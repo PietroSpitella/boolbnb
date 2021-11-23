@@ -14,4 +14,8 @@ class Apartment extends Model
         return $this->belongsTo('App\User');
     }
 
+    public function statistics(){
+        return $this->hasMany('App\Statistic');
+    }
+
 }
