@@ -19,6 +19,10 @@ class User extends Authenticatable
         'name', 'surname', 'date_of_birth' , 'email', 'password',
     ];
 
+    public function apartments(){
+        return $this->hasMany('App\Apartment');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -36,4 +40,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 }
