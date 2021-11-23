@@ -16,7 +16,7 @@ class CreateApartmentsTable extends Migration
         Schema::create('apartments', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->string('type')->nullable();
             $table->text('description');
             $table->smallInteger('mq')->nullable();
@@ -29,7 +29,7 @@ class CreateApartmentsTable extends Migration
             $table->string('h_checkout');
             $table->smallInteger('price_night')->nullable();
             $table->string('image');
-            $table->string('visibility');
+            $table->boolean('visibility')->default(true);
             $table->string('city');
             $table->string('street');
             $table->float('lat', 7,5);

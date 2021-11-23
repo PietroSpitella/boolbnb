@@ -21,6 +21,12 @@ class CreateApartmentAdvertiseTable extends Migration
 
             $table->unsignedBigInteger('advertise_id');
             $table->foreign('advertise_id')->references('id')->on('advertises')->onDelete('cascade');
+
+            $table->date('start_date');
+            $table->date('end_date');
+            $table->boolean('status'); // Pagamento accettato o no
+            $table->string('transaction_id');
+
         });
     }
 
