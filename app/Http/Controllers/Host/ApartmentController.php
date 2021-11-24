@@ -26,8 +26,8 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        $apartments = Apartment::all();
-        return view('host.create', compact('apartments'));
+        
+        return view('host.create');
     }
 
     /**
