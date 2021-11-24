@@ -15,8 +15,10 @@
         <label for="type" class="form-label">Tipologia</label>
         <select name="type" id="type">
             <option value=""> -- Seleziona -- </option>
-            <option value=""> Appartamento </option>
-            <option value=""> Stanza</option>
+            <option value="appartamento"> Appartamento </option>
+            {{-- da controllare lo spazio lasciato nel value --}}
+            <option value="casa intera"> Casa intera </option>
+            <option value="stanza"> Stanza</option>
         </select>
     </div>
     <div>
@@ -26,7 +28,7 @@
     {{--L'utente può utilizzare le frecce per sceglire il valore ma anche inserirlo, se lo inserisce controllare che metta solo un numero--}}
     <div>
         <label for="mq">Metri quadrati</label>
-        <input type="number" id="mq" name="mq" min="30" max="300" placeholder="Add square meters min 1 max 5">
+        <input type="number" id="mq" name="mq" min="30" max="300" placeholder="Add square meters min 30 max 300">
     </div>
     <div>
         <label for="n_rooms">Numero stanze</label>
@@ -48,17 +50,17 @@
         <label for="pet" class="form-label">Animali</label>
         <select name="pet" id="pet">
             <option value=""> -- Seleziona -- </option>
-            <option value="Sono ammessi"> Certo che sono ammessi </option>
-            <option value="Non sono ammessi"> Mi dispiace, non sono ammessi gli animali </option>
+            <option value="true"> Certo che sono ammessi </option>
+            <option value="false"> Mi dispiace, non sono ammessi gli animali </option>
         </select>
     </div>
     <div>
         <label for="h_checkin">Orario checkin</label>
-        <input type="time" id="h_checkin" name="h_checkin">
+        <input type="text" id="h_checkin" name="h_checkin">
     </div>
     <div>
         <label for="h_checkout">Orario checkout</label>
-        <input type="time" id="h_checkout" name="h_checkout">
+        <input type="text" id="h_checkout" name="h_checkout">
     </div>
     <div>
         <label for="price_night">Prezzo per notte</label>
