@@ -28,7 +28,7 @@ class UpdateUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('surname');
-            $table->dropColumn('date_of_birth');
+            $table->dropColumn('date_of_birth')->nullable();
         });
     }
 }
