@@ -55,6 +55,7 @@ class ApartmentController extends Controller
             "image" => "required",
             "city" => "required",
             "street" => "required",
+            //da modificare lat e long con tomtom
             "lat" => "required|numeric",
             "long" => "required|numeric",
             "house_number" => "required",
@@ -85,10 +86,9 @@ class ApartmentController extends Controller
             $i++;
         }
         $new_apartment->slug = $slug;
-
-        
-        
         $new_apartment->save();
+
+        return redirect()->route('host.apartments.index');
     }
 
     /**

@@ -20,10 +20,17 @@
         <label for="type" class="form-label">Tipologia</label>
         <select name="type" id="type">
             <option value=""> -- Seleziona -- </option>
-            <option value="appartamento"> Appartamento </option>
+            <option value="appartamento"
+                {{old("type") == "appartamento" ? "selected" : null}}
+            > 
+            Appartamento </option>
             {{-- da controllare lo spazio lasciato nel value --}}
-            <option value="casa intera"> Casa intera </option>
-            <option value="stanza"> Stanza</option>
+            <option value="casa"
+                {{old("type") == "casa" ? "selected" : null}}
+            > Casa intera </option>
+            <option value="stanza"
+                {{old("type") == "stanza" ? "selected" : null}}
+            > Stanza</option>
         </select>
     </div>
     <div>
@@ -40,40 +47,41 @@
     </div>
     <div>
         <label for="n_rooms">Numero stanze*</label>
-        <input type="number" id="n_rooms" name="n_rooms" min="1" max="5" placeholder="Add square meters min 1 max 5" class="@error('n_rooms') is-invalid @enderror" value="{{old('n_rooms')}}">
+        <input type="number" id="n_rooms" name="n_rooms" placeholder="Aggiungere numero stanze" class="@error('n_rooms') is-invalid @enderror" value="{{old('n_rooms')}}">
         @error('n_rooms')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
     <div>
         <label for="n_beds">Numero letti*</label>
-        <input type="number" id="n_beds" name="n_beds" min="1" max="5" placeholder="Add square meters min 1 max 5" class="@error('n_beds') is-invalid @enderror" value="{{old('n_beds')}}">
+        <input type="number" id="n_beds" name="n_beds" placeholder="Aggiungere numero letti" class="@error('n_beds') is-invalid @enderror" value="{{old('n_beds')}}">
         @error('n_beds')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
     <div>
         <label for="n_baths">Numero bagni*</label>
-        <input type="number" id="n_baths" name="n_baths" min="1" max="5" placeholder="Add square meters min 1 max 5" class="@error('n_baths') is-invalid @enderror" value="{{old('n_baths')}}">
+        <input type="number" id="n_baths" name="n_baths" placeholder="Aggiungere numero bagni" class="@error('n_baths') is-invalid @enderror" value="{{old('n_baths')}}">
         @error('n_baths')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
     <div>
         <label for="n_guests">Numero ospiti*</label>
-        <input type="number" id="n_guests" name="n_guests" min="1" max="5" maxlength="1" placeholder="Add square meters min 1 max 5" class="@error('n_guests') is-invalid @enderror" value="{{old('n_guests')}}">
+        <input type="number" id="n_guests" name="n_guests" placeholder="Aggiungere numero ospiti" class="@error('n_guests') is-invalid @enderror" value="{{old('n_guests')}}">
         @error('n_guests')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+
     <div>
-        <label for="pet" class="form-label">Animali*</label>
-        <select name="pet" id="pet">
-            <option value=""> -- Seleziona -- </option>
-            <option value="true"> Certo che sono ammessi </option>
-            <option value="false"> Mi dispiace, non sono ammessi gli animali </option>
-        </select>
+        <label for="pet">Possibilità di portare animali*</label>
+        <input type="text" id="pet" name="pet" class="@error('pet') is-invalid @enderror" value="{{old('pet')}}">
+        @error('pet')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
+
     <div>
         <label for="h_checkin">Orario checkin*</label>
         <input type="text" id="h_checkin" name="h_checkin" class="@error('h_checkin') is-invalid @enderror" value="{{old('h_checkin')}}">
@@ -96,10 +104,12 @@
   
     <div>
         <label for="image">Inserisci l'immagine di copertina del tuo appartamento*</label>
-        <input type="file" id="image" name="image">
+        <input type="file" id="image" name="image" class="@error('image') is-invalid @enderror">
+        @error('image')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
-    
-    
+     
     <div>
         <label for="visibility" class="form-label">Visibità appartamento</label>
         <select name="visibility" id="visibility">
@@ -107,7 +117,7 @@
             <option value="0"> Per il momento non rendere visibile l'appartamento </option>
         </select>
     </div>
-    
+
     <div>
         <label for="city">Città*</label>
         <input type="text" id="city" name="city" placeholder="Aggiungi la Città" class="@error('h_checkout') is-invalid @enderror" value="{{old('city')}}">
