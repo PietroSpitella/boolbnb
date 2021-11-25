@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Host;
 
 use App\Http\Controllers\Controller;
-use Http\Controllers\Host\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use App\Apartment;
 
 
@@ -40,12 +41,23 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        $form_data_apartemnt = $request->all();
+        $form_data_apartment = $request->all();
 
+        //Verifico se l'immagine è stata caricata
+        if(array_key_exists('image', $form_data_apartment)){
+            $img_path = Storage::put('apartment_image', $form_data_apartment['image']);
+            $form_data_apartment['image'] = $img_path;
+        }
         $new_apartment = new Apartment();
-        //$new_apartment->user_id = Auth::user()->id;
-        $new_apartment->fill($form_data_apartemnt);
+        $new_apartment->fill($form_data_apartment);
 
+        //Creazione slug
+        $slug = Str::slug($new_apartment->title, '-');
+        $slug_apartment = Apartment::where('slug', $slug)->first();
+        $new_apartment->slug = $slug;
+
+        
+        
         $new_apartment->save();
     }
 
