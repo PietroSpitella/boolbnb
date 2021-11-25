@@ -1,0 +1,52 @@
+// DASHBOARD
+
+// barra superiore
+
+nav {
+    height: 70px;
+    a {
+        img {
+            height: 45px;
+        }
+    }
+}
+
+
+.my_user{
+    display: flex;
+    align-items: center;
+
+
+    .my_user_icon{
+        display: flex;
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+        overflow: hidden;
+        justify-content: center;
+        
+        img {
+            height: 100%;
+        }
+    }
+}
+
+//barra laterale
+
+.sidebar {
+    height: calc(100vh - 46px);
+}
+
+.flex-column {
+
+    .nav-item {
+        
+        a {
+            color: $red;
+            font-size: 25px;
+        }
+    }
+}
+
+
+// End DASHBOARD
