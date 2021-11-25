@@ -41,6 +41,29 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            //Required
+            "title" => "required|max:255",
+            "description" => "required",
+            "n_rooms" => "required|numeric|max:1",
+            "n_beds" => "required|numeric|max:1",
+            "n_baths" => "required|numeric|max:1",
+            "n_guests" => "required|numeric|max:1",
+            "pet" => "required",
+            "h_checkin" => "required",
+            "h_checkout" => "required",
+            "image" => "required",
+            "city" => "required",
+            "street" => "required",
+            "lat" => "required|numeric",
+            "long" => "required|numeric",
+            "house_number" => "required",
+            //Nullable
+            "type" => "nullable",
+            "mq" => "nullable|numeric",
+            "price_night" => "nullable|numeric"
+        ]);
+    
         $form_data_apartment = $request->all();
 
         //Verifico se l'immagine è stata caricata
