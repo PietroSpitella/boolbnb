@@ -1,12 +1,14 @@
 {{-- Creazione appartamenti --}}
 @extends('layouts.dashboard')
 @section('title', 'New Apartment')
-    
+
 @section('content')
-<form action="{{ route('host.apartments.store')}}" method="POST" enctype="multipart/form-data">
+
+<form action="{{ route('host.apartments.store')}}" method="POST">
     @csrf
     @method('POST')
     <h1>Aggiungi un nuovo appartamento</h1>
+    <input type="text" value="{{Auth::user()->id}}" hidden name="user_id">
     <div class="mb-3">
         <label for="title" class="form-label">Titolo</label>
         <input type="text" name="title" class="form-control" id="title" placeholder="Add Title">
@@ -66,15 +68,23 @@
         <label for="price_night">Prezzo per notte</label>
         <input type="number" id="price_night" name="price_night" min="30" max="1000" placeholder="Add square meters min 30 max 1.000">
     </div>
-    {{-- Inserire l'immagine dopo aver fatto lo storage --}}
+    {{-- Per l'immagine bisogna: modificare il file system, creare un link nella cartella publi, inserire l'enctype nel form, utilizzare il metodo Storage::put nel controller --}}
+   {{--
+    <div>
+        <label for="image">Inserisci l'immagine di copertina del tuo appartamento</label>
+        <input type="file" id="image" name="image">
+    </div>
+    --}}
+    
     <div>
         <label for="visibility" class="form-label">Visibità appartamento</label>
         <select name="visibility" id="visibility">
             <option value=""> -- Select -- </option>
-            <option value="true"> Rendi visibile l'appartamento </option>
-            <option value="false"> Per il momento non rendere visibile l'appartamento </option>
+            <option value="0"> Rendi visibile l'appartamento </option>
+            <option value="1"> Per il momento non rendere visibile l'appartamento </option>
         </select>
     </div>
+    
     <div>
         <label for="city">Città</label>
         <input type="text" id="city" name="city" placeholder="Aggiungi la Città">

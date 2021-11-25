@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Host;
 
 use App\Http\Controllers\Controller;
+use Http\Controllers\Host\Auth;
 use Illuminate\Http\Request;
 use App\Apartment;
+
 
 class ApartmentController extends Controller
 {
@@ -38,7 +40,13 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_data_apartemnt = $request->all();
+
+        $new_apartment = new Apartment();
+        //$new_apartment->user_id = Auth::user()->id;
+        $new_apartment->fill($form_data_apartemnt);
+
+        $new_apartment->save();
     }
 
     /**
