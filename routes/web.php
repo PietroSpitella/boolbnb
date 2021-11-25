@@ -27,6 +27,6 @@ Route::middleware('auth')->namespace('Host')->prefix('host')->name('host.')
 ->group(function(){
 
     Route::get('/dashboard', 'HomeController@index')->name('home');
-
+    Route::get('/messages', 'HomeController@listMessage')->name('messages');
     Route::resource('/apartments', 'ApartmentController');
 });
