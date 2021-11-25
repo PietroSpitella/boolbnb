@@ -54,6 +54,13 @@ class ApartmentController extends Controller
         //Creazione slug
         $slug = Str::slug($new_apartment->title, '-');
         $slug_apartment = Apartment::where('slug', $slug)->first();
+        //il ciclo inizia se lo slug è gia presente
+        $i= 1;
+        while($slug_apartment) {
+            $slug = $slug . '-' . $i;
+            $slug_apartment = Apartment::where('slug', $slug)->first();
+            $i++;
+        }
         $new_apartment->slug = $slug;
 
         
