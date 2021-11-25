@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('index');
 })->name('index');
+Route::resource('/apartments', 'ApartmentController');
 
 Auth::routes();
 

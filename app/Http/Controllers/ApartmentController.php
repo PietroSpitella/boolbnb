@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Apartment;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 class ApartmentController extends Controller
 {
     /**
@@ -13,7 +14,8 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        //
+        $apartments = Apartment::all();
+        return view('search', compact('apartments'));
     }
 
     /**
@@ -45,7 +47,12 @@ class ApartmentController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = Auth::user();
+        $apartment = Apartment::where('id', $id)->first();
+        if(!$apartment){
+            abort(404);
+        }
+        return view('show', compact('apartment', 'user'));
     }
 
     /**
