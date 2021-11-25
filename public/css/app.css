@@ -11011,3 +11011,38 @@ a.text-dark:focus {
   color: #ff385c;
 }
 
+nav {
+  height: 70px;
+}
+
+nav a img {
+  height: 45px;
+}
+
+.my_user {
+  display: flex;
+  align-items: center;
+}
+
+.my_user .my_user_icon {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.my_user .my_user_icon img {
+  height: 100%;
+}
+
+.sidebar {
+  min-height: calc(100vh - 46px);
+}
+
+.flex-column .nav-item a {
+  color: #ff385c;
+  font-size: 25px;
+}
+

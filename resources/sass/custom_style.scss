@@ -1,9 +1,9 @@
-.navbar .logo{
+.navbar .logo {
     color: $red;
 }
 
 .button_login,
-.button_register{
+.button_register {
     background-color: $red;
     border-radius: 10px;
     border: 0;
@@ -11,38 +11,76 @@
     color: $white;
 }
 
-.modal-dialog{
+.modal-dialog {
     height: max-content;
-    width: 100%;;
-    
-
-    .modal-body-left{
+    width: 100%;
+    ;
+    .modal-body-left {
         width: 50%;
-        
-        img{
+        img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
     }
-    
-    .modal-body-right{
+    .modal-body-right {
         width: 50%;
         height: 100%;
-        
     }
 }
 
-.btn-login-register{
+.btn-login-register {
     background-color: $red;
     border: none;
     color: $white;
 }
 
-.color-red{
+.color-red {
     color: $red;
 }
 
-.color-red:hover{
+.color-red:hover {
     color: $red;
 }
+
+// barra superiore
+nav {
+    height: 70px;
+    a {
+        img {
+            height: 45px;
+        }
+    }
+}
+
+.my_user {
+    display: flex;
+    align-items: center;
+    .my_user_icon {
+        display: flex;
+        width: 30px;
+        height: 30px;
+        border-radius: 50px;
+        overflow: hidden;
+        justify-content: center;
+        img {
+            height: 100%;
+        }
+    }
+}
+
+//barra laterale
+.sidebar {
+    min-height: calc(100vh - 46px);
+}
+
+.flex-column {
+    .nav-item {
+        a {
+            color: $red;
+            font-size: 25px;
+        }
+    }
+}
+
+// End DASHBOARD
