@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Host;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use App\Apartment;
+
 
 class ApartmentController extends Controller
 {
@@ -26,6 +29,7 @@ class ApartmentController extends Controller
      */
     public function create()
     {
+        
         return view('host.create');
     }
 
@@ -37,7 +41,54 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            //Required
+            "title" => "required|max:255",
+            "description" => "required",
+            "n_rooms" => "required|numeric",
+            "n_beds" => "required|numeric",
+            "n_baths" => "required|numeric",
+            "n_guests" => "required|numeric",
+            "pet" => "required",
+            "h_checkin" => "required",
+            "h_checkout" => "required",
+            "image" => "required",
+            "city" => "required",
+            "street" => "required",
+            //da modificare lat e long con tomtom
+            "lat" => "required|numeric",
+            "long" => "required|numeric",
+            "house_number" => "required",
+            //Nullable
+            "type" => "nullable",
+            "mq" => "nullable|numeric",
+            "price_night" => "nullable|numeric"
+        ]);
+    
+        $form_data_apartment = $request->all();
+
+        //Verifico se l'immagine è stata caricata
+        if(array_key_exists('image', $form_data_apartment)){
+            $img_path = Storage::put('apartment_image', $form_data_apartment['image']);
+            $form_data_apartment['image'] = $img_path;
+        }
+        $new_apartment = new Apartment();
+        $new_apartment->fill($form_data_apartment);
+
+        //Creazione slug
+        $slug = Str::slug($new_apartment->title, '-');
+        $slug_apartment = Apartment::where('slug', $slug)->first();
+        //il ciclo inizia se lo slug è gia presente
+        $i= 1;
+        while($slug_apartment) {
+            $slug = $slug . '-' . $i;
+            $slug_apartment = Apartment::where('slug', $slug)->first();
+            $i++;
+        }
+        $new_apartment->slug = $slug;
+        $new_apartment->save();
+
+        return redirect()->route('host.apartments.index');
     }
 
     /**
