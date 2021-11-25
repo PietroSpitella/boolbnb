@@ -1,0 +1,48 @@
+.navbar .logo{
+    color: $red;
+}
+
+.button_login,
+.button_register{
+    background-color: $red;
+    border-radius: 10px;
+    border: 0;
+    //padding: 8px;
+    color: $white;
+}
+
+.modal-dialog{
+    height: max-content;
+    width: 100%;;
+    
+
+    .modal-body-left{
+        width: 50%;
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    .modal-body-right{
+        width: 50%;
+        height: 100%;
+        
+    }
+}
+
+.btn-login{
+    background-color: $red;
+    border: none;
+    color: $white;
+}
+
+.color-red{
+    color: $red;
+}
+
+.color-red:hover{
+    color: $red;
+}
