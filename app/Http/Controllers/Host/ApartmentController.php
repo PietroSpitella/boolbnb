@@ -52,7 +52,7 @@ class ApartmentController extends Controller
             "pet" => "required",
             "h_checkin" => "required",
             "h_checkout" => "required",
-            "image" => "required",
+            "image" => "required|image",
             "city" => "required",
             "street" => "required",
             //da modificare lat e long con tomtom
@@ -94,35 +94,90 @@ class ApartmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Apartment $apartment
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Apartment $apartment)
     {
-        return view('host.show');
+        if(!$apartment) {
+            abort(404);
+        }
+        return view('host.show', compact('apartment'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Apartment $apartment
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Apartment $apartment)
     {
-        return view('host.edit');
+        if(!$apartment) {
+            abort(404);
+        }
+        return view('host.edit', compact('apartment'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Apartment $apartment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Apartment $apartment)
     {
-        //
+        $request->validate([
+            //Required
+            "title" => "required|max:255",
+            "description" => "required",
+            "n_rooms" => "required|numeric",
+            "n_beds" => "required|numeric",
+            "n_baths" => "required|numeric",
+            "n_guests" => "required|numeric",
+            "pet" => "required",
+            "h_checkin" => "required",
+            "h_checkout" => "required",
+            "image" => "nullable|image",
+            "city" => "required",
+            "street" => "required",
+            //da modificare lat e long con tomtom
+            "lat" => "required|numeric",
+            "long" => "required|numeric",
+            "house_number" => "required",
+            //Nullable
+            "type" => "nullable",
+            "mq" => "nullable|numeric",
+            "price_night" => "nullable|numeric"
+        ]);
+        $form_data_apartment = $request->all();
+        if(array_key_exists('image', $form_data_apartment)){
+            Storage::delete($apartment->image);
+            $img_path = Storage::put('apartment_image', $form_data_apartment['image']);
+            $form_data_apartment['image'] = $img_path;
+        }
+        
+        if($form_data_apartment != $apartment->title) {
+            //Creazione slug
+            $slug = Str::slug($form_data_apartment['title'], '-');
+            $slug_apartment = Apartment::where('slug', $slug)->first();
+            //il ciclo inizia se lo slug è gia presente
+            $i= 1;
+            while($slug_apartment) {
+                $slug = $slug . '-' . $i;
+                $slug_apartment = Apartment::where('slug', $slug)->first();
+                $i++;
+            }
+            
+            //Dobbiamo inviare il nuovo slug, quindi bisogna sovracrivere la proprietà slug
+            
+            $form_data_apartment['slug'] = $slug;
+        }
+
+        //Per inviare i dati utilizzo il metodo update
+        $apartment->update($form_data_apartment);
+        return redirect()->route('host.apartments.index');
     }
 
     /**
