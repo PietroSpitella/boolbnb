@@ -52,7 +52,7 @@ class ApartmentController extends Controller
             "pet" => "required",
             "h_checkin" => "required",
             "h_checkout" => "required",
-            "image" => "required|image|dimensions:max_width=300,max_height=300",
+            "image" => "required|image",
             "city" => "required",
             "street" => "required",
             //da modificare lat e long con tomtom
@@ -139,7 +139,7 @@ class ApartmentController extends Controller
             "pet" => "required",
             "h_checkin" => "required",
             "h_checkout" => "required",
-            "image" => "nullable|image|dimensions:max_width=300,max_height=300",
+            "image" => "nullable|image",
             "city" => "required",
             "street" => "required",
             //da modificare lat e long con tomtom
@@ -153,6 +153,7 @@ class ApartmentController extends Controller
         ]);
         $form_data_apartment = $request->all();
         if(array_key_exists('image', $form_data_apartment)){
+            Storage::delete($apartment->image);
             $img_path = Storage::put('apartment_image', $form_data_apartment['image']);
             $form_data_apartment['image'] = $img_path;
         }

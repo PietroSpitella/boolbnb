@@ -133,6 +133,13 @@
             @enderror
         </div>
         <div>
+            <label for="house_number">Numero civico*</label>
+            <input type="number" id="house_number" name="house_number" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola" class="@error('house_number') is-invalid @enderror" value="{{old('house_number')}}">
+            @error('house_number')
+             <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
+        </div>
+        <div>
             <label for="lat">latitudine*</label>
             <input type="number" id="lat" name="lat" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola">
         </div>
