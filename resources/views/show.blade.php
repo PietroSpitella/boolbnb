@@ -4,6 +4,14 @@
 
 @section('content')
 {{-- @dump($user) --}}
+@if (session('sent'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{ session('sent') }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
 <h2>Info appartamento:</h2>
 <p>id: {{$apartment->id}}</p>
 <p>title: {{$apartment->title}}</p>
@@ -23,7 +31,10 @@
 <p>house_number: {{$apartment->house_number}}</p>
 
 <h2>Scrivi un messaggio:</h2>
-<form action="">
+<form action="{{route('store-message')}}" method="POST">
+    @csrf
+    @method('POST')
+
     <div class="form-group">
         <label for="fullname">Nome completo:</label>
         @if (Auth::user())
@@ -42,8 +53,8 @@
         @endif
     </div>
     <div class="form-group">
-        <label for="text">Testo:</label>
-        <textarea type="textarea" name="text" id="text"></textarea>
+        <label for="message">Testo:</label>
+        <textarea type="textarea" name="message" id="message"></textarea>
     </div>
     <input type="text" name="apartment_id" value="{{$apartment->id}}" hidden>
     <button type="submit">Manda messaggio</button>

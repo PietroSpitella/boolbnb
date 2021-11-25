@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('index');
 })->name('index');
 Route::resource('/apartments', 'ApartmentController');
-
+Route::post('/new-message', 'MessageController@store')->name('store-message');
 Auth::routes();
 
 // Route::get('/dashboard', 'HomeController@index')->name('home');
