@@ -6,7 +6,7 @@
 <form action="{{ route('host.apartments.update', $apartment->id)}}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
-    <h1>Aggiungi un nuovo appartamento</h1>
+    <h1>Modifica l'appartamento selezionato</h1>
     <input type="text" value="{{Auth::user()->id}}" hidden name="user_id">
     <div class="mb-3">
         <label for="title" class="form-label">Titolo*</label>
@@ -100,13 +100,12 @@
         <input type="number" id="price_night" name="price_night" min="30" max="1000" placeholder="Add square meters min 30 max 1.000" value="{{old('price_night', $apartment->price_night)}}">
     </div>
     {{-- Per l'immagine bisogna: modificare il file system, creare un link nella cartella public, inserire l'enctype nel form, utilizzare il metodo Storage::put nel controller --}}
-
+    @if ($apartment->image)
+        <img src="{{ asset('storage/' . $apartment->image)}}" alt="">
+    @endif
     <div>
-        <label for="image">Inserisci l'immagine di copertina del tuo appartamento*</label>
-        <input type="file" id="image" name="image" class="@error('image') is-invalid @enderror">
-        @error('image')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
+        <label for="image">Modifca l'immagine di copertina del tuo appartamento*</label>
+        <input type="file" id="image" name="image">
     </div>
     
     <div>
