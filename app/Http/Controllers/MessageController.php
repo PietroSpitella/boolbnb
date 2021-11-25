@@ -10,6 +10,7 @@ class MessageController extends Controller
     public function store(Request $request){
         $request->validate([
             'apartment_id'=>'required',
+            'apartment_title'=>'required',
             'fullname'=>'required',
             'email'=>'required',
             'message'=>'required',
@@ -21,4 +22,5 @@ class MessageController extends Controller
         $new_message->save();
         return redirect()->route('apartments.show', $apartment_id)->with('sent', 'Il messaggio è stato correttamente inviato');
     }
+
 }

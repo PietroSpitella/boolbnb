@@ -57,6 +57,7 @@
         <textarea type="textarea" name="message" id="message"></textarea>
     </div>
     <input type="text" name="apartment_id" value="{{$apartment->id}}" hidden>
+    <input type="text" name="apartment_title" value="{{$apartment->title}}" hidden>
     <button type="submit">Manda messaggio</button>
 </form>
 @endsection

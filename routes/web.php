@@ -28,5 +28,6 @@ Route::middleware('auth')->namespace('Host')->prefix('host')->name('host.')
 
     Route::get('/dashboard', 'HomeController@index')->name('home');
     Route::get('/messages', 'HomeController@listMessage')->name('messages');
+    Route::get('/messages/show/{message}', 'HomeController@showMessage')->name('show-message');
     Route::resource('/apartments', 'ApartmentController');
 });
