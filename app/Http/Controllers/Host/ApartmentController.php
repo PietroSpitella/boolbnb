@@ -52,7 +52,7 @@ class ApartmentController extends Controller
             "pet" => "required",
             "h_checkin" => "required",
             "h_checkout" => "required",
-            "image" => "required",
+            "image" => "required|image",
             "city" => "required",
             "street" => "required",
             //da modificare lat e long con tomtom
@@ -139,7 +139,7 @@ class ApartmentController extends Controller
             "pet" => "required",
             "h_checkin" => "required",
             "h_checkout" => "required",
-            "image" => "required",
+            "image" => "required|image",
             "city" => "required",
             "street" => "required",
             //da modificare lat e long con tomtom
