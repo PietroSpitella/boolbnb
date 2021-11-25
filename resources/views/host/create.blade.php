@@ -76,11 +76,17 @@
     </div>
     <div>
         <label for="h_checkin">Orario checkin*</label>
-        <input type="text" id="h_checkin" name="h_checkin">
+        <input type="text" id="h_checkin" name="h_checkin" class="@error('h_checkin') is-invalid @enderror" value="{{old('h_checkin')}}">
+        @error('h_checkin')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     <div>
         <label for="h_checkout">Orario checkout*</label>
-        <input type="text" id="h_checkout" name="h_checkout">
+        <input type="text" id="h_checkout" name="h_checkout" class="@error('h_checkout') is-invalid @enderror" value="{{old('h_checkout')}}">
+        @error('h_checkout')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     <div>
         <label for="price_night">Prezzo per notte</label>
@@ -104,22 +110,28 @@
     
     <div>
         <label for="city">Città*</label>
-        <input type="text" id="city" name="city" placeholder="Aggiungi la Città">
+        <input type="text" id="city" name="city" placeholder="Aggiungi la Città" class="@error('h_checkout') is-invalid @enderror" value="{{old('city')}}">
+        @error('city')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     <div>
-        <label for="street">Via</label>
-        <input type="text" id="street" name="street" placeholder="Aggiungi la strada">
+        <label for="street">Via*</label>
+        <input type="text" id="street" name="street" placeholder="Aggiungi la strada" class="@error('street') is-invalid @enderror" value="{{old('street')}}">
+        @error('street')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
     </div>
     <div>
-        <label for="lat">lat*</label>
+        <label for="lat">latitudine*</label>
         <input type="number" id="lat" name="lat" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola">
     </div>
     <div>
-        <label for="long">long</label>
+        <label for="long">longitudine*</label>
         <input type="number" id="long" name="long" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola">
     </div>
     <div>
-        <label for="house_number">long*</label>
+        <label for="house_number">Numero civico*</label>
         <input type="number" id="house_number" name="house_number" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola">
     </div>
     <p>I campi contrassegnati con il simbolo (*) sono obbligatori</p>
