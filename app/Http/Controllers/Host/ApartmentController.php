@@ -94,23 +94,29 @@ class ApartmentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Apartment $apartment
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Apartment $apartment)
     {
-        return view('host.show');
+        if(!$apartment) {
+            abort(404);
+        }
+        return view('host.show', compact('apartment'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  Apartment $apartment
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Apartment $apartment)
     {
-        return view('host.edit');
+        if(!$apartment) {
+            abort(404);
+        }
+        return view('host.edit', compact('apartment'));
     }
 
     /**
