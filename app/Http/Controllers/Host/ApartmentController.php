@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Apartment;
+use App\Service;
 use Illuminate\Support\Facades\Auth;
 
 class ApartmentController extends Controller
@@ -30,8 +31,10 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        
-        return view('host.apartments.create');
+
+        $services = Service::all();
+        return view('host.apartments.create', compact('services'));
+
     }
 
     /**
@@ -56,6 +59,8 @@ class ApartmentController extends Controller
             "image" => "required|image",
             "city" => "required",
             "street" => "required",
+            //"services" => "exists:services,id",
+
             //da modificare lat e long con tomtom
             "lat" => "required|numeric",
             "long" => "required|numeric",
@@ -87,8 +92,17 @@ class ApartmentController extends Controller
             $i++;
         }
         $new_apartment->slug = $slug;
+        //Fino a qui creo solo l'appartamento con tutti i valori delle colonne ma senza assegnargli l'id
         $new_apartment->save();
-
+        //Faccio qui l'attach perchè dopo il salvataggio l'appartamento avrà l'id assegnato a cui dobbiamo collegare gli id dei servizi 
+        
+        //$new_apartment->services()->attach($form_data_apartment['services']);
+        if(array_key_exists('services', $form_data_apartment)) {
+            $new_apartment->services()->attach($form_data_apartment['services']);
+        } else {
+            $new_apartment->services()->attach([]);
+        }
+         
         return redirect()->route('host.apartments.index');
     }
 
@@ -117,7 +131,10 @@ class ApartmentController extends Controller
         if(!$apartment) {
             abort(404);
         }
-        return view('host.apartments.edit', compact('apartment'));
+
+        $services = Service::all();
+        return view('host.apartments.edit', compact('apartment','services'));
+
     }
 
     /**
@@ -178,17 +195,26 @@ class ApartmentController extends Controller
 
         //Per inviare i dati utilizzo il metodo update
         $apartment->update($form_data_apartment);
+        
+       
+        if(array_key_exists('services', $form_data_apartment)) {
+            $apartment->services()->sync($form_data_apartment['services']);
+        } else {
+            $apartment->services()->sync([]);
+        }
+       
         return redirect()->route('host.apartments.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Apartment $apartment
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Apartment $apartment)
     {
-        //
+        $apartment->delete();
+        return redirect()->route('host.apartments.index');
     }
 }
