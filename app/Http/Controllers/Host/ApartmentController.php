@@ -57,6 +57,7 @@ class ApartmentController extends Controller
             "image" => "required|image",
             "city" => "required",
             "street" => "required",
+            "services" => "exists:services,id",
             //da modificare lat e long con tomtom
             "lat" => "required|numeric",
             "long" => "required|numeric",
@@ -88,7 +89,10 @@ class ApartmentController extends Controller
             $i++;
         }
         $new_apartment->slug = $slug;
+        //Fino a qui creo solo l'appartamento con tutti i valori delle colonne ma senza assegnargli l'id
         $new_apartment->save();
+        //Faccio qui l'attach perchè dopo il salvataggio l'appartamento avrà l'id assegnato a cui dobbiamo collegare gli id dei servizi 
+        $new_apartment->services()->attach($form_data_apartment['services']);
 
         return redirect()->route('host.apartments.index');
     }
