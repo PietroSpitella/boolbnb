@@ -77,11 +77,11 @@
             <label>Inserisci i servizi offerti dalla tua struttura</label>
             @foreach ($services as $service)
                 <div>
+                    <i class="{{ $service['icon'] }}"></i>
+                    <label for="{{ 'service' . $service['id'] }}" class="form-check-label">{{ $service['name'] }}</label> 
                     <input type="checkbox" 
                     {{in_array($service->id, old('services', [])) ? 'checked' : null}}
-                    value="{{ $service['id'] }}" name="services[]" id="{{ 'service' . $service['id'] }}">
-                    <label for="{{ 'service' . $service['id'] }}" class="form-check-label">{{ $service['name'] }}</label>
-                    <i class="{{ $service['icon'] }}"></i>
+                    value="{{ $service['id'] }}" name="services[]" id="{{ 'service' . $service['id'] }}">      
                 </div>
             @endforeach
         </div>
