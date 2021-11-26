@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('index');
 })->name('index');
+Route::get('/about-us', 'HomeController@about')->name('about-us');
+
 Route::resource('/apartments', 'ApartmentController');
 Route::post('/new-message', 'MessageController@store')->name('store-message');
 Auth::routes();

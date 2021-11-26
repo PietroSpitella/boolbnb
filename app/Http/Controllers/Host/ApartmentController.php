@@ -20,7 +20,7 @@ class ApartmentController extends Controller
     {
         $user_id = Auth::user()->id;
         $apartments = Apartment::where('user_id', $user_id)->get();
-        return view('host.index', compact('apartments'));
+        return view('host.apartments.index', compact('apartments'));
     }
 
     /**
@@ -31,7 +31,7 @@ class ApartmentController extends Controller
     public function create()
     {
         
-        return view('host.create');
+        return view('host.apartments.create');
     }
 
     /**
@@ -103,7 +103,7 @@ class ApartmentController extends Controller
         if(!$apartment) {
             abort(404);
         }
-        return view('host.show', compact('apartment'));
+        return view('host.apartments.show', compact('apartment'));
     }
 
     /**
@@ -117,7 +117,7 @@ class ApartmentController extends Controller
         if(!$apartment) {
             abort(404);
         }
-        return view('host.edit', compact('apartment'));
+        return view('host.apartments.edit', compact('apartment'));
     }
 
     /**

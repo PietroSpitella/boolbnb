@@ -31,11 +31,22 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-    
+                    <div class="collapse navbar-collapse" id="navbarScroll">
+                        <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+                          <li class="nav-item {{Request::route()->getName()=='index'? 'active' : 'null'}}">
+                            <a class="nav-link" href="{{route('index')}}">Home</a>
+                          </li>
+                          <li class="nav-item {{Request::route()->getName()=='apartments.index'? 'active' : 'null'}}">
+                            <a class="nav-link" href="{{route('apartments.index')}}">Appartamenti</a>
+                          </li>
+                          <li class="nav-item {{Request::route()->getName()=='about-us'? 'active' : 'null'}}">
+                            <a class="nav-link" href="{{url('/about-us')}}">About Us</a>
+                          </li>
+                        </ul>
+                    </div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
-    
                         </ul>
     
                         <!-- Right Side Of Navbar -->
@@ -43,7 +54,7 @@
                             <!-- Authentication Links -->
                             @guest
                                 <li class="nav-item pr-2">
-                                    {{-- <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> --}}
+                                    Sei un host?
                                     <button type="button" class="button_login p-2" data-toggle="modal" data-target="#exampleModal">
                                         Login
                                     </button>
