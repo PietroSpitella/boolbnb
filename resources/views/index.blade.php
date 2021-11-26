@@ -34,7 +34,7 @@
             <div class="form-group m-0 col">
                 <input type="text" class="form-control h-100 form-control-lg" placeholder="guests">
             </div>
-            <button type="submit" class="btn button_register">Sign in</button>
+            <button type="submit" class="btn button_register">Search</button>
         </div>
     </form>
 </div>
