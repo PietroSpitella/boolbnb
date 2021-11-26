@@ -73,7 +73,19 @@
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
-
+        <div>
+            <label>Inserisci i servizi offerti dalla tua struttura</label>
+            @foreach ($services as $service)
+                <div>
+                    <input type="checkbox" 
+                    {{in_array($service->id, old('services', [])) ? 'checked' : null}}
+                    value="{{ $service['id'] }}" name="services[]" id="{{ 'service' . $service['id'] }}">
+                    <label for="{{ 'service' . $service['id'] }}" class="form-check-label">{{ $service['name'] }}</label>
+                    <i class="{{ $service['icon'] }}"></i>
+                </div>
+            @endforeach
+            
+        </div>
         <div>
             <label for="pet">Possibilità di portare animali*</label>
             <input type="text" id="pet" name="pet" class="@error('pet') is-invalid @enderror" value="{{old('pet')}}">

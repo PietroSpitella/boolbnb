@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Apartment;
+use App\Service;
 use Illuminate\Support\Facades\Auth;
 
 class ApartmentController extends Controller
@@ -30,8 +31,8 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        
-        return view('host.create');
+        $services = Service::all();
+        return view('host.create', compact('services'));
     }
 
     /**
