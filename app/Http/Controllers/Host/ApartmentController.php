@@ -122,7 +122,8 @@ class ApartmentController extends Controller
         if(!$apartment) {
             abort(404);
         }
-        return view('host.edit', compact('apartment'));
+        $services = Service::all();
+        return view('host.edit', compact('apartment','services'));
     }
 
     /**
@@ -183,6 +184,12 @@ class ApartmentController extends Controller
 
         //Per inviare i dati utilizzo il metodo update
         $apartment->update($form_data_apartment);
+
+        if(array_key_exists('services', $form_data_apartment)) {
+            $apartment->services()->sync($form_data_apartment['services']);
+        } else {
+            $apartment->services()->sync([]);
+        }
         return redirect()->route('host.apartments.index');
     }
 

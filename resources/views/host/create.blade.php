@@ -84,7 +84,6 @@
                     <i class="{{ $service['icon'] }}"></i>
                 </div>
             @endforeach
-            
         </div>
         <div>
             <label for="pet">Possibilità di portare animali*</label>

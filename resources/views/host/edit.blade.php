@@ -72,6 +72,25 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
+    <div>
+        <label>Inserisci i servizi offerti dalla tua struttura</label>
+        @foreach ($services as $service)
+            <div>
+                @if ($errors->any())
+                    <input type="checkbox" 
+                    {{in_array($service->id, old('services', [])) ? 'checked' : null}}
+                    value="{{ $service['id'] }}" name="services[]" id="{{ 'service' . $service['id'] }}">
+                    <label for="{{ 'service' . $service['id'] }}" class="form-check-label">{{ $service['name'] }}</label>
+                    <i class="{{ $service['icon'] }}"></i>
+                @else
+                    <input 
+                        {{$apartment->services->contains($service->id) ? 'checked' : null}} 
+                        value="{{ $service['id'] }}" id="{{ 'service' . $service['id'] }}" type="checkbox" name="services[]" class="form-check-input">
+                        <label for="{{ 'service' . $service['id'] }}" class="form-check-label">{{ $service['name'] }}</label>
+                @endif
+            </div>
+        @endforeach
+    </div>
 
     <div>
         <label for="pet">Possibilità di portare animali*</label>
