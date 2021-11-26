@@ -84,9 +84,10 @@
                     <i class="{{ $service['icon'] }}"></i>
                 @else
                     <input 
-                        {{$apartment->services->contains($service->id) ? 'checked' : null}} 
-                        value="{{ $service['id'] }}" id="{{ 'service' . $service['id'] }}" type="checkbox" name="services[]" class="form-check-input">
-                        <label for="{{ 'service' . $service['id'] }}" class="form-check-label">{{ $service['name'] }}</label>
+                    {{$apartment->services->contains($service->id) ? 'checked' : null}}
+                    value="{{ $service['id'] }}" id="{{ 'service' . $service['id'] }}" type="checkbox" name="services[]" class="form-check-input">
+                    <label for="{{ 'service' . $service['id'] }}" class="form-check-label">{{ $service['name'] }}</label>
+                    <i class="{{ $service['icon'] }}"></i>
                 @endif
             </div>
         @endforeach
@@ -160,11 +161,11 @@
     </div>
     <div>
         <label for="lat">latitudine*</label>
-        <input type="number" id="lat" name="lat" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola">
+        <input type="number" id="lat" name="lat" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola" class="@error('lat') is-invalid @enderror" value="{{old('lat', $apartment->lat)}}">
     </div>
     <div>
         <label for="long">longitudine*</label>
-        <input type="number" id="long" name="long" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola">
+        <input type="number" id="long" name="long" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola" class="@error('long') is-invalid @enderror" value="{{old('long', $apartment->long)}}">
     </div>
     
     <p>I campi contrassegnati con il simbolo (*) sono obbligatori</p>

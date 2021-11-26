@@ -109,7 +109,7 @@
         </div>
         <div>
             <label for="price_night">Prezzo per notte</label>
-            <input type="number" id="price_night" name="price_night" min="30" max="1000" placeholder="Add square meters min 30 max 1.000">
+            <input type="number" id="price_night" name="price_night" min="30" max="1000" placeholder="Add square meters min 30 max 1.000" value="{{old('price_night')}}">
         </div>
         {{-- Per l'immagine bisogna: modificare il file system, creare un link nella cartella public, inserire l'enctype nel form, utilizzare il metodo Storage::put nel controller --}}
     
@@ -152,15 +152,11 @@
         </div>
         <div>
             <label for="lat">latitudine*</label>
-            <input type="number" id="lat" name="lat" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola">
+            <input type="number" id="lat" name="lat" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola" class="@error('lat') is-invalid @enderror" value="{{old('lat')}}">
         </div>
         <div>
             <label for="long">longitudine*</label>
-            <input type="number" id="long" name="long" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola">
-        </div>
-        <div>
-            <label for="house_number">Numero civico*</label>
-            <input type="number" id="house_number" name="house_number" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola">
+            <input type="number" id="long" name="long" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola" class="@error('long') is-invalid @enderror" value="{{old('long')}}">
         </div>
         <p>I campi contrassegnati con il simbolo (*) sono obbligatori</p>
         <button type="submit" class="d-block btn btn-primary">Sono pronto a registrare l'appartamento</button>
