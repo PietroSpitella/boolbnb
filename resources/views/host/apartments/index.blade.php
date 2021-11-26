@@ -13,6 +13,11 @@
             <li>{{$apartment->title}}</li>
             <a href="{{ route('host.apartments.show', $apartment['id'])}}" class="btn btn-success">Detail Post</a>
             <a href="{{ route('host.apartments.edit', $apartment['id'])}}" class="btn btn-warning">Modify Post</a>
+            <form class="d-inline confirm-delete-post" method="POST" action="{{ route('host.apartments.destroy', $apartment['id']) }}">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger" type="submit">Elimina appartamento</button>
+            </form>
         @endforeach
     </ul>
     
