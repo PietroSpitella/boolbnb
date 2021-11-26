@@ -1,6 +1,6 @@
 {{-- Pagina di ricerca appartamenti (sarà con vue) --}}
 @extends('layouts.app')
-@section('title', 'Appartamento')
+@section('title', 'Appartamenti')
 
 @section('content')
     <ul>
