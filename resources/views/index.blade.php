@@ -22,7 +22,7 @@
     {{-- Form di ricerca appartamenti --}}
     <form>
         <div class="form-row">
-            <div class="form-group m-0 col">
+            <div class="form-group m-0 col-4">
                 <input type="text" class="form-control h-100 form-control-lg" placeholder="where do you want to go?">
             </div>
             <div class="form-group m-0 col">
