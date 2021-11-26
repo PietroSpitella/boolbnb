@@ -9,7 +9,7 @@
             <h1>INFORMATION APARTMENT</h1>
             <div class="col-md-12 p-0 mt-4">
                 <p class="fs-20 font-weight-bold">Title: {{$apartment->title}}</p>
-                <p class="fs-15">All images inserted: {{$apartment->image}}</p>
+                <p class="fs-15 d-flex flex-column">All images inserted: <img class="host-apartments-img my-2" src="{{$apartment->image}}" alt="Image inserted"></p>
                 <p class="fs-15">Type: {{$apartment->type}}</p>
                 <p class="fs-15">Description: {{$apartment->description}}</p>
                 <p class="fs-15">Mq: {{$apartment->mq}}</p>
