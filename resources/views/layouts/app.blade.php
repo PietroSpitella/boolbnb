@@ -10,15 +10,16 @@
 
     <title>@yield('title') | BoolBnB</title>
 
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    
     {{-- Favicon --}}
     <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -45,10 +46,7 @@
                         </ul>
                     </div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
-                        </ul>
-    
+
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                             <!-- Authentication Links -->
@@ -81,6 +79,7 @@
                                                                         @csrf                              
                                                                         <div class="form-group modal-dialog-centered row">
                                                                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __   ('E-Mail Address') }}</label>
+
                                                                         
                                                                                 <div class="col-md-8 flex-column">
                                                                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -91,6 +90,7 @@
                                                                                         </span>
                                                                                     @enderror
                                                                                 </div>
+
                                                                         </div>
 
                                                                         <div class="form-group modal-dialog-centered row">
@@ -197,7 +197,6 @@
                                                                             </div>
                                                                             <div class="form-group modal-dialog-centered row">
                                                                                 <label for="date_of_birth" class="col-md-4 col-form-label text-md-right">{{ __('Date of birth') }}</label>
-                                                    
                                                                                 <div class="col-md-8 flex-column">
                                                                                     <input id="date_of_birth" type="date" class="form-control @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}" required autocomplete="date_of_birth">
                                                     
