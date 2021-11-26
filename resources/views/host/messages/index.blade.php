@@ -37,7 +37,7 @@
         @endforeach
     </div>
     @else
-            <h2>Nessun Messaggio Ricevuto</h2>
+        <h2>Nessun Messaggio Ricevuto</h2>
     @endif
 </div>
 
