@@ -121,7 +121,9 @@
     </div>
     {{-- Per l'immagine bisogna: modificare il file system, creare un link nella cartella public, inserire l'enctype nel form, utilizzare il metodo Storage::put nel controller --}}
     @if ($apartment->image)
-        <img src="{{ asset('storage/' . $apartment->image)}}" alt="">
+    <div class="img-edit-apartments">
+        <img src="{{ asset('storage/' . $apartment->image)}}" class="img-thumbnail w-100" alt="">
+    </div>    
     @endif
     <div>
         <label for="image">Modifca l'immagine di copertina del tuo appartamento*</label>

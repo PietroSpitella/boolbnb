@@ -184,3 +184,11 @@ nav {
 }
 
 //fine font size da 10 a 25px
+//img edit apartment
+.img-edit-apartments {
+    margin: 10px 0px;
+    width: 300px;
+    img {
+        object-fit: cover;
+    }
+}
