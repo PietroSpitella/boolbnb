@@ -22,16 +22,15 @@
 
 </head>
 <body>
-    <div id="app">
-        @include('partials.header_app')
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+    @include('partials.header_app')
 
-        <footer>
-        </footer>
+    <main class="py-4">
+        @yield('content')
+    </main>
 
-    </div>
+    <footer>
+    </footer>
+
 </body>
 </html>
