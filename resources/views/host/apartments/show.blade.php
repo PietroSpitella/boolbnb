@@ -22,13 +22,9 @@
                 <p class="fs-15">City: {{$apartment->city}}</p>
                 <p class="fs-15">Street: {{$apartment->street}}</p>
                 <p class="fs-15 mb-4">House number: {{$apartment->house_number}}</p>
-                <a href="{{route('host.apartments.index')}}" class="btn-login-register p-2">Back</a>
+                <a href="{{route('host.apartments.index')}}" class="btn-login-register p-2 btn">Back</a>
             </div>
         </div>
     </div>
 </div>
-
-    <h1>{{$apartment->title}}</h1>
-    <a href="{{ route('host.apartments.index')}}" class="btn btn-success">Torna ai tuoi appartamenti</a>
-
 @endsection

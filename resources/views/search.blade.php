@@ -2,7 +2,7 @@
 @extends('layouts.app')
 @section('title', 'Appartamenti')
 
-@section('content')
+@section('content_main')
     <ul>
         @foreach ($apartments as $apartment)
             <li><a href="{{route('apartments.show', $apartment->id)}}">{{$apartment->title}}</a></li>
