@@ -11015,35 +11015,6 @@ body {
   color: #ff385c;
 }
 
-@-webkit-keyframes transitionIn {
-  from {
-    opacity: 0;
-    transform: translateX(-20deg);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes transitionIn {
-  from {
-    opacity: 0;
-    transform: translateX(-20deg);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.container {
-  -webkit-animation: transitionIn 0.8s;
-          animation: transitionIn 0.8s;
-}
-
 nav {
   height: 70px;
 }
@@ -11100,6 +11071,30 @@ nav a img {
 
 .apartments-img {
   max-width: 400px;
+}
+
+.color-grey-icon {
+  color: #c0c4c8;
+}
+
+.div-bordered {
+  border: 1px dotted #d8dce1;
+}
+
+.div-bordered-2 {
+  border-right: 1px dotted #d8dce1;
+}
+
+.div-bordered-3 {
+  border-bottom: 1px dotted #d8dce1;
+}
+
+.div-bordered-4 {
+  border-left: 1px dotted #d8dce1;
+}
+
+.icon-separation {
+  width: 33.3333333333%;
 }
 
 .fs-10 {
@@ -11164,6 +11159,26 @@ nav a img {
 
 .fs-25 {
   font-size: 25px;
+}
+
+.fs-26 {
+  font-size: 26px;
+}
+
+.fs-27 {
+  font-size: 27px;
+}
+
+.fs-28 {
+  font-size: 28px;
+}
+
+.fs-29 {
+  font-size: 29px;
+}
+
+.fs-30 {
+  font-size: 30px;
 }
 
 .img-edit-apartments {
