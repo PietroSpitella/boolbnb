@@ -27,7 +27,7 @@
             @include('partials.navbar')
         </header>
 
-        <main class="py-4">
+        <main {{-- class="py-4"--}}>
             @yield('content_main')
         </main>
 
