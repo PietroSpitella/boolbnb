@@ -2,16 +2,18 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+// inizio navbar home page
 .navbar .logo {
     color: $red;
 }
 
+// fine navbar home page
+// inizio modali login e register
 .button_login,
 .button_register {
     background-color: $red;
     border-radius: 10px;
     border: 0;
-    //padding: 8px;
     color: $white;
 }
 
@@ -47,25 +49,7 @@ body {
     color: $red;
 }
 
-// DASHBOARD
-
-// Animations
-@keyframes transitionIn {
-    from {
-        opacity: 0;
-        transform: translateX(-20deg);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.container {
-    animation: transitionIn 0.80s;
-}
-
-//
+// fine modali login e register
 
 // barra superiore
 nav {
@@ -107,4 +91,104 @@ nav {
     }
 }
 
-// End DASHBOARD
+//icona cestino dashboard
+.my-icons {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 5px;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        background-color: $red;
+    }
+}
+
+//appartamenti degli host
+.host-apartments-img {
+    max-width: 400px;
+}
+
+//fine appartamenti degli host
+//appartamenti degli utenti
+.apartments-img {
+    max-width: 400px;
+}
+
+//fine appartamenti degli utenti
+//tutti i font size da 10 a 25px
+.fs-10 {
+    font-size: 10px;
+}
+
+.fs-11 {
+    font-size: 11px;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.fs-13 {
+    font-size: 13px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.fs-15 {
+    font-size: 15px;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.fs-17 {
+    font-size: 17px;
+}
+
+.fs-18 {
+    font-size: 18px;
+}
+
+.fs-19 {
+    font-size: 19px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.fs-21 {
+    font-size: 21px;
+}
+
+.fs-22 {
+    font-size: 22px;
+}
+
+.fs-23 {
+    font-size: 23px;
+}
+
+.fs-24 {
+    font-size: 24px;
+}
+
+.fs-25 {
+    font-size: 25px;
+}
+
+//fine font size da 10 a 25px
+//img edit apartment
+.img-edit-apartments {
+    margin: 10px 0px;
+    width: 300px;
+    img {
+        object-fit: cover;
+    }
+}

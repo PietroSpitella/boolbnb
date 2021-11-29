@@ -43,4 +43,9 @@ class HomeController extends Controller
         $message = Message::where('id', $id)->first();
         return view('host.messages.show', compact('message'));
     }
+
+    public function destroyMessage(Message $message){
+        $message->delete();
+        return redirect()->route('host.messages')->with('deleted-message', 'Messaggio eliminato');
+    }
 }

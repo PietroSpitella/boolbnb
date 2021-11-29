@@ -10,15 +10,16 @@
 
     <title>@yield('title') | BoolBnB</title>
 
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    
     {{-- Favicon --}}
     <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -45,10 +46,7 @@
                         </ul>
                     </div>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav mr-auto">
-                        </ul>
-    
+
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                             <!-- Authentication Links -->
@@ -79,24 +77,26 @@
                                                                 <div class="card-body">
                                                                     <form method="POST" action="{{ route('login') }}">
                                                                         @csrf                              
-                                                                        <div class="form-group row">
+                                                                        <div class="form-group modal-dialog-centered row">
                                                                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __   ('E-Mail Address') }}</label>
-                                                
-                                                                            <div class="col-md-8 modal-dialog-centered">
-                                                                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                                
-                                                                                @error('email')
-                                                                                    <span class="invalid-feedback" role="alert">
-                                                                                        <strong>{{ $message }}</strong>
-                                                                                    </span>
-                                                                                @enderror
-                                                                            </div>
+
+                                                                        
+                                                                                <div class="col-md-8 flex-column">
+                                                                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                                                                    
+                                                                                    @error('email')
+                                                                                        <span class="invalid-feedback" role="alert">
+                                                                                            <strong>{{ $message }}</strong>
+                                                                                        </span>
+                                                                                    @enderror
+                                                                                </div>
+
                                                                         </div>
-                                        
-                                                                        <div class="form-group row">
+
+                                                                        <div class="form-group modal-dialog-centered row">
                                                                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
                                         
-                                                                            <div class="col-md-8 modal-dialog-centered">
+                                                                            <div class="col-md-8 flex-column">
                                                                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                         
                                                                                 @error('password')
@@ -169,11 +169,11 @@
                                                                         <form method="POST" action="{{ route('register') }}">
                                                                             @csrf
                                                     
-                                                                            <div class="form-group row">
+                                                                            <div class="form-group modal-dialog-centered row">
                                                                                 <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
                                                     
-                                                                                <div class="col-md-8 modal-dialog-centered">
-                                                                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                                                                <div class="col-md-8 flex-column">
+                                                                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
                                                     
                                                                                     @error('name')
                                                                                         <span class="invalid-feedback" role="alert">
@@ -182,11 +182,11 @@
                                                                                     @enderror
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="form-group row">
+                                                                            <div class="form-group modal-dialog-centered row">
                                                                                 <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
                                                     
-                                                                                <div class="col-md-8 modal-dialog-centered">
-                                                                                    <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
+                                                                                <div class="col-md-8 flex-column">
+                                                                                    <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname">
                                                     
                                                                                     @error('surname')
                                                                                         <span class="invalid-feedback" role="alert">
@@ -195,11 +195,10 @@
                                                                                     @enderror
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="form-group row">
+                                                                            <div class="form-group modal-dialog-centered row">
                                                                                 <label for="date_of_birth" class="col-md-4 col-form-label text-md-right">{{ __('Date of birth') }}</label>
-                                                    
-                                                                                <div class="col-md-8 modal-dialog-centered">
-                                                                                    <input id="date_of_birth" type="date" class="form-control @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}" required autocomplete="date_of_birth" autofocus>
+                                                                                <div class="col-md-8 flex-column">
+                                                                                    <input id="date_of_birth" type="date" class="form-control @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}" required autocomplete="date_of_birth">
                                                     
                                                                                     @error('date_of_birth')
                                                                                         <span class="invalid-feedback" role="alert">
@@ -209,10 +208,10 @@
                                                                                 </div>
                                                                             </div>
                                                     
-                                                                            <div class="form-group row">
+                                                                            <div class="form-group modal-dialog-centered row">
                                                                                 <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
                                                     
-                                                                                <div class="col-md-8 modal-dialog-centered">
+                                                                                <div class="col-md-8 flex-column">
                                                                                     <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                                                     
                                                                                     @error('email')
@@ -223,10 +222,10 @@
                                                                                 </div>
                                                                             </div>
                                                     
-                                                                            <div class="form-group row">
+                                                                            <div class="form-group modal-dialog-centered row">
                                                                                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
                                                     
-                                                                                <div class="col-md-8 modal-dialog-centered">
+                                                                                <div class="col-md-8 flex-column">
                                                                                     <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
                                                     
                                                                                     @error('password')
@@ -237,10 +236,10 @@
                                                                                 </div>
                                                                             </div>
                                                     
-                                                                            <div class="form-group row">
+                                                                            <div class="form-group modal-dialog-centered row">
                                                                                 <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
                                                     
-                                                                                <div class="col-md-8 modal-dialog-centered">
+                                                                                <div class="col-md-8 flex-column">
                                                                                     <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                                                                                 </div>
                                                                             </div>
@@ -251,6 +250,7 @@
                                                                                         {{ __('Register') }}
                                                                                     </button>
                                                                                     <a class="color-red btn btn-link" data-target="#exampleModal" data-dismiss="modal" data-toggle="modal" href="#lost">Do you already have an account? Login!</a>
+                                                                                    {{-- reindirizza l'utente nel modale login --}}
                                                                                 </div>
                                                                             </div>
                                                                         </form>

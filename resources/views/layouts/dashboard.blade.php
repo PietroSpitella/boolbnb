@@ -11,12 +11,9 @@
     <title>@yield('title') | Pannello di controllo</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
     {{-- Favicon --}}
     <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
