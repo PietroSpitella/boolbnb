@@ -11191,6 +11191,26 @@ nav a img {
      object-fit: cover;
 }
 
+#jumbotron {
+  padding: 250px 0;
+  overflow: hidden;
+}
+
+#jumbotron .img-overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.459);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#jumbotron img {
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
 /*!
  * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
