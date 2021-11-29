@@ -6,13 +6,7 @@
 {{-- @dump($user) --}}
 
 {{-- PER CICLARE I SERVIZI:  --}}
-@foreach($apartment->services as $service)
-    <div>
-       nome: {{$service->name}} <br>
-       icona: {{$service->icon}}
-       <hr>
-    </div>
-@endforeach
+
 
 @if (session('sent'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -72,6 +66,14 @@
                         <p class="fs-15"><i class="far fa-circle fs-12"></i> House number: {{$apartment->house_number}}</p>
                     </div>
                 </div>
+            </div>
+            <h4 class="font-weight-bold pt-3">Additional Services</h4>
+            <div class="additional_services d-flex div-bordered-3 flex-wrap pt-2 pb-3">
+                @foreach($apartment->services as $service)
+                    <div class="pr-4">
+                        <p class="fs-15"><i class="{{$service->icon}} fs-15"></i> {{$service->name}}</p>
+                    </div>
+                @endforeach
             </div>
             <h4 class="font-weight-bold pt-3">Price</h4> 
             <p class="fs-15 pb-3 div-bordered-3"><i class="fas fa-chevron-right fs-12"></i> Price per night: {{$apartment->price_night}} €</p>
