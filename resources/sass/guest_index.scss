@@ -1,0 +1,17 @@
+#jumbotron {
+    padding: 250px 0;
+    overflow: hidden;
+    .img-overlay {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.459);
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    img {
+        z-index: -2;
+        top: 0;
+        left: 0;
+    }
+}
