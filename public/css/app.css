@@ -11015,6 +11015,35 @@ body {
   color: #ff385c;
 }
 
+@-webkit-keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.container {
+  -webkit-animation: transitionIn 0.8s;
+          animation: transitionIn 0.8s;
+}
+
 nav {
   height: 70px;
 }
@@ -11041,7 +11070,7 @@ nav a img {
   height: 100%;
 }
 
-.sidebar {
+.my_sidebar {
   min-height: calc(100vh - 46px);
 }
 
