@@ -53,7 +53,13 @@ class ApartmentController extends Controller
         if(!$apartment){
             abort(404);
         }
+
         $services = Service::all();
+
+
+        $services = Service::all();
+
+
         return view('show', compact('apartment', 'user', 'services'));
     }
 

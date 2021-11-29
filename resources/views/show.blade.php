@@ -4,6 +4,16 @@
 
 @section('content_main')
 {{-- @dump($user) --}}
+
+{{-- PER CICLARE I SERVIZI:  --}}
+@foreach($apartment->services as $service)
+    <div>
+       nome: {{$service->name}} <br>
+       icona: {{$service->icon}}
+       <hr>
+    </div>
+@endforeach
+
 @if (session('sent'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
     {{ session('sent') }}
