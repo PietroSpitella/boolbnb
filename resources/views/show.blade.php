@@ -2,7 +2,7 @@
 @extends('layouts.app')
 @section('title', $apartment->title)
 
-@section('content')
+@section('content_main')
 {{-- @dump($user) --}}
 @if (session('sent'))
 <div class="alert alert-success alert-dismissible fade show" role="alert">
