@@ -56,6 +56,10 @@ class ApartmentController extends Controller
 
         $services = Service::all();
 
+
+        $services = Service::all();
+
+
         return view('show', compact('apartment', 'user', 'services'));
     }
 

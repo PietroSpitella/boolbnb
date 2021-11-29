@@ -37336,11 +37336,16 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports, __webpack_require__) {
 
 
+
 __webpack_require__(/*! /Users/albertogaia/Desktop/boolbnb/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /Users/albertogaia/Desktop/boolbnb/resources/sass/app.scss */"./resources/sass/app.scss");
 
 __webpack_require__(/*! C:\AMEDEO\Percorso di studi\Boolean\LEZIONI\95 progetto finale\boolbnb\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\AMEDEO\Percorso di studi\Boolean\LEZIONI\95 progetto finale\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+
+
+__webpack_require__(/*! C:\Users\Luciano\Documents\Boolean\Progetto_Finale\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Luciano\Documents\Boolean\Progetto_Finale\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 
