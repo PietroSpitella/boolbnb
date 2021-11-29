@@ -1,4 +1,6 @@
 // Ricerca e autocompletamento per creazione appartamento e modifica
+
+window.searchBox = function() {
     var options = {
         searchOptions: {
             key: '6pyK2YdKNiLrHrARYvnllho6iAdjMPex',
@@ -18,6 +20,7 @@
     document.querySelector('input.tt-search-box-input').id = 'search-for-coordinates';
     document.querySelector('input.tt-search-box-input').placeholder = 'Indirizzo';
 
+}
 
 
 

@@ -157,7 +157,7 @@
     <button type="submit" class="d-block btn btn-primary">Modifica appartamento</button>
 </form>
 
-<script>
+{{-- <script>
     var options = {
         searchOptions: {
             key: '6pyK2YdKNiLrHrARYvnllho6iAdjMPex',
@@ -177,8 +177,5 @@
     document.querySelector('input.tt-search-box-input').id = 'search-for-coordinates';
     document.querySelector('input.tt-search-box-input').placeholder = 'Indirizzo';
     document.querySelector('input.tt-search-box-input').value = `{{old('street', $apartment->street)}}`;
-
-
-
-</script>
+</script> --}}
 @endsection

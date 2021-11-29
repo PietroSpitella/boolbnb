@@ -47,7 +47,7 @@ class ApartmentController extends Controller
     public function store(Request $request)
     {
         // Creo apiURL per ricevere info TomTom
-        $apiUrl = 'https://api.tomtom.com/search/2/geocode/' . $request->street . '.JSON?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex';
+        $apiUrl = 'https://api.tomtom.com/search/2/geocode/' . $request->address . '.JSON?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex';
 
         // Prendo la risposta in formato JSON
         $responseJson = Http::get($apiUrl)->json();
@@ -82,7 +82,7 @@ class ApartmentController extends Controller
         if(isset($responsePosition['lon'])){
             $long = $responsePosition['lon'];
         }
-        
+
         $validationData = [
             'city' => $city,
             'street' => $street,
@@ -211,7 +211,9 @@ class ApartmentController extends Controller
     {
 
          // Creo apiURL per ricevere info TomTom
-         $apiUrl = 'https://api.tomtom.com/search/2/geocode/' . $apartment->street . '.JSON?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex';
+         if(isset($request->street)){
+             $apiUrl = 'https://api.tomtom.com/search/2/geocode/' . $request->address . '.JSON?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex';
+         
 
          // Prendo la risposta in formato JSON
          $responseJson = Http::get($apiUrl)->json();
@@ -266,6 +268,7 @@ class ApartmentController extends Controller
          if($validator->fails()){
              return redirect()->back()->withInput()->withErrors($validator);
          }
+        }
 
         $request->validate([
             //Required

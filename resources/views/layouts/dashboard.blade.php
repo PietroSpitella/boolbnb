@@ -34,7 +34,7 @@
     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.1.2-public-preview.15/services/services-web.min.js"></script>
 
 </head>
-<body>
+<body onload="searchBox()">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark flex-md-nowrap py-0 px-4">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{route('host.home')}}">
             <img src="{{asset('images/boolbnb-def.png')}}" alt="boolbnb_logo">
