@@ -11050,6 +11050,21 @@ nav a img {
   font-size: 25px;
 }
 
+.my-icons {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 5px;
+  transition: 0.5s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-icons:hover {
+  background-color: #ff385c;
+}
+
 .host-apartments-img {
   max-width: 400px;
 }
@@ -11164,6 +11179,16 @@ nav a img {
 
 .fs-30 {
   font-size: 30px;
+}
+
+.img-edit-apartments {
+  margin: 10px 0px;
+  width: 300px;
+}
+
+.img-edit-apartments img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 /*!
