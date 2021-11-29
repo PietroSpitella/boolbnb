@@ -63,7 +63,6 @@
                     </div>
                 </div>
             </div>
-
             <h4 class="font-weight-bold pt-3">Price</h4> 
             <p class="fs-15 pb-3 div-bordered-3"><i class="fas fa-chevron-right fs-12"></i> Price per night: {{$apartment->price_night}} €</p>
      
