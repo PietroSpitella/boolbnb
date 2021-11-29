@@ -158,6 +158,12 @@
             <label for="long">longitudine*</label>
             <input type="number" id="long" name="long" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola" class="@error('long') is-invalid @enderror" value="{{old('long')}}">
         </div>
+
+        <div class="form-group">
+            <label for="search-for-coordinates"></label>
+            <div id="search-field" class="form-control"></div>
+        </div>
+        
         <p>I campi contrassegnati con il simbolo (*) sono obbligatori</p>
         <button type="submit" class="d-block btn btn-primary">Sono pronto a registrare l'appartamento</button>
     </form>
