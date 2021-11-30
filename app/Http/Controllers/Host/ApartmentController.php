@@ -213,37 +213,44 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
-
          // Creo apiURL per ricevere info TomTom
-         if(isset($request->street)){
-             $apiUrl = 'https://api.tomtom.com/search/2/geocode/' . $request->address . '.JSON?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex';
-         
+        $apiUrl = 'https://api.tomtom.com/search/2/geocode/' . $request->address . '.JSON?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex';
+        
+        
 
          // Prendo la risposta in formato JSON
-         $responseJson = Http::get($apiUrl)->json();
- 
+        $responseJson = Http::get($apiUrl)->json();
+        // dd($responseJson);
          // Setto a Null le variabili per l'indirizzo
-         $city = NULL;
-         $street = NULL;
-         $house_number = NULL;
+        //  $city = NULL;
+        //  $street = NULL;
+        //  $house_number = NULL;
  
-         $lat = NULL;
-         $long = NULL;
+        //  $lat = NULL;
+        //  $long = NULL;
  
          // Prendo gli address dalla risposta
+        dd($responseJson);
 
-             $responseAddress = $responseJson['results'][0]['address'];
-             if(isset($responseAddress['municipality'])){
-                 $city = $responseAddress['municipality'];
-             }
-             if(isset($responseAddress['streetName'])){
-                 $street = $responseAddress['streetName'];
-             }
-             if(isset($responseAddress['streetNumber'])){
-                 $house_number = $responseAddress['streetNumber'];
-             }else{
-                 $house_number = 1;
-             }
+        $responseAddress = $responseJson['results'][0]['address'];
+
+        if(isset($responseAddress['municipality'])){
+            $city = $responseAddress['municipality'];
+            $apartment->city = $city;
+        }
+        if(isset($responseAddress['streetName'])){
+            $street = $responseAddress['streetName'];
+            $apartment->street = $street;
+
+        }
+        if(isset($responseAddress['streetNumber'])){
+            $house_number = $responseAddress['streetNumber'];
+            $apartment->house_number = $house_number;
+
+        }else{
+            $house_number = 1;
+        }
+
          // Prendo la posizione lat e long dalla risposta position
          $responsePosition = $responseJson['results'][0]['position'];
          if(isset($responsePosition['lat'])){
@@ -253,26 +260,26 @@ class ApartmentController extends Controller
              $long = $responsePosition['lon'];
          }
          
-         $validationData = [
-             'city' => $city,
-             'street' => $street,
-             'house_number' => $house_number,
-         ];
+        //  $validationData = [
+        //      'city' => $city,
+        //      'street' => $street,
+        //      'house_number' => $house_number,
+        //  ];
  
-         // prepare validatio rules package
-         $validationRules = [
-             'city' => 'required|max:255',
-             'street' => 'required|max:255',
-             'house_number' => 'required|max:20',
-         ];
+        //  // prepare validatio rules package
+        //  $validationRules = [
+        //      'city' => 'required|max:255',
+        //      'street' => 'required|max:255',
+        //      'house_number' => 'required|max:20',
+        //  ];
  
-         // call validator method
-         $validator = Validator::make($validationData, $validationRules);
+        //  // call validator method
+        //  $validator = Validator::make($validationData, $validationRules);
  
-         if($validator->fails()){
-             return redirect()->back()->withInput()->withErrors($validator);
-         }
-        }
+        //  if($validator->fails()){
+        //      return redirect()->back()->withInput()->withErrors($validator);
+        //  }
+        $tmp_req = $request->request;
 
         $request->validate([
             //Required
@@ -291,6 +298,7 @@ class ApartmentController extends Controller
             "mq" => "nullable|numeric",
             "price_night" => "nullable|numeric"
         ]);
+
         $form_data_apartment = $request->all();
 
         if(array_key_exists('image', $form_data_apartment)){
