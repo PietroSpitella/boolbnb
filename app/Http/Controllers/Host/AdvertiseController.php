@@ -56,7 +56,7 @@ class AdvertiseController extends Controller
         $end_date = $timestamp + $duration;
         $form_adv['end_date'] = $end_date;
         
-
+        //Non dimenticarti di fare le sponsorizzate perchè questa parte è sbagliata
         $advertise = Advertise::find('advertise_id');
         
         if(array_key_exists('apartment', $form_adv)) {
