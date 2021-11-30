@@ -11191,6 +11191,26 @@ nav a img {
      object-fit: cover;
 }
 
+#jumbotron {
+  padding: 250px 0;
+  overflow: hidden;
+}
+
+#jumbotron .img-overlay {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.459);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#jumbotron img {
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
 #my_map {
   background-image: url("https://images.unsplash.com/photo-1503346359167-984a891788fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80");
   background-repeat: no-repeat;
