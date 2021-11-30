@@ -1,11 +1,15 @@
 <template>
   <div>
-    <h1>Sono il main di vue</h1>
+    <Main />
   </div>
 </template>
 <script>
+import Main from "./Main.vue";
 export default {
-  name: "Main",
+  name: "App",
+  components: {
+    Main,
+  },
 };
 </script>
 

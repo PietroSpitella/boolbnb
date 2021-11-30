@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1>Sono il main di vue</h1>
-  </div>
+  <div></div>
 </template>
 <script>
 export default {
