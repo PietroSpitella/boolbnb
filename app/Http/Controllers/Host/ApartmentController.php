@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Apartment;
 use App\Service;
+use App\Advertise;
 use Illuminate\Support\Facades\Auth;
 
 class ApartmentController extends Controller
@@ -102,7 +103,7 @@ class ApartmentController extends Controller
         } else {
             $new_apartment->services()->attach([]);
         }
-         
+      
         return redirect()->route('host.apartments.index');
     }
 
