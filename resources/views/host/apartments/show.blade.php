@@ -10,6 +10,7 @@
             <div class="col-md-12 p-0 mt-4">
                 <p class="fs-20 font-weight-bold">Title: {{$apartment->title}}</p>
                 <p class="fs-15 d-flex flex-column">All images inserted: <img class="host-apartments-img my-2" src="{{$apartment->image}}" alt="Image inserted"></p>
+                <p class="fs-15">ID: {{$apartment->id}}</p>
                 <p class="fs-15">Type: {{$apartment->type}}</p>
                 <p class="fs-15">Description: {{$apartment->description}}</p>
                 <p class="fs-15">Mq: {{$apartment->mq}}</p>
@@ -22,7 +23,7 @@
                 <p class="fs-15">City: {{$apartment->city}}</p>
                 <p class="fs-15">Street: {{$apartment->street}}</p>
                 <p class="fs-15 mb-4">House number: {{$apartment->house_number}}</p>
-                <a href="{{route('host.apartments.index')}}" class="btn-login-register p-2 btn">Back</a>
+                <a href="{{route('host.apartments.index')}}" class="btn btn-login-register p-2">Back</a>
             </div>
         </div>
     </div>
