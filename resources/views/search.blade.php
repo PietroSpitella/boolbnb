@@ -73,17 +73,18 @@
             </div>
             <div id="button_filters" class="col my-sm-4">
                 <ul class="pl-0">
-                    {{-- @foreach ($services as $service) --}}
-                     {{-- <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="{{$service->icon}}"></i></button></li>    --}}
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-parking"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-fan"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-wifi"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-tv"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-utensils"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-wind"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-swimmer"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-tty"></i></button></li>   
-                    {{-- @endforeach --}}
+                    <form action="{{route('apartments.index')}}" method="GET">
+                        @csrf
+                        @method('GET')
+                        @foreach ($services as $service)
+                        <div class="input-group-text mx-2 p-1 d-inline-block">
+                            <input type="checkbox" id="{{$service->id}}" class="btn btn-outline-dark btn-sm my-check">
+                            <label for="{{$service->id}}"><i class="{{$service->icon}} my-icon"></i></label>
+                          </div>
+                        @endforeach
+
+                        <button type="submit">FILTRA</button>
+                    </form>
                 </ul>
             </div>
         </div>
@@ -91,7 +92,7 @@
             @foreach ($apartments as $apartment)
                 <div class="col-lg-4 mb-4">
                     <div class="card">
-                        <img src="{{$apartment->image}}" class="card-img-top" alt="">
+                        <img src="{{asset('storage/'.$apartment->image)}}" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title">{{$apartment->title}}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{$apartment->city}}</h6>
@@ -103,4 +104,22 @@
             @endforeach
         </div>
     </div>
+
+    {{-- <script>
+        let flag = false;
+        let myCheck = document.querySelectorAll('.my-check');
+        myCheck.forEach((check, index) => {
+            check.addEventListener('change', (el,i)=>{
+                console.log(el,i)
+                flag = !flag;
+                myIcon = document.getElementById(i + 1);
+                console.log(myIcon);
+                if(flag == true){
+                    myIcon.style.color = 'green';
+                }else{
+                    myIcon.style.color = '';
+                }
+            })
+        });
+    </script> --}}
 @endsection

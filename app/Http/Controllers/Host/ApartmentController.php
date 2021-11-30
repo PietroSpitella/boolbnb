@@ -131,7 +131,6 @@ class ApartmentController extends Controller
         if(!$apartment) {
             abort(404);
         }
-
         $services = Service::all();
         return view('host.apartments.edit', compact('apartment','services'));
 
