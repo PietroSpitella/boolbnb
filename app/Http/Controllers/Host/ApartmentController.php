@@ -116,6 +116,8 @@ class ApartmentController extends Controller
     {
         if(!$apartment) {
             abort(404);
+        }elseif(Auth::user()->id !== $apartment->user_id){
+            return redirect()->back();
         }
         return view('host.apartments.show', compact('apartment'));
     }
@@ -130,6 +132,8 @@ class ApartmentController extends Controller
     {
         if(!$apartment) {
             abort(404);
+        }elseif(Auth::user()->id !== $apartment->user_id){
+            return redirect()->back();
         }
 
         $services = Service::all();
