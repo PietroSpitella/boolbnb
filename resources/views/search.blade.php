@@ -72,19 +72,21 @@
                 </div>
             </div>
             <div id="button_filters" class="col my-sm-4">
-                <ul class="pl-0">
-                    {{-- @foreach ($services as $service) --}}
-                     {{-- <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="{{$service->icon}}"></i></button></li>    --}}
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-parking"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-fan"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-wifi"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-tv"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-utensils"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-wind"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-swimmer"></i></button></li>   
-                     <li><button type="button" onclick="" class="btn btn-outline-dark btn-sm"><i class="fas fa-tty"></i></button></li>   
-                    {{-- @endforeach --}}
-                </ul>
+                <form action="#" method="GET">
+                    @foreach ($services as $service)
+                        <ul class="pl-0 d-inline-block"> 
+                            <li>
+                                <label for="{{$service['id']}}"></label>
+                                <input type="checkbox"
+                                name="id[]"
+                                value="{{($service['id'])}}"
+                                >
+                                <i class="{{$service['icon']}}"></i>
+                            </li> 
+                        </ul>
+                    @endforeach
+                    <button type="submit">Filtra</button>
+                </form>
             </div>
         </div>
         <div class="row mt-4">

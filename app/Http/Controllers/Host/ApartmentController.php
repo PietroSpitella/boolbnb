@@ -72,7 +72,7 @@ class ApartmentController extends Controller
         ]);
     
         $form_data_apartment = $request->all();
-
+        
         //Verifico se l'immagine è stata caricata
         if(array_key_exists('image', $form_data_apartment)){
             $img_path = Storage::put('apartment_image', $form_data_apartment['image']);

@@ -6,6 +6,8 @@ use App\Apartment;
 use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 class ApartmentController extends Controller
 {
     /**
@@ -13,10 +15,20 @@ class ApartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        
+        $name = $request->input('id');
+        dump($name);
+        $db = DB::table('apartment_service')
+        ->where('service_id', '=', $name)
+        ->get()
+        ;
+        dump($db);
+
         $apartments = Apartment::all();
-        return view('search', compact('apartments'));
+        $services = Service::all();
+        return view('search', compact('apartments', 'services'));
     }
 
     /**
