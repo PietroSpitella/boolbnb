@@ -89,6 +89,7 @@
                 </form>
             </div>
         </div>
+        {{-- 
         <div class="row mt-4">
             @foreach ($apartments as $apartment)
                 <div class="col-lg-4 mb-4">
@@ -103,6 +104,17 @@
                     </div>                    
                 </div>
             @endforeach
+        </div>
+        --}}
+        <div>
+            <ul>
+                @foreach ($filter_apartment_service as $item)
+                 <li>
+                    {{$item->title}}
+                </li>
+                @endforeach
+            </ul>
+            
         </div>
     </div>
 @endsection

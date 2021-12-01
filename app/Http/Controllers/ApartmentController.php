@@ -19,16 +19,32 @@ class ApartmentController extends Controller
     {
         
         $name = $request->input('id');
-        dump($name);
-        $db = DB::table('apartment_service')
+        //dump($name);
+        /* PRIMA SOLUZIONE DA CUI PARTIRE
+        $apartments_filter = DB::table('apartment_service')
         ->where('service_id', '=', $name)
         ->get()
         ;
-        dump($db);
+        dump($apartments_filter);
+       */
 
-        $apartments = Apartment::all();
+        $deck_table = DB::table('apartments')
+        ->join('apartment_service','apartments.id', '=', 'apartment_service.apartment_id')
+        ->join('services', 'apartment_service.service_id', '=', 'services.id')
+        ->where('service_id', '=', $name)
+        ->get()
+        ;
+        $filter_apartment_service = [];
+        for($i = 0; $i < count($deck_table); $i++) {
+            $apartments_filter = $deck_table[$i];
+            array_push($filter_apartment_service, $apartments_filter);
+        }
+ 
+        dump($filter_apartment_service);
+     
+        //$apartments = Apartment::all();
         $services = Service::all();
-        return view('search', compact('apartments', 'services'));
+        return view('search', compact('filter_apartment_service','services'));
     }
 
     /**
