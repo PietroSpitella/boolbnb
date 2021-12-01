@@ -8,9 +8,12 @@
     <title>Document</title>
 </head>
 <body>
+    @include('partials.navbar')
     <div id="vue">
-
-    </div>
+    </div> 
     <script src="{{asset('js/front.js')}}"></script>
+
+    
+    
 </body>
 </html>
