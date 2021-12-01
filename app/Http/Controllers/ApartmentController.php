@@ -18,20 +18,21 @@ class ApartmentController extends Controller
     public function index(Request $request)
     {
         
-        $name = $request->input('id');
-        //dump($name);
-        /* PRIMA SOLUZIONE DA CUI PARTIRE
-        $apartments_filter = DB::table('apartment_service')
-        ->where('service_id', '=', $name)
-        ->get()
-        ;
-        dump($apartments_filter);
-       */
+        //$name = $request->input('id');
+        $id_service = $request->input('id');
+        $n_rooms = $request->query('n_rooms');
+        $n_beds = $request->query('n_beds');
+        $type = $request->query('type');
+   
+        
 
         $deck_table = DB::table('apartments')
         ->join('apartment_service','apartments.id', '=', 'apartment_service.apartment_id')
         ->join('services', 'apartment_service.service_id', '=', 'services.id')
-        ->where('service_id', '=', $name)
+        ->where('service_id', '=', $id_service)
+        ->where('n_beds', '=', $n_beds)
+        ->where('n_rooms', '=', $n_rooms)
+        ->where('type', '=', $type)
         ->get()
         ;
         $filter_apartment_service = [];
@@ -40,7 +41,7 @@ class ApartmentController extends Controller
             array_push($filter_apartment_service, $apartments_filter);
         }
  
-        dump($filter_apartment_service);
+        //dump($filter_apartment_service);
      
         //$apartments = Apartment::all();
         $services = Service::all();
