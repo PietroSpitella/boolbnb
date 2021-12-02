@@ -246,16 +246,27 @@ nav {
     text-align: center;   
 }
 
-    @media only screen and (max-width: 767px){
-        .my-background-navbar{
-            margin-left: auto;
-            width: 25%;
-            
-            .navbar-buttons{
-                padding-right: 0;
-                margin-top: 10px;
-            }
+.mw-25{
+    max-width: 25%;
+}
 
+    @media only screen and (max-width: 767px){
+        .navbar-hamburger{   
+            z-index: 1041;
+
+            .my-background-navbar{
+                margin-left: auto;
+                width: 25%;        
+                    
+                .navbar-buttons{
+                    padding-right: 0;
+                    margin-top: 10px;
+                }
+                    
+                .mbr-10{
+                    margin-bottom: 10px;
+                }
+            }     
         }
         
         .modal{
@@ -274,4 +285,10 @@ nav {
                 }
             }
         }   
+    }
+
+    @media only screen and (max-width: 400px){
+        .my-background-navbar{
+            width: 92px;
+        }
     }

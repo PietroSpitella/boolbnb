@@ -37270,7 +37270,9 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_require__(/*! ./searchMap */ "./resources/js/searchMap.js");
+__webpack_require__(/*! ./searchMap */ "./resources/js/searchMap.js"); // function myFunction(){
+//     document.getElementById("navbarSupportedContent").style.zIndex = "1";
+// }
 
 /***/ }),
 
