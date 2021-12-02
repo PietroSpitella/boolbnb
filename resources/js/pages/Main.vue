@@ -19,7 +19,7 @@
             class="form-control"
             type="number"
             v-model="guests"
-            placeholder="Quanti ospiti?"
+            placeholder="Numero ospiti"
             @change="getCity"
           />
         </div>
@@ -28,16 +28,7 @@
             class="form-control"
             type="number"
             v-model="rooms"
-            placeholder="Quante stanze?"
-            @change="getCity"
-          />
-        </div>
-        <div class="form-group">
-          <input
-            class="form-control"
-            type="number"
-            v-model="baths"
-            placeholder="Quanti bagni?"
+            placeholder="Numero stanze"
             @change="getCity"
           />
         </div>
@@ -49,7 +40,7 @@
             v-model="distance"
             placeholder="Distanza"
             @change="getCity"
-            max="200"
+            max="40"
             id="rangeDistance"
           />
         </div>
@@ -57,7 +48,7 @@
     </template>
     <div v-for="(apartment, index) in apartments" :key="index">
       <p>
-        <a>{{ apartment.title }}</a>
+        <a :href="`/apartments/${apartment.id}`">{{ apartment.title }}</a>
       </p>
     </div>
   </div>
@@ -68,7 +59,6 @@ export default {
   data() {
     return {
       distance: "20",
-      baths: "",
       rooms: "",
       guests: "",
       myUrl: "/api/apartments?",
@@ -91,8 +81,6 @@ export default {
             "&n_rooms=" +
             this.rooms +
             "&n_baths=" +
-            this.baths +
-            "&n_rooms=" +
             this.rooms +
             "&distance=" +
             this.distance +
@@ -105,14 +93,17 @@ export default {
           this.apartments = res.data.results;
         });
     },
+
     getCity() {
-      axios.get(this.tomTomAPI + this.city + this.apiKey).then((res) => {
-        console.log(res.data.results[0].position);
-        this.lat = res.data.results[0].position.lat;
-        this.long = res.data.results[0].position.lon;
-        this.getApartments();
-        this.citySearched = true;
-      });
+      if (this.city !== "") {
+        axios.get(this.tomTomAPI + this.city + this.apiKey).then((res) => {
+          console.log(res.data.results[0].position);
+          this.lat = res.data.results[0].position.lat;
+          this.long = res.data.results[0].position.lon;
+          this.getApartments();
+          this.citySearched = true;
+        });
+      }
     },
   },
   created() {
