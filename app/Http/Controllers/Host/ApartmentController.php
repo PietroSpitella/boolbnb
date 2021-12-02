@@ -9,7 +9,8 @@ use Illuminate\Support\Str;
 use App\Apartment;
 use App\Service;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Validator;
 class ApartmentController extends Controller
 {
     /**
@@ -45,6 +46,63 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
+        // Creo apiURL per ricevere info TomTom
+        $apiUrl = 'https://api.tomtom.com/search/2/geocode/' . $request->address . '.JSON?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex';
+
+        // Prendo la risposta in formato JSON
+        $responseJson = Http::get($apiUrl)->json();
+
+        // Setto a Null le variabili per l'indirizzo
+        $city = NULL;
+        $street = NULL;
+        $house_number = NULL;
+
+        $lat = NULL;
+        $long = NULL;
+
+        // Prendo gli address dalla risposta
+        $responseAddress = $responseJson['results'][0]['address'];
+        if(isset($responseAddress['municipality'])){
+            $city = $responseAddress['municipality'];
+        }
+        if(isset($responseAddress['streetName'])){
+            $street = $responseAddress['streetName'];
+        }
+        if(isset($responseAddress['streetNumber'])){
+            $house_number = $responseAddress['streetNumber'];
+        }else{
+            $house_number = 1;
+        }
+
+        // Prendo la posizione lat e long dalla risposta position
+        $responsePosition = $responseJson['results'][0]['position'];
+        if(isset($responsePosition['lat'])){
+            $lat = $responsePosition['lat'];
+        }
+        if(isset($responsePosition['lon'])){
+            $long = $responsePosition['lon'];
+        }
+
+        $validationData = [
+            'city' => $city,
+            'street' => $street,
+            'house_number' => $house_number,
+        ];
+
+        // prepare validatio rules package
+        $validationRules = [
+            'city' => 'required|max:255',
+            'street' => 'required|max:255',
+            'house_number' => 'required|max:20',
+        ];
+
+        // call validator method
+        $validator = Validator::make($validationData, $validationRules);
+
+        if($validator->fails()){
+            return redirect()->back()->withInput()->withErrors($validator);
+        }
+
         $request->validate([
             //Required
             "title" => "required|max:255",
@@ -57,14 +115,14 @@ class ApartmentController extends Controller
             "h_checkin" => "required",
             "h_checkout" => "required",
             "image" => "required|image",
-            "city" => "required",
-            "street" => "required",
+            // "city" => "required",
+            // "street" => "required",
             //"services" => "exists:services,id",
 
             //da modificare lat e long con tomtom
-            "lat" => "required|numeric",
-            "long" => "required|numeric",
-            "house_number" => "required",
+            // "lat" => "required|numeric",
+            // "long" => "required|numeric",
+            // "house_number" => "required",
             //Nullable
             "type" => "nullable",
             "mq" => "nullable|numeric",
@@ -72,6 +130,11 @@ class ApartmentController extends Controller
         ]);
     
         $form_data_apartment = $request->all();
+        $form_data_apartment['city']=$city;
+        $form_data_apartment['street']=$street;
+        $form_data_apartment['house_number']=$house_number;
+        $form_data_apartment['lat']=$lat;
+        $form_data_apartment['long']=$long;
 
         //Verifico se l'immagine è stata caricata
         if(array_key_exists('image', $form_data_apartment)){
@@ -135,7 +198,6 @@ class ApartmentController extends Controller
         }elseif(Auth::user()->id !== $apartment->user_id){
             return redirect()->back();
         }
-
         $services = Service::all();
         return view('host.apartments.edit', compact('apartment','services'));
 
@@ -150,6 +212,74 @@ class ApartmentController extends Controller
      */
     public function update(Request $request, Apartment $apartment)
     {
+         // Creo apiURL per ricevere info TomTom
+        $apiUrl = 'https://api.tomtom.com/search/2/geocode/' . $request->address . '.JSON?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex';
+        
+        
+
+         // Prendo la risposta in formato JSON
+        $responseJson = Http::get($apiUrl)->json();
+        // dd($responseJson);
+         // Setto a Null le variabili per l'indirizzo
+        //  $city = NULL;
+        //  $street = NULL;
+        //  $house_number = NULL;
+ 
+        //  $lat = NULL;
+        //  $long = NULL;
+ 
+         // Prendo gli address dalla risposta
+        dd($responseJson);
+
+        $responseAddress = $responseJson['results'][0]['address'];
+
+        if(isset($responseAddress['municipality'])){
+            $city = $responseAddress['municipality'];
+            $apartment->city = $city;
+        }
+        if(isset($responseAddress['streetName'])){
+            $street = $responseAddress['streetName'];
+            $apartment->street = $street;
+
+        }
+        if(isset($responseAddress['streetNumber'])){
+            $house_number = $responseAddress['streetNumber'];
+            $apartment->house_number = $house_number;
+
+        }else{
+            $house_number = 1;
+        }
+
+         // Prendo la posizione lat e long dalla risposta position
+         $responsePosition = $responseJson['results'][0]['position'];
+         if(isset($responsePosition['lat'])){
+             $lat = $responsePosition['lat'];
+         }
+         if(isset($responsePosition['lon'])){
+             $long = $responsePosition['lon'];
+         }
+         
+        //  $validationData = [
+        //      'city' => $city,
+        //      'street' => $street,
+        //      'house_number' => $house_number,
+        //  ];
+ 
+        //  // prepare validatio rules package
+        //  $validationRules = [
+        //      'city' => 'required|max:255',
+        //      'street' => 'required|max:255',
+        //      'house_number' => 'required|max:20',
+        //  ];
+ 
+        //  // call validator method
+        //  $validator = Validator::make($validationData, $validationRules);
+ 
+        //  if($validator->fails()){
+        //      return redirect()->back()->withInput()->withErrors($validator);
+        //  }
+        $tmp_req = $request->request;
+
         $request->validate([
             //Required
             "title" => "required|max:255",
@@ -161,19 +291,15 @@ class ApartmentController extends Controller
             "pet" => "required",
             "h_checkin" => "required",
             "h_checkout" => "required",
-            "image" => "nullable|image",
-            "city" => "required",
-            "street" => "required",
-            //da modificare lat e long con tomtom
-            "lat" => "required|numeric",
-            "long" => "required|numeric",
-            "house_number" => "required",
+
             //Nullable
             "type" => "nullable",
             "mq" => "nullable|numeric",
             "price_night" => "nullable|numeric"
         ]);
+
         $form_data_apartment = $request->all();
+
         if(array_key_exists('image', $form_data_apartment)){
             Storage::delete($apartment->image);
             $img_path = Storage::put('apartment_image', $form_data_apartment['image']);
@@ -195,6 +321,21 @@ class ApartmentController extends Controller
             //Dobbiamo inviare il nuovo slug, quindi bisogna sovracrivere la proprietà slug
             
             $form_data_apartment['slug'] = $slug;
+        }
+
+        if(isset($responseJson)){
+            $form_data_apartment['city'] = $city;
+            $form_data_apartment['street'] = $street;
+            $form_data_apartment['house_number'] = $house_number;
+            $responsePosition = $responseJson['results'][0]['position'];
+            $form_data_apartment['lat'] = $lat;
+            $form_data_apartment['long'] = $long;
+        } else {
+            $form_data_apartment['city'] =  $apartment->city;
+            $form_data_apartment['street'] = $apartment->street;
+            $form_data_apartment['house_number'] = $apartment->house_number;
+            $form_data_apartment['lat'] = $apartment->lat;
+            $form_data_apartment['lon'] = $apartment->long;
         }
 
         //Per inviare i dati utilizzo il metodo update
