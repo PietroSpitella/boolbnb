@@ -115,7 +115,7 @@ export default {
   },
   methods: {
     async getServices() {
-      let resServices = await axios.get("/api/apartments");
+      let resServices = await axios.get(this.myURL);
       this.services = resServices.data.services;
     },
     getApartments() {
@@ -139,6 +139,26 @@ export default {
         )
         .then((res) => {
           this.apartments = res.data.results;
+          const url = new URL(location.href.split("?")[0]);
+          history.pushState(
+            null,
+            "",
+            url +
+              "?n_guests=" +
+              this.guests +
+              "&n_rooms=" +
+              this.rooms +
+              "&n_baths=" +
+              this.rooms +
+              "&distance=" +
+              this.distance +
+              "&lat=" +
+              this.lat +
+              "&long=" +
+              this.long +
+              "&services=" +
+              this.selectedServices
+          );
         });
     },
     getCity() {
