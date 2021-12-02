@@ -56,23 +56,7 @@ class ApartmentController extends Controller
         };
 
         $services = Service::all();
-        // $idsServices = [];
-        // foreach($services as $service){
-        //     $idsServices[] = $service->id;
-        // };
-        // dd($idsServices);
-        // $ids = $resQuery['services'];
 
-        // $filteredApartments->whereHas('apartment_service', function($q) use($ids){
-        //     $q -> whereIn('service_id', [$ids]);
-        // })->get();
-
-        // dd($resQuery['services']);
-        // $defApartments = [];
-        // $id = $resQuery['services'];
-        // $filteredApartmentsByDistance->whereHas('apartment_service', function($q) use($id){
-        //     $q -> whereIn('service_id', $id);
-        // });
 
         return response()->json([
             'success' => true,

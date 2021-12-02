@@ -115,7 +115,7 @@ export default {
   },
   methods: {
     async getServices() {
-      let resServices = await axios.get(this.myURL);
+      let resServices = await axios.get(this.myUrl);
       this.services = resServices.data.services;
     },
     getApartments() {
