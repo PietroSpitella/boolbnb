@@ -1,18 +1,34 @@
 #jumbotron {
     padding: 250px 0;
     overflow: hidden;
-    .img-overlay {
-        height: 100%;
+    background-image: url("//89239-630690-raikfcquaxqncofqfm.stackpathdns.com/wp-content/uploads/2018/10/01-3.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    // .img-overlay {
+    //     height: 100%;
+    //     width: 100%;
+    //     background-color: rgba(0, 0, 0, 0.459);
+    //     top: 0;
+    //     left: 0;
+    //     z-index: 0;
+    // }
+    // img {
+    //     top: 0;
+    //     left: 0;
+    //     z-index: 0;
+    // }
+    &:before {
+        content: " ";
+        background-color: #000;
+        opacity: 0.35;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.459);
-        top: 0;
-        left: 0;
+        height: 100%;
         z-index: -1;
-    }
-    img {
-        top: 0;
-        left: 0;
-        z-index: -2;
     }
 }
 
