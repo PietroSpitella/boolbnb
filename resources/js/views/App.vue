@@ -1,14 +1,14 @@
 <template>
   <div>
-    <Main />
+    <Discover />
   </div>
 </template>
 <script>
-import Main from "../pages/Main.vue";
+import Discover from "../pages/Discover.vue";
 export default {
   name: "App",
   components: {
-    Main,
+    Discover,
   },
 };
 </script>

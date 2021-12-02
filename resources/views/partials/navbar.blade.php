@@ -12,7 +12,7 @@
                 <a class="nav-link" href="{{route('index')}}">Home</a>
               </li>
               <li class="nav-item {{Request::route()->getName()=='apartments.index'? 'active' : 'null'}}">
-                <a class="nav-link" href="{{route('apartments.index')}}">Appartamenti</a>
+                <a class="nav-link" href="{{route('discoverPage')}}">Appartamenti</a>
               </li>
               <li class="nav-item {{Request::route()->getName()=='about-us'? 'active' : 'null'}}">
                 <a class="nav-link" href="{{url('/about-us')}}">About Us</a>
