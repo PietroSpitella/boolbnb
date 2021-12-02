@@ -23,13 +23,20 @@ class ApartmentController extends Controller
 
         // Mi salvo la query in una variabile
         $resQuery = $request->query();
-        
+        $ids = explode(',', $request->services);
+
         // Creo il primo filtro in base a ciò che mi viene passato dalla query. Se non mi viene passato nessun valore lo inizializzo io con 0
         $filteredApartments = Apartment::where('n_rooms', '>=', $resQuery['n_rooms'] ?? 0)
         ->where('n_beds', '>=', $resQuery['n_beds'] ?? 0)
         ->where('n_guests', '>=', $resQuery['n_guests'] ?? 0)
         ->get();
 
+
+        if(!empty($request->services)){
+            $filteredApartments = Apartment::whereHas('services', function($q) use($ids){
+                $q->whereIn('service_id', $ids);
+            })->get();
+        }
 
         // Salvo la distanza passata dal range input
         $rangeDistance = $request->distance;
@@ -48,9 +55,29 @@ class ApartmentController extends Controller
             }
         };
 
+        $services = Service::all();
+        // $idsServices = [];
+        // foreach($services as $service){
+        //     $idsServices[] = $service->id;
+        // };
+        // dd($idsServices);
+        // $ids = $resQuery['services'];
+
+        // $filteredApartments->whereHas('apartment_service', function($q) use($ids){
+        //     $q -> whereIn('service_id', [$ids]);
+        // })->get();
+
+        // dd($resQuery['services']);
+        // $defApartments = [];
+        // $id = $resQuery['services'];
+        // $filteredApartmentsByDistance->whereHas('apartment_service', function($q) use($id){
+        //     $q -> whereIn('service_id', $id);
+        // });
+
         return response()->json([
             'success' => true,
-            "results" => $filteredApartmentsByDistance
+            "results" => $filteredApartmentsByDistance,
+            'services' => $services
         ]);
     }
 }

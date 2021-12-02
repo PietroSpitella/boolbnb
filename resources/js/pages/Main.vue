@@ -14,6 +14,23 @@
     </div>
     <template>
       <div v-if="citySearched">
+        <div class="form-services row">
+          <div
+            class="form-group col-2"
+            v-for="service in services"
+            :key="service.id"
+          >
+            <label :for="service.id">{{ service.name }}</label>
+            <input
+              type="checkbox"
+              :name="service.name"
+              :id="service.id"
+              class=""
+              :value="service.id"
+              @change="getSelectedServices"
+            />
+          </div>
+        </div>
         <div class="form-group">
           <input
             class="form-control"
@@ -46,10 +63,33 @@
         </div>
       </div>
     </template>
-    <div v-for="(apartment, index) in apartments" :key="index">
-      <p>
-        <a :href="`/apartments/${apartment.id}`">{{ apartment.title }}</a>
-      </p>
+    <div class="row mt-4">
+      <div
+        class="col-lg-4 mb-4"
+        v-for="(apartment, index) in apartments"
+        :key="index"
+      >
+        <div class="card">
+          <img
+            :src="'/storage/' + apartment.image"
+            class="card-img-top"
+            alt=""
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ apartment.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              {{ apartment.city }}
+            </h6>
+            <p class="card-text">{{ apartment.description }}</p>
+            <a
+              :href="'/apartments/' + apartment.id"
+              target="_blank"
+              class="card-link"
+              >Visualizza</a
+            >
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -58,7 +98,7 @@ export default {
   name: "Main",
   data() {
     return {
-      distance: "20",
+      distance: "20", // Inizializzo con 20 come richiesto dal Brief
       rooms: "",
       guests: "",
       myUrl: "/api/apartments?",
@@ -69,9 +109,15 @@ export default {
       lat: "",
       long: "",
       citySearched: false,
+      services: [],
+      selectedServices: [],
     };
   },
   methods: {
+    async getServices() {
+      let resServices = await axios.get("/api/apartments");
+      this.services = resServices.data.services;
+    },
     getApartments() {
       axios
         .get(
@@ -87,17 +133,17 @@ export default {
             "&lat=" +
             this.lat +
             "&long=" +
-            this.long
+            this.long +
+            "&services=" +
+            this.selectedServices
         )
         .then((res) => {
           this.apartments = res.data.results;
         });
     },
-
     getCity() {
       if (this.city !== "") {
         axios.get(this.tomTomAPI + this.city + this.apiKey).then((res) => {
-          console.log(res.data.results[0].position);
           this.lat = res.data.results[0].position.lat;
           this.long = res.data.results[0].position.lon;
           this.getApartments();
@@ -105,9 +151,21 @@ export default {
         });
       }
     },
+    getSelectedServices(el) {
+      if (el.target.checked === true) {
+        this.selectedServices.push(el.target.value);
+      } else {
+        this.selectedServices.splice(
+          this.selectedServices.indexOf(el.target.value),
+          1
+        );
+      }
+      this.getApartments();
+    },
   },
   created() {
     this.getApartments();
+    this.getServices();
   },
 };
 </script>
