@@ -22,9 +22,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index(Apartment $apartment)
+    public function index()
     {
-        return view('index', compact('apartment'));
+        return view('index');
     }
 
     public function about(){

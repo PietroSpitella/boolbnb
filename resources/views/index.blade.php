@@ -1,5 +1,4 @@
 {{-- Homepage sito --}}
-
 @extends('layouts.app')
 @section('title', 'Homepage')
 
@@ -16,7 +15,7 @@
         </div>
     
         {{-- Form di ricerca appartamenti --}}
-        <form>
+        <form action="{{route('apartments.index')}}" method="post">
             <div class="form-row">
                 <div class="col-12 col-lg-4 mb-2 position-relative">
                     <input
@@ -52,10 +51,9 @@
                         placeholder="guests">
                     <i class="far fa-user"></i>
                 </div>
+                {{-- SUBMIT --}}
                 <div class="col 12 col-lg-auto mb-2">
-                    <a href=""> {{-- {{route('search')}} --}}
-                        <button type="submit" class="btn button_register h-100 w-100">Search</button>
-                    </a>
+                    <button type="submit" class="btn button_register h-100 w-100">Search</button>
                 </div>
             </div>
         </form>

@@ -13,9 +13,8 @@ class ApartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, Apartment $apartment)
+    public function index()
     {
-        $form_data = $request->all();
         $apartments = Apartment::all();
         return view('search', compact('apartments'));
     }
