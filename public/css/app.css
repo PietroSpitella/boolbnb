@@ -11191,6 +11191,59 @@ nav a img {
      object-fit: cover;
 }
 
+.my-background-navbar {
+  background-color: #ffffff;
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+}
+
+.mw-25 {
+  max-width: 25%;
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-hamburger {
+    z-index: 1041;
+  }
+
+  .navbar-hamburger .my-background-navbar {
+    margin-left: auto;
+    width: 25%;
+  }
+
+  .navbar-hamburger .my-background-navbar .navbar-buttons {
+    padding-right: 0;
+    margin-top: 10px;
+  }
+
+  .navbar-hamburger .my-background-navbar .mbr-10 {
+    margin-bottom: 10px;
+  }
+
+  .modal {
+    width: 100%;
+  }
+
+  .modal .modal-dialog {
+    max-width: 100%;
+  }
+
+  .modal .modal-dialog .modal-body-left {
+    display: none;
+  }
+
+  .modal .modal-dialog .modal-body-left,
+  .modal .modal-dialog .modal-body-right {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .my-background-navbar {
+    width: 92px;
+  }
+}
+
 #jumbotron {
   padding: 250px 0;
   overflow: hidden;
