@@ -16,7 +16,8 @@ class ApartmentController extends Controller
     public function index(Request $request, Apartment $apartment)
     {
         $form_data = $request->all();
-        return view('search', compact('apartment'));
+        $apartments = Apartment::all();
+        return view('search', compact('apartments'));
     }
 
     /**
