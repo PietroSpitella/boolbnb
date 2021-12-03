@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Apartment;
 
 class HomeController extends Controller
 {
@@ -21,9 +22,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Apartment $apartment)
     {
-        return view('index');
+        return view('index', compact('apartment'));
     }
 
     public function about(){

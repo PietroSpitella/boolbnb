@@ -13,10 +13,10 @@ class ApartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, Apartment $apartment)
     {
-        $apartments = Apartment::all();
-        return view('search', compact('apartments'));
+        $form_data = $request->all();
+        return view('search', compact('apartment'));
     }
 
     /**
@@ -56,7 +56,7 @@ class ApartmentController extends Controller
 
         $services = Service::all();
 
-
+        // ????????????????????????????????????
         $services = Service::all();
 
 
