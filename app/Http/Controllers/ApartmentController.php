@@ -17,33 +17,40 @@ class ApartmentController extends Controller
      */
     public function index(Request $request)
     {
-        
-        //$name = $request->input('id');
-        $id_service = $request->input('id');
+        //Prendo i dati dalla vista
+        //$id_service = $request->input('id');
         $n_rooms = $request->query('n_rooms');
         $n_beds = $request->query('n_beds');
-        $type = $request->query('type');
-   
-        
+        //$type = $request->query('type');
 
+        //VADO NEL DATABASE
         $deck_table = DB::table('apartments')
         ->join('apartment_service','apartments.id', '=', 'apartment_service.apartment_id')
         ->join('services', 'apartment_service.service_id', '=', 'services.id')
-        ->where('service_id', '=', $id_service)
-        ->where('n_beds', '=', $n_beds)
-        ->where('n_rooms', '=', $n_rooms)
-        ->where('type', '=', $type)
+        //->where('service_id', '=', $id_service)
+        ->where('n_rooms', '>=', $n_rooms)
+        ->where('n_beds', '>=', $n_beds )
+        //->where('type', '=', $type)
         ->get()
         ;
+        //VERIFICO LE RICHIESTE E FACCIO LE RICERCHE
+
+        if($request->has('id')) {
+            $deck_table->where('service_id', '=', $request->input('id'));
+        }
+        if($request->has('type')) {
+            $deck_table->where('type', '=', $request->query('type'));
+        }
+        
+
+        //INVIO L'ARRAY DI CASE ALLA VISTA PER POTER STAMPARE A SCHERMO LE CASE RICHIESTE DALL'UTENTE
         $filter_apartment_service = [];
         for($i = 0; $i < count($deck_table); $i++) {
             $apartments_filter = $deck_table[$i];
             array_push($filter_apartment_service, $apartments_filter);
         }
- 
-        //dump($filter_apartment_service);
-     
-        //$apartments = Apartment::all();
+        
+        //INVIO TUTTI I SERVIZI ALLA VISTA PER POTERLI STAMPARE A SCHERMO
         $services = Service::all();
         return view('search', compact('filter_apartment_service','services'));
     }

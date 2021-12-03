@@ -88,6 +88,7 @@
                                     <input type="checkbox"
                                     name="id[]"
                                     value="{{($service['id'])}}"
+                                    
                                     >
                                     <i class="{{$service['icon']}}"></i>
                                 </li> 
