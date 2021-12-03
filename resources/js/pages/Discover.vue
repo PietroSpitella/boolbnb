@@ -1,29 +1,17 @@
 <template>
   <div class="container my-3">
-    <div id="my_map">
-      <div class="overlay"></div>
-      <form>
-        <div class="form-row">
-          <div class="form-group m-0 col-9">
-            <input
-              type="text"
-              v-model="city"
-              @keyup.enter="getCity"
-              class="form-control h-100 form-control-lg"
-              placeholder="where do you want to go?"
-            />
-          </div>
-          <button
-            type="submit"
-            class="btn button_register col-3"
-            @click="getCity"
-          >
-            Search
-          </button>
-        </div>
-      </form>
+    <div class="form-group">
+      <input
+        type="text"
+        v-model="city"
+        @keyup.enter="getCity"
+        placeholder="Città"
+        class="form-control"
+      />
+      <button class="btn btn-primary my-3" @click="getCity" id="getCityBtn">
+        Vai
+      </button>
     </div>
-
     <template>
       <div v-if="citySearched">
         <div class="form-services row">
@@ -109,13 +97,13 @@
 </template>
 <script>
 export default {
-  name: "Discover",
+  name: "Main",
   data() {
     return {
       distance: "20", // Inizializzo con 20 come richiesto dal Brief
       rooms: "",
       guests: "",
-      myUrl: "/api/apartments?",
+      myUrl: "/api/apartments",
       tomTomAPI: "https://api.tomtom.com/search/2/geocode/",
       city: "",
       apiKey: ".json?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
@@ -140,7 +128,7 @@ export default {
       axios
         .get(
           this.myUrl +
-            "n_guests=" +
+            "?n_guests=" +
             this.guests +
             "&n_rooms=" +
             this.rooms +
@@ -157,24 +145,16 @@ export default {
         )
         .then((res) => {
           this.apartments = res.data.results;
-        })
-        .catch((err) => {
-          console.log(err);
         });
     },
     getCity() {
       if (this.city !== "") {
-        axios
-          .get(this.tomTomAPI + this.city + this.apiKey)
-          .then((res) => {
-            this.lat = res.data.results[0].position.lat;
-            this.long = res.data.results[0].position.lon;
-            this.getApartments();
-            this.citySearched = true;
-          })
-          .catch((err) => {
-            console.log(err);
-          });
+        axios.get(this.tomTomAPI + this.city + this.apiKey).then((res) => {
+          this.lat = res.data.results[0].position.lat;
+          this.long = res.data.results[0].position.lon;
+          this.getApartments();
+          this.citySearched = true;
+        });
       }
     },
     getSelectedServices(el) {

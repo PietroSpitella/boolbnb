@@ -11,7 +11,7 @@
               <li class="nav-item {{Request::route()->getName()=='index'? 'active' : 'null'}}">
                 <a class="nav-link" href="{{route('index')}}">Home</a>
               </li>
-              <li class="nav-item {{Request::route()->getName()=='apartments.index'? 'active' : 'null'}}">
+              <li class="nav-item {{Request::route()->getName()=='discoverPage'? 'active' : 'null'}}">
                 <a class="nav-link" href="{{route('discoverPage')}}">Appartamenti</a>
               </li>
               <li class="nav-item {{Request::route()->getName()=='about-us'? 'active' : 'null'}}">
