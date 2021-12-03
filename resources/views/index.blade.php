@@ -15,7 +15,8 @@
         </div>
     
         {{-- Form di ricerca appartamenti --}}
-        <form action="{{route('apartments.index')}}" method="post">
+        <form action="{{route('apartments.index')}}" method="">
+        @csrf
             <div class="form-row">
                 <div class="col-12 col-lg-4 mb-2 position-relative">
                     <input
