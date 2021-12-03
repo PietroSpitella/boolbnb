@@ -18,33 +18,20 @@
         {{-- Titoli --}}
         <div class="row align-items-center flex-column mb-4">
             <div class="col-auto mx-auto text-center">
-                <h2 class="mb-4"><strong>Book & Experience Amazing Places</strong></h2>
-                <h5 class="mb-0">Theme For Booking and Rental</h5>
+                <h2 class="mb-4"><strong>Scopri nuovi posti e partecipa a esperienze fantastiche!</strong></h2>
+                <h5 class="mb-0">Inizia scegliendo la tua prossima destinazione</h5>
             </div>
         </div>
     
         {{-- Form di ricerca appartamenti --}}
         <div class="row">
-            <form class="form-row">
                 {{-- DA FARE: aggiungere icone fontawesome negli imput con un ::after --}}
-                <div class="form-group m-0 col-4">
-                    <input
-                        name=""
-                        type="text"
-                        class="form-control h-100 form-control-lg pl-5"
-                        placeholder="where do you want to go?">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control h-100 form-control-lg pl-5" id="input_destination" name="destination" placeholder="Dove Vuoi Andare?" aria-label="Destination" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-danger bg-danger text-light" type="button">Search</button>
                 </div>
-                <div class="form-group m-0 col">
-                    <input type="text" class="form-control h-100 form-control-lg pl-5" placeholder="check-in">
-                </div>
-                <div class="form-group m-0 col">
-                    <input type="text" class="form-control h-100 form-control-lg pl-5" placeholder="check-out">
-                </div>
-                <div class="form-group m-0 col">
-                    <input type="text" class="form-control h-100 form-control-lg pl-5" placeholder="guests">
-                </div>
-                <button type="submit" class="btn button_register">Search</button>
-            </form>
+            </div>
         </div>
     </div>
 </section>
