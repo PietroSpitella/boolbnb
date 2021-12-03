@@ -5,4 +5,4 @@
  */
 
 require('./bootstrap');
-require('./searchMap');
+require('./searchMap')

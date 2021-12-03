@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-3">
+  <div v-if="!isLoading" class="container my-3">
     <div class="form-group">
       <input
         type="text"
@@ -108,8 +108,8 @@ export default {
       city: "",
       apiKey: ".json?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
       apartments: [],
-      lat: "",
-      long: "",
+      lat: 45.07049,
+      long: 7.68682,
       citySearched: false,
       services: [],
       selectedServices: [],
@@ -117,6 +117,7 @@ export default {
       userIP: "",
       apartmentID: "",
       today: "",
+      isLoading: true,
     };
   },
   methods: {
@@ -145,6 +146,7 @@ export default {
         )
         .then((res) => {
           this.apartments = res.data.results;
+          this.isLoading = false;
         });
     },
     getCity() {
@@ -201,11 +203,10 @@ export default {
           console.log(err);
         });
     },
-
-    created() {
-      this.getApartments();
-      this.getServices();
-    },
+  },
+  created() {
+    this.getApartments();
+    this.getServices();
   },
 };
 </script>

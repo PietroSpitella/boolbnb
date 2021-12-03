@@ -26,7 +26,8 @@ class ApartmentController extends Controller
         $ids = explode(',', $request->services);
 
         // Creo il primo filtro in base a ciò che mi viene passato dalla query. Se non mi viene passato nessun valore lo inizializzo io con 0
-        $filteredApartments = Apartment::where('n_rooms', '>=', $resQuery['n_rooms'] ?? 0)
+        $filteredApartments = Apartment::where('visibility', 1)
+        ->where('n_rooms', '>=', $resQuery['n_rooms'] ?? 0)
         ->where('n_beds', '>=', $resQuery['n_beds'] ?? 0)
         ->where('n_guests', '>=', $resQuery['n_guests'] ?? 0)
         ->get();
@@ -42,18 +43,19 @@ class ApartmentController extends Controller
         $rangeDistance = $request->distance;
 
         // Salvo la lat e long della città cercata dall'utente e se non c'è imposto quella di una città (in questo caso Torino)
-        $lat = $request->lat ?? 45.07049;
-        $long = $request->long ?? 7.68682;
+        $lat = $request->lat;
+        $long = $request->long;
 
         // Controllo tramite un foreach che i singoli appartamenti che si sono salvati dal primo filtro risultino nel raggio della distanza che ha inserito l'utente
         $filteredApartmentsByDistance = [];
         foreach($filteredApartments as $apartment){
             $distancePoints = distanceCalculation($lat, $long, $apartment->lat, $apartment->long, 2);
-
             if($distancePoints < $rangeDistance || ($lat === null && $long === null)){
                 $filteredApartmentsByDistance[] = $apartment;
             }
         };
+
+
 
         $services = Service::all();
 
