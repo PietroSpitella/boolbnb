@@ -221,11 +221,10 @@ export default {
           console.log(err);
         });
     },
-
-    created() {
-      this.getApartments();
-      this.getServices();
-    },
+  },
+  created() {
+    this.getApartments();
+    this.getServices();
   },
 };
 </script>
