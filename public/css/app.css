@@ -11007,6 +11007,11 @@ body {
   color: #fff;
 }
 
+.btn-login-register:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
 .color-red {
   color: #e3342f;
 }
@@ -11192,13 +11197,18 @@ nav a img {
 }
 
 .my-background-navbar {
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 0 0 20px 20px;
   text-align: center;
 }
 
 .mw-25 {
   max-width: 25%;
+}
+
+.flex-wrap .mb-3 input {
+  width: 280px;
+  min-width: auto;
 }
 
 @media only screen and (max-width: 767px) {
