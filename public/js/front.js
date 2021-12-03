@@ -2023,6 +2023,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Main",
   data: function data() {
@@ -2031,7 +2033,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       // Inizializzo con 20 come richiesto dal Brief
       rooms: "",
       guests: "",
-      myUrl: "/api/apartments?",
+      myUrl: "/api/apartments",
       tomTomAPI: "https://api.tomtom.com/search/2/geocode/",
       city: "",
       apiKey: ".json?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
@@ -2040,7 +2042,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       "long": "",
       citySearched: false,
       services: [],
-      selectedServices: []
+      selectedServices: [],
+      apiIPurl: "https://api.ipify.org/",
+      userIP: "",
+      apartmentID: "",
+      today: ""
     };
   },
   methods: {
@@ -2071,7 +2077,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     getApartments: function getApartments() {
       var _this2 = this;
 
-      axios.get(this.myUrl + "n_guests=" + this.guests + "&n_rooms=" + this.rooms + "&n_baths=" + this.rooms + "&distance=" + this.distance + "&lat=" + this.lat + "&long=" + this["long"] + "&services=" + this.selectedServices).then(function (res) {
+      axios.get(this.myUrl + "?n_guests=" + this.guests + "&n_rooms=" + this.rooms + "&n_baths=" + this.rooms + "&distance=" + this.distance + "&lat=" + this.lat + "&long=" + this["long"] + "&services=" + this.selectedServices).then(function (res) {
         _this2.apartments = res.data.results;
         var url = new URL(location.href.split("?")[0]);
         history.pushState(null, "", url + "?n_guests=" + _this2.guests + "&n_rooms=" + _this2.rooms + "&n_baths=" + _this2.rooms + "&distance=" + _this2.distance + "&lat=" + _this2.lat + "&long=" + _this2["long"] + "&services=" + _this2.selectedServices);
@@ -2099,11 +2105,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }
 
       this.getApartments();
+    },
+    getData: function getData(el) {
+      var _this4 = this;
+
+      this.apartmentID = el.target.id;
+      axios.get(this.apiIPurl).then(function (res) {
+        _this4.userIP = res.data;
+      })["catch"](function (err) {
+        console.log(err);
+      })["finally"](function () {
+        _this4.sendData();
+      });
+    },
+    sendData: function sendData() {
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, "0");
+      var mm = String(today.getMonth() + 1).padStart(2, "0");
+      var yyyy = today.getFullYear();
+      this.today = yyyy + "/" + mm + "/" + dd;
+      axios.post("api/statistics", {
+        apartment_id: this.apartmentID,
+        data: this.today,
+        visitors: this.userIP
+      }).then(function (res) {
+        res.data.success;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    created: function created() {
+      this.getApartments();
+      this.getServices();
     }
-  },
-  created: function created() {
-    this.getApartments();
-    this.getServices();
   }
 });
 
@@ -3575,8 +3609,10 @@ var render = function () {
                     staticClass: "card-link",
                     attrs: {
                       href: "/apartments/" + apartment.id,
+                      id: apartment.id,
                       target: "_blank",
                     },
+                    on: { click: _vm.getData },
                   },
                   [_vm._v("Visualizza")]
                 ),

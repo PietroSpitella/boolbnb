@@ -83,8 +83,10 @@
             <p class="card-text">{{ apartment.description }}</p>
             <a
               :href="'/apartments/' + apartment.id"
+              :id="apartment.id"
               target="_blank"
               class="card-link"
+              @click="getData"
               >Visualizza</a
             >
           </div>
@@ -101,7 +103,7 @@ export default {
       distance: "20", // Inizializzo con 20 come richiesto dal Brief
       rooms: "",
       guests: "",
-      myUrl: "/api/apartments?",
+      myUrl: "/api/apartments",
       tomTomAPI: "https://api.tomtom.com/search/2/geocode/",
       city: "",
       apiKey: ".json?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
@@ -111,6 +113,10 @@ export default {
       citySearched: false,
       services: [],
       selectedServices: [],
+      apiIPurl: "https://api.ipify.org/",
+      userIP: "",
+      apartmentID: "",
+      today: "",
     };
   },
   methods: {
@@ -122,7 +128,7 @@ export default {
       axios
         .get(
           this.myUrl +
-            "n_guests=" +
+            "?n_guests=" +
             this.guests +
             "&n_rooms=" +
             this.rooms +
@@ -182,10 +188,44 @@ export default {
       }
       this.getApartments();
     },
-  },
-  created() {
-    this.getApartments();
-    this.getServices();
+    getData(el) {
+      this.apartmentID = el.target.id;
+      axios
+        .get(this.apiIPurl)
+        .then((res) => {
+          this.userIP = res.data;
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          this.sendData();
+        });
+    },
+    sendData() {
+      let today = new Date();
+      let dd = String(today.getDate()).padStart(2, "0");
+      let mm = String(today.getMonth() + 1).padStart(2, "0");
+      let yyyy = today.getFullYear();
+      this.today = yyyy + "/" + mm + "/" + dd;
+      axios
+        .post("api/statistics", {
+          apartment_id: this.apartmentID,
+          data: this.today,
+          visitors: this.userIP,
+        })
+        .then((res) => {
+          res.data.success;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+
+    created() {
+      this.getApartments();
+      this.getServices();
+    },
   },
 };
 </script>
