@@ -14,14 +14,13 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+Route::get('/', 'HomeController@index')->name('index');
 Route::get('/about-us', 'HomeController@about')->name('about-us');
 
 Route::resource('/apartments', 'ApartmentController');
 Route::post('/new-message', 'MessageController@store')->name('store-message');
 Auth::routes();
+Route::get('/discover', 'HomeController@search')->name('guest-discover');
 
 // Route::get('/dashboard', 'HomeController@index')->name('home');
 
@@ -31,5 +30,6 @@ Route::middleware('auth')->namespace('Host')->prefix('host')->name('host.')
     Route::get('/dashboard', 'HomeController@index')->name('home');
     Route::get('/messages', 'HomeController@listMessage')->name('messages');
     Route::get('/messages/show/{message}', 'HomeController@showMessage')->name('show-message');
+    Route::delete('/messages/delete/{message}', 'HomeController@destroyMessage')->name('delete-message');
     Route::resource('/apartments', 'ApartmentController');
 });

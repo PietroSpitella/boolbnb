@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Apartment;
+use App\Service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
+
 class ApartmentController extends Controller
 {
     /**
@@ -12,10 +15,12 @@ class ApartmentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
+        $services = Service::all();
         $apartments = Apartment::all();
-        return view('search', compact('apartments'));
+        return view('search', compact('apartments', 'services'));
     }
 
     /**
@@ -52,7 +57,10 @@ class ApartmentController extends Controller
         if(!$apartment){
             abort(404);
         }
-        return view('show', compact('apartment', 'user'));
+
+        $services = Service::all();
+
+        return view('show', compact('apartment', 'user', 'services'));
     }
 
     /**

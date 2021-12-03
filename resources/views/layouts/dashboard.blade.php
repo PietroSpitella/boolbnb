@@ -11,15 +11,31 @@
     <title>@yield('title') | Pannello di controllo</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/searchMap.js') }}"></script>
     {{-- Favicon --}}
     <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
-
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    {{-- Maps TomTom --}}
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps.css'>
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/maps/maps-web.min.js"></script>
+
+    {{-- Services TomTom  --}}
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.15.0/services/services-web.min.js"></script>
+
+    {{-- SearchMap TomTom --}}
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.11/SearchBox-web.js"></script>
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.11/SearchBox.css'>
+
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox.css'>
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/plugins/SearchBox/3.1.3-public-preview.0/SearchBox-web.js"></script>
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.1.2-public-preview.15/services/services-web.min.js"></script>
+
 </head>
-<body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark flex-md-nowrap py-0 px-4">
+<body onload="searchBox()">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark flex-md-nowrap py-0 px-4">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{route('host.home')}}">
             <img src="{{asset('images/boolbnb-def.png')}}" alt="boolbnb_logo">
         </a>
@@ -53,8 +69,8 @@
     </nav>
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-3 d-none d-md-block sidebar bg-dark py-4">
-                <div class="sidebar-sticky">
+            <nav class="col-md-3 d-none d-md-block my_sidebar bg-dark py-4">
+                <div class="sidebar-container">
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('host.home')}}">
