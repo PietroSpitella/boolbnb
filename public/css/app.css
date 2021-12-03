@@ -11008,7 +11008,7 @@ body {
 }
 
 .btn-login-register:hover {
-  color: #fff;
+  color: #ffffff;
   transform: scale(1.1);
 }
 
@@ -11212,13 +11212,13 @@ nav a img {
 }
 
 .btn-warning {
-  color: #fff;
+  color: #ffffff;
   background-color: #dada27;
   border-color: #dada27;
 }
 
 .btn-warning:hover {
-  color: #fff;
+  color: #ffffff;
   background-color: #cccc2f;
   border-color: #cccc2f;
 }
