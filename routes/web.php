@@ -20,6 +20,7 @@ Route::get('/about-us', 'HomeController@about')->name('about-us');
 Route::resource('/apartments', 'ApartmentController');
 Route::post('/new-message', 'MessageController@store')->name('store-message');
 Auth::routes();
+Route::get('/discover', 'HomeController@search')->name('guest-discover');
 
 // Route::get('/dashboard', 'HomeController@index')->name('home');
 

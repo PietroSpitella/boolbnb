@@ -198,7 +198,6 @@ class ApartmentController extends Controller
         }elseif(Auth::user()->id !== $apartment->user_id){
             return redirect()->back();
         }
-
         $services = Service::all();
         return view('host.apartments.edit', compact('apartment','services'));
 
