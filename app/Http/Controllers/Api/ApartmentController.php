@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Apartment;
 use App\Service;
-
+use App\Message;
 class ApartmentController extends Controller
 {
     public function searchApartment(Request $request){
@@ -64,6 +64,34 @@ class ApartmentController extends Controller
             'success' => true,
             "results" => $filteredApartmentsByDistance,
             'services' => $services
+        ]);
+    }
+
+    public function show($slug){
+        $apartment = Apartment::where('slug', $slug)->with(['services'])->first();
+
+        return response()->json([
+            'success'=>true,
+            'results'=>$apartment
+        ]);
+    }
+
+    public function sendMessage(Request $request){
+        $request->validate([
+            'apartment_id'=>'required',
+            'apartment_title'=>'required',
+            'fullname'=>'required',
+            'email'=>'required',
+            'message'=>'required',
+        ]);
+        $apartment_id = $request->apartment_id;
+        $message_data = $request->all();
+        $new_message = new Message();
+        $new_message->fill($message_data);
+        $new_message->save();
+
+        return response()->json([
+            'success' => true
         ]);
     }
 }

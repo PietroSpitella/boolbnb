@@ -81,14 +81,17 @@
               {{ apartment.city }}
             </h6>
             <p class="card-text">{{ apartment.description }}</p>
-            <a
-              :href="'/apartments/' + apartment.id"
-              :id="apartment.id"
-              target="_blank"
+            <router-link
+              :to="{
+                name: 'Apartment',
+                params: { slug: apartment.slug },
+              }"
+              meta="apartment"
               class="card-link"
-              @click="getData"
-              >Visualizza</a
-            >
+              target="_blank"
+              @click="getData;"
+              >Visualizza
+            </router-link>
           </div>
         </div>
       </div>

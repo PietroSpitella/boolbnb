@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title') | BoolBnB</title>
+    <title>BoolBnB</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
@@ -17,25 +17,22 @@
     
     {{-- Favicon --}}
     <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
-
 </head>
 <body>
     <div id="vue">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand col-sm-3 col-md-3 mr-0 mw-25" href="{{route('index')}}">
-                    <img src="{{asset('images/boolbnb-def.png')}}" alt="boolbnb_logo">
-                </a>
+                    <router-link class="navbar-brand col-sm-3 col-md-3 mr-0 mw-25" to="/"><img src="{{asset('images/boolbnb-def.png')}}" alt="boolbnb_logo"></router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse col-md-6 col-sm-6 justify-content-center" id="navbarScroll">
                     <ul class="navbar-nav mr-2 my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
-                    <li class="nav-item {{Request::route()->getName()=='index'? 'active' : 'null'}}">
-                        <a class="nav-link" href="{{route('index')}}">Home</a>
+                    <li class="nav-item {{Request::route()->getName()=='home'? 'active' : 'null'}}">
+                        <router-link class="nav-link" to="/">Home</router-link>
                     </li>
                     <li class="nav-item {{Request::route()->getName()=='discoverPage'? 'active' : 'null'}}">
-                        <a class="nav-link"><router-link to="/discoverPage">Appartamenti</router-link></a>
+                        <router-link class="nav-link" to="/discover">Discover</router-link>
                     </li>
                     <li class="nav-item {{Request::route()->getName()=='about-us'? 'active' : 'null'}}">
                         <a class="nav-link" href="{{url('/about-us')}}">About Us</a>
@@ -284,5 +281,6 @@
 
         <router-view></router-view>
     </div>
+    <script src="{{asset('js/front.js')}}"></script>
 </body>
 </html>
