@@ -11211,6 +11211,18 @@ nav a img {
   min-width: auto;
 }
 
+.btn-warning {
+  color: #fff;
+  background-color: #dada27;
+  border-color: #dada27;
+}
+
+.btn-warning:hover {
+  color: #fff;
+  background-color: #cccc2f;
+  border-color: #cccc2f;
+}
+
 @media only screen and (max-width: 767px) {
   .navbar-hamburger {
     z-index: 1041;
