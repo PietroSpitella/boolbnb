@@ -94,4 +94,12 @@ class ApartmentController extends Controller
             'success' => true
         ]);
     }
+
+    public function sendCity(Request $request){
+        $data = $request->all();
+        return response()->json([
+            'success'=>true,
+            'results'=>$data
+        ]);
+    }
 }

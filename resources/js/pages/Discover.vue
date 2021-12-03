@@ -1,5 +1,6 @@
 <template>
   <div v-if="!isLoading" class="container my-3">
+    {{ destination }}
     <div class="form-group">
       <input
         type="text"
@@ -101,6 +102,7 @@
 <script>
 export default {
   name: "Main",
+  props: ["destination"],
   data() {
     return {
       distance: "20", // Inizializzo con 20 come richiesto dal Brief
@@ -206,11 +208,16 @@ export default {
           console.log(err);
         });
     },
+    getCity() {
+      console.log(this.destination);
+    },
   },
   created() {
     this.getApartments();
+    this.getCity();
     this.getServices();
   },
+  mounted() {},
 };
 </script>
 
