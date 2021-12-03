@@ -32,4 +32,9 @@ class HomeController extends Controller
     public function search(){
         return view('discover');
     }
+    public function indexHome(){
+        return view('guest.homepage');
+    }
+
+
 }

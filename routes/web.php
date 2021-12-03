@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+// TEST
+Route::get('/home', 'HomeController@indexHome')->name('home');
+
+
+
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('/about-us', 'HomeController@about')->name('about-us');
 
