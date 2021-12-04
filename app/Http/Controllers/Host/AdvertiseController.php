@@ -17,9 +17,9 @@ class AdvertiseController extends Controller
      */
     public function index()
     {
-        $user_id = Auth::user()->id;
-        $apartments = Apartment::where('user_id', $user_id)->get();
-        return view('host.apartments.advertises.index', compact('apartments'));
+        //$user_id = Auth::user()->id;
+        //$apartments = Apartment::where('user_id', $user_id)->get();
+        //return view('host.apartments.advertises.index', compact('apartments'));
     }
 
     /**
@@ -29,7 +29,10 @@ class AdvertiseController extends Controller
      */
     public function create()
     {
-        //
+        $advertises = Advertise::all();
+        $user_id = Auth::user()->id;
+        $apartments = Apartment::where('user_id', $user_id)->get();
+        return view('host.apartments.advertises.create', compact('advertises','apartments'));
     }
 
     /**
@@ -40,6 +43,9 @@ class AdvertiseController extends Controller
      */
     public function store(Request $request)
     {
+        /* 
+        CODICE ALBERTO
+        -----------------
         $form_adv = $request->all();
         $timestamp = now()->timestamp;
         $form_adv['start_date'] = $timestamp;
@@ -55,13 +61,31 @@ class AdvertiseController extends Controller
         }
         $end_date = $timestamp + $duration;
         $form_adv['end_date'] = $end_date;
+        ------------------
+        FINE CODICE ALBERTO
+        */
+
+        //CODICE ROBERTO
+        //Richiesta dal form
+        $form_adv = $request->all();
+        //Data di inizio
         
-        //Non dimenticarti di fare le sponsorizzate perchè questa parte è sbagliata
-        $advertise = Advertise::find('advertise_id');
         
-        if(array_key_exists('apartment', $form_adv)) {
-            $advertise->apartment()->attach($form_adv['apartment']);
-        }
+        //Sponsorizzate Roberto
+        //Id appartamento da sponsorizzare
+        $apartment_id = $form_adv['apartment_id'];
+        $advertise_id = $form_adv['advertise_id'];
+       
+        //QUESTO è l'appartamento completo che l'utente vuole sponsorizzare
+        $apartment = Apartment::find($apartment_id);
+        //A questo '$apartment' devo attaccare l'advertise_id
+        
+        //Punto da cui partire domani
+        $apartment->advertises()->attach($form_adv['advertise_id'], ['start_date' => $form_adv['start_date']]);
+        
+    
+        return redirect()->route('host.apartments.index');
+        
     }
 
     /**
@@ -72,9 +96,9 @@ class AdvertiseController extends Controller
      */
     public function show($id)
     {
-        $advertises = Advertise::all();
-        $apartment = Apartment::where('id', $id)->get();
-        return view('host.apartments.advertises.create', compact('advertises','apartment'));
+        //$advertises = Advertise::all();
+        //$apartment = Apartment::where('id', $id)->get();
+        //return view('host.apartments.advertises.create', compact('advertises','apartment'));
     }
 
     /**
@@ -83,9 +107,10 @@ class AdvertiseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Apartment $apartment)
     {
         //
+        
     }
 
     /**

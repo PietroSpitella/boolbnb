@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateApartmentAdvertiseTable extends Migration
+class CreateAdvertiseApartmentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateApartmentAdvertiseTable extends Migration
      */
     public function up()
     {
-        Schema::create('apartment_advertise', function (Blueprint $table) {
+        Schema::create('advertise_apartment', function (Blueprint $table) {
             $table->id();
             // $table->timestamps();
             $table->unsignedBigInteger('apartment_id');
@@ -26,7 +26,6 @@ class CreateApartmentAdvertiseTable extends Migration
             $table->date('end_date');
             $table->boolean('status'); // Pagamento accettato o no
             $table->string('transaction_id');
-
         });
     }
 
@@ -37,6 +36,6 @@ class CreateApartmentAdvertiseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apartment_advertise');
+        Schema::dropIfExists('advertise_apartment');
     }
 }

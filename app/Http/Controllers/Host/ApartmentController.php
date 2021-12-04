@@ -23,6 +23,7 @@ class ApartmentController extends Controller
         $user_id = Auth::user()->id;
         $apartments = Apartment::where('user_id', $user_id)->get();
         return view('host.apartments.index', compact('apartments'));
+        
     }
 
     /**
@@ -73,7 +74,6 @@ class ApartmentController extends Controller
         ]);
     
         $form_data_apartment = $request->all();
-
         //Verifico se l'immagine è stata caricata
         if(array_key_exists('image', $form_data_apartment)){
             $img_path = Storage::put('apartment_image', $form_data_apartment['image']);
@@ -94,16 +94,19 @@ class ApartmentController extends Controller
         }
         $new_apartment->slug = $slug;
         //Fino a qui creo solo l'appartamento con tutti i valori delle colonne ma senza assegnargli l'id
+  
         $new_apartment->save();
         //Faccio qui l'attach perchè dopo il salvataggio l'appartamento avrà l'id assegnato a cui dobbiamo collegare gli id dei servizi 
         
         //$new_apartment->services()->attach($form_data_apartment['services']);
+ 
+        
         if(array_key_exists('services', $form_data_apartment)) {
             $new_apartment->services()->attach($form_data_apartment['services']);
         } else {
             $new_apartment->services()->attach([]);
         }
-      
+        
         return redirect()->route('host.apartments.index');
     }
 
