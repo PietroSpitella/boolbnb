@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Host;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\DB;
 use App\Advertise;
 use App\Apartment;
 
@@ -43,29 +44,7 @@ class AdvertiseController extends Controller
      */
     public function store(Request $request)
     {
-        /* 
-        CODICE ALBERTO
-        -----------------
-        $form_adv = $request->all();
-        $timestamp = now()->timestamp;
-        $form_adv['start_date'] = $timestamp;
-        $duration = 0;
-        if($request->advertise_id === '1') {
-            $duration = (24*60*60);
-        }
-        if($request->advertise_id === '2') {
-            $duration = (72*60*60);
-        }
-        if($request->advertise_id === '3') {
-            $duration = (144*60*60);
-        }
-        $end_date = $timestamp + $duration;
-        $form_adv['end_date'] = $end_date;
-        ------------------
-        FINE CODICE ALBERTO
-        */
-
-        //CODICE ROBERTO
+    
         //Richiesta dal form
         $form_adv = $request->all();
         //Devo capire come partire da una data e in base al pacchetto scelto, aggiungere le ore
@@ -87,16 +66,74 @@ class AdvertiseController extends Controller
 
         //Sponsorizzate Roberto
         //Id appartamento da sponsorizzare
-        $apartment_id = $form_adv['apartment_id'];
+        $apartment_id = (int) $form_adv['apartment_id'];
         $advertise_id = $form_adv['advertise_id'];
         
         //QUESTO è l'appartamento completo che l'utente vuole sponsorizzare
         $apartment = Apartment::find($apartment_id);
         //A questo '$apartment' devo attaccare l'advertise_id
         
-        //Invio dei dati al DB (tabella ponte)
+        //Invio dei dati al DB (tabella ponte) 
+        
+        $advTable = DB::table('advertises')
+        ->join('advertise_apartment','advertises.id', '=', 'advertise_apartment.advertise_id')
+        ->join('apartments', 'advertise_apartment.apartment_id', '=', 'apartments.id')        
+        ->get()
+        ;
+        if((count($advTable) === 0)) {
+            $apartment->advertises()->attach($form_adv['advertise_id'], 
+            [
+                'start_date' => $start_date,
+                'end_date' => $end_date,
+                'status' => true,
+                'transaction_id' => 'transazione avvenuta'
+            ]);
+        }
+
+        $arr = [];
+        for($i = 0; $i < count($advTable); $i++) {
+            array_push($arr, $advTable[$i]);
+            foreach ($arr as $item) {
+                if((($item->apartment_id) !== $apartment_id) && ($start_date <= $end_date) ){
+                    $apartment->advertises()->attach($form_adv['advertise_id'], 
+                    [
+                        'start_date' => $start_date,
+                        'end_date' => $end_date,
+                        'status' => true,
+                        'transaction_id' => 'transazione avvenuta'
+                    ]); 
+                }elseif(( ($item->apartment_id) == $apartment_id) && (($item->advertise_id) == $advertise_id) && ($start_date > $end_date)) {
+                    $apartment->advertises()->attach($form_adv['advertise_id'], 
+                    [
+                        'start_date' => $start_date,
+                        'end_date' => $end_date,
+                        'status' => true,
+                        'transaction_id' => 'transazione avvenuta'
+                    ]); 
+                }else {
+                    dd('esiste');
+                }
+                
+            }
+        }
+
+        /*
+        if((count($advTable) >= 0)) {
+            $apartment->advertises()->attach($form_adv['advertise_id'], 
+            [
+                'start_date' => $start_date,
+                'end_date' => $end_date,
+                'status' => true,
+                'transaction_id' => 'transazione avvenuta'
+            ]);
+        }
+        
+        */
         
         
+        
+       
+        /*
         $apartment->advertises()->attach($form_adv['advertise_id'], 
         [
             'start_date' => $start_date,
@@ -104,6 +141,16 @@ class AdvertiseController extends Controller
             'status' => true,
             'transaction_id' => 'transazione avvenuta'
         ]);
+        */
+        /*
+        //VERIFICO LE RICHIESTE E FACCIO LE RICERCHE
+
+        if($request->has('id')) {
+            $deck_table->where('service_id', '=', $request->input('id'));
+        }
+        if($request->has('type')) {
+            $deck_table->where('type', '=', $request->query('type'));
+        }
         
         /*
         $apartment->advertises()->attach($form_adv['advertise_id'], 
