@@ -89,12 +89,14 @@ class AdvertiseController extends Controller
         //Id appartamento da sponsorizzare
         $apartment_id = $form_adv['apartment_id'];
         $advertise_id = $form_adv['advertise_id'];
-       
+        
         //QUESTO è l'appartamento completo che l'utente vuole sponsorizzare
         $apartment = Apartment::find($apartment_id);
         //A questo '$apartment' devo attaccare l'advertise_id
         
         //Invio dei dati al DB (tabella ponte)
+        
+        
         $apartment->advertises()->attach($form_adv['advertise_id'], 
         [
             'start_date' => $start_date,
@@ -103,6 +105,15 @@ class AdvertiseController extends Controller
             'transaction_id' => 'transazione avvenuta'
         ]);
         
+        /*
+        $apartment->advertises()->attach($form_adv['advertise_id'], 
+        [
+            'start_date' => $start_date,
+            'end_date' => $end_date,
+            'status' => true,
+            'transaction_id' => 'transazione avvenuta'
+        ]);
+        */
         
         return redirect()->route('host.apartments.index');
         
