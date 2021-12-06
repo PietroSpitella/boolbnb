@@ -26,7 +26,9 @@ class Apartment extends Model
         return $this->belongsToMany('App\Service');
     }
 
+    
     public function advertises(){
         return $this->belongsToMany('App\Advertise');
     }
+    
 }

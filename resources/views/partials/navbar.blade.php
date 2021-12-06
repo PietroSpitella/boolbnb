@@ -10,10 +10,11 @@
         <div class="collapse navbar-collapse col-md-6 col-sm-6 justify-content-center" id="navbarScroll">
             <ul class="navbar-nav mr-2 my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
               <li class="nav-item {{Request::route()->getName()=='index'? 'active' : 'null'}}">
-                <a class="nav-link" href="{{route('index')}}">Home</a>
+                <a class="nav-link" href="{{url('/')}}">Home</a>
               </li>
-              <li class="nav-item {{Request::route()->getName()=='apartments.index'? 'active' : 'null'}}">
-                <a class="nav-link" href="{{route('apartments.index')}}">Apartments</a>
+
+              <li class="nav-item {{Request::route()->getName()=='discoverPage'? 'active' : 'null'}}">
+                <a class="nav-link" href="{{url('/discover')}}">Discover</a>
               </li>
               <li class="nav-item {{Request::route()->getName()=='about-us'? 'active' : 'null'}}">
                 <a class="nav-link" href="{{url('/about-us')}}">About Us</a>

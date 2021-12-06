@@ -9,55 +9,21 @@
         {{-- Titoli --}}
         <div class="row align-items-center flex-column mb-4">
             <div class="col-auto mx-auto text-center">
-                <h2 class="mb-4"><strong>Book & Experience Amazing Places</strong></h2>
-                <h5 class="mb-0">Booking and Rental</h5>
+                <h2 class="mb-4"><strong>Scopri nuovi posti e partecipa a esperienze fantastiche!</strong></h2>
+                <h5 class="mb-0">Inizia scegliendo la tua prossima destinazione</h5>
             </div>
         </div>
     
         {{-- Form di ricerca appartamenti --}}
-        <form action="{{route('apartments.index')}}" method="">
-        @csrf
-            <div class="form-row">
-                <div class="col-12 col-lg-4 mb-2 position-relative">
-                    <input
-                        name="title"
-                        type="text"
-                        class="form-control form-control-lg pl-5"
-                        placeholder="where do you want to go?"
-                    >
-                    <i class="fas fa-search"></i>
-                </div>
-                <div class="col col-lg mb-2">
-                    <input 
-                        name="h_checkin"
-                        type="text"
-                        class="form-control form-control-lg pl-5"
-                        placeholder="check-in"
-                    >
-                    <i class="far fa-calendar-alt"></i>
-                </div>
-                <div class="col col-lg mb-2">
-                    <input
-                        name="h_checkout"
-                        type="text"
-                        class="form-control form-control-lg pl-5"
-                        placeholder="check-out">
-                    <i class="far fa-calendar-alt"></i>
-                </div>
-                <div class="col-12 col-lg mb-2">
-                    <input
-                        name="n_guests"
-                        type="text"
-                        class="form-control form-control-lg pl-5"
-                        placeholder="guests">
-                    <i class="far fa-user"></i>
-                </div>
-                {{-- SUBMIT --}}
-                <div class="col 12 col-lg-auto mb-2">
-                    <button type="submit" class="btn button_register h-100 w-100">Search</button>
+        <div class="row">
+                {{-- DA FARE: aggiungere icone fontawesome negli imput con un ::after --}}
+            <div class="input-group mb-3">
+                <input type="text" class="form-control h-100 form-control-lg pl-5" id="input_destination" name="destination" placeholder="Dove Vuoi Andare?" aria-label="Destination" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-danger bg-danger text-light" type="button">Search</button>
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </section>
 

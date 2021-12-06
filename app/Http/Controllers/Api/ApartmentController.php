@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Apartment;
 use App\Service;
-
+use App\Message;
 class ApartmentController extends Controller
 {
     public function searchApartment(Request $request){
@@ -26,7 +26,8 @@ class ApartmentController extends Controller
         $ids = explode(',', $request->services);
 
         // Creo il primo filtro in base a ciò che mi viene passato dalla query. Se non mi viene passato nessun valore lo inizializzo io con 0
-        $filteredApartments = Apartment::where('n_rooms', '>=', $resQuery['n_rooms'] ?? 0)
+        $filteredApartments = Apartment::where('visibility', 1)
+        ->where('n_rooms', '>=', $resQuery['n_rooms'] ?? 0)
         ->where('n_beds', '>=', $resQuery['n_beds'] ?? 0)
         ->where('n_guests', '>=', $resQuery['n_guests'] ?? 0)
         ->get();
@@ -42,18 +43,19 @@ class ApartmentController extends Controller
         $rangeDistance = $request->distance;
 
         // Salvo la lat e long della città cercata dall'utente e se non c'è imposto quella di una città (in questo caso Torino)
-        $lat = $request->lat ?? 45.07049;
-        $long = $request->long ?? 7.68682;
+        $lat = $request->lat;
+        $long = $request->long;
 
         // Controllo tramite un foreach che i singoli appartamenti che si sono salvati dal primo filtro risultino nel raggio della distanza che ha inserito l'utente
         $filteredApartmentsByDistance = [];
         foreach($filteredApartments as $apartment){
             $distancePoints = distanceCalculation($lat, $long, $apartment->lat, $apartment->long, 2);
-
             if($distancePoints < $rangeDistance || ($lat === null && $long === null)){
                 $filteredApartmentsByDistance[] = $apartment;
             }
         };
+
+
 
         $services = Service::all();
 
@@ -62,6 +64,42 @@ class ApartmentController extends Controller
             'success' => true,
             "results" => $filteredApartmentsByDistance,
             'services' => $services
+        ]);
+    }
+
+    public function show($slug){
+        $apartment = Apartment::where('slug', $slug)->with(['services'])->first();
+
+        return response()->json([
+            'success'=>true,
+            'results'=>$apartment
+        ]);
+    }
+
+    public function sendMessage(Request $request){
+        $request->validate([
+            'apartment_id'=>'required',
+            'apartment_title'=>'required',
+            'fullname'=>'required',
+            'email'=>'required',
+            'message'=>'required',
+        ]);
+        $apartment_id = $request->apartment_id;
+        $message_data = $request->all();
+        $new_message = new Message();
+        $new_message->fill($message_data);
+        $new_message->save();
+
+        return response()->json([
+            'success' => true
+        ]);
+    }
+
+    public function sendCity(Request $request){
+        $data = $request->all();
+        return response()->json([
+            'success'=>true,
+            'results'=>$data
         ]);
     }
 }

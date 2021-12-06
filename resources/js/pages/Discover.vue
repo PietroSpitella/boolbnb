@@ -1,5 +1,6 @@
 <template>
-  <div class="container my-3">
+  <div v-if="!isLoading" class="container my-3">
+    {{ destination }}
     <div class="form-group">
       <input
         type="text"
@@ -81,14 +82,17 @@
               {{ apartment.city }}
             </h6>
             <p class="card-text">{{ apartment.description }}</p>
-            <a
-              :href="'/apartments/' + apartment.id"
-              :id="apartment.id"
-              target="_blank"
+            <router-link
+              :to="{
+                name: 'Apartment',
+                params: { slug: apartment.slug },
+              }"
+              meta="apartment"
               class="card-link"
+              target="_blank"
               @click="getData"
-              >Visualizza</a
-            >
+              >Visualizza
+            </router-link>
           </div>
         </div>
       </div>
@@ -98,6 +102,7 @@
 <script>
 export default {
   name: "Main",
+  props: ["destination"],
   data() {
     return {
       distance: "20", // Inizializzo con 20 come richiesto dal Brief
@@ -108,8 +113,8 @@ export default {
       city: "",
       apiKey: ".json?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
       apartments: [],
-      lat: "",
-      long: "",
+      lat: 45.07049,
+      long: 7.68682,
       citySearched: false,
       services: [],
       selectedServices: [],
@@ -117,9 +122,13 @@ export default {
       userIP: "",
       apartmentID: "",
       today: "",
+      isLoading: true,
     };
   },
   methods: {
+    clicked() {
+      console.log("clicked");
+    },
     async getServices() {
       let resServices = await axios.get(this.myUrl);
       this.services = resServices.data.services;
@@ -145,26 +154,7 @@ export default {
         )
         .then((res) => {
           this.apartments = res.data.results;
-          const url = new URL(location.href.split("?")[0]);
-          history.pushState(
-            null,
-            "",
-            url +
-              "?n_guests=" +
-              this.guests +
-              "&n_rooms=" +
-              this.rooms +
-              "&n_baths=" +
-              this.rooms +
-              "&distance=" +
-              this.distance +
-              "&lat=" +
-              this.lat +
-              "&long=" +
-              this.long +
-              "&services=" +
-              this.selectedServices
-          );
+          this.isLoading = false;
         });
     },
     getCity() {
@@ -221,11 +211,11 @@ export default {
           console.log(err);
         });
     },
-
-    created() {
-      this.getApartments();
-      this.getServices();
-    },
+  },
+  created() {
+    this.getApartments();
+    this.getCity();
+    this.getServices();
   },
 };
 </script>

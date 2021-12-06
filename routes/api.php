@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,4 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/apartments', 'Api\ApartmentController@searchApartment');
+Route::get('/apartment/{slug}', 'Api\ApartmentController@show');
 Route::post('/statistics', 'Api\StatisticController@store');
+Route::post('/contacts', 'Api\ApartmentController@sendMessage');
+// Route::post('/sendcity', 'Api\ApartmentController@sendCity');
+// Route::get('/sendcity', 'Api\ApartmentController@sendCity');
