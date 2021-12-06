@@ -10,32 +10,32 @@
               alt="Image inserted"
             />
           </div>
-          <p class="fs-25 font-weight-bold pt-3 m-0">{{ apartment.title }}</p>
+          <p class="fs-25 font-weight-bold pt-3 m-0 text-capitalize">{{ apartment.title }}</p>
           <p class="fs-15">
-            <i class="fas fa-map-marker-alt fs-15"></i> {{ apartment.city }},
+            <i class="fas fa-map-marker-alt fs-15 text-capitalize"></i> {{ apartment.city }},
             {{ apartment.street }}, {{ apartment.house_number }}
           </p>
 
           <div class="div-bordered text-center mt-3">
             <div class="p-4">
               <i class="fas fa-home fs-30 color-grey-icon"></i>
-              <p class="fs-15 text-capitalize font-weight-bold">
+              <p class="fs-15 text-capitalize font-weight-bold text-capitalize">
                 Type {{ apartment.type }}
               </p>
             </div>
           </div>
 
           <div class="div-bordered d-flex text-center mb-3">
-            <div
-              class="
-                div-bordered-2 div-bordered-3 div-bordered-4
-                icon-separation
-                p-4
-              "
-            >
+            <div class="div-bordered-2 div-bordered-3 div-bordered-4 icon-separation p-4">
               <i class="fas fa-bed fs-20 color-grey-icon"></i>
               <p class="fs-15 text-capitalize font-weight-bold">
-                Bedrooms {{ apartment.n_beds }}
+                Beds {{ apartment.n_beds }}
+              </p>
+            </div>
+            <div class="div-bordered-2 div-bordered-3 div-bordered-4 icon-separation p-4">
+              <i class="fas fa-door-closed fs-20 color-grey-icon"></i>
+              <p class="fs-15 text-capitalize font-weight-bold">
+                Rooms {{ apartment.n_rooms }}
               </p>
             </div>
             <div class="div-bordered-3 icon-separation p-4">
@@ -44,13 +44,7 @@
                 Guests {{ apartment.n_guests }}
               </p>
             </div>
-            <div
-              class="
-                div-bordered-2 div-bordered-3 div-bordered-4
-                icon-separation
-                p-4
-              "
-            >
+            <div class="div-bordered-2 div-bordered-3 div-bordered-4 icon-separation p-4">
               <i class="far fa-clone fs-20 color-grey-icon"></i>
               <p class="fs-15 text-capitalize font-weight-bold">
                 Mq {{ apartment.mq }}
@@ -59,7 +53,7 @@
           </div>
 
           <h4 class="font-weight-bold">Description</h4>
-          <p class="fs-15 pb-3 div-bordered-3">{{ apartment.description }}</p>
+          <p class="fs-15 pb-3 div-bordered-3 text-capitalize">{{ apartment.description }}</p>
 
           <div class="pb-3 div-bordered-3">
             <h4 class="font-weight-bold">Details</h4>
@@ -68,32 +62,28 @@
                 <p class="fs-15">
                   <i class="far fa-circle fs-12"></i> ID: {{ apartment.id }}
                 </p>
-                <p class="fs-15">
+                <p class="fs-15 text-capitalize">
                   <i class="far fa-circle fs-12"></i> Pet: {{ apartment.pet }}
                 </p>
-                <p class="fs-15">
-                  <i class="far fa-circle fs-12"></i> Checkin time:
-                  {{ apartment.h_checkin }}
+                <p class="fs-15 text-capitalize">
+                  <i class="far fa-circle fs-12"></i> Checkin time: {{ apartment.h_checkin }}
                 </p>
-                <p class="fs-15">
-                  <i class="far fa-circle fs-12"></i> Checkout time:
-                  {{ apartment.h_checkout }}
+                <p class="fs-15 text-capitalize">
+                  <i class="far fa-circle fs-12"></i> Checkout time: {{ apartment.h_checkout }}
                 </p>
               </div>
               <div class="details-right">
-                <p class="fs-15">
+                <p class="fs-15 text-capitalize">
                   <i class="far fa-circle fs-12"></i> Type: {{ apartment.type }}
                 </p>
-                <p class="fs-15">
+                <p class="fs-15 text-capitalize">
                   <i class="far fa-circle fs-12"></i> City: {{ apartment.city }}
                 </p>
-                <p class="fs-15">
-                  <i class="far fa-circle fs-12"></i> Street:
-                  {{ apartment.street }}
+                <p class="fs-15 text-capitalize">
+                  <i class="far fa-circle fs-12"></i> Street: {{ apartment.street }}
                 </p>
                 <p class="fs-15">
-                  <i class="far fa-circle fs-12"></i> House number:
-                  {{ apartment.house_number }}
+                  <i class="far fa-circle fs-12"></i> House number: {{ apartment.house_number }}
                 </p>
               </div>
             </div>
@@ -111,7 +101,7 @@
           >
             <div
               class="pr-4"
-              v-for="service in apartment.service"
+              v-for="service in apartment.services"
               :key="service.id"
             >
               <p class="fs-15">

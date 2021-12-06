@@ -9,9 +9,11 @@
         placeholder="Città"
         class="form-control"
       />
-      <button class="btn btn-primary my-3" @click="getCity" id="getCityBtn">
-        Vai
-      </button>
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-login-register px-3 my-3" @click="getCity" id="getCityBtn">
+          Vai
+        </button>
+      </div>
     </div>
     <template>
       <div v-if="citySearched">

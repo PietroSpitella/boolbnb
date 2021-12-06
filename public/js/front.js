@@ -1983,6 +1983,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactForm",
   props: ["apartment"],
@@ -2335,16 +2337,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Apartment",
@@ -2419,6 +2411,8 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+//
+//
 //
 //
 //
@@ -4554,7 +4548,7 @@ var render = function () {
       [
         _c("div", { staticClass: "d-flex" }, [
           _c("div", { staticClass: "form-group w-50 mr-3 my-3" }, [
-            _c("label", { attrs: { for: "fullname" } }, [_vm._v("Nome:")]),
+            _c("label", { attrs: { for: "fullname" } }, [_vm._v("Full Name:")]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -4607,7 +4601,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "message" } }, [_vm._v("Testo:")]),
+          _c("label", { attrs: { for: "message" } }, [_vm._v("Text:")]),
           _vm._v(" "),
           _c("textarea", {
             directives: [
@@ -4632,14 +4626,7 @@ var render = function () {
           }),
         ]),
         _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-login-register p-2",
-            attrs: { type: "submit" },
-          },
-          [_vm._v("\n      Send Message\n    ")]
-        ),
+        _vm._m(0),
         _vm._v(" "),
         _vm.messageSent
           ? _c(
@@ -4650,8 +4637,10 @@ var render = function () {
                 attrs: { role: "alert" },
               },
               [
-                _vm._v("\n      Messaggio inviato con successo!\n      "),
-                _vm._m(0),
+                _vm._v(
+                  "\n      The message has been successfully sent!\n      "
+                ),
+                _vm._m(1),
               ]
             )
           : _vm._e(),
@@ -4660,6 +4649,21 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d-flex justify-content-end " }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-login-register p-2",
+          attrs: { type: "submit" },
+        },
+        [_vm._v("\n        Send Message\n      ")]
+      ),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -4988,12 +4992,19 @@ var render = function () {
                   }),
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "fs-25 font-weight-bold pt-3 m-0" }, [
-                  _vm._v(_vm._s(_vm.apartment.title)),
-                ]),
+                _c(
+                  "p",
+                  {
+                    staticClass:
+                      "fs-25 font-weight-bold pt-3 m-0 text-capitalize",
+                  },
+                  [_vm._v(_vm._s(_vm.apartment.title))]
+                ),
                 _vm._v(" "),
                 _c("p", { staticClass: "fs-15" }, [
-                  _c("i", { staticClass: "fas fa-map-marker-alt fs-15" }),
+                  _c("i", {
+                    staticClass: "fas fa-map-marker-alt fs-15 text-capitalize",
+                  }),
                   _vm._v(
                     " " +
                       _vm._s(_vm.apartment.city) +
@@ -5013,7 +5024,10 @@ var render = function () {
                     _vm._v(" "),
                     _c(
                       "p",
-                      { staticClass: "fs-15 text-capitalize font-weight-bold" },
+                      {
+                        staticClass:
+                          "fs-15 text-capitalize font-weight-bold text-capitalize",
+                      },
                       [
                         _vm._v(
                           "\n              Type " +
@@ -5033,7 +5047,7 @@ var render = function () {
                       "div",
                       {
                         staticClass:
-                          "\n              div-bordered-2 div-bordered-3 div-bordered-4\n              icon-separation\n              p-4\n            ",
+                          "div-bordered-2 div-bordered-3 div-bordered-4 icon-separation p-4",
                       },
                       [
                         _c("i", {
@@ -5048,8 +5062,37 @@ var render = function () {
                           },
                           [
                             _vm._v(
-                              "\n              Bedrooms " +
+                              "\n              Beds " +
                                 _vm._s(_vm.apartment.n_beds) +
+                                "\n            "
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "div-bordered-2 div-bordered-3 div-bordered-4 icon-separation p-4",
+                      },
+                      [
+                        _c("i", {
+                          staticClass:
+                            "fas fa-door-closed fs-20 color-grey-icon",
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "fs-15 text-capitalize font-weight-bold",
+                          },
+                          [
+                            _vm._v(
+                              "\n              Rooms " +
+                                _vm._s(_vm.apartment.n_rooms) +
                                 "\n            "
                             ),
                           ]
@@ -5087,7 +5130,7 @@ var render = function () {
                       "div",
                       {
                         staticClass:
-                          "\n              div-bordered-2 div-bordered-3 div-bordered-4\n              icon-separation\n              p-4\n            ",
+                          "div-bordered-2 div-bordered-3 div-bordered-4 icon-separation p-4",
                       },
                       [
                         _c("i", {
@@ -5117,9 +5160,11 @@ var render = function () {
                   _vm._v("Description"),
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "fs-15 pb-3 div-bordered-3" }, [
-                  _vm._v(_vm._s(_vm.apartment.description)),
-                ]),
+                _c(
+                  "p",
+                  { staticClass: "fs-15 pb-3 div-bordered-3 text-capitalize" },
+                  [_vm._v(_vm._s(_vm.apartment.description))]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "pb-3 div-bordered-3" }, [
                   _c("h4", { staticClass: "font-weight-bold" }, [
@@ -5143,7 +5188,7 @@ var render = function () {
                           ),
                         ]),
                         _vm._v(" "),
-                        _c("p", { staticClass: "fs-15" }, [
+                        _c("p", { staticClass: "fs-15 text-capitalize" }, [
                           _c("i", { staticClass: "far fa-circle fs-12" }),
                           _vm._v(
                             " Pet: " +
@@ -5152,19 +5197,19 @@ var render = function () {
                           ),
                         ]),
                         _vm._v(" "),
-                        _c("p", { staticClass: "fs-15" }, [
+                        _c("p", { staticClass: "fs-15 text-capitalize" }, [
                           _c("i", { staticClass: "far fa-circle fs-12" }),
                           _vm._v(
-                            " Checkin time:\n                " +
+                            " Checkin time: " +
                               _vm._s(_vm.apartment.h_checkin) +
                               "\n              "
                           ),
                         ]),
                         _vm._v(" "),
-                        _c("p", { staticClass: "fs-15" }, [
+                        _c("p", { staticClass: "fs-15 text-capitalize" }, [
                           _c("i", { staticClass: "far fa-circle fs-12" }),
                           _vm._v(
-                            " Checkout time:\n                " +
+                            " Checkout time: " +
                               _vm._s(_vm.apartment.h_checkout) +
                               "\n              "
                           ),
@@ -5172,7 +5217,7 @@ var render = function () {
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "details-right" }, [
-                        _c("p", { staticClass: "fs-15" }, [
+                        _c("p", { staticClass: "fs-15 text-capitalize" }, [
                           _c("i", { staticClass: "far fa-circle fs-12" }),
                           _vm._v(
                             " Type: " +
@@ -5181,7 +5226,7 @@ var render = function () {
                           ),
                         ]),
                         _vm._v(" "),
-                        _c("p", { staticClass: "fs-15" }, [
+                        _c("p", { staticClass: "fs-15 text-capitalize" }, [
                           _c("i", { staticClass: "far fa-circle fs-12" }),
                           _vm._v(
                             " City: " +
@@ -5190,10 +5235,10 @@ var render = function () {
                           ),
                         ]),
                         _vm._v(" "),
-                        _c("p", { staticClass: "fs-15" }, [
+                        _c("p", { staticClass: "fs-15 text-capitalize" }, [
                           _c("i", { staticClass: "far fa-circle fs-12" }),
                           _vm._v(
-                            " Street:\n                " +
+                            " Street: " +
                               _vm._s(_vm.apartment.street) +
                               "\n              "
                           ),
@@ -5202,7 +5247,7 @@ var render = function () {
                         _c("p", { staticClass: "fs-15" }, [
                           _c("i", { staticClass: "far fa-circle fs-12" }),
                           _vm._v(
-                            " House number:\n                " +
+                            " House number: " +
                               _vm._s(_vm.apartment.house_number) +
                               "\n              "
                           ),
@@ -5222,7 +5267,7 @@ var render = function () {
                     staticClass:
                       "\n            additional_services\n            d-flex\n            div-bordered-3\n            flex-wrap\n            pt-2\n            pb-3\n          ",
                   },
-                  _vm._l(_vm.apartment.service, function (service) {
+                  _vm._l(_vm.apartment.services, function (service) {
                     return _c("div", { key: service.id, staticClass: "pr-4" }, [
                       _c("p", { staticClass: "fs-15" }, [
                         _c("i", { staticClass: "fs-15", class: service.icon }),
@@ -5315,15 +5360,17 @@ var render = function () {
               },
             }),
             _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-primary my-3",
-                attrs: { id: "getCityBtn" },
-                on: { click: _vm.getCity },
-              },
-              [_vm._v("\n      Vai\n    ")]
-            ),
+            _c("div", { staticClass: "d-flex justify-content-end" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-login-register px-3 my-3",
+                  attrs: { id: "getCityBtn" },
+                  on: { click: _vm.getCity },
+                },
+                [_vm._v("\n        Vai\n      ")]
+              ),
+            ]),
           ]),
           _vm._v(" "),
           [
