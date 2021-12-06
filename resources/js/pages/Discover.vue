@@ -90,7 +90,7 @@
               meta="apartment"
               class="card-link"
               target="_blank"
-              @click="getData;"
+              @click="getData"
               >Visualizza
             </router-link>
           </div>
@@ -126,6 +126,9 @@ export default {
     };
   },
   methods: {
+    clicked() {
+      console.log("clicked");
+    },
     async getServices() {
       let resServices = await axios.get(this.myUrl);
       this.services = resServices.data.services;
@@ -208,16 +211,12 @@ export default {
           console.log(err);
         });
     },
-    getCity() {
-      console.log(this.destination);
-    },
   },
   created() {
     this.getApartments();
     this.getCity();
     this.getServices();
   },
-  mounted() {},
 };
 </script>
 
