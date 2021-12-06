@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Apartment;
+use App\Service;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -24,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $services = Service::all();
+        $apartments = Apartment::all();
+        return view('index', compact('apartments', 'services'));
     }
 
     public function about(){
