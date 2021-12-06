@@ -19,7 +19,7 @@
                 <p class="fs-15">Number of guests: {{$apartment->n_guests}}</p>
                 <p class="fs-15">Servizi aggiuntivi:
                     @foreach($apartment->services as $service)
-                        {{($service->name)}}@if($service->name).@else,@endif
+                        {{($service->name)}}@if($apartment === end($service)).@else,@endif
                     @endforeach
                 </p>
                 <p class="fs-15">Pet: {{$apartment->pet}}</p>
