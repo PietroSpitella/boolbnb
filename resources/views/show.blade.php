@@ -35,7 +35,11 @@
             <div class="div-bordered d-flex text-center mb-3">
                 <div class="div-bordered-2 div-bordered-3 div-bordered-4 icon-separation p-4">
                     <i class="fas fa-bed fs-20 color-grey-icon"></i>
-                    <p class="fs-15 text-capitalize font-weight-bold">Bedrooms {{$apartment->n_beds}}</p>
+                    <p class="fs-15 text-capitalize font-weight-bold">Beds {{$apartment->n_beds}}</p>
+                </div>
+                <div class="div-bordered-2 div-bordered-3 div-bordered-4 icon-separation p-4">
+                    <i class="fas fa-door-closed fs-20 color-grey-icon"></i>
+                    <p class="fs-15 text-capitalize font-weight-bold">Rooms {{$apartment->n_rooms}}</p>
                 </div>
                 <div class="div-bordered-3 icon-separation p-4">
                     <i class="fas fa-user-friends fs-20 color-grey-icon"></i>
