@@ -2464,11 +2464,7 @@ textarea.form-control.is-valid {
   font-size: 0.7875rem;
   line-height: 1.6;
   color: #ffffff;
-  my_apartments_branch
   background-color: rgba(227, 28, 92, 0.9);
-
-  background-color: rgba(227, 52, 47, 0.9);
-  master
   border-radius: 0.25rem;
 }
 
@@ -2516,11 +2512,7 @@ textarea.form-control.is-invalid {
 .custom-select.is-invalid {
   border-color: #E31C5C;
   padding-right: calc(0.75em + 2.3125rem) !important;
-  my_apartments_branch
   background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") right 0.75rem center/8px 10px no-repeat, #ffffff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23E31C5C' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23E31C5C' stroke='none'/%3e%3c/svg%3e") center right 1.75rem/calc(0.8em + 0.375rem) calc(0.8em + 0.375rem) no-repeat;
-
-  background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") right 0.75rem center/8px 10px no-repeat, #ffffff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23e3342f' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23e3342f' stroke='none'/%3e%3c/svg%3e") center right 1.75rem/calc(0.8em + 0.375rem) calc(0.8em + 0.375rem) no-repeat;
-  master
 }
 
 .was-validated .custom-select:invalid:focus,
@@ -2902,59 +2894,37 @@ fieldset:disabled a.btn {
 
 .btn-danger {
   color: #ffffff;
-  my_apartments_branch
   background-color: #E31C5C;
   border-color: #E31C5C;
-  background-color: #e3342f;
-  border-color: #e3342f;
-  master
 }
 
 .btn-danger:hover {
   color: #ffffff;
-  my_apartments_branch
   background-color: #c1184e;
   border-color: #b6164a;
-
-  background-color: #d0211c;
-  border-color: #c51f1a;
-  master
 }
 
 .btn-danger:focus,
 .btn-danger.focus {
   color: #ffffff;
-  my_apartments_branch
   background-color: #c1184e;
   border-color: #b6164a;
   box-shadow: 0 0 0 0.2rem rgba(231, 62, 116, 0.5);
-  background-color: #d0211c;
-  border-color: #c51f1a;
-  box-shadow: 0 0 0 0.2rem rgba(231, 82, 78, 0.5);
-  master
 }
 
 .btn-danger.disabled,
 .btn-danger:disabled {
   color: #ffffff;
-  my_apartments_branch
   background-color: #E31C5C;
   border-color: #E31C5C;
-  background-color: #e3342f;
-  border-color: #e3342f;
-  master
 }
 
 .btn-danger:not(:disabled):not(.disabled):active,
 .btn-danger:not(:disabled):not(.disabled).active,
 .show > .btn-danger.dropdown-toggle {
   color: #ffffff;
-  my_apartments_branch
   background-color: #b6164a;
   border-color: #aa1545;
-  background-color: #c51f1a;
-  border-color: #b91d19;
-  master
 }
 
 .btn-danger:not(:disabled):not(.disabled):active:focus,
@@ -3232,12 +3202,8 @@ fieldset:disabled a.btn {
 
 .btn-outline-danger:hover {
   color: #ffffff;
-  my_apartments_branch
   background-color: #E31C5C;
   border-color: #E31C5C;
-  background-color: #e3342f;
-  border-color: #e3342f;
-  master
 }
 
 .btn-outline-danger:focus,
@@ -3255,12 +3221,8 @@ fieldset:disabled a.btn {
 .btn-outline-danger:not(:disabled):not(.disabled).active,
 .show > .btn-outline-danger.dropdown-toggle {
   color: #ffffff;
-  my_apartments_branch
   background-color: #E31C5C;
   border-color: #E31C5C;
-  background-color: #e3342f;
-  border-color: #e3342f;
-  master
 }
 
 .btn-outline-danger:not(:disabled):not(.disabled):active:focus,
@@ -5519,19 +5481,13 @@ a.badge-warning.focus {
 
 .badge-danger {
   color: #ffffff;
-  my_apartments_branch
   background-color: #E31C5C;
-  background-color: #e3342f;
-  master
 }
 
 a.badge-danger:hover,
 a.badge-danger:focus {
   color: #ffffff;
-  y_apartments_branch
   background-color: #b6164a;
-  background-color: #c51f1a;
-  master
 }
 
 a.badge-danger:focus,
@@ -6134,12 +6090,8 @@ a.badge-dark.focus {
 
 .list-group-item-danger.list-group-item-action.active {
   color: #ffffff;
-  my_apartments_branch
   background-color: #760f30;
   border-color: #760f30;
-  background-color: #761b18;
-  border-color: #761b18;
-  master
 }
 
 .list-group-item-light {
@@ -11055,11 +11007,8 @@ body {
   color: #ffffff;
 }
 
-my_apartments_branch
 .btn-login-register:hover,
 .btn-login-register-green:hover {
-.btn-login-register:hover {
-  master
   color: #ffffff;
   transform: scale(1.1);
 }
