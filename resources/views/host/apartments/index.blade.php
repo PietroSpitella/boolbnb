@@ -15,6 +15,7 @@
                 <div>
                     <a href="{{ route('host.apartments.show', $apartment['id'])}}" class="btn btn-success">Detail Post</a>
                     <a href="{{ route('host.apartments.edit', $apartment['id'])}}" class="btn btn-warning">Modify Post</a>
+                    <a href="{{ route('host.statistics-page', $apartment['id'])}}" class="btn btn-primary">Statistics</a>
                     <form class="d-inline confirm-delete-post" method="POST" action="{{ route('host.apartments.destroy', $apartment['id']) }}">
                         @csrf
                         @method('DELETE')

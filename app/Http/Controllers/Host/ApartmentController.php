@@ -183,8 +183,6 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
-        // $n_visitators = Apartment::where()
-
         if(!$apartment) {
             abort(404);
         }elseif(Auth::user()->id !== $apartment->user_id){
