@@ -154,7 +154,11 @@
     </div>
     
     <p>I campi contrassegnati con il simbolo (*) sono obbligatori</p>
-    <button type="submit" class="d-block btn btn-primary">Modifica appartamento</button>
+
+    <div class="d-flex justify-content-between">
+        <button type="submit" class="d-block btn btn-login-register-green">Modifica appartamento</button>
+        <a href="{{route('host.apartments.index')}}" class="btn btn-login-register p-2">Back</a>
+    </div>
 </form>
 
 {{-- <script>

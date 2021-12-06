@@ -153,6 +153,9 @@
         </div>
         
         <p>Fields marked with the symbol (*) are required</p>
-        <button type="submit" class="d-block btn btn-login-register">Register the apartment</button>
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="d-block btn btn-login-register-green">Register the apartment</button>
+            <a href="{{route('host.apartments.index')}}" class="btn btn-login-register p-2">Back</a>
+        </div>
     </form>
 @endsection

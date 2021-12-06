@@ -11007,9 +11007,19 @@ body {
   color: #ffffff;
 }
 
+my_apartments_branch
+.btn-login-register:hover,
+.btn-login-register-green:hover {
 .btn-login-register:hover {
+  master
   color: #ffffff;
   transform: scale(1.1);
+}
+
+.btn-login-register-green {
+  background-color: #38c172;
+  border: none;
+  color: #ffffff;
 }
 
 .color-red {
@@ -11231,6 +11241,7 @@ nav a img {
   .navbar-hamburger .my-background-navbar {
     margin-left: auto;
     width: 25%;
+    min-width: 92px;
   }
 
   .navbar-hamburger .my-background-navbar .navbar-buttons {
