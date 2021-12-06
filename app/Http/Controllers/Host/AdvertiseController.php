@@ -142,25 +142,6 @@ class AdvertiseController extends Controller
             'transaction_id' => 'transazione avvenuta'
         ]);
         */
-        /*
-        //VERIFICO LE RICHIESTE E FACCIO LE RICERCHE
-
-        if($request->has('id')) {
-            $deck_table->where('service_id', '=', $request->input('id'));
-        }
-        if($request->has('type')) {
-            $deck_table->where('type', '=', $request->query('type'));
-        }
-        
-        /*
-        $apartment->advertises()->attach($form_adv['advertise_id'], 
-        [
-            'start_date' => $start_date,
-            'end_date' => $end_date,
-            'status' => true,
-            'transaction_id' => 'transazione avvenuta'
-        ]);
-        */
         
         return redirect()->route('host.apartments.index');
         
