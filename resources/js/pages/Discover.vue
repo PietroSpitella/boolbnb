@@ -87,10 +87,7 @@
                 name: 'Apartment',
                 params: { slug: apartment.slug },
               }"
-              meta="apartment"
               class="card-link"
-              target="_blank"
-              @click="getData"
               >Visualizza
             </router-link>
           </div>
@@ -118,8 +115,7 @@ export default {
       citySearched: false,
       services: [],
       selectedServices: [],
-      apiIPurl: "https://api.ipify.org/",
-      userIP: "",
+
       apartmentID: "",
       today: "",
       isLoading: true,
@@ -177,39 +173,6 @@ export default {
         );
       }
       this.getApartments();
-    },
-    getData(el) {
-      this.apartmentID = el.target.id;
-      axios
-        .get(this.apiIPurl)
-        .then((res) => {
-          this.userIP = res.data;
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-        .finally(() => {
-          this.sendData();
-        });
-    },
-    sendData() {
-      let today = new Date();
-      let dd = String(today.getDate()).padStart(2, "0");
-      let mm = String(today.getMonth() + 1).padStart(2, "0");
-      let yyyy = today.getFullYear();
-      this.today = yyyy + "/" + mm + "/" + dd;
-      axios
-        .post("api/statistics", {
-          apartment_id: this.apartmentID,
-          data: this.today,
-          visitors: this.userIP,
-        })
-        .then((res) => {
-          res.data.success;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
     },
   },
   created() {

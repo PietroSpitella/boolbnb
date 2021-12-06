@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="container my-3">
-      <div class="row">
+      <div v-if="!isLoading" class="row">
         <div class="col-md-12">
           <div class="d-flex justify-content-center">
             <img
@@ -140,18 +140,54 @@ export default {
       apiUrl: "/api/apartment/",
       apartment: [],
       apartmentId: "",
+      userIp: "",
+      isLoading: true,
+      apiIPurl: "https://api.ipify.org/",
     };
   },
   mounted() {
     axios
-      .get(this.apiUrl + this.$route.params.slug)
-      .then((res) => {
-        this.apartment = res.data.results;
-        this.apartmentId = res.data.results.id;
-      })
-      .catch((err) => {
-        console.log(err);
+      .all([
+        axios.get(this.apiUrl + this.$route.params.slug),
+        axios.get(this.apiIPurl),
+      ])
+      .then(
+        axios.spread((res, res2) => {
+          this.apartment = res.data.results;
+          this.apartmentId = res.data.results.id;
+          this.userIp = res2.data;
+        })
+      )
+      .catch(
+        axios.spread((err, err2) => {
+          console.log(err, err2);
+        })
+      )
+      .finally(() => {
+        this.sendData();
       });
+  },
+  methods: {
+    sendData() {
+      let today = new Date();
+      let dd = String(today.getDate()).padStart(2, "0");
+      let mm = String(today.getMonth() + 1).padStart(2, "0");
+      let yyyy = today.getFullYear();
+      this.today = yyyy + "/" + mm + "/" + dd;
+      axios
+        .post("/api/statistics", {
+          apartment_id: this.apartmentId,
+          data: this.today,
+          visitors: this.userIp,
+        })
+        .then((res) => {
+          res.data.success;
+          this.isLoading = false;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
   created() {
     this.apartment = this.$route.params.data;
