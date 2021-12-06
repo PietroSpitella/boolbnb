@@ -68,9 +68,23 @@ class AdvertiseController extends Controller
         //CODICE ROBERTO
         //Richiesta dal form
         $form_adv = $request->all();
+        //Devo capire come partire da una data e in base al pacchetto scelto, aggiungere le ore
+
+        //Calcolo della data finale;
+        if($form_adv['advertise_id'] === '1') {
+            $end_date=Date('y:m:d', strtotime("+1 days"));
+        } 
+        if($form_adv['advertise_id'] === '2') {
+            $end_date=Date('y:m:d', strtotime("+3 days"));
+        }
+        if($form_adv['advertise_id'] === '3'){
+            $end_date=Date('y:m:d', strtotime("+6 days"));
+        }
+        
         //Data di inizio
+        $start_date = Date('y:m:d');
         
-        
+
         //Sponsorizzate Roberto
         //Id appartamento da sponsorizzare
         $apartment_id = $form_adv['apartment_id'];
@@ -80,10 +94,16 @@ class AdvertiseController extends Controller
         $apartment = Apartment::find($apartment_id);
         //A questo '$apartment' devo attaccare l'advertise_id
         
-        //Punto da cui partire domani
-        $apartment->advertises()->attach($form_adv['advertise_id'], ['start_date' => $form_adv['start_date']]);
+        //Invio dei dati al DB (tabella ponte)
+        $apartment->advertises()->attach($form_adv['advertise_id'], 
+        [
+            'start_date' => $start_date,
+            'end_date' => $end_date,
+            'status' => true,
+            'transaction_id' => 'transazione avvenuta'
+        ]);
         
-    
+        
         return redirect()->route('host.apartments.index');
         
     }
