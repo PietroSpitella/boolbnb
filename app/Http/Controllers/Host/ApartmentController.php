@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Apartment;
+use App\Statistic;
 use App\Service;
 use App\Advertise;
 use Illuminate\Support\Facades\Auth;
@@ -182,6 +183,8 @@ class ApartmentController extends Controller
      */
     public function show(Apartment $apartment)
     {
+        // $n_visitators = Apartment::where()
+
         if(!$apartment) {
             abort(404);
         }elseif(Auth::user()->id !== $apartment->user_id){

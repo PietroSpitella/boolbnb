@@ -180,6 +180,7 @@ export default {
     },
     getData(el) {
       this.apartmentID = el.target.id;
+      console.log(this.apartmentID);
       axios
         .get(this.apiIPurl)
         .then((res) => {
