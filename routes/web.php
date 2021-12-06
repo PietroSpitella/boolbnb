@@ -38,6 +38,7 @@ Route::middleware('auth')->namespace('Host')->prefix('host')->name('host.')
     Route::get('/messages/show/{message}', 'HomeController@showMessage')->name('show-message');
     Route::delete('/messages/delete/{message}', 'HomeController@destroyMessage')->name('delete-message');
     Route::resource('/apartments', 'ApartmentController');
+    Route::resource('/advertises', 'AdvertiseController');
 });
 
 Route::get('/{any}', function () {
