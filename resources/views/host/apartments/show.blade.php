@@ -15,7 +15,13 @@
                 <p class="fs-15">Description: {{$apartment->description}}</p>
                 <p class="fs-15">Mq: {{$apartment->mq}}</p>
                 <p class="fs-15">Number of beds: {{$apartment->n_beds}}</p>
+                <p class="fs-15">Number of rooms: {{$apartment->n_rooms}}</p>
                 <p class="fs-15">Number of guests: {{$apartment->n_guests}}</p>
+                <p class="fs-15">Servizi aggiuntivi:
+                    @foreach($apartment->services as $service)
+                        {{($service->name)}}@if($service->name[0]).@else,@endif
+                    @endforeach
+                </p>
                 <p class="fs-15">Pet: {{$apartment->pet}}</p>
                 <p class="fs-15">Time checkin: {{$apartment->h_checkin}}</p>
                 <p class="fs-15">Time checkout: {{$apartment->h_checkout}}</p>
