@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Apartment;
 
 class HomeController extends Controller
 {
@@ -32,4 +33,9 @@ class HomeController extends Controller
     public function search(){
         return view('discover');
     }
+    public function indexHome(){
+        return view('guest.homepage');
+    }
+
+
 }

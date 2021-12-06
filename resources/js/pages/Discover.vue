@@ -1,5 +1,6 @@
 <template>
-  <div class="container my-3">
+  <div v-if="!isLoading" class="container my-3">
+    {{ destination }}
     <div class="form-group">
       <input
         type="text"
@@ -81,12 +82,17 @@
               {{ apartment.city }}
             </h6>
             <p class="card-text">{{ apartment.description }}</p>
-            <a
-              :href="'/apartments/' + apartment.id"
-              target="_blank"
+            <router-link
+              :to="{
+                name: 'Apartment',
+                params: { slug: apartment.slug },
+              }"
+              meta="apartment"
               class="card-link"
-              >Visualizza</a
-            >
+              target="_blank"
+              @click="getData"
+              >Visualizza
+            </router-link>
           </div>
         </div>
       </div>
@@ -96,24 +102,33 @@
 <script>
 export default {
   name: "Main",
+  props: ["destination"],
   data() {
     return {
       distance: "20", // Inizializzo con 20 come richiesto dal Brief
       rooms: "",
       guests: "",
-      myUrl: "/api/apartments?",
+      myUrl: "/api/apartments",
       tomTomAPI: "https://api.tomtom.com/search/2/geocode/",
       city: "",
       apiKey: ".json?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
       apartments: [],
-      lat: "",
-      long: "",
+      lat: 45.07049,
+      long: 7.68682,
       citySearched: false,
       services: [],
       selectedServices: [],
+      apiIPurl: "https://api.ipify.org/",
+      userIP: "",
+      apartmentID: "",
+      today: "",
+      isLoading: true,
     };
   },
   methods: {
+    clicked() {
+      console.log("clicked");
+    },
     async getServices() {
       let resServices = await axios.get(this.myUrl);
       this.services = resServices.data.services;
@@ -122,7 +137,7 @@ export default {
       axios
         .get(
           this.myUrl +
-            "n_guests=" +
+            "?n_guests=" +
             this.guests +
             "&n_rooms=" +
             this.rooms +
@@ -139,26 +154,7 @@ export default {
         )
         .then((res) => {
           this.apartments = res.data.results;
-          const url = new URL(location.href.split("?")[0]);
-          history.pushState(
-            null,
-            "",
-            url +
-              "?n_guests=" +
-              this.guests +
-              "&n_rooms=" +
-              this.rooms +
-              "&n_baths=" +
-              this.rooms +
-              "&distance=" +
-              this.distance +
-              "&lat=" +
-              this.lat +
-              "&long=" +
-              this.long +
-              "&services=" +
-              this.selectedServices
-          );
+          this.isLoading = false;
         });
     },
     getCity() {
@@ -182,9 +178,43 @@ export default {
       }
       this.getApartments();
     },
+    getData(el) {
+      this.apartmentID = el.target.id;
+      axios
+        .get(this.apiIPurl)
+        .then((res) => {
+          this.userIP = res.data;
+        })
+        .catch((err) => {
+          console.log(err);
+        })
+        .finally(() => {
+          this.sendData();
+        });
+    },
+    sendData() {
+      let today = new Date();
+      let dd = String(today.getDate()).padStart(2, "0");
+      let mm = String(today.getMonth() + 1).padStart(2, "0");
+      let yyyy = today.getFullYear();
+      this.today = yyyy + "/" + mm + "/" + dd;
+      axios
+        .post("api/statistics", {
+          apartment_id: this.apartmentID,
+          data: this.today,
+          visitors: this.userIP,
+        })
+        .then((res) => {
+          res.data.success;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
   created() {
     this.getApartments();
+    this.getCity();
     this.getServices();
   },
 };
