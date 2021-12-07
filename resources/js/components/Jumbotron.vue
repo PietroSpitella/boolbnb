@@ -20,6 +20,7 @@
             class="form-control h-100 form-control-lg pl-5"
             id="input_destination"
             v-model="destination"
+            v-on:keyup.enter="searchDestination"
             placeholder="Dove Vuoi Andare?"
             aria-label="Destination"
             aria-describedby="button-addon2"
@@ -30,7 +31,7 @@
                 name: 'Discover',
               }"
               class="btn btn-outline-danger bg-danger text-light"
-              :destination="destination"
+              @click="searchDestination"
               >Cerca
             </router-link>
           </div>
@@ -49,18 +50,12 @@ export default {
     };
   },
   methods: {
-    // sendValue() {
-    //   axios
-    //     .post("/api/sendcity", {
-    //       city: this.destination,
-    //     })
-    //     .then((res) => {
-    //       res.data.success;
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //     });
-    // },
+    searchDestination() {
+      this.$router.push({
+        name: "Discover",
+        params: { destination: this.destination },
+      });
+    },
   },
 };
 </script>
