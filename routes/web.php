@@ -14,12 +14,19 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', 'HomeController@index')->name('index');
+// TEST
+Route::get('/', 'HomeController@indexHome')->name('index');
+
+
+
+
+// Route::get('/', 'HomeController@index')->name('index');
 Route::get('/about-us', 'HomeController@about')->name('about-us');
 
 Route::resource('/apartments', 'ApartmentController');
 Route::post('/new-message', 'MessageController@store')->name('store-message');
 Auth::routes();
+// Route::get('/discover', 'HomeController@search')->name('discoverPage');
 
 // Route::get('/dashboard', 'HomeController@index')->name('home');
 
@@ -29,7 +36,24 @@ Route::middleware('auth')->namespace('Host')->prefix('host')->name('host.')
     Route::get('/dashboard', 'HomeController@index')->name('home');
     Route::get('/messages', 'HomeController@listMessage')->name('messages');
     Route::get('/messages/show/{message}', 'HomeController@showMessage')->name('show-message');
+    Route::get('/apartments/advertise/{id}', 'ApartmentController@sponsor')->name('apartments.advertise');
+    Route::get('/apartments/advertise/payment/{id}', 'SponsorController@index')->name('apartments.advertise.payment');
+    Route::post('/apartments/advertise/checkout/{id}', 'SponsorController@checkout')->name('apartments.advertise.checkout');
     Route::delete('/messages/delete/{message}', 'HomeController@destroyMessage')->name('delete-message');
     Route::resource('/apartments', 'ApartmentController');
     Route::resource('/advertises', 'AdvertiseController');
+});
+
+Route::get('/{any}', function () {
+    return view('guest.homepage');
+})->where("any", ".*");
+
+Route::prefix('api')->namespace('Api')->middleware('auth')->group(function (){
+    Route::get('/user', function(){
+        $auth = Auth::user();
+        return response()->json([
+            'success'=>true,
+            'user' => $auth
+        ]);
+});
 });

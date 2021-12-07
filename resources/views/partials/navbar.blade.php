@@ -1,35 +1,31 @@
+{{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
-        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{route('index')}}">
+        <a class="navbar-brand col-sm-3 col-md-3 mr-0 mw-25" href="{{route('index')}}">
             <img src="{{asset('images/boolbnb-def.png')}}" alt="boolbnb_logo">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarScroll">
-            <ul class="navbar-nav mr-auto my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
+        <div class="collapse navbar-collapse col-md-6 col-sm-6 justify-content-center" id="navbarScroll">
+            <ul class="navbar-nav mr-2 my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
               <li class="nav-item {{Request::route()->getName()=='index'? 'active' : 'null'}}">
-                <a class="nav-link" href="{{route('index')}}">Home</a>
+                <a class="nav-link" href="{{url('/')}}">Home</a>
               </li>
-              <li class="nav-item {{Request::route()->getName()=='apartments.index'? 'active' : 'null'}}">
-                <a class="nav-link" href="{{route('apartments.index')}}">Appartamenti</a>
+
+              <li class="nav-item {{Request::route()->getName()=='discoverPage'? 'active' : 'null'}}">
+                <a class="nav-link" href="{{url('/discover')}}">Discover</a>
               </li>
               <li class="nav-item {{Request::route()->getName()=='about-us'? 'active' : 'null'}}">
                 <a class="nav-link" href="{{url('/about-us')}}">About Us</a>
               </li>
             </ul>
         </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <!-- Left Side Of Navbar -->
-            <ul class="navbar-nav mr-auto">
-            </ul>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse navbar-hamburger" id="navbarSupportedContent">
+            <ul class="navbar-nav my-background-navbar">
                 <!-- Authentication Links -->
                 @guest
-                    <li class="nav-item pr-2">
-                        Sei un host?
+                    <li class="nav-item pr-1 h-50 navbar-buttons">
                         <button type="button" class="button_login p-2" data-toggle="modal" data-target="#exampleModal">
                             Login
                         </button>
@@ -48,7 +44,7 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
+                                        <div class="modal-body p-0">
                                             <div class="row justify-content-center">
                                                 <div class="col-md-12">
                                                     <div class="card-body">
@@ -118,7 +114,7 @@
                         </div>
                     </li>
                     @if (Route::has('register'))
-                        <li class="nav-item">
+                        <li class="nav-item h-50 navbar-buttons mbr-10">
                             {{-- <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
                             <button type="button" class="button_register p-2" data-toggle="modal" data-target="#exampleModal2">
                                 Register
@@ -137,7 +133,7 @@
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
-                                            <div class="modal-body">
+                                            <div class="modal-body p-0">
                                                 <div class="row justify-content-center">
                                                     <div class="col-md-12">
                                                         <div class="card-body">

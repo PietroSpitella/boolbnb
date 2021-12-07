@@ -140,37 +140,46 @@
         </select>
     </div>
 
-    <div>
-        <label for="city">Città*</label>
-        <input type="text" id="city" name="city" placeholder="Aggiungi la Città" class="@error('h_checkout') is-invalid @enderror" value="{{old('city', $apartment->city)}}">
-        @error('city')
-            <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
+    <div class="form-group">
+        <label for="search-for-coordinates">Indirizzo*</label>
+        <div id="search-field"></div>
     </div>
     <div>
-        <label for="street">Via*</label>
-        <input type="text" id="street" name="street" placeholder="Aggiungi la strada" class="@error('street') is-invalid @enderror" value="{{old('street', $apartment->street)}}">
+        @error('city')
+            <div class="alert alert-danger pt-1">{{ $message }}</div>
+        @enderror
         @error('street')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
     </div>
-    <div>
-        <label for="house_number">Numero civico*</label>
-        <input type="number" id="house_number" name="house_number" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola" class="@error('house_number') is-invalid @enderror" value="{{old('house_number', $apartment->house_number)}}">
-        @error('house_number')
-         <div class="alert alert-danger">{{ $message }}</div>
-        @enderror
-    </div>
-    <div>
-        <label for="lat">latitudine*</label>
-        <input type="number" id="lat" name="lat" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola" class="@error('lat') is-invalid @enderror" value="{{old('lat', $apartment->lat)}}">
-    </div>
-    <div>
-        <label for="long">longitudine*</label>
-        <input type="number" id="long" name="long" placeholder="Aggiungi 7 numeri, di cui 5 dopo la virgola" class="@error('long') is-invalid @enderror" value="{{old('long', $apartment->long)}}">
-    </div>
     
     <p>I campi contrassegnati con il simbolo (*) sono obbligatori</p>
-    <button type="submit" class="d-block btn btn-primary">Modifica appartamento</button>
+
+    <div class="d-flex justify-content-between">
+        <button type="submit" class="d-block btn btn-login-register-green">Modifica appartamento</button>
+        <a href="{{route('host.apartments.index')}}" class="btn btn-login-register p-2">Back</a>
+    </div>
 </form>
+
+{{-- <script>
+    var options = {
+        searchOptions: {
+            key: '6pyK2YdKNiLrHrARYvnllho6iAdjMPex',
+            language: 'it-IT',
+        },
+        autocompleteOptions: {
+            key: '6pyK2YdKNiLrHrARYvnllho6iAdjMPex',
+            language: 'it-IT'
+        }
+    }
+    
+    var ttSearchBox = new tt.plugins.SearchBox(tt.services, options);
+    var searchBoxHTML = ttSearchBox.getSearchBoxHTML();
+    document.getElementById('search-field').append(searchBoxHTML);
+    
+    document.querySelector('input.tt-search-box-input').name = 'street';
+    document.querySelector('input.tt-search-box-input').id = 'search-for-coordinates';
+    document.querySelector('input.tt-search-box-input').placeholder = 'Indirizzo';
+    document.querySelector('input.tt-search-box-input').value = `{{old('street', $apartment->street)}}`;
+</script> --}}
 @endsection
