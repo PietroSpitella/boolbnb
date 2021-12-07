@@ -5,11 +5,16 @@
       <input
         type="text"
         v-model="city"
-        @keyup.enter="getCity"
+        @keyup.enter="getApartments"
         placeholder="Città"
         class="form-control"
       />
-      <button class="btn btn-primary my-3" @click="getCity" id="getCityBtn">
+      <div id="map_div" class="map"></div>
+      <button
+        class="btn btn-primary my-3"
+        @click="getApartments"
+        id="getCityBtn"
+      >
         Vai
       </button>
     </div>
@@ -38,7 +43,7 @@
             type="number"
             v-model="guests"
             placeholder="Numero ospiti"
-            @change="getCity"
+            @change="getApartments"
           />
         </div>
         <div class="form-group">
@@ -47,7 +52,7 @@
             type="number"
             v-model="rooms"
             placeholder="Numero stanze"
-            @change="getCity"
+            @change="getApartments"
           />
         </div>
         <div class="form-group">
@@ -57,7 +62,7 @@
             type="range"
             v-model="distance"
             placeholder="Distanza"
-            @change="getCity"
+            @change="getApartments"
             max="40"
             id="rangeDistance"
           />
@@ -109,27 +114,41 @@ export default {
       tomTomAPI: "https://api.tomtom.com/search/2/geocode/",
       city: this.$route.params.destination,
       apiKey: ".json?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
+      API_KEY: "6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
       apartments: [],
-      lat: 45.07049,
-      long: 7.68682,
+      lat: "",
+      long: "",
       citySearched: false,
       services: [],
       selectedServices: [],
-
+      map: undefined,
       apartmentID: "",
       today: "",
       isLoading: true,
+      popupOffsets: {
+        top: [0, 0],
+        bottom: [0, -70],
+        "bottom-right": [0, -70],
+        "bottom-left": [0, -70],
+        left: [25, -35],
+        right: [-25, -35],
+      },
     };
   },
   methods: {
-    clicked() {
-      console.log("clicked");
-    },
     async getServices() {
       let resServices = await axios.get(this.myUrl);
       this.services = resServices.data.services;
     },
-    getApartments() {
+    async getApartments() {
+      if (this.city) {
+        await axios
+          .get(this.tomTomAPI + this.city + this.apiKey)
+          .then((res) => {
+            this.lat = res.data.results[0].position.lat;
+            this.long = res.data.results[0].position.lon;
+          });
+      }
       axios
         .get(
           this.myUrl +
@@ -150,18 +169,12 @@ export default {
         )
         .then((res) => {
           this.apartments = res.data.results;
+          // this.createMarker(this.apartments);
           this.isLoading = false;
         });
-    },
-    getCity() {
-      if (this.city !== "") {
-        axios.get(this.tomTomAPI + this.city + this.apiKey).then((res) => {
-          this.lat = res.data.results[0].position.lat;
-          this.long = res.data.results[0].position.lon;
-          this.getApartments();
-          this.citySearched = true;
-        });
-      }
+      // if (this.map != undefined) {
+      //   this.getMap();
+      // }
     },
     getSelectedServices(el) {
       if (el.target.checked === true) {
@@ -174,14 +187,78 @@ export default {
       }
       this.getApartments();
     },
+    // getMap() {
+    //   this.map = tt.map({
+    //     container: "map_div",
+    //     key: this.API_KEY,
+    //     source: "vector",
+    //     center: [this.long, this.lat],
+    //     zoom: 12,
+    //   });
+    //   this.map.addControl(new tt.FullscreenControl());
+    //   this.map.addControl(new tt.NavigationControl());
+    //   console.log(this.map);
+    // },
+    // createMarker(arr) {
+    //   arr.forEach((element) => {
+    //     let cor = [element.long, element.lat];
+    //     let marker = new tt.Marker().setLngLat(cor).addTo(this.map);
+    //     let popup = new tt.Popup({ offset: this.popupOffsets }).setHTML(
+    //       `${element.name}`
+    //     );
+    //     marker.setPopup(popup);
+    //   });
+    // },
   },
   created() {
     this.getApartments();
-    this.getCity();
     this.getServices();
+  },
+  mounted() {
+    // this.getMap();
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.marker-icon {
+  background-position: center;
+  background-size: 22px 22px;
+  border-radius: 50%;
+  height: 22px;
+  left: 4px;
+  position: absolute;
+  text-align: center;
+  top: 3px;
+  transform: rotate(45deg);
+  width: 22px;
+}
+.marker {
+  height: 30px;
+  width: 30px;
+}
+.marker-content {
+  background: #c30b82;
+  border-radius: 50% 50% 50% 0;
+  height: 30px;
+  left: 50%;
+  margin: -15px 0 0 -15px;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-45deg);
+  width: 30px;
+}
+.marker-content::before {
+  background: #ffffff;
+  border-radius: 50%;
+  content: "";
+  height: 24px;
+  margin: 3px 0 0 3px;
+  position: absolute;
+  width: 24px;
+}
+#my-map {
+  width: 100%;
+  height: 100%;
+}
 </style>
