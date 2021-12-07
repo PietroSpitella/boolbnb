@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Apartment;
+use App\Statistic;
 use App\Service;
 use App\Advertise;
 use Illuminate\Support\Facades\Auth;
@@ -23,7 +24,9 @@ class ApartmentController extends Controller
     {
         $user_id = Auth::user()->id;
         $apartments = Apartment::where('user_id', $user_id)->get();
-        return view('host.apartments.index', compact('apartments'));
+        $advertises = Advertise::all();
+
+        return view('host.apartments.index', compact('apartments', 'advertises'));
         
     }
 
@@ -330,5 +333,16 @@ class ApartmentController extends Controller
     {
         $apartment->delete();
         return redirect()->route('host.apartments.index');
+    }
+
+    public function sponsor($id){
+        $apartment = Apartment::where('id', $id)->first();
+        if(!$apartment) {
+            abort(404);
+        }elseif(Auth::user()->id !== $apartment->user_id){
+            return redirect()->back();
+        }
+        $advertises = Advertise::all();
+        return view('host.apartments.advertise', compact('advertises', 'apartment'));
     }
 }
