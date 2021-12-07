@@ -18,9 +18,6 @@ class ApartmentController extends Controller
     public function index(Request $request)
     {
 
-        $services = Service::all();
-        $apartments = Apartment::all();
-        return view('search', compact('apartments', 'services'));
     }
 
     /**

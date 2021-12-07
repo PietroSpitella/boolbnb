@@ -2376,7 +2376,8 @@ __webpack_require__.r(__webpack_exports__);
       userIp: "",
       isLoading: true,
       apiIPurl: "https://api.ipify.org/",
-      img: ""
+      img: "",
+      services: []
     };
   },
   mounted: function mounted() {
@@ -2386,6 +2387,7 @@ __webpack_require__.r(__webpack_exports__);
       _this.apartment = res.data.results;
       _this.apartmentId = res.data.results.id;
       _this.userIp = res2.data;
+      _this.services = res.data.results.services;
     }))["catch"](axios.spread(function (err, err2) {
       console.log(err, err2);
     }))["finally"](function () {
@@ -5301,7 +5303,7 @@ var render = function () {
                           staticClass:
                             "\n                  additional_services\n                  d-flex\n                  div-bordered-3\n                  flex-wrap\n                  pt-2\n                  pb-3\n                ",
                         },
-                        _vm._l(_vm.apartment.service, function (service) {
+                        _vm._l(_vm.services, function (service) {
                           return _c(
                             "div",
                             { key: service.id, staticClass: "pr-4" },
