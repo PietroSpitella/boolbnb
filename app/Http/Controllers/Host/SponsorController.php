@@ -13,7 +13,14 @@ use Illuminate\Support\Facades\Auth;
 class SponsorController extends Controller
 {
     public function index(Request $request, $id){
+        
         $apartment = Apartment::where('id', $id)->first();
+        if(!$apartment) {
+            abort(404);
+        }elseif(Auth::user()->id !== $apartment->user_id){
+            return redirect()->back();
+        }
+
         $advertise = Advertise::find($request->advertise_id);
         $gateway = new Gateway([
             'environment' => 'sandbox',
@@ -36,6 +43,11 @@ class SponsorController extends Controller
 
         // Salvo l'appartamento da sponsorizzare e l'advertise
         $apartment = Apartment::where('id', $id)->first();
+        if(!$apartment) {
+            abort(404);
+        }elseif(Auth::user()->id !== $apartment->user_id){
+            return redirect()->back();
+        }
         $advertise = Advertise::find($request->advertise_id);
 
         // Prendo l'autorizzazione di pagamento nonce (è un token)

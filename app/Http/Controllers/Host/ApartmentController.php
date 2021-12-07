@@ -336,6 +336,11 @@ class ApartmentController extends Controller
 
     public function sponsor($id){
         $apartment = Apartment::where('id', $id)->first();
+        if(!$apartment) {
+            abort(404);
+        }elseif(Auth::user()->id !== $apartment->user_id){
+            return redirect()->back();
+        }
         $advertises = Advertise::all();
         return view('host.apartments.advertise', compact('advertises', 'apartment'));
     }

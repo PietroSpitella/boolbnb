@@ -4874,8 +4874,6 @@ var render = function () {
     _c("div", { staticClass: "container" }, [
       _vm._m(0),
       _vm._v(" "),
-      _vm._m(1),
-      _vm._v(" "),
       _c("div", { staticClass: "row" }, [
         _c(
           "div",
@@ -4884,28 +4882,49 @@ var render = function () {
             return _c("div", { key: apartment.id, staticClass: "card" }, [
               _c("img", {
                 staticClass: "card-img-top",
-                attrs: { src: apartment.image, alt: "" },
+                attrs: { src: "/storage/" + apartment.image, alt: "" },
               }),
               _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("h5", { staticClass: "card-title" }, [
-                  _vm._v(_vm._s(apartment.title)),
-                ]),
-                _vm._v(" "),
-                _c("h6", { staticClass: "card-subtitle mb-2 text-muted" }, [
-                  _vm._v("Card subtitle"),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(
-                    "\n              Some quick example text to build on the card title and make up\n              the bulk of the card's content.\n            "
+              _c(
+                "div",
+                { staticClass: "card-body" },
+                [
+                  _c("h5", { staticClass: "card-title" }, [
+                    _vm._v(_vm._s(apartment.title)),
+                  ]),
+                  _vm._v(" "),
+                  _c("h6", { staticClass: "card-subtitle mb-2 text-muted" }, [
+                    _vm._v(
+                      "\n              " +
+                        _vm._s(apartment.type) +
+                        "\n            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "card-text" }, [
+                    _vm._v(
+                      "\n              " +
+                        _vm._s(apartment.description) +
+                        "\n            "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "router-link",
+                    {
+                      staticClass: "card-link",
+                      attrs: {
+                        to: {
+                          name: "Apartment",
+                          params: { slug: apartment.slug },
+                        },
+                      },
+                    },
+                    [_vm._v("Visualizza\n            ")]
                   ),
-                ]),
-                _vm._v(" "),
-                _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
-                  _vm._v("Card link"),
-                ]),
-              ]),
+                ],
+                1
+              ),
             ])
           }),
           0
@@ -4929,30 +4948,6 @@ var staticRenderFns = [
           _vm._v("Hand-picked selection of quality places"),
         ]),
       ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row justify-content-end mb-3" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-outline-danger btn-sm px-1 py-0 mr-2",
-          attrs: { type: "button" },
-        },
-        [_vm._v("\n        Prev\n      ")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-outline-danger btn-sm px-1 py-0",
-          attrs: { type: "button" },
-        },
-        [_vm._v("\n        Next\n      ")]
-      ),
     ])
   },
 ]

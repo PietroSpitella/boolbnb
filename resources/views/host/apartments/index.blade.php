@@ -24,7 +24,10 @@
                     <a href="{{ route('host.apartments.show', $apartment['id'])}}" class="btn btn-success">Detail Post</a>
                     <a href="{{ route('host.apartments.edit', $apartment['id'])}}" class="btn btn-warning">Modify Post</a>
                     @if (count($apartment->advertises) < 1)
-                    <a href="{{ route('host.apartments.advertise', $apartment['id'])}}" class="btn btn-primary">Sponsorizza</a>                        
+                    <a href="{{ route('host.apartments.advertise', $apartment['id'])}}" class="btn btn-primary">Sponsorizza</a>
+                    @else
+                    <button class="btn btn-secondary" disabled>Sponsorizza</button>
+                    
                     @endif
                     <form class="d-inline confirm-delete-post" method="POST" action="{{ route('host.apartments.destroy', $apartment['id']) }}">
                         @csrf
