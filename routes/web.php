@@ -42,6 +42,7 @@ Route::middleware('auth')->namespace('Host')->prefix('host')->name('host.')
     Route::delete('/messages/delete/{message}', 'HomeController@destroyMessage')->name('delete-message');
     Route::resource('/apartments', 'ApartmentController');
     Route::resource('/advertises', 'AdvertiseController');
+    Route::get('/statistics/{id}', 'StatisticController@statistics')->name('statistics-page');
 });
 
 Route::get('/{any}', function () {

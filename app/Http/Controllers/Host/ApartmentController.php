@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use App\Apartment;
+use App\Statistic;
 use App\Service;
 use App\Advertise;
 use Illuminate\Support\Facades\Auth;
