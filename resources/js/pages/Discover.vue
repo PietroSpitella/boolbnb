@@ -109,7 +109,7 @@ export default {
       guests: "",
       myUrl: "/api/apartments",
       tomTomAPI: "https://api.tomtom.com/search/2/geocode/",
-      city: "",
+      city: this.$route.params.destination,
       apiKey: ".json?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
       apartments: [],
       lat: 45.07049,

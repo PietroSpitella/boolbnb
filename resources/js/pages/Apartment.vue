@@ -107,13 +107,52 @@
               <p class="fs-15">
                 <i class="fs-15" :class="service.icon"></i> {{ service.name }}
               </p>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="row flex-column">
+                <h4 class="font-weight-bold pt-3">Additional Services</h4>
+                <div
+                  class="
+                    additional_services
+                    d-flex
+                    div-bordered-3
+                    flex-wrap
+                    pt-2
+                    pb-3
+                  "
+                >
+                  <div
+                    class="pr-4"
+                    v-for="service in apartment.service"
+                    :key="service.id"
+                  >
+                    <p class="fs-15">
+                      <i class="fs-15" :class="service.icon"></i>
+                      {{ service.name }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="row flex-column">
+                <h4 class="font-weight-bold pt-3">Price</h4>
+                <p class="fs-15 pb-3 div-bordered-3">
+                  <i class="fas fa-chevron-right fs-12"></i> Price per night:
+                  {{ apartment.price_night }} €
+                </p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div id="map" class="map">
+                <img
+                  :src="`https://api.tomtom.com/map/1/staticimage?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex&zoom=16&center=${apartment.long},${apartment.lat}&format=jpg&layer=basic&style=main&width=1305&height=748&view=Unified&language=en-GB`"
+                  alt="Mappa"
+                  class="w-100"
+                />
+                <i class="fas fa-map-pin"></i>
+              </div>
             </div>
           </div>
-          <h4 class="font-weight-bold pt-3">Price</h4>
-          <p class="fs-15 pb-3 div-bordered-3">
-            <i class="fas fa-chevron-right fs-12"></i> Price per night:
-            {{ apartment.price_night }} €
-          </p>
         </div>
       </div>
     </div>
@@ -133,6 +172,7 @@ export default {
       userIp: "",
       isLoading: true,
       apiIPurl: "https://api.ipify.org/",
+      img: "",
     };
   },
   mounted() {
@@ -185,4 +225,20 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+#map {
+  width: 100%;
+  position: relative;
+  i {
+    position: absolute;
+    inset: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: brown;
+  }
+}
 </style>

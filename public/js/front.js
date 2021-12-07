@@ -2085,6 +2085,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Jumbotron",
   data: function data() {
@@ -2092,18 +2093,15 @@ __webpack_require__.r(__webpack_exports__);
       destination: ""
     };
   },
-  methods: {// sendValue() {
-    //   axios
-    //     .post("/api/sendcity", {
-    //       city: this.destination,
-    //     })
-    //     .then((res) => {
-    //       res.data.success;
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //     });
-    // },
+  methods: {
+    searchDestination: function searchDestination() {
+      this.$router.push({
+        name: "Discover",
+        params: {
+          destination: this.destination
+        }
+      });
+    }
   }
 });
 
@@ -2337,6 +2335,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Apartment",
@@ -2350,7 +2387,8 @@ __webpack_require__.r(__webpack_exports__);
       apartmentId: "",
       userIp: "",
       isLoading: true,
-      apiIPurl: "https://api.ipify.org/"
+      apiIPurl: "https://api.ipify.org/",
+      img: ""
     };
   },
   mounted: function mounted() {
@@ -2522,7 +2560,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       guests: "",
       myUrl: "/api/apartments",
       tomTomAPI: "https://api.tomtom.com/search/2/geocode/",
-      city: "",
+      city: this.$route.params.destination,
       apiKey: ".json?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
       apartments: [],
       lat: 45.07049,
@@ -2650,6 +2688,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "#jumbotron[data-v-0b8439d1] {\n  background-image: url(\"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80\");\n  background-size: cover;\n  background-position: center;\n}\n#jumbotron .bg-overlay[data-v-0b8439d1] {\n  position: absolute;\n  inset: 0;\n  background-color: rgba(0, 0, 0, 0.387);\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Apartment.vue?vue&type=style&index=0&id=37b4720e&lang=scss&scoped=true&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Apartment.vue?vue&type=style&index=0&id=37b4720e&lang=scss&scoped=true& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "#map[data-v-37b4720e] {\n  width: 100%;\n  position: relative;\n}\n#map i[data-v-37b4720e] {\n  position: absolute;\n  inset: 0;\n  left: 50%;\n  top: 50%;\n  transform: translate(-50%, -50%);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 2em;\n  color: brown;\n}", ""]);
 
 // exports
 
@@ -3931,6 +3988,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Apartment.vue?vue&type=style&index=0&id=37b4720e&lang=scss&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/sass-loader/dist/cjs.js??ref--7-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Apartment.vue?vue&type=style&index=0&id=37b4720e&lang=scss&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Apartment.vue?vue&type=style&index=0&id=37b4720e&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Apartment.vue?vue&type=style&index=0&id=37b4720e&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -4736,6 +4823,15 @@ var render = function () {
               },
               domProps: { value: _vm.destination },
               on: {
+                keyup: function ($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.searchDestination.apply(null, arguments)
+                },
                 input: function ($event) {
                   if ($event.target.composing) {
                     return
@@ -4757,8 +4853,8 @@ var render = function () {
                       to: {
                         name: "Discover",
                       },
-                      destination: _vm.destination,
                     },
+                    on: { click: _vm.searchDestination },
                   },
                   [_vm._v("Cerca\n          ")]
                 ),
@@ -4971,337 +5067,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "section",
-    [
-      _c("div", { staticClass: "container my-3" }, [
-        !_vm.isLoading
-          ? _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-12" }, [
-                _c("div", { staticClass: "d-flex justify-content-center" }, [
-                  _c("img", {
-                    staticClass: "apartments-img",
-                    attrs: {
-                      src: "/storage/" + _vm.apartment.image,
-                      alt: "Image inserted",
-                    },
-                  }),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  {
-                    staticClass:
-                      "fs-25 font-weight-bold pt-3 m-0 text-capitalize",
-                  },
-                  [_vm._v(_vm._s(_vm.apartment.title))]
-                ),
-                _vm._v(" "),
-                _c("p", { staticClass: "fs-15" }, [
-                  _c("i", {
-                    staticClass: "fas fa-map-marker-alt fs-15 text-capitalize",
-                  }),
-                  _vm._v(
-                    " " +
-                      _vm._s(_vm.apartment.city) +
-                      ",\n          " +
-                      _vm._s(_vm.apartment.street) +
-                      ", " +
-                      _vm._s(_vm.apartment.house_number) +
-                      "\n        "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "div-bordered text-center mt-3" }, [
-                  _c("div", { staticClass: "p-4" }, [
-                    _c("i", {
-                      staticClass: "fas fa-home fs-30 color-grey-icon",
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      {
-                        staticClass:
-                          "fs-15 text-capitalize font-weight-bold text-capitalize",
-                      },
-                      [
-                        _vm._v(
-                          "\n              Type " +
-                            _vm._s(_vm.apartment.type) +
-                            "\n            "
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "div-bordered d-flex text-center mb-3" },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "div-bordered-2 div-bordered-3 div-bordered-4 icon-separation p-4",
-                      },
-                      [
-                        _c("i", {
-                          staticClass: "fas fa-bed fs-20 color-grey-icon",
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          {
-                            staticClass:
-                              "fs-15 text-capitalize font-weight-bold",
-                          },
-                          [
-                            _vm._v(
-                              "\n              Beds " +
-                                _vm._s(_vm.apartment.n_beds) +
-                                "\n            "
-                            ),
-                          ]
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "div-bordered-2 div-bordered-3 div-bordered-4 icon-separation p-4",
-                      },
-                      [
-                        _c("i", {
-                          staticClass:
-                            "fas fa-door-closed fs-20 color-grey-icon",
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          {
-                            staticClass:
-                              "fs-15 text-capitalize font-weight-bold",
-                          },
-                          [
-                            _vm._v(
-                              "\n              Rooms " +
-                                _vm._s(_vm.apartment.n_rooms) +
-                                "\n            "
-                            ),
-                          ]
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "div-bordered-3 icon-separation p-4" },
-                      [
-                        _c("i", {
-                          staticClass:
-                            "fas fa-user-friends fs-20 color-grey-icon",
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          {
-                            staticClass:
-                              "fs-15 text-capitalize font-weight-bold",
-                          },
-                          [
-                            _vm._v(
-                              "\n              Guests " +
-                                _vm._s(_vm.apartment.n_guests) +
-                                "\n            "
-                            ),
-                          ]
-                        ),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "div-bordered-2 div-bordered-3 div-bordered-4 icon-separation p-4",
-                      },
-                      [
-                        _c("i", {
-                          staticClass: "far fa-clone fs-20 color-grey-icon",
-                        }),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          {
-                            staticClass:
-                              "fs-15 text-capitalize font-weight-bold",
-                          },
-                          [
-                            _vm._v(
-                              "\n              Mq " +
-                                _vm._s(_vm.apartment.mq) +
-                                "\n            "
-                            ),
-                          ]
-                        ),
-                      ]
-                    ),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("h4", { staticClass: "font-weight-bold" }, [
-                  _vm._v("Description"),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "p",
-                  { staticClass: "fs-15 pb-3 div-bordered-3 text-capitalize" },
-                  [_vm._v(_vm._s(_vm.apartment.description))]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "pb-3 div-bordered-3" }, [
-                  _c("h4", { staticClass: "font-weight-bold" }, [
-                    _vm._v("Details"),
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "details-apartments d-flex justify-content-around",
-                    },
-                    [
-                      _c("div", { staticClass: "details-left" }, [
-                        _c("p", { staticClass: "fs-15" }, [
-                          _c("i", { staticClass: "far fa-circle fs-12" }),
-                          _vm._v(
-                            " ID: " +
-                              _vm._s(_vm.apartment.id) +
-                              "\n              "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "fs-15 text-capitalize" }, [
-                          _c("i", { staticClass: "far fa-circle fs-12" }),
-                          _vm._v(
-                            " Pet: " +
-                              _vm._s(_vm.apartment.pet) +
-                              "\n              "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "fs-15 text-capitalize" }, [
-                          _c("i", { staticClass: "far fa-circle fs-12" }),
-                          _vm._v(
-                            " Checkin time: " +
-                              _vm._s(_vm.apartment.h_checkin) +
-                              "\n              "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "fs-15 text-capitalize" }, [
-                          _c("i", { staticClass: "far fa-circle fs-12" }),
-                          _vm._v(
-                            " Checkout time: " +
-                              _vm._s(_vm.apartment.h_checkout) +
-                              "\n              "
-                          ),
-                        ]),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "details-right" }, [
-                        _c("p", { staticClass: "fs-15 text-capitalize" }, [
-                          _c("i", { staticClass: "far fa-circle fs-12" }),
-                          _vm._v(
-                            " Type: " +
-                              _vm._s(_vm.apartment.type) +
-                              "\n              "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "fs-15 text-capitalize" }, [
-                          _c("i", { staticClass: "far fa-circle fs-12" }),
-                          _vm._v(
-                            " City: " +
-                              _vm._s(_vm.apartment.city) +
-                              "\n              "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "fs-15 text-capitalize" }, [
-                          _c("i", { staticClass: "far fa-circle fs-12" }),
-                          _vm._v(
-                            " Street: " +
-                              _vm._s(_vm.apartment.street) +
-                              "\n              "
-                          ),
-                        ]),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "fs-15" }, [
-                          _c("i", { staticClass: "far fa-circle fs-12" }),
-                          _vm._v(
-                            " House number: " +
-                              _vm._s(_vm.apartment.house_number) +
-                              "\n              "
-                          ),
-                        ]),
-                      ]),
-                    ]
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("h4", { staticClass: "font-weight-bold pt-3" }, [
-                  _vm._v("Additional Services"),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "\n            additional_services\n            d-flex\n            div-bordered-3\n            flex-wrap\n            pt-2\n            pb-3\n          ",
-                  },
-                  _vm._l(_vm.apartment.services, function (service) {
-                    return _c("div", { key: service.id, staticClass: "pr-4" }, [
-                      _c("p", { staticClass: "fs-15" }, [
-                        _c("i", { staticClass: "fs-15", class: service.icon }),
-                        _vm._v(" " + _vm._s(service.name) + "\n            "),
-                      ]),
-                    ])
-                  }),
-                  0
-                ),
-                _vm._v(" "),
-                _c("h4", { staticClass: "font-weight-bold pt-3" }, [
-                  _vm._v("Price"),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "fs-15 pb-3 div-bordered-3" }, [
-                  _c("i", { staticClass: "fas fa-chevron-right fs-12" }),
-                  _vm._v(
-                    " Price per night:\n          " +
-                      _vm._s(_vm.apartment.price_night) +
-                      " €\n        "
-                  ),
-                ]),
-              ]),
-            ])
-          : _vm._e(),
-      ]),
-      _vm._v(" "),
-      _c("ContactForm", { attrs: { apartment: _vm.apartment } }),
-    ],
-    1
-  )
-}
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
 
 
 
@@ -21204,7 +20971,9 @@ var app = new Vue({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Apartment_vue_vue_type_template_id_37b4720e_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Apartment.vue?vue&type=template&id=37b4720e&scoped=true& */ "./resources/js/pages/Apartment.vue?vue&type=template&id=37b4720e&scoped=true&");
 /* harmony import */ var _Apartment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Apartment.vue?vue&type=script&lang=js& */ "./resources/js/pages/Apartment.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _Apartment_vue_vue_type_style_index_0_id_37b4720e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Apartment.vue?vue&type=style&index=0&id=37b4720e&lang=scss&scoped=true& */ "./resources/js/pages/Apartment.vue?vue&type=style&index=0&id=37b4720e&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -21212,7 +20981,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
   _Apartment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Apartment_vue_vue_type_template_id_37b4720e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Apartment_vue_vue_type_template_id_37b4720e_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
@@ -21241,6 +21010,22 @@ component.options.__file = "resources/js/pages/Apartment.vue"
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Apartment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Apartment.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Apartment.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Apartment_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/Apartment.vue?vue&type=style&index=0&id=37b4720e&lang=scss&scoped=true&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/js/pages/Apartment.vue?vue&type=style&index=0&id=37b4720e&lang=scss&scoped=true& ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Apartment_vue_vue_type_style_index_0_id_37b4720e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--7-2!../../../node_modules/sass-loader/dist/cjs.js??ref--7-3!../../../node_modules/vue-loader/lib??vue-loader-options!./Apartment.vue?vue&type=style&index=0&id=37b4720e&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Apartment.vue?vue&type=style&index=0&id=37b4720e&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Apartment_vue_vue_type_style_index_0_id_37b4720e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Apartment_vue_vue_type_style_index_0_id_37b4720e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Apartment_vue_vue_type_style_index_0_id_37b4720e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_sass_loader_dist_cjs_js_ref_7_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Apartment_vue_vue_type_style_index_0_id_37b4720e_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+
 
 /***/ }),
 
