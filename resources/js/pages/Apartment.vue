@@ -114,7 +114,7 @@
                 >
                   <div
                     class="pr-4"
-                    v-for="service in apartment.service"
+                    v-for="service in services"
                     :key="service.id"
                   >
                     <p class="fs-15">
@@ -163,6 +163,7 @@ export default {
       isLoading: true,
       apiIPurl: "https://api.ipify.org/",
       img: "",
+      services: [],
     };
   },
   mounted() {
@@ -176,6 +177,7 @@ export default {
           this.apartment = res.data.results;
           this.apartmentId = res.data.results.id;
           this.userIp = res2.data;
+          this.services = res.data.results.services;
         })
       )
       .catch(

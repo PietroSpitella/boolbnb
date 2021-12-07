@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Apartment;
 use App\Service;
 use App\Message;
+use Illuminate\Support\Carbon;
 class ApartmentController extends Controller
 {
     public function searchApartment(Request $request){
@@ -100,6 +101,18 @@ class ApartmentController extends Controller
         return response()->json([
             'success'=>true,
             'results'=>$data
+        ]);
+    }
+
+    public function sponsored(){
+        $apartments = Apartment::whereHas('advertises', function($q){
+            $today = Carbon::now()->toDateTimeString();
+            $q->where('end_date', '>', $today);
+        })->get();
+
+        return response()->json([
+            'success'=>true,
+            'results'=>$apartments
         ]);
     }
 }
