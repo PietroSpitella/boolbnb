@@ -286,14 +286,14 @@ nav {
 
 //footer
 .back-color-black{
-    background-color: $black;
+    background-color: rgb(180, 180, 180);
     color: $white;
 
     .col{
         width: calc(100% / 3);
 
         img{
-            filter: contrast(0);
+            filter: brightness(3);
             width: 200px;
         }
     }

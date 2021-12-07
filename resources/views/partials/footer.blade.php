@@ -8,21 +8,21 @@
             <div class="col text-center">
                 <h2>Site creators</h2>
                 <ul class="list-unstyled">
-                    <li><a class="color-white" href="https://www.linkedin.com/in/alberto-gaia/">Alberto Gaia</li>
-                    <li><a class="color-white" href="https://www.linkedin.com/in/amedeo-pasanisi-88a331185/">Amedeo Pasanisi</li>
+                    <li><a class="color-white" href="https://www.linkedin.com/in/alberto-gaia/">Alberto Gaia</a></li>
+                    <li><a class="color-white" href="https://www.linkedin.com/in/amedeo-pasanisi-88a331185/">Amedeo Pasanisi</a></li>
                     <li><a class="color-white" href="https://www.linkedin.com/in/luciano-marchionna/">Luciano Marchionna</a></li>
-                    <li><a class="color-white" href="https://www.linkedin.com/in/pietro-spitella/">Pietro Spitella</li>
-                    <li><a class="color-white" href="https://www.linkedin.com/in/roberto-martino-86a301163/">Roberto Martino</li>
+                    <li><a class="color-white" href="https://www.linkedin.com/in/pietro-spitella/">Pietro Spitella</a></li>
+                    <li><a class="color-white" href="https://www.linkedin.com/in/roberto-martino-86a301163/">Roberto Martino</a></li>
                 </ul>
             </div>
             <div class="col text-center">
-                <h2>Other informationr</h2>
+                <h2>Other information</h2>
                 <ul class="list-unstyled">
-                    <li><a class="color-white" href="./">Home</li>
-                    <li><a class="color-white" href="./discover">Discover</li>
-                    <li><a class="color-white" href="./about-us">About Us</li>
-                    <li><a class="color-white" href="./host/dashboard">Dashboard</li>
-                    <li><a class="color-white" href="./host/messages">Messages</li>
+                    <li><a class="color-white" href="./">Home</a></li>
+                    <li><a class="color-white" href="./discover">Discover</a></li>
+                    <li><a class="color-white" href="./about-us">About Us</a></li>
+                    <li><a class="color-white" href="./host/dashboard">Dashboard</a></li>
+                    <li><a class="color-white" href="./host/messages">Messages</a></li>
                 </ul>
             </div>
         </div>

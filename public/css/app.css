@@ -11231,7 +11231,7 @@ nav a img {
 }
 
 .back-color-black {
-  background-color: #000000;
+  background-color: #b4b4b4;
   color: #ffffff;
 }
 
@@ -11240,7 +11240,7 @@ nav a img {
 }
 
 .back-color-black .col img {
-  filter: contrast(0);
+  filter: brightness(3);
   width: 200px;
 }
 
