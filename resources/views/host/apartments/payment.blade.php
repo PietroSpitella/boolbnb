@@ -8,7 +8,7 @@
 @csrf
 @method('POST')
 <div id="dropin-container"></div>
-<button type="submit" class="btn btn-primary">Invia</button>
+<button type="submit" class="btn btn-primary">Paga</button>
 <input type="hidden" name="payment_method_nonce" id="nonce" />
 </form>
 
