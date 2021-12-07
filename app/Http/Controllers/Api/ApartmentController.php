@@ -102,4 +102,15 @@ class ApartmentController extends Controller
             'results'=>$data
         ]);
     }
+
+    public function sponsored(){
+        $apartments = Apartment::whereHas('advertises', function($q){
+            $q->where('status', 1);
+        })->get();
+
+        return response()->json([
+            'success'=>true,
+            'results'=>$apartments
+        ]);
+    }
 }

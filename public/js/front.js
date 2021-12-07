@@ -2155,48 +2155,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Sponsored"
+  name: "Sponsored",
+  data: function data() {
+    return {
+      apiSponsors: "/api/sponsored/",
+      apartments: []
+    };
+  },
+  methods: {
+    getSponsoredHouses: function getSponsoredHouses() {
+      var _this = this;
+
+      axios.get(this.apiSponsors).then(function (res) {
+        _this.apartments = res.data.results;
+      });
+    }
+  },
+  created: function created() {
+    this.getSponsoredHouses();
+  }
 });
 
 /***/ }),
@@ -4892,139 +4870,89 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("section", { attrs: { id: "sponsored" } }, [
+    _c("div", { staticClass: "container" }, [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-4" },
+          _vm._l(_vm.apartments, function (apartment) {
+            return _c("div", { key: apartment.id, staticClass: "card" }, [
+              _c("img", {
+                staticClass: "card-img-top",
+                attrs: { src: apartment.image, alt: "" },
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "card-body" }, [
+                _c("h5", { staticClass: "card-title" }, [
+                  _vm._v(_vm._s(apartment.title)),
+                ]),
+                _vm._v(" "),
+                _c("h6", { staticClass: "card-subtitle mb-2 text-muted" }, [
+                  _vm._v("Card subtitle"),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "card-text" }, [
+                  _vm._v(
+                    "\n              Some quick example text to build on the card title and make up\n              the bulk of the card's content.\n            "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
+                  _vm._v("Card link"),
+                ]),
+              ]),
+            ])
+          }),
+          0
+        ),
+      ]),
+    ]),
+  ])
 }
 var staticRenderFns = [
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { attrs: { id: "sponsored" } }, [
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row mb-3" }, [
-          _c("div", { staticClass: "col-12" }, [
-            _c("h3", { staticClass: "mb-3" }, [
-              _c("strong", [_vm._v("Our Featured Homes")]),
-            ]),
-            _vm._v(" "),
-            _c("h5", { staticClass: "mb-0" }, [
-              _vm._v("Hand-picked selection of quality places"),
-            ]),
-          ]),
+    return _c("div", { staticClass: "row mb-3" }, [
+      _c("div", { staticClass: "col-12" }, [
+        _c("h3", { staticClass: "mb-3" }, [
+          _c("strong", [_vm._v("Our Featured Homes")]),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "row justify-content-end mb-3" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-outline-danger btn-sm px-1 py-0 mr-2",
-              attrs: { type: "button" },
-            },
-            [_vm._v("\n        Prev\n      ")]
-          ),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-outline-danger btn-sm px-1 py-0",
-              attrs: { type: "button" },
-            },
-            [_vm._v("\n        Next\n      ")]
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-4" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("img", {
-                staticClass: "card-img-top",
-                attrs: {
-                  src: "https://www.greenme.it/wp-content/uploads/2021/02/tiny-house-ikea.jpg",
-                  alt: "",
-                },
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("h5", { staticClass: "card-title" }, [_vm._v("Card title")]),
-                _vm._v(" "),
-                _c("h6", { staticClass: "card-subtitle mb-2 text-muted" }, [
-                  _vm._v("Card subtitle"),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(
-                    "\n              Some quick example text to build on the card title and make up\n              the bulk of the card's content.\n            "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
-                  _vm._v("Card link"),
-                ]),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-4" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("img", {
-                staticClass: "card-img-top",
-                attrs: {
-                  src: "https://www.greenme.it/wp-content/uploads/2021/02/tiny-house-ikea.jpg",
-                  alt: "",
-                },
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("h5", { staticClass: "card-title" }, [_vm._v("Card title")]),
-                _vm._v(" "),
-                _c("h6", { staticClass: "card-subtitle mb-2 text-muted" }, [
-                  _vm._v("Card subtitle"),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(
-                    "\n              Some quick example text to build on the card title and make up\n              the bulk of the card's content.\n            "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
-                  _vm._v("Card link"),
-                ]),
-              ]),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-4" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("img", {
-                staticClass: "card-img-top",
-                attrs: {
-                  src: "https://www.greenme.it/wp-content/uploads/2021/02/tiny-house-ikea.jpg",
-                  alt: "",
-                },
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("h5", { staticClass: "card-title" }, [_vm._v("Card title")]),
-                _vm._v(" "),
-                _c("h6", { staticClass: "card-subtitle mb-2 text-muted" }, [
-                  _vm._v("Card subtitle"),
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
-                  _vm._v(
-                    "\n              Some quick example text to build on the card title and make up\n              the bulk of the card's content.\n            "
-                  ),
-                ]),
-                _vm._v(" "),
-                _c("a", { staticClass: "card-link", attrs: { href: "#" } }, [
-                  _vm._v("Card link"),
-                ]),
-              ]),
-            ]),
-          ]),
+        _c("h5", { staticClass: "mb-0" }, [
+          _vm._v("Hand-picked selection of quality places"),
         ]),
       ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row justify-content-end mb-3" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-outline-danger btn-sm px-1 py-0 mr-2",
+          attrs: { type: "button" },
+        },
+        [_vm._v("\n        Prev\n      ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-outline-danger btn-sm px-1 py-0",
+          attrs: { type: "button" },
+        },
+        [_vm._v("\n        Next\n      ")]
+      ),
     ])
   },
 ]
