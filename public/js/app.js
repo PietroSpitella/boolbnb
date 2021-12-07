@@ -37366,8 +37366,8 @@ window.searchBox = function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\AMEDEO\Percorso di studi\Boolean\LEZIONI\95 progetto finale\boolbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\AMEDEO\Percorso di studi\Boolean\LEZIONI\95 progetto finale\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Zaps\Desktop\BOOLEAN\PROGETTO-FINALE\boolbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Zaps\Desktop\BOOLEAN\PROGETTO-FINALE\boolbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
