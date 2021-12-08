@@ -13,13 +13,13 @@
             <div class="d-flex justify-content-center">
                 <img class="apartments-img" src="{{$apartment->image}}" alt="Image inserted">
             </div>
-            <p class="fs-25 font-weight-bold pt-3 m-0">{{$apartment->title}}</p>
-            <p class="fs-15"><i class="fas fa-map-marker-alt fs-15"></i> {{$apartment->city}}, {{$apartment->street}}, {{$apartment->house_number}}</p>
+            <p class="fs-25 font-weight-bold pt-3 m-0 text-capitalize">{{$apartment->title}}</p>
+            <p class="fs-15"><i class="fas fa-map-marker-alt fs-15 text-capitalize"></i> {{$apartment->city}}, {{$apartment->street}}, {{$apartment->house_number}}</p>
             
             <div class="div-bordered text-center mt-3">
                 <div class="p-4">
                     <i class="fas fa-home fs-30 color-grey-icon"></i>
-                    <p class="fs-15 text-capitalize font-weight-bold">Type {{$apartment->type}}</p>
+                    <p class="fs-15 text-capitalize font-weight-bold text-capitalize">Type {{$apartment->type}}</p>
                 </div>
             </div>
 
@@ -43,21 +43,21 @@
             </div> 
 
             <h4 class="font-weight-bold">Description </h4>
-            <p class="fs-15 pb-3 div-bordered-3">{{$apartment->description}}</p>
+            <p class="fs-15 pb-3 div-bordered-3 text-capitalize">{{$apartment->description}}</p>
             
             <div class="pb-3 div-bordered-3">
                 <h4 class="font-weight-bold">Details</h4>
                 <div class="details-apartments d-flex justify-content-around">
                     <div class="details-left">
                         <p class="fs-15"><i class="far fa-circle fs-12"></i> ID: {{$apartment->id}}</p>
-                        <p class="fs-15"><i class="far fa-circle fs-12"></i> Pet: {{$apartment->pet}}</p>
-                        <p class="fs-15"><i class="far fa-circle fs-12"></i> Checkin time: {{$apartment->h_checkin}}</p>
-                        <p class="fs-15"><i class="far fa-circle fs-12"></i> Checkout time: {{$apartment->h_checkout}}</p>
+                        <p class="fs-15 text-capitalize"><i class="far fa-circle fs-12"></i> Pet: {{$apartment->pe)}}</p>
+                        <p class="fs-15 text-capitalize"><i class="far fa-circle fs-12"></i> Checkin time: {{$apartment->h_checkin}}</p>
+                        <p class="fs-15 text-capitalize"><i class="far fa-circle fs-12"></i> Checkout time: {{$apartment->h_checkout}}</p>
                     </div>
                     <div class="details-right">
-                        <p class="fs-15"><i class="far fa-circle fs-12"></i> Type: {{$apartment->type}}</p>
-                        <p class="fs-15"><i class="far fa-circle fs-12"></i> City: {{$apartment->city}}</p>
-                        <p class="fs-15"><i class="far fa-circle fs-12"></i> Street: {{$apartment->street}}</p>
+                        <p class="fs-15 text-capitalize"><i class="far fa-circle fs-12"></i> Type: {{$apartment->type}}</p>
+                        <p class="fs-15 text-capitalize"><i class="far fa-circle fs-12"></i> City: {{$apartment->city}}</p>
+                        <p class="fs-15 text-capitalize"><i class="far fa-circle fs-12"></i> Street: {{$apartment->street}}</p>
                         <p class="fs-15"><i class="far fa-circle fs-12"></i> House number: {{$apartment->house_number}}</p>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
 
                 <div class="d-flex">
                     <div class="form-group w-50 mr-3 my-3">
-                        <label for="fullname">Nome completo:</label>
+                        <label for="fullname">Full Name:</label>
                         @if (Auth::user())
                             <input class="w-100" type="text" value="{{$user->name . ' ' . $user->surname}}" name="fullname" id="fullname">
                         @else
@@ -99,12 +99,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Testo:</label>
+                    <label for="message">Text:</label>
                     <textarea class="w-100" type="textarea" name="message" id="message"></textarea>
                 </div>
                 <input type="text" name="apartment_id" value="{{$apartment->id}}" hidden>
                 <input type="text" name="apartment_title" value="{{$apartment->title}}" hidden>
-                <button class="btn btn-login-register p-2" type="submit">Manda messaggio</button>
+                <button class="btn btn-login-register p-2" type="submit">Send message</button>
             </form>
         </div>
     </div>

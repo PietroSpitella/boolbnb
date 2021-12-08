@@ -284,6 +284,26 @@ nav {
 }
 //fine elenco miei appartamenti
 
+//footer
+.back-color-black{
+    background-color: rgb(180, 180, 180);
+    color: $white;
+
+    .col{
+        width: calc(100% / 3);
+
+        img{
+            filter: brightness(3);
+            width: 200px;
+        }
+    }
+   
+
+    .color-white{
+        color: $white;
+    }
+}
+
     @media only screen and (max-width: 767px){
         .navbar-hamburger{   
             z-index: 1041;

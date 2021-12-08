@@ -9,7 +9,7 @@
     >
       <div class="d-flex">
         <div class="form-group w-50 mr-3 my-3">
-          <label for="fullname">Nome:</label>
+          <label for="fullname">Full Name:</label>
           <input
             class="w-100"
             type="text"
@@ -32,7 +32,7 @@
       </div>
 
       <div class="form-group">
-        <label for="message">Testo:</label>
+        <label for="message">Text:</label>
         <textarea
           class="w-100"
           type="textarea"
@@ -40,15 +40,17 @@
           id="message"
         ></textarea>
       </div>
-      <button class="btn btn-login-register p-2" type="submit">
-        Send Message
-      </button>
+      <div class="d-flex justify-content-end ">
+        <button class="btn btn-login-register p-2" type="submit">
+          Send Message
+        </button>
+      </div>
       <div
         class="my-3 alert alert-success alert-dismissible fade show"
         v-if="messageSent"
         role="alert"
       >
-        Messaggio inviato con successo!
+        The message has been successfully sent!
         <button
           type="button"
           class="close"

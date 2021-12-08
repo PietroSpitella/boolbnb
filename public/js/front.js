@@ -1983,6 +1983,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactForm",
   props: ["apartment"],
@@ -2189,6 +2191,16 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ContactForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/ContactForm */ "./resources/js/components/ContactForm.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4716,7 +4728,7 @@ var render = function () {
       [
         _c("div", { staticClass: "d-flex" }, [
           _c("div", { staticClass: "form-group w-50 mr-3 my-3" }, [
-            _c("label", { attrs: { for: "fullname" } }, [_vm._v("Nome:")]),
+            _c("label", { attrs: { for: "fullname" } }, [_vm._v("Full Name:")]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -4769,7 +4781,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "message" } }, [_vm._v("Testo:")]),
+          _c("label", { attrs: { for: "message" } }, [_vm._v("Text:")]),
           _vm._v(" "),
           _c("textarea", {
             directives: [
@@ -4794,14 +4806,7 @@ var render = function () {
           }),
         ]),
         _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-login-register p-2",
-            attrs: { type: "submit" },
-          },
-          [_vm._v("\n      Send Message\n    ")]
-        ),
+        _vm._m(0),
         _vm._v(" "),
         _vm.messageSent
           ? _c(
@@ -4812,8 +4817,10 @@ var render = function () {
                 attrs: { role: "alert" },
               },
               [
-                _vm._v("\n      Messaggio inviato con successo!\n      "),
-                _vm._m(0),
+                _vm._v(
+                  "\n      The message has been successfully sent!\n      "
+                ),
+                _vm._m(1),
               ]
             )
           : _vm._e(),
@@ -4822,6 +4829,21 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d-flex justify-content-end " }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-login-register p-2",
+          attrs: { type: "submit" },
+        },
+        [_vm._v("\n        Send Message\n      ")]
+      ),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement
@@ -5083,6 +5105,7 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {}
 var render = function () {
   var _vm = this
   var _h = _vm.$createElement
@@ -5410,7 +5433,6 @@ var render = function () {
   )
 }
 var staticRenderFns = []
-render._withStripped = true
 
 
 
@@ -5431,6 +5453,57 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  return !_vm.isLoading
+    ? _c(
+        "div",
+        { staticClass: "container my-3" },
+        [
+          _vm._v("\n  " + _vm._s(_vm.destination) + "\n  "),
+          _c("div", { staticClass: "form-group" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.city,
+                  expression: "city",
+                },
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Città" },
+              domProps: { value: _vm.city },
+              on: {
+                keyup: function ($event) {
+                  if (
+                    !$event.type.indexOf("key") &&
+                    _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                  ) {
+                    return null
+                  }
+                  return _vm.getCity.apply(null, arguments)
+                },
+                input: function ($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.city = $event.target.value
+                },
+              },
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "d-flex justify-content-end" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-login-register px-3 my-3",
+                  attrs: { id: "getCityBtn" },
+                  on: { click: _vm.getCity },
+                },
+                [_vm._v("\n        Vai\n      ")]
+              ),
+            ]),
+          ]),
+
   return _c("div", [
     _c(
       "div",
@@ -21581,6 +21654,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(/*! C:\Users\Luciano\Documents\Boolean\Progetto_Finale\boolbnb\resources\js\front.js */"./resources/js/front.js");
 module.exports = __webpack_require__(/*! C:\Users\Zaps\Desktop\BOOLEAN\PROGETTO-FINALE\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
