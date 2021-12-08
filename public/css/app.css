@@ -11406,6 +11406,29 @@ nav a img {
   align-items: center;
 }
 
+.my_card .row .my_img_col img {
+  border-radius: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.my_card .row .my_text_col .card-body {
+  height: 100%;
+}
+
+.my_contacts_btns a {
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.my_contacts_btns a i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+}
+
 /*!
  * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
