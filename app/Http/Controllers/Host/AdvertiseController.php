@@ -48,26 +48,31 @@ class AdvertiseController extends Controller
         //Richiesta dal form
         $form_adv = $request->all();
         //Devo capire come partire da una data e in base al pacchetto scelto, aggiungere le ore
-
-        //Calcolo della data finale;
+        /* DATA IN MINUTI
+        $ldate = date('Y-m-d H:i:s', strtotime("+1 minutes"));
         if($form_adv['advertise_id'] === '1') {
-            $end_date=Date('y:m:d', strtotime("+1 days"));
+            $end_date = $ldate;
+        } 
+        */
+        //DATA IN GIORNI;
+        if($form_adv['advertise_id'] === '1') {
+            $end_date=Date('y-m-d', strtotime("+1 days"));
         } 
         if($form_adv['advertise_id'] === '2') {
-            $end_date=Date('y:m:d', strtotime("+3 days"));
+            $end_date=Date('y-m-d', strtotime("+3 days"));
         }
         if($form_adv['advertise_id'] === '3'){
-            $end_date=Date('y:m:d', strtotime("+6 days"));
+            $end_date=Date('y-m-d', strtotime("+6 days"));
         }
         
-        //Data di inizio
-        $start_date = Date('y:m:d');
-        
-
+        //DATA di inizio in giorno/mese/anno
+        $start_date = Date('Y-m-d');
+        //Data di inizio in giorno/mese/anno/ore/minuti/secondi
+        //$start_date = date('Y-m-d H:i:s');
         //Sponsorizzate Roberto
         //Id appartamento da sponsorizzare
         $apartment_id = (int) $form_adv['apartment_id'];
-        $advertise_id = $form_adv['advertise_id'];
+        $advertise_id = (int)$form_adv['advertise_id'];
         
         //QUESTO è l'appartamento completo che l'utente vuole sponsorizzare
         $apartment = Apartment::find($apartment_id);
@@ -80,6 +85,7 @@ class AdvertiseController extends Controller
         ->join('apartments', 'advertise_apartment.apartment_id', '=', 'apartments.id')        
         ->get()
         ;
+        
         if((count($advTable) === 0)) {
             $apartment->advertises()->attach($form_adv['advertise_id'], 
             [
@@ -87,51 +93,74 @@ class AdvertiseController extends Controller
                 'end_date' => $end_date,
                 'status' => true,
                 'transaction_id' => 'transazione avvenuta'
-            ]);
+            ]); 
         }
-
-        $arr = [];
-        for($i = 0; $i < count($advTable); $i++) {
-            array_push($arr, $advTable[$i]);
-            foreach ($arr as $item) {
-                if((($item->apartment_id) !== $apartment_id) && ($start_date <= $end_date) ){
-                    $apartment->advertises()->attach($form_adv['advertise_id'], 
-                    [
-                        'start_date' => $start_date,
-                        'end_date' => $end_date,
-                        'status' => true,
-                        'transaction_id' => 'transazione avvenuta'
-                    ]); 
-                }elseif(( ($item->apartment_id) == $apartment_id) && (($item->advertise_id) == $advertise_id) && ($start_date > $end_date)) {
-                    $apartment->advertises()->attach($form_adv['advertise_id'], 
-                    [
-                        'start_date' => $start_date,
-                        'end_date' => $end_date,
-                        'status' => true,
-                        'transaction_id' => 'transazione avvenuta'
-                    ]); 
-                }else {
-                    dd('esiste');
-                }
-                
+        foreach ($advTable as $advItem) {
+            if(((count($advTable) > 0) && ($advItem->apartment_id) !== $apartment_id)) {
+                $apartment->advertises()->attach($form_adv['advertise_id'], 
+                [
+                    'start_date' => $start_date,
+                    'end_date' => $end_date,
+                    'status' => true,
+                    'transaction_id' => 'transazione avvenuta'
+                ]);     
+            }elseif(( ($advItem->apartment_id) == $apartment_id) && (($advItem->advertise_id) == $advertise_id) && ($start_date > $advItem->end_date)) {
+                $apartment->advertises()->attach($form_adv['advertise_id'], 
+                [
+                    'start_date' => $start_date,
+                    'end_date' => $end_date,
+                    'status' => true,
+                    'transaction_id' => 'transazione avvenuta'
+                ]); 
+            }else {
+                dd('esiste');
             }
         }
 
+        
+
+
+
+        
         /*
-        if((count($advTable) >= 0)) {
-            $apartment->advertises()->attach($form_adv['advertise_id'], 
-            [
-                'start_date' => $start_date,
-                'end_date' => $end_date,
-                'status' => true,
-                'transaction_id' => 'transazione avvenuta'
-            ]);
+        $arr = [];
+        for($i = 0; $i < count($advTable); $i++) {
+            array_push($arr, $advTable[$i]);
+            dump($arr);
         }
-        
         */
-        
-        
-        
+        /*
+        foreach ($arr as $item) {
+                if((($item->apartment_id) !== $apartment_id)){
+                //if((($item->apartment_id) !== $apartment_id) && ($start_date <= $end_date) ){
+                    $apartment->advertises()->attach($form_adv['advertise_id'], 
+                    [
+                        'start_date' => $start_date,
+                        'end_date' => $end_date,
+                        'status' => true,
+                        'transaction_id' => 'transazione avvenuta'
+                    ]);
+                    dd($arr);
+                }
+                elseif(( ($item->apartment_id) == $apartment_id) && (($item->advertise_id) == $advertise_id) && ($start_date > $item->end_date)) {
+                    $apartment->advertises()->attach($form_adv['advertise_id'], 
+                    [
+                        'start_date' => $start_date,
+                        'end_date' => $end_date,
+                        'status' => true,
+                        'transaction_id' => 'transazione avvenuta'
+                    ]); 
+                }
+                
+                else {
+                    //dd('esiste');
+                    dd('esiste');
+                    //return redirect()->route('host.apartments.index');
+                }
+                
+            }
+        */
+       
        
         /*
         $apartment->advertises()->attach($form_adv['advertise_id'], 
