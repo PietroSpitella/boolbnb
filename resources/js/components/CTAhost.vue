@@ -4,7 +4,7 @@
       <div class="row h-100">
         <div
           class="
-            col-12 col-md-8
+            col-12 col-md-9
             cta-host
             d-flex
             flex-column
@@ -14,7 +14,7 @@
             text-left
           "
         >
-          <div class="text-cta">
+          <div class="text-cta px-3">
             <h2 class="text-white mb-2 title-cta">Prova ad ospitare</h2>
             <h3 class="text-white">
               Condividi il tuo spazio per guadagnare qualcosa in più e cogliere
@@ -22,7 +22,7 @@
             </h3>
           </div>
         </div>
-        <div class="col-12 col-md-4 h-100 d-flex align-items-center">
+        <div class="col-12 col-md-3 h-100 d-flex align-items-center">
           <a href="/register" class="btn">Diventa Host</a>
         </div>
       </div>

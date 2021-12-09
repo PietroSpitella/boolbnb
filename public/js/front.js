@@ -5143,10 +5143,10 @@ var staticRenderFns = [
             "div",
             {
               staticClass:
-                "\n          col-12 col-md-8\n          cta-host\n          d-flex\n          flex-column\n          align-items-center\n          justify-content-center\n          h-100\n          text-left\n        ",
+                "\n          col-12 col-md-9\n          cta-host\n          d-flex\n          flex-column\n          align-items-center\n          justify-content-center\n          h-100\n          text-left\n        ",
             },
             [
-              _c("div", { staticClass: "text-cta" }, [
+              _c("div", { staticClass: "text-cta px-3" }, [
                 _c("h2", { staticClass: "text-white mb-2 title-cta" }, [
                   _vm._v("Prova ad ospitare"),
                 ]),
@@ -5162,7 +5162,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "col-12 col-md-4 h-100 d-flex align-items-center" },
+            { staticClass: "col-12 col-md-3 h-100 d-flex align-items-center" },
             [
               _c("a", { staticClass: "btn", attrs: { href: "/register" } }, [
                 _vm._v("Diventa Host"),
