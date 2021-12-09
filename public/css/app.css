@@ -11301,6 +11301,81 @@ nav a img {
   }
 }
 
+#payment_section .bg-Bronze {
+  background-image: linear-gradient(to left, #d68721, #dc8327, #e17f2d, #e67b33, #eb7739);
+}
+
+#payment_section .bg-Silver {
+  background-image: linear-gradient(to left, #dcd9d5, #d5d0cf, #ccc8c9, #c2c1c1, #b9b9b9);
+}
+
+#payment_section .bg-Gold {
+  background-image: linear-gradient(to left, #ffbe45, #ffc158, #fdc36a, #fcc67a, #f9c98a);
+}
+
+#payment_section .shadow-Bronze {
+  box-shadow: rgba(230, 123, 51, 0.1) 0px 20px 25px -5px, rgba(230, 123, 51, 0.1) 0px 10px 10px -5px;
+}
+
+#payment_section .shadow-Silver {
+  box-shadow: rgba(194, 193, 193, 0.1) 0px 20px 25px -5px, rgba(194, 193, 193, 0.1) 0px 10px 10px -5px;
+}
+
+#payment_section .shadow-Gold {
+  box-shadow: rgba(252, 198, 122, 0.1) 0px 20px 25px -5px, rgba(252, 198, 122, 0.1) 0px 10px 10px -5px;
+}
+
+#payment_section .btn-Bronze {
+  border: 2px solid #e67b33;
+}
+
+#payment_section .btn-Bronze:hover {
+  background-color: #e67b33;
+  color: white;
+  font-weight: bold;
+}
+
+#payment_section .btn-Silver {
+  border: 2px solid #c2c1c1;
+}
+
+#payment_section .btn-Silver:hover {
+  background-color: #c2c1c1;
+  color: white;
+  font-weight: bold;
+}
+
+#payment_section .btn-Gold {
+  border: 2px solid #fcc67a;
+}
+
+#payment_section .btn-Gold:hover {
+  background-color: #fcc67a;
+  color: white;
+  font-weight: bold;
+}
+
+#payment_section .card-price {
+  font-size: 4em;
+  position: relative;
+}
+
+#payment_section .card-price::before {
+  content: "\20AC";
+  position: absolute;
+  display: inline-block;
+  font-size: 18px;
+  left: 20%;
+}
+
+#payment_section .card {
+  transition: 0.4s;
+}
+
+#payment_section .card:hover {
+  transform: scale(1.05);
+}
+
 #jumbotron {
   padding: 250px 0;
   overflow: hidden;

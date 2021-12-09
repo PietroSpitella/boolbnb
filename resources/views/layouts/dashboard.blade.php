@@ -39,7 +39,8 @@
 <body onload="searchBox()">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark flex-md-nowrap py-0 px-4">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{route('host.home')}}">
-            <img src="{{asset('images/boolbnb-def.png')}}" alt="boolbnb_logo">
+            <img src="{{asset('images/boolbnb-def.png')}}" class="d-none d-md-block" alt="boolbnb_logo">
+            <img src="{{asset('images/favicon.png')}}" class="d-block d-md-none" alt="boolbnb_logo">
         </a>
         <ul class="navbar-nav px-3 ml-auto">
             <li class="nav-item my_user">
@@ -71,8 +72,8 @@
     </nav>
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-3 d-none d-md-block my_sidebar bg-dark py-4">
-                <div class="sidebar-container">
+            <nav class="col-md-3 col-12 d-md-block my_sidebar bg-dark py-4">
+
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('host.home')}}">
@@ -113,7 +114,7 @@
                         </li> --}}
                     </ul>
 
-                </div>
+
             </nav>
 
             <main role="main" class="col-md-9 ml-sm-auto col-lg-9 px-4 py-5">

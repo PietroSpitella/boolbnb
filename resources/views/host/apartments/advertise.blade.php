@@ -9,15 +9,20 @@
     </button>
 </div>
 @endif
-<div class="container">
+<div class="container" id="payment_section">
     <h1>Sponsorizza il tuo appartamento: {{$apartment->title}}</h1>
-    <div class="row my-3">
+    <div class="row my-5">
     @foreach ($advertises as $advertise)
         <div class="col-12 col-md-4">
-            <div class="card">
-                <div class="card-title">{{$advertise->name}}</div>
-                <div class="card-body">Metti in risalto per {{$advertise->duration}} ore</div>
-                <div class="card-footer"><a href="{{route('host.apartments.advertise.payment', ['id' => $apartment->id, 'advertise_id'=>$advertise->id])}}" class="btn btn-success">Compra ora per {{$advertise->price}}€!</a></div>
+            <div class="card text-center border-0 shadow-{{$advertise->name}}">
+                <div class="card-body">
+                    <div class="card-title w-100  text-uppercase font-weight-bold fs-24 bg-{{$advertise->name}} p-2 border rounded text-white mb-4">{{$advertise->name}}</div>
+                    <div class="card-text card-price mb-2 font-weight-bold">{{$advertise->price}}</div>
+                    <div class="card-text mb-4">Metti in risalto per <p class="font-weight-bold fs-20">{{$advertise->duration}} ore</p></div>
+                </div>
+                <div class="card-footer bg-white ">
+                    <a href="{{route('host.apartments.advertise.payment', ['id' => $apartment->id, 'advertise_id'=>$advertise->id])}}" class="btn p-2 px-4 btn-{{$advertise->name}} ">Compra ora</a>
+                </div>
             </div>
         </div>
         @endforeach

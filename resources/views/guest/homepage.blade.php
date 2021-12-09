@@ -26,7 +26,8 @@
         {{-- NAVBAR --}}
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                    <router-link class="navbar-brand col-sm-3 col-md-3 mr-0 mw-25" to="/"><img src="{{asset('images/boolbnb-def.png')}}" alt="boolbnb_logo"></router-link>
+                    <router-link class="navbar-brand col-sm-3 col-md-3 mr-0 mw-25 d-none d-md-block" to="/"><img src="{{asset('images/boolbnb-def.png')}}" alt="boolbnb_logo"></router-link>
+                    <router-link class="navbar-brand col-sm-3 col-md-3 mr-0 mw-25 d-block d-md-none" to="/"><img src="{{asset('images/favicon.png')}}" alt="boolbnb_logo"></router-link>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

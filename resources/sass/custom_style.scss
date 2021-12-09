@@ -347,3 +347,66 @@ nav {
         width: 92px;
     }
 }
+
+// SPONSORIZZATE PACCHETTI
+#payment_section {
+    .bg-Bronze {
+        background-image: linear-gradient(to left, #d68721, #dc8327, #e17f2d, #e67b33, #eb7739);
+    }
+    .bg-Silver {
+        background-image: linear-gradient(to left, #dcd9d5, #d5d0cf, #ccc8c9, #c2c1c1, #b9b9b9);
+    }
+    .bg-Gold {
+        background-image: linear-gradient(to left, #ffbe45, #ffc158, #fdc36a, #fcc67a, #f9c98a);
+    }
+    .shadow-Bronze {
+        box-shadow: rgba(#e67b33, 0.1) 0px 20px 25px -5px, rgba(#e67b33, 0.1) 0px 10px 10px -5px;
+    }
+    .shadow-Silver {
+        box-shadow: rgba(#c2c1c1, 0.1) 0px 20px 25px -5px, rgba(#c2c1c1, 0.1) 0px 10px 10px -5px;
+    }
+    .shadow-Gold {
+        box-shadow: rgba(#fcc67a, 0.1) 0px 20px 25px -5px, rgba(#fcc67a, 0.1) 0px 10px 10px -5px;
+    }
+    .btn-Bronze {
+        border: 2px solid #e67b33;
+        &:hover {
+            background-color: #e67b33;
+            color: white;
+            font-weight: bold;
+        }
+    }
+    .btn-Silver {
+        border: 2px solid #c2c1c1;
+        &:hover {
+            background-color: #c2c1c1;
+            color: white;
+            font-weight: bold;
+        }
+    }
+    .btn-Gold {
+        border: 2px solid #fcc67a;
+        &:hover {
+            background-color: #fcc67a;
+            color: white;
+            font-weight: bold;
+        }
+    }
+    .card-price {
+        font-size: 4em;
+        position: relative;
+        &::before {
+            content: '€';
+            position: absolute;
+            display: inline-block;
+            font-size: 18px;
+            left: 20%;
+        }
+    }
+    .card {
+        transition: 0.4s;
+    }
+    .card:hover {
+        transform: scale(1.05);
+    }
+}
