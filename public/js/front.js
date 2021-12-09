@@ -1983,6 +1983,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "ContactForm",
   props: ["apartment"],
@@ -4716,7 +4718,7 @@ var render = function () {
       [
         _c("div", { staticClass: "d-flex" }, [
           _c("div", { staticClass: "form-group w-50 mr-3 my-3" }, [
-            _c("label", { attrs: { for: "fullname" } }, [_vm._v("Nome:")]),
+            _c("label", { attrs: { for: "fullname" } }, [_vm._v("Full Name:")]),
             _vm._v(" "),
             _c("input", {
               directives: [
@@ -4769,7 +4771,7 @@ var render = function () {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "message" } }, [_vm._v("Testo:")]),
+          _c("label", { attrs: { for: "message" } }, [_vm._v("Text:")]),
           _vm._v(" "),
           _c("textarea", {
             directives: [
@@ -4794,14 +4796,7 @@ var render = function () {
           }),
         ]),
         _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-login-register p-2",
-            attrs: { type: "submit" },
-          },
-          [_vm._v("\n      Send Message\n    ")]
-        ),
+        _vm._m(0),
         _vm._v(" "),
         _vm.messageSent
           ? _c(
@@ -4812,8 +4807,10 @@ var render = function () {
                 attrs: { role: "alert" },
               },
               [
-                _vm._v("\n      Messaggio inviato con successo!\n      "),
-                _vm._m(0),
+                _vm._v(
+                  "\n      The message has been successfully sent!\n      "
+                ),
+                _vm._m(1),
               ]
             )
           : _vm._e(),
@@ -4822,6 +4819,21 @@ var render = function () {
   ])
 }
 var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "d-flex justify-content-end " }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-login-register p-2",
+          attrs: { type: "submit" },
+        },
+        [_vm._v("\n        Send Message\n      ")]
+      ),
+    ])
+  },
   function () {
     var _vm = this
     var _h = _vm.$createElement

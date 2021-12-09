@@ -2,7 +2,8 @@
 @section('title', 'Advertises')
     
 @section('content')
-    <form action="{{ route('host.advertises.store')}}"  method="POST">
+    <form class="d-flex justify-content-between w-100" action="{{ route('host.advertises.store')}}"  method="POST">
+        
         @csrf
         @method('POST')
         
@@ -18,6 +19,6 @@
         </select>
        
         {{--<input type="text" name="apartment_id" value="{{$apartment[0]->id}}" hidden>--}}
-        <button type="submit" class="d-block btn btn-primary">Sono pronto a sponsorizzare</button>
+            <button type="submit" class="btn btn-login-register p-2">Sono pronto a sponsorizzare</button>
     </form>
 @endsection
