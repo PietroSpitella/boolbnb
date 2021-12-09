@@ -2183,6 +2183,275 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/AboutUs.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/AboutUs.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "AboutUs"
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/Apartment.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Apartment.vue?vue&type=script&lang=js& ***!
@@ -5124,6 +5393,612 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("h5", { staticClass: "mb-0" }, [
           _vm._v("Hand-picked selection of quality places"),
+        ]),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/AboutUs.vue?vue&type=template&id=3eec1a12&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/AboutUs.vue?vue&type=template&id=3eec1a12&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container my-3" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-10" }, [
+          _c("h1", { staticClass: "font-weight-bold" }, [_vm._v("About Us")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "\n        See the humble contributors who gave a soul to this\n        "
+            ),
+            _c("strong", [_vm._v("AWESOME")]),
+            _vm._v(" website\n      "),
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass:
+                "\n          row row-cols-1 row-cols-md-1 row-cols-lg-1\n          justify-content-center\n        ",
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "my_card card my-3 border-0 bg-transparent" },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "my_img_col d-flex col-md-4 col-lg-4 p-0",
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "img-fluid rounded-start",
+                          attrs: {
+                            src: "https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+                            alt: "pic",
+                          },
+                        }),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "my_text_col col-md-8 col-lg-8" },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card-body d-flex flex-column justify-content-center",
+                          },
+                          [
+                            _c("div", { staticClass: "my_info" }, [
+                              _c(
+                                "h2",
+                                { staticClass: "card-title font-weight-bold" },
+                                [
+                                  _vm._v(
+                                    "\n                    Paolino Paperino\n                  "
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "card-text" }, [
+                                _vm._v(
+                                  "\n                    This is a wider card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                  "
+                                ),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "my_contacts_btns d-flex justify-content-evenly my-3",
+                              },
+                              [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "https://github.com/PietroSpitella",
+                                      target: "_blank",
+                                    },
+                                  },
+                                  [_c("i", { staticClass: "fab fa-github" })]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "https://www.linkedin.com/in/pietro-spitella/",
+                                      target: "_blank",
+                                    },
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fab fa-linkedin-in",
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "my_card card my-3 border-0 bg-transparent" },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "my_img_col d-flex col-md-4 col-lg-4 p-0",
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "img-fluid rounded-start",
+                          attrs: {
+                            src: "https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+                            alt: "pic",
+                          },
+                        }),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "my_text_col col-md-8 col-lg-8" },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card-body d-flex flex-column justify-content-center",
+                          },
+                          [
+                            _c("div", { staticClass: "my_info" }, [
+                              _c(
+                                "h2",
+                                { staticClass: "card-title font-weight-bold" },
+                                [
+                                  _vm._v(
+                                    "\n                    Paolino Paperino\n                  "
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "card-text" }, [
+                                _vm._v(
+                                  "\n                    This is a wider card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                  "
+                                ),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "my_contacts_btns d-flex justify-content-evenly my-3",
+                              },
+                              [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "https://github.com/PietroSpitella",
+                                      target: "_blank",
+                                    },
+                                  },
+                                  [_c("i", { staticClass: "fab fa-github" })]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "https://www.linkedin.com/in/pietro-spitella/",
+                                      target: "_blank",
+                                    },
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fab fa-linkedin-in",
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "my_card card my-3 border-0 bg-transparent" },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "my_img_col d-flex col-md-4 col-lg-4 p-0",
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "img-fluid rounded-start",
+                          attrs: {
+                            src: "https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+                            alt: "pic",
+                          },
+                        }),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "my_text_col col-md-8 col-lg-8" },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card-body d-flex flex-column justify-content-center",
+                          },
+                          [
+                            _c("div", { staticClass: "my_info" }, [
+                              _c(
+                                "h2",
+                                { staticClass: "card-title font-weight-bold" },
+                                [
+                                  _vm._v(
+                                    "\n                    Paolino Paperino\n                  "
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "card-text" }, [
+                                _vm._v(
+                                  "\n                    This is a wider card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                  "
+                                ),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "my_contacts_btns d-flex justify-content-evenly my-3",
+                              },
+                              [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "https://github.com/PietroSpitella",
+                                      target: "_blank",
+                                    },
+                                  },
+                                  [_c("i", { staticClass: "fab fa-github" })]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "https://www.linkedin.com/in/pietro-spitella/",
+                                      target: "_blank",
+                                    },
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fab fa-linkedin-in",
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "my_card card my-3 border-0 bg-transparent" },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "my_img_col d-flex col-md-4 col-lg-4 p-0",
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "img-fluid rounded-start",
+                          attrs: {
+                            src: "https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+                            alt: "pic",
+                          },
+                        }),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "my_text_col col-md-8 col-lg-8" },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card-body d-flex flex-column justify-content-center",
+                          },
+                          [
+                            _c("div", { staticClass: "my_info" }, [
+                              _c(
+                                "h2",
+                                { staticClass: "card-title font-weight-bold" },
+                                [
+                                  _vm._v(
+                                    "\n                    Paolino Paperino\n                  "
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "card-text" }, [
+                                _vm._v(
+                                  "\n                    This is a wider card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                  "
+                                ),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "my_contacts_btns d-flex justify-content-evenly my-3",
+                              },
+                              [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "https://github.com/PietroSpitella",
+                                      target: "_blank",
+                                    },
+                                  },
+                                  [_c("i", { staticClass: "fab fa-github" })]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "https://www.linkedin.com/in/pietro-spitella/",
+                                      target: "_blank",
+                                    },
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fab fa-linkedin-in",
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "my_card card my-3 border-0 bg-transparent" },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "my_img_col d-flex col-md-4 col-lg-4 p-0",
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "img-fluid rounded-start",
+                          attrs: {
+                            src: "https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+                            alt: "pic",
+                          },
+                        }),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "my_text_col col-md-8 col-lg-8" },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card-body d-flex flex-column justify-content-center",
+                          },
+                          [
+                            _c("div", { staticClass: "my_info" }, [
+                              _c(
+                                "h2",
+                                { staticClass: "card-title font-weight-bold" },
+                                [
+                                  _vm._v(
+                                    "\n                    Paolino Paperino\n                  "
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "card-text" }, [
+                                _vm._v(
+                                  "\n                    This is a wider card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                  "
+                                ),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "my_contacts_btns d-flex justify-content-evenly my-3",
+                              },
+                              [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "https://github.com/PietroSpitella",
+                                      target: "_blank",
+                                    },
+                                  },
+                                  [_c("i", { staticClass: "fab fa-github" })]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "https://www.linkedin.com/in/pietro-spitella/",
+                                      target: "_blank",
+                                    },
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fab fa-linkedin-in",
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "my_card card my-3 border-0 bg-transparent" },
+                [
+                  _c("div", { staticClass: "row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "my_img_col d-flex col-md-4 col-lg-4 p-0",
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "img-fluid rounded-start",
+                          attrs: {
+                            src: "https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+                            alt: "pic",
+                          },
+                        }),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "my_text_col col-md-8 col-lg-8" },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "card-body d-flex flex-column justify-content-center",
+                          },
+                          [
+                            _c("div", { staticClass: "my_info" }, [
+                              _c(
+                                "h2",
+                                { staticClass: "card-title font-weight-bold" },
+                                [
+                                  _vm._v(
+                                    "\n                    Paolino Paperino\n                  "
+                                  ),
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("p", { staticClass: "card-text" }, [
+                                _vm._v(
+                                  "\n                    This is a wider card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                  "
+                                ),
+                              ]),
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              {
+                                staticClass:
+                                  "my_contacts_btns d-flex justify-content-evenly my-3",
+                              },
+                              [
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "https://github.com/PietroSpitella",
+                                      target: "_blank",
+                                    },
+                                  },
+                                  [_c("i", { staticClass: "fab fa-github" })]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "a",
+                                  {
+                                    attrs: {
+                                      href: "https://www.linkedin.com/in/pietro-spitella/",
+                                      target: "_blank",
+                                    },
+                                  },
+                                  [
+                                    _c("i", {
+                                      staticClass: "fab fa-linkedin-in",
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]
+              ),
+            ]
+          ),
         ]),
       ]),
     ])
@@ -21379,10 +22254,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_Discover_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/Discover.vue */ "./resources/js/pages/Discover.vue");
 /* harmony import */ var _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Home.vue */ "./resources/js/pages/Home.vue");
 /* harmony import */ var _pages_Apartment_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Apartment.vue */ "./resources/js/pages/Apartment.vue");
+/* harmony import */ var _pages_AboutUs_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/AboutUs.vue */ "./resources/js/pages/AboutUs.vue");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
 
 
 
@@ -21400,6 +22277,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
     path: '/apartment/:slug',
     name: 'Apartment',
     component: _pages_Apartment_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }, {
+    path: '/about',
+    name: 'about',
+    component: _pages_AboutUs_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 });
 router.beforeEach(function (to, from, next) {
@@ -21409,6 +22290,75 @@ router.beforeEach(function (to, from, next) {
 var app = new Vue({
   router: router
 }).$mount('#vue');
+
+/***/ }),
+
+/***/ "./resources/js/pages/AboutUs.vue":
+/*!****************************************!*\
+  !*** ./resources/js/pages/AboutUs.vue ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AboutUs_vue_vue_type_template_id_3eec1a12_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AboutUs.vue?vue&type=template&id=3eec1a12&scoped=true& */ "./resources/js/pages/AboutUs.vue?vue&type=template&id=3eec1a12&scoped=true&");
+/* harmony import */ var _AboutUs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AboutUs.vue?vue&type=script&lang=js& */ "./resources/js/pages/AboutUs.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AboutUs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AboutUs_vue_vue_type_template_id_3eec1a12_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AboutUs_vue_vue_type_template_id_3eec1a12_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "3eec1a12",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/AboutUs.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/AboutUs.vue?vue&type=script&lang=js&":
+/*!*****************************************************************!*\
+  !*** ./resources/js/pages/AboutUs.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutUs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./AboutUs.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/AboutUs.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutUs_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/AboutUs.vue?vue&type=template&id=3eec1a12&scoped=true&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/pages/AboutUs.vue?vue&type=template&id=3eec1a12&scoped=true& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutUs_vue_vue_type_template_id_3eec1a12_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./AboutUs.vue?vue&type=template&id=3eec1a12&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/AboutUs.vue?vue&type=template&id=3eec1a12&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutUs_vue_vue_type_template_id_3eec1a12_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AboutUs_vue_vue_type_template_id_3eec1a12_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -21662,11 +22612,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-<<<<<<< HEAD
-module.exports = __webpack_require__(/*! C:\Users\Luciano\Documents\Boolean\Progetto_Finale\boolbnb\resources\js\front.js */"./resources/js/front.js");
-=======
-module.exports = __webpack_require__(/*! C:\Users\Roberto\Desktop\BOOLEAN\PROGETTO FINALE\boolbnb\resources\js\front.js */"./resources/js/front.js");
->>>>>>> 3342bd9eadd6dc42c10e1ae3cf51170df92b9938
+module.exports = __webpack_require__(/*! /Users/albertogaia/Desktop/boolbnb/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

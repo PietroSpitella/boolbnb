@@ -38,9 +38,10 @@
                     <li class="nav-item {{Request::route()->getName()=='discoverPage'? 'active' : 'null'}}">
                         <router-link class="nav-link" to="/discover">Discover</router-link>
                     </li>
-                    <li class="nav-item {{Request::route()->getName()=='about-us'? 'active' : 'null'}}">
-                        <a class="nav-link" href="{{url('/about-us')}}">About Us</a>
+                    <li class="nav-item {{Request::route()->getName()=='discoverPage'? 'active' : 'null'}}">
+                        <router-link class="nav-link" to="/about">About Us</router-link>
                     </li>
+
                     </ul>
                 </div>
                 <div class="collapse navbar-collapse navbar-hamburger" id="navbarSupportedContent">
