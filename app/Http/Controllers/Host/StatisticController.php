@@ -40,12 +40,12 @@ class StatisticController extends Controller
         dd($statistics);
         */
 
-        $stat_apartment = [];
-        foreach ($statistics as $statistic) {
-            array_push($stat_apartment,$statistic);
-        }
+        // $stat_apartment = [];
+        // foreach ($statistics as $statistic) {
+        //     array_push($stat_apartment,$statistic);
+        // }
        
         
-        return view('host.apartments.statistics', compact('stat_apartment'));
+        return view('host.apartments.statistics', compact('statistics'));
     }
 }

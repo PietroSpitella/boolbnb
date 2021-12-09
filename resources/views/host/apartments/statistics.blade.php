@@ -6,8 +6,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10">
-
-                @foreach ($stat_apartment as $item)
+           
+                @foreach ($statistics as $item)
                     <div>
                         <h1>Appartamento n°</h1>
                         <p id="apartment_id">{{$item->apartment_id}}</p>
@@ -17,6 +17,16 @@
                         <p id="apartment_count">{{$item->apartment_count}}</p>
                     </div>
                 @endforeach
+                {{-- @foreach ($stat_apartment as $item)
+                    <div>
+                        <h1>Appartamento n°</h1>
+                        <p id="apartment_id">{{$item->apartment_id}}</p>
+                    </div>
+                    <div>
+                        <h2>N° visualizzazioni</h2>
+                        <p id="apartment_count">{{$item->apartment_count}}</p>
+                    </div>
+                @endforeach --}}
             <canvas id="myChart"></canvas>
         </div>
     </div>
