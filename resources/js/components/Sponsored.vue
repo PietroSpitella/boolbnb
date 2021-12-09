@@ -3,14 +3,21 @@
     <div class="container">
       <div class="row mb-3">
         <div class="col-12">
-          <h3 class="mb-3"><strong>Our Featured Homes</strong></h3>
-          <h5 class="mb-0">Hand-picked selection of quality places</h5>
+          <h3 class="mb-3"><strong>Le nostre case in evidenza</strong></h3>
+          <h5 class="mb-0">
+            Soggiorna nelle migliori abitazioni del multiverso per un'esperienza
+            indimenticabile
+          </h5>
         </div>
       </div>
 
       <div class="row">
-        <div
-          class="col-5 col-md-3 card m-2 px-0"
+        <router-link
+          :to="{
+            name: 'Apartment',
+            params: { slug: apartment.slug },
+          }"
+          class="col-5 col-md-3 card m-2 px-0 text-reset text-decoration-none"
           v-for="apartment in apartments"
           :key="apartment.id"
         >
@@ -27,16 +34,8 @@
             <p class="card-text">
               {{ apartment.description }}
             </p>
-            <router-link
-              :to="{
-                name: 'Apartment',
-                params: { slug: apartment.slug },
-              }"
-              class="card-link"
-              >Visualizza
-            </router-link>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </section>
@@ -63,6 +62,12 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.card {
+  transition: 0.5s;
+  &:hover {
+    transform: translateY(-5%);
+  }
+}
 .card-img-top {
   height: 200px;
   width: 100%;

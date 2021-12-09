@@ -69,62 +69,76 @@
         </div>
       </template>
     </div>
-    <div class="row justify-content-around mx-0">
-      <div class="col-12 col-md-3">
-        <div class="row">
-          <div class="col-12">
-            <h3 v-if="resultCity != ''">
-              Risultati trovati per: {{ resultCity }} ({{ apartments.length }})
-            </h3>
-            <h3 v-else>Viaggetto a Roma?</h3>
+    <section class="container mb-5">
+      <div class="row justify-content-around mx-0">
+        <div class="col-12 col-md-6">
+          <div class="row">
+            <div class="col-12">
+              <h3 v-if="resultCity != ''">
+                Risultati trovati per: {{ resultCity }} ({{
+                  apartments.length
+                }})
+              </h3>
+              <h3 v-else>Viaggetto a Roma?</h3>
+            </div>
           </div>
-        </div>
-        <div class="row" v-for="(apartment, index) in apartments" :key="index">
-          <div class="col-12">
-            <div class="card mb-3" style="max-width: 540px">
-              <div class="row no-gutters">
-                <div class="col-md-4">
-                  <img
-                    :src="'/storage/' + apartment.image"
-                    class="card-img-top"
-                    alt=""
-                  />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ apartment.title }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">
-                      {{ apartment.city }}
-                    </h6>
-                    <p class="card-text">{{ apartment.description }}</p>
-                    <p class="card-text">
-                      <router-link
-                        :to="{
-                          name: 'Apartment',
-                          params: { slug: apartment.slug },
-                        }"
-                        class="card-link"
-                        >Visualizza
-                      </router-link>
-                    </p>
+          <div
+            class="row"
+            v-for="(apartment, index) in apartments"
+            :key="index"
+          >
+            <div class="col-12">
+              <div class="card mb-3" style="max-width: 540px">
+                <div class="row no-gutters">
+                  <div class="col-md-4">
+                    <img
+                      :src="'/storage/' + apartment.image"
+                      class="card-img-top"
+                      alt=""
+                    />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{ apartment.title }}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">
+                        {{ apartment.city }}
+                      </h6>
+                      <p class="card-text">{{ apartment.description }}</p>
+                      <p class="card-text">
+                        <router-link
+                          :to="{
+                            name: 'Apartment',
+                            params: { slug: apartment.slug },
+                          }"
+                          class="card-link"
+                          >Visualizza
+                        </router-link>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-12 col-md-8">
-        <div class="container-map">
-          <div id="map_div" class="map"></div>
+        <div class="col-12 col-md-6">
+          <div class="container-map">
+            <div id="map_div" class="map"></div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+    <CTAhost />
   </div>
 </template>
 <script>
+import CTAhost from "../components/CTAhost.vue";
+
 export default {
   name: "Main",
+  components: {
+    CTAhost,
+  },
   props: ["destination"],
   data() {
     return {

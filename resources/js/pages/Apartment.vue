@@ -1,15 +1,15 @@
 <template>
   <section>
-    <div class="container my-3">
-      <div v-if="!isLoading" class="row">
-        <div class="col-md-12">
-          <div class="d-flex justify-content-center">
-            <img
-              class="apartments-img"
-              :src="'/storage/' + apartment.image"
-              alt="Image inserted"
-            />
-          </div>
+    <div v-if="!isLoading" class="row">
+      <div class="col-md-12">
+        <div class="d-flex justify-content-center img-container">
+          <img
+            class="apartments-img w-100 h-100"
+            :src="'/storage/' + apartment.image"
+            alt="Image inserted"
+          />
+        </div>
+        <div class="container my-3">
           <p class="fs-25 font-weight-bold pt-3 m-0">{{ apartment.title }}</p>
           <p class="fs-15">
             <i class="fas fa-map-marker-alt fs-15"></i> {{ apartment.city }},
@@ -217,6 +217,15 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.img-container {
+  height: 400px;
+  width: 100%;
+  object-position: center;
+  .apartments-img {
+    max-width: 100% !important;
+    object-fit: cover;
+  }
+}
 #map {
   width: 100%;
   position: relative;
