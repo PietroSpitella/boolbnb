@@ -2342,16 +2342,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Apartment",
@@ -5105,8 +5095,334 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "section",
+    [
+      _c("div", { staticClass: "container my-3" }, [
+        !_vm.isLoading
+          ? _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("div", { staticClass: "d-flex justify-content-center" }, [
+                  _c("img", {
+                    staticClass: "apartments-img",
+                    attrs: {
+                      src: "/storage/" + _vm.apartment.image,
+                      alt: "Image inserted",
+                    },
+                  }),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "fs-25 font-weight-bold pt-3 m-0" }, [
+                  _vm._v(_vm._s(_vm.apartment.title)),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "fs-15" }, [
+                  _c("i", { staticClass: "fas fa-map-marker-alt fs-15" }),
+                  _vm._v(
+                    " " +
+                      _vm._s(_vm.apartment.city) +
+                      ",\n          " +
+                      _vm._s(_vm.apartment.street) +
+                      ", " +
+                      _vm._s(_vm.apartment.house_number) +
+                      "\n        "
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "div-bordered text-center mt-3" }, [
+                  _c("div", { staticClass: "p-4" }, [
+                    _c("i", {
+                      staticClass: "fas fa-home fs-30 color-grey-icon",
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      { staticClass: "fs-15 text-capitalize font-weight-bold" },
+                      [
+                        _vm._v(
+                          "\n              Type " +
+                            _vm._s(_vm.apartment.type) +
+                            "\n            "
+                        ),
+                      ]
+                    ),
+                  ]),
+                ]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "div-bordered d-flex text-center mb-3" },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "\n              div-bordered-2 div-bordered-3 div-bordered-4\n              icon-separation\n              p-4\n            ",
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "fas fa-bed fs-20 color-grey-icon",
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "fs-15 text-capitalize font-weight-bold",
+                          },
+                          [
+                            _vm._v(
+                              "\n              Bedrooms " +
+                                _vm._s(_vm.apartment.n_beds) +
+                                "\n            "
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "div-bordered-3 icon-separation p-4" },
+                      [
+                        _c("i", {
+                          staticClass:
+                            "fas fa-user-friends fs-20 color-grey-icon",
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "fs-15 text-capitalize font-weight-bold",
+                          },
+                          [
+                            _vm._v(
+                              "\n              Guests " +
+                                _vm._s(_vm.apartment.n_guests) +
+                                "\n            "
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "\n              div-bordered-2 div-bordered-3 div-bordered-4\n              icon-separation\n              p-4\n            ",
+                      },
+                      [
+                        _c("i", {
+                          staticClass: "far fa-clone fs-20 color-grey-icon",
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "fs-15 text-capitalize font-weight-bold",
+                          },
+                          [
+                            _vm._v(
+                              "\n              Mq " +
+                                _vm._s(_vm.apartment.mq) +
+                                "\n            "
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ]
+                ),
+                _vm._v(" "),
+                _c("h4", { staticClass: "font-weight-bold" }, [
+                  _vm._v("Description"),
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "fs-15 pb-3 div-bordered-3" }, [
+                  _vm._v(_vm._s(_vm.apartment.description)),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "pb-3 div-bordered-3" }, [
+                  _c("h4", { staticClass: "font-weight-bold" }, [
+                    _vm._v("Details"),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "details-apartments d-flex justify-content-around",
+                    },
+                    [
+                      _c("div", { staticClass: "details-left" }, [
+                        _c("p", { staticClass: "fs-15" }, [
+                          _c("i", { staticClass: "far fa-circle fs-12" }),
+                          _vm._v(
+                            " ID: " +
+                              _vm._s(_vm.apartment.id) +
+                              "\n              "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "fs-15" }, [
+                          _c("i", { staticClass: "far fa-circle fs-12" }),
+                          _vm._v(
+                            " Pet: " +
+                              _vm._s(_vm.apartment.pet) +
+                              "\n              "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "fs-15" }, [
+                          _c("i", { staticClass: "far fa-circle fs-12" }),
+                          _vm._v(
+                            " Checkin time:\n                " +
+                              _vm._s(_vm.apartment.h_checkin) +
+                              "\n              "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "fs-15" }, [
+                          _c("i", { staticClass: "far fa-circle fs-12" }),
+                          _vm._v(
+                            " Checkout time:\n                " +
+                              _vm._s(_vm.apartment.h_checkout) +
+                              "\n              "
+                          ),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "details-right" }, [
+                        _c("p", { staticClass: "fs-15" }, [
+                          _c("i", { staticClass: "far fa-circle fs-12" }),
+                          _vm._v(
+                            " Type: " +
+                              _vm._s(_vm.apartment.type) +
+                              "\n              "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "fs-15" }, [
+                          _c("i", { staticClass: "far fa-circle fs-12" }),
+                          _vm._v(
+                            " City: " +
+                              _vm._s(_vm.apartment.city) +
+                              "\n              "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "fs-15" }, [
+                          _c("i", { staticClass: "far fa-circle fs-12" }),
+                          _vm._v(
+                            " Street:\n                " +
+                              _vm._s(_vm.apartment.street) +
+                              "\n              "
+                          ),
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "fs-15" }, [
+                          _c("i", { staticClass: "far fa-circle fs-12" }),
+                          _vm._v(
+                            " House number:\n                " +
+                              _vm._s(_vm.apartment.house_number) +
+                              "\n              "
+                          ),
+                        ]),
+                      ]),
+                    ]
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-6" }, [
+                    _c("div", { staticClass: "row flex-column" }, [
+                      _c("h4", { staticClass: "font-weight-bold pt-3" }, [
+                        _vm._v("Additional Services"),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "\n                  additional_services\n                  d-flex\n                  div-bordered-3\n                  flex-wrap\n                  pt-2\n                  pb-3\n                ",
+                        },
+                        _vm._l(_vm.services, function (service) {
+                          return _c(
+                            "div",
+                            { key: service.id, staticClass: "pr-4" },
+                            [
+                              _c("p", { staticClass: "fs-15" }, [
+                                _c("i", {
+                                  staticClass: "fs-15",
+                                  class: service.icon,
+                                }),
+                                _vm._v(
+                                  "\n                    " +
+                                    _vm._s(service.name) +
+                                    "\n                  "
+                                ),
+                              ]),
+                            ]
+                          )
+                        }),
+                        0
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row flex-column" }, [
+                      _c("h4", { staticClass: "font-weight-bold pt-3" }, [
+                        _vm._v("Price"),
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "fs-15 pb-3 div-bordered-3" }, [
+                        _c("i", { staticClass: "fas fa-chevron-right fs-12" }),
+                        _vm._v(
+                          " Price per night:\n                " +
+                            _vm._s(_vm.apartment.price_night) +
+                            " €\n              "
+                        ),
+                      ]),
+                    ]),
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-6" }, [
+                    _c("div", { staticClass: "map", attrs: { id: "map" } }, [
+                      _c("img", {
+                        staticClass: "w-100",
+                        attrs: {
+                          src:
+                            "https://api.tomtom.com/map/1/staticimage?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex&zoom=16&center=" +
+                            _vm.apartment.long +
+                            "," +
+                            _vm.apartment.lat +
+                            "&format=jpg&layer=basic&style=main&width=1305&height=748&view=Unified&language=en-GB",
+                          alt: "Mappa",
+                        },
+                      }),
+                      _vm._v(" "),
+                      _c("i", { staticClass: "fas fa-map-pin" }),
+                    ]),
+                  ]),
+                ]),
+              ]),
+            ])
+          : _vm._e(),
+      ]),
+      _vm._v(" "),
+      _c("ContactForm", { attrs: { apartment: _vm.apartment } }),
+    ],
+    1
+  )
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 
