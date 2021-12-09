@@ -1,0 +1,30 @@
+.my_card {
+    .row {
+        .my_img_col {
+            img {
+                border-radius: 100%;
+                object-fit: cover;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            }
+        }
+
+        .my_text_col{
+            .card-body{
+                height: 100%;
+            }
+        }
+    }
+}
+
+.my_contacts_btns {
+    a {
+        text-decoration: none;
+        margin-right: 15px;
+        i{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+        }
+    }
+}
