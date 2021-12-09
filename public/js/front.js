@@ -3082,7 +3082,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#jumbotron[data-v-0b8439d1] {\n  background-image: url(\"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80\");\n  background-size: cover;\n  background-position: center;\n}\n#jumbotron .bg-overlay[data-v-0b8439d1] {\n  position: absolute;\n  inset: 0;\n  background-color: rgba(0, 0, 0, 0.387);\n}", ""]);
+exports.push([module.i, "#jumbotron[data-v-0b8439d1] {\n  background-image: url(\"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80\");\n  background-size: cover;\n  background-position: center;\n}\n#jumbotron .title-jumbotron[data-v-0b8439d1] {\n  font-size: 3.5em;\n  font-weight: 800;\n}\n#jumbotron .bg-overlay[data-v-0b8439d1] {\n  position: absolute;\n  inset: 0;\n  background-color: rgba(0, 0, 0, 0.387);\n}", ""]);
 
 // exports
 
@@ -5475,7 +5475,7 @@ var staticRenderFns = [
       { staticClass: "row align-items-center flex-column mb-4" },
       [
         _c("div", { staticClass: "col-auto mx-auto text-center" }, [
-          _c("h2", { staticClass: "mb-4" }, [
+          _c("h2", { staticClass: "mb-4 title-jumbotron" }, [
             _c("strong", [
               _vm._v(
                 "Scopri nuovi posti e partecipa a esperienze fantastiche!"
@@ -6741,7 +6741,9 @@ var render = function () {
                     _vm._v(
                       "\n            Risultati trovati per: " +
                         _vm._s(_vm.resultCity) +
-                        "\n          "
+                        " (" +
+                        _vm._s(_vm.apartments.length) +
+                        ")\n          "
                     ),
                   ])
                 : _c("h3", [_vm._v("Viaggetto a Roma?")]),

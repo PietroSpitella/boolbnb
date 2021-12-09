@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row align-items-center flex-column mb-4">
         <div class="col-auto mx-auto text-center">
-          <h2 class="mb-4">
+          <h2 class="mb-4 title-jumbotron">
             <strong
               >Scopri nuovi posti e partecipa a esperienze fantastiche!</strong
             >
@@ -72,6 +72,10 @@ export default {
   background-image: url("https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80");
   background-size: cover;
   background-position: center;
+  .title-jumbotron {
+    font-size: 3.5em;
+    font-weight: 800;
+  }
   .bg-overlay {
     position: absolute;
     inset: 0;

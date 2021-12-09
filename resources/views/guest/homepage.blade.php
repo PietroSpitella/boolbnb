@@ -32,7 +32,7 @@
                 </button>
                 <div class="collapse navbar-collapse col-md-6 col-sm-6 justify-content-center" id="navbarScroll">
                     <ul class="navbar-nav mr-2 my-2 my-lg-0 navbar-nav-scroll" style="max-height: 100px;">
-                    <li class="nav-item {{Request::route()->getUrl()=='Homepage'? 'active' : 'null'}}">
+                    <li class="nav-item {{Request::route()->getName()=='Homepage'? 'active' : 'null'}}">
                         <router-link class="nav-link" to="/">Home</router-link>
                     </li>
                     <li class="nav-item {{Request::route()->getName()=='Discover'? 'active' : 'null'}}">

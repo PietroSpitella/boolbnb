@@ -74,7 +74,7 @@
         <div class="row">
           <div class="col-12">
             <h3 v-if="resultCity != ''">
-              Risultati trovati per: {{ resultCity }}
+              Risultati trovati per: {{ resultCity }} ({{ apartments.length }})
             </h3>
             <h3 v-else>Viaggetto a Roma?</h3>
           </div>

@@ -10976,7 +10976,6 @@ body {
 
 #app main {
   min-height: calc(100vh - 70px);
-  padding: 15px 0;
 }
 
 .button_login,
@@ -11014,12 +11013,13 @@ body {
   background-color: #ff385c;
   border: none;
   color: #ffffff;
+  transition: 0.4s;
 }
 
 .btn-login-register:hover,
 .btn-login-register-green:hover {
   color: #ffffff;
-  transform: scale(1.1);
+  background-color: #dc2424;
 }
 
 .btn-login-register-green {
