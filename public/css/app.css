@@ -10970,6 +10970,26 @@ body {
   color: #ff385c;
 }
 
+#vue main {
+  min-height: calc(100vh - 70px);
+  margin-top: 70px;
+}
+
+#app main {
+  min-height: calc(100vh - 70px);
+  margin-top: 70px;
+  padding-top: 15px;
+}
+
+#vue nav.navbar {
+  position: fixed;
+  z-index: 999;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 .button_login,
 .button_register {
   background-color: #ff385c;

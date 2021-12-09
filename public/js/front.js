@@ -2806,6 +2806,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Main",
   props: ["destination"],
@@ -2818,6 +2826,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       myUrl: "/api/apartments",
       tomTomAPI: "https://api.tomtom.com/search/2/geocode/",
       city: this.$route.params.destination,
+      resultCity: "",
       apiKey: ".json?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
       API_KEY: "6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
       apartments: [],
@@ -2880,6 +2889,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return axios.get(_this2.tomTomAPI + _this2.city + _this2.apiKey).then(function (res) {
                   _this2.lat = res.data.results[0].position.lat;
                   _this2["long"] = res.data.results[0].position.lon;
+                  _this2.resultCity = _this2.city;
                   _this2.citySearched = true;
                 });
 
@@ -6372,7 +6382,7 @@ var render = function () {
   return _c("div", [
     _c(
       "div",
-      { staticClass: "container my-3" },
+      { staticClass: "container my-3 py-3" },
       [
         _c("div", { staticClass: "form-group" }, [
           _c("input", {
@@ -6534,79 +6544,98 @@ var render = function () {
       2
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "row justify-content-around" }, [
+    _c("div", { staticClass: "row justify-content-around mx-0" }, [
       _c(
         "div",
         { staticClass: "col-12 col-md-3" },
-        _vm._l(_vm.apartments, function (apartment, index) {
-          return _c("div", { key: index, staticClass: "row" }, [
+        [
+          _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-12" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "card mb-3",
-                  staticStyle: { "max-width": "540px" },
-                },
-                [
-                  _c("div", { staticClass: "row no-gutters" }, [
-                    _c("div", { staticClass: "col-md-4" }, [
-                      _c("img", {
-                        staticClass: "card-img-top",
-                        attrs: { src: "/storage/" + apartment.image, alt: "" },
-                      }),
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-md-8" }, [
-                      _c("div", { staticClass: "card-body" }, [
-                        _c("h5", { staticClass: "card-title" }, [
-                          _vm._v(_vm._s(apartment.title)),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "h6",
-                          { staticClass: "card-subtitle mb-2 text-muted" },
-                          [
-                            _vm._v(
-                              "\n                    " +
-                                _vm._s(apartment.city) +
-                                "\n                  "
-                            ),
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c("p", { staticClass: "card-text" }, [
-                          _vm._v(_vm._s(apartment.description)),
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          { staticClass: "card-text" },
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "card-link",
-                                attrs: {
-                                  to: {
-                                    name: "Apartment",
-                                    params: { slug: apartment.slug },
+              _vm.resultCity != ""
+                ? _c("h3", [
+                    _vm._v(
+                      "\n            Risultati trovati per: " +
+                        _vm._s(_vm.resultCity) +
+                        "\n          "
+                    ),
+                  ])
+                : _c("h3", [_vm._v("Viaggetto a Roma?")]),
+            ]),
+          ]),
+          _vm._v(" "),
+          _vm._l(_vm.apartments, function (apartment, index) {
+            return _c("div", { key: index, staticClass: "row" }, [
+              _c("div", { staticClass: "col-12" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "card mb-3",
+                    staticStyle: { "max-width": "540px" },
+                  },
+                  [
+                    _c("div", { staticClass: "row no-gutters" }, [
+                      _c("div", { staticClass: "col-md-4" }, [
+                        _c("img", {
+                          staticClass: "card-img-top",
+                          attrs: {
+                            src: "/storage/" + apartment.image,
+                            alt: "",
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-8" }, [
+                        _c("div", { staticClass: "card-body" }, [
+                          _c("h5", { staticClass: "card-title" }, [
+                            _vm._v(_vm._s(apartment.title)),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "h6",
+                            { staticClass: "card-subtitle mb-2 text-muted" },
+                            [
+                              _vm._v(
+                                "\n                    " +
+                                  _vm._s(apartment.city) +
+                                  "\n                  "
+                              ),
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("p", { staticClass: "card-text" }, [
+                            _vm._v(_vm._s(apartment.description)),
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "p",
+                            { staticClass: "card-text" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  staticClass: "card-link",
+                                  attrs: {
+                                    to: {
+                                      name: "Apartment",
+                                      params: { slug: apartment.slug },
+                                    },
                                   },
                                 },
-                              },
-                              [_vm._v("Visualizza\n                    ")]
-                            ),
-                          ],
-                          1
-                        ),
+                                [_vm._v("Visualizza\n                    ")]
+                              ),
+                            ],
+                            1
+                          ),
+                        ]),
                       ]),
                     ]),
-                  ]),
-                ]
-              ),
-            ]),
-          ])
-        }),
-        0
+                  ]
+                ),
+              ]),
+            ])
+          }),
+        ],
+        2
       ),
       _vm._v(" "),
       _vm._m(0),
@@ -22279,7 +22308,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
     component: _pages_Apartment_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: '/about',
-    name: 'about',
+    name: 'About',
     component: _pages_AboutUs_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 });

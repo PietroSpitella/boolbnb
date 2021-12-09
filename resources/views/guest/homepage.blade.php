@@ -284,7 +284,9 @@
             </div>
         </nav>
 
-        <router-view></router-view>
+        <main>
+            <router-view></router-view>
+        </main>
 
 
         {{-- FOOTER --}}

@@ -7,6 +7,32 @@ body {
     color: $red;
 }
 
+#vue {
+    main {
+        min-height: calc(100vh - 70px);
+        margin-top: 70px;
+    }
+}
+
+#app {
+    main {
+        min-height: calc(100vh - 70px);
+        margin-top: 70px;
+        padding-top: 15px;
+    }
+}
+
+#vue {
+    nav.navbar {
+        position: fixed;
+        z-index: 999;
+        background-color: $white;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
 // fine navbar home page
 // inizio modali login e register
 .button_login,
@@ -42,12 +68,12 @@ body {
 }
 
 .btn-login-register:hover,
-.btn-login-register-green:hover{
+.btn-login-register-green:hover {
     color: $white;
     transform: scale(1.1);
 }
 
-.btn-login-register-green{
+.btn-login-register-green {
     background-color: $green;
     border: none;
     color: $white;
@@ -62,7 +88,6 @@ body {
 }
 
 // fine modali login e register
-
 // barra superiore
 nav {
     height: 70px;
@@ -129,32 +154,31 @@ nav {
     max-width: 400px;
 }
 
-.color-grey-icon{
+.color-grey-icon {
     color: #c0c4c8;
 }
 
-.div-bordered{
+.div-bordered {
     border: 1px dotted #d8dce1;
 }
 
-.div-bordered-2{
+.div-bordered-2 {
     border-right: 1px dotted #d8dce1;
 }
 
-.div-bordered-3{
+.div-bordered-3 {
     border-bottom: 1px dotted #d8dce1;
 }
 
-.div-bordered-4{
+.div-bordered-4 {
     border-left: 1px dotted #d8dce1;
 }
 
-.icon-separation{
+.icon-separation {
     width: calc(100% / 3);
 }
 
 //fine appartamenti degli utenti
-
 //tutti i font size da 10 a 25px
 .fs-10 {
     font-size: 10px;
@@ -220,27 +244,27 @@ nav {
     font-size: 25px;
 }
 
-.fs-26{
+.fs-26 {
     font-size: 26px;
 }
 
-.fs-27{
+.fs-27 {
     font-size: 27px;
 }
 
-.fs-28{
+.fs-28 {
     font-size: 28px;
 }
 
-.fs-29{
+.fs-29 {
     font-size: 29px;
 }
 
-.fs-30{
+.fs-30 {
     font-size: 30px;
 }
-//fine font size da 10 a 30px
 
+//fine font size da 10 a 30px
 //fine font size da 10 a 25px
 //img edit apartment
 .img-edit-apartments {
@@ -252,98 +276,87 @@ nav {
 }
 
 //navbar
-.my-background-navbar{
+.my-background-navbar {
     background-color: $white;
     border-radius: 0 0 20px 20px;
-    text-align: center;   
+    text-align: center;
 }
 
-.mw-25{
+.mw-25 {
     max-width: 25%;
 }
-//navbar
 
+//navbar
 //creazione nuovo appartamento
-.flex-wrap .mb-3 input{
+.flex-wrap .mb-3 input {
     width: 280px;
     min-width: auto;
 }
-//fine creazione nuovo appartamento
 
+//fine creazione nuovo appartamento
 //elenco miei appartamenti
-.btn-warning{
+.btn-warning {
     color: $white;
     background-color: rgb(218, 218, 39);
     border-color: rgb(218, 218, 39);
 }
 
-.btn-warning:hover{
+.btn-warning:hover {
     color: $white;
     background-color: rgb(204, 204, 47);
     border-color: rgb(204, 204, 47);
 }
-//fine elenco miei appartamenti
 
+//fine elenco miei appartamenti
 //footer
-.back-color-black{
+.back-color-black {
     background-color: rgb(180, 180, 180);
     color: $white;
-
-    .col{
+    .col {
         width: calc(100% / 3);
-
-        img{
+        img {
             filter: brightness(3);
             width: 200px;
         }
     }
-   
-
-    .color-white{
+    .color-white {
         color: $white;
     }
 }
 
-    @media only screen and (max-width: 767px){
-        .navbar-hamburger{   
-            z-index: 1041;
-
-            .my-background-navbar{
-                margin-left: auto;
-                width: 25%;        
-                min-width: 92px;
-                  
-                .navbar-buttons{
-                    padding-right: 0;
-                    margin-top: 10px;
-                }
-                    
-                .mbr-10{
-                    margin-bottom: 10px;
-                }
-            }     
-        }
-        
-        .modal{
-            width: 100%;
-
-            .modal-dialog{
-                max-width: 100%;
-            
-                .modal-body-left{
-                    display: none;
-                }
-
-                .modal-body-left,
-                .modal-body-right{
-                    margin: 0 auto;
-                }
+@media only screen and (max-width: 767px) {
+    .navbar-hamburger {
+        z-index: 1041;
+        .my-background-navbar {
+            margin-left: auto;
+            width: 25%;
+            min-width: 92px;
+            .navbar-buttons {
+                padding-right: 0;
+                margin-top: 10px;
             }
-        }   
-    }
-
-    @media only screen and (max-width: 400px){
-        .my-background-navbar{
-            width: 92px;
+            .mbr-10 {
+                margin-bottom: 10px;
+            }
         }
     }
+    .modal {
+        width: 100%;
+        .modal-dialog {
+            max-width: 100%;
+            .modal-body-left {
+                display: none;
+            }
+            .modal-body-left,
+            .modal-body-right {
+                margin: 0 auto;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .my-background-navbar {
+        width: 92px;
+    }
+}

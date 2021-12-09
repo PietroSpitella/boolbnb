@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container my-3">
+    <div class="container my-3 py-3">
       <div class="form-group">
         <input
           type="text"
@@ -69,8 +69,16 @@
         </div>
       </template>
     </div>
-    <div class="row justify-content-around">
+    <div class="row justify-content-around mx-0">
       <div class="col-12 col-md-3">
+        <div class="row">
+          <div class="col-12">
+            <h3 v-if="resultCity != ''">
+              Risultati trovati per: {{ resultCity }}
+            </h3>
+            <h3 v-else>Viaggetto a Roma?</h3>
+          </div>
+        </div>
         <div class="row" v-for="(apartment, index) in apartments" :key="index">
           <div class="col-12">
             <div class="card mb-3" style="max-width: 540px">
@@ -126,6 +134,7 @@ export default {
       myUrl: "/api/apartments",
       tomTomAPI: "https://api.tomtom.com/search/2/geocode/",
       city: this.$route.params.destination,
+      resultCity: "",
       apiKey: ".json?key=6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
       API_KEY: "6pyK2YdKNiLrHrARYvnllho6iAdjMPex",
       apartments: [],
@@ -158,6 +167,7 @@ export default {
           .then((res) => {
             this.lat = res.data.results[0].position.lat;
             this.long = res.data.results[0].position.lon;
+            this.resultCity = this.city;
             this.citySearched = true;
           });
       }
