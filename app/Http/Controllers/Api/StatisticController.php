@@ -11,7 +11,7 @@ class StatisticController extends Controller
 {
     public function store(Request $request){
         $data = $request->all();
-
+        
         $validator = Validator::make($request->all(),[
             'apartment_id' => 'required',
             'data' => 'required|date',
