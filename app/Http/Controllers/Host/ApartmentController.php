@@ -13,6 +13,8 @@ use App\Advertise;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 class ApartmentController extends Controller
 {
     /**
@@ -26,7 +28,16 @@ class ApartmentController extends Controller
         $apartments = Apartment::where('user_id', $user_id)->get();
         $advertises = Advertise::all();
 
-        return view('host.apartments.index', compact('apartments', 'advertises'));
+        $houses = DB::table('apartments')->join('advertise_apartment' , 'apartments.id', '=','advertise_apartment.apartment_id')->get();
+
+        $adv_houses = [];
+        foreach($houses as $house){
+            if(Carbon::now()->toDateTimeString() < $house->end_date){
+                $adv_houses[] = $house;
+            }
+        }
+
+        return view('host.apartments.index', compact('apartments', 'advertises', 'adv_houses'));
         
     }
 

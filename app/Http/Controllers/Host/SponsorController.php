@@ -67,11 +67,15 @@ class SponsorController extends Controller
 
         // $amount = $result->transaction->amount;
 
+
+
         if($result->success){
             $startDate = Carbon::now()->toDateTimeString();
             $endDate = Carbon::now()->add($advertise->duration, 'hours')->toDateTimeString();
 
-            // dd($startDate, $endDate);
+            if(Carbon::now()->toDateTimeString() < $endDate) {
+                return redirect()->route('host.apartments.advertise', $apartment->id)->with('error', 'L\'appartamento ha già una sponsorizzazione in corso');
+            }
 
             $apartment->advertises()->attach($advertise->id, [
                 'start_date' => $startDate,

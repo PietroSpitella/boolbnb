@@ -11,34 +11,50 @@
     </button>
 </div>
 @endif
-@if (count($apartments) < 1)
-    <h2>You don't have any apartments yet</h2>
-    <a href="{{route('host.apartments.create')}}" class="btn btn-primary">Add your first apartment</a>
-@else 
-    <h2>My apartments:</h2>
+<div class="container">
+
+    @if (count($apartments) < 1)
+        <h2>You don't have any apartments yet</h2>
+        <a href="{{route('host.apartments.create')}}" class="btn btn-primary">Add your first apartment</a>
+    @else 
+    <h3>Appartamenti sponsorizzati attivi:</h3>
     <ol>
-        @foreach ($apartments as $apartment)
-            <div class="d-flex my-4 justify-content-between">
-                <li class="font-weight-bold">{{$apartment->title}}</li>
-                <div>
-                    <a href="{{ route('host.apartments.show', $apartment['id'])}}" class="btn btn-success">Detail Post</a>
-                    <a href="{{ route('host.statistics-page', $apartment['id'])}}" class="btn btn-dark">Statistics</a>
-                    <a href="{{ route('host.apartments.edit', $apartment['id'])}}" class="btn btn-warning">Modify Post</a>
-                    @if (count($apartment->advertises) < 1)
-                    <a href="{{ route('host.apartments.advertise', $apartment['id'])}}" class="btn btn-primary">Sponsorizza</a>
-                    @else
-                    <button class="btn btn-secondary" disabled>Sponsorizza</button>
-                    
-                    @endif
-                    <form class="d-inline confirm-delete-post" method="POST" action="{{ route('host.apartments.destroy', $apartment['id']) }}">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-danger" type="submit">Elimina appartamento</button>
-                    </form>
-                </div>
-            </div>
-        @endforeach
+    @foreach ($adv_houses as $house)
+    <div class="row border rounded my-4 align-items-center">
+        <h5 class="col-12 col-md-6">{{$house->title}}</h5>
+        <div class="col-12 col-md-6 text-right d-flex flex-column justify-content-center">
+           <span>Promozione valida fino al:</span>
+           <p>{{$house->end_date}}</p>
+        </div>
+    </div>
+    @endforeach
     </ol>
-    
-@endif
+        <h2>My apartments:</h2>
+        <ol>
+            @foreach ($apartments as $apartment)
+                <div class="border rounded row my-4 apartment-row align-items-center py-3">
+                    <div class="col-12 col-md-6">
+                        <div class="row col-12">
+                            <h4>{{$apartment->title}}</h4>
+                        </div>
+                        <div class="row col-12 align-items-center edit-delete">
+                            <a href="{{ route('host.apartments.edit', $apartment['id'])}}" class="">Modifica</a>
+                            <form class="d-inline confirm-delete-post" method="POST" action="{{ route('host.apartments.destroy', $apartment['id']) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-link text-danger" type="submit">Elimina</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 details-statistic text-right">
+                        <a href="{{ route('host.apartments.show', $apartment['id'])}}" class="btn btn-success">Dettagli</a>
+                        <a href="{{ route('host.statistics-page', $apartment['id'])}}" class="btn btn-dark">Statistiche</a>
+                        <a href="{{ route('host.apartments.advertise', $apartment['id'])}}" class="btn btn-primary">Sponsorizza</a>
+                    </div>
+                </div>
+            @endforeach
+        </ol>
+        
+    @endif
+</div>
 @endsection

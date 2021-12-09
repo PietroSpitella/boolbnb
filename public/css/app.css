@@ -11411,6 +11411,14 @@ nav a img {
   transform: scale(1.05);
 }
 
+.apartment-row .edit-delete {
+  visibility: hidden;
+}
+
+.apartment-row:hover .edit-delete {
+  visibility: initial;
+}
+
 #jumbotron {
   padding: 250px 0;
   overflow: hidden;
