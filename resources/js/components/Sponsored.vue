@@ -1,5 +1,5 @@
 <template>
-  <section id="sponsored" class="">
+  <section id="sponsored" class="my-5">
     <div class="container">
       <div class="row mb-3">
         <div class="col-12">
@@ -9,30 +9,32 @@
       </div>
 
       <div class="row">
-        <div class="col-4">
-          <div class="card" v-for="apartment in apartments" :key="apartment.id">
-            <img
-              :src="'/storage/' + apartment.image"
-              class="card-img-top"
-              alt=""
-            />
-            <div class="card-body">
-              <h5 class="card-title">{{ apartment.title }}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">
-                {{ apartment.type }}
-              </h6>
-              <p class="card-text">
-                {{ apartment.description }}
-              </p>
-              <router-link
-                :to="{
-                  name: 'Apartment',
-                  params: { slug: apartment.slug },
-                }"
-                class="card-link"
-                >Visualizza
-              </router-link>
-            </div>
+        <div
+          class="col-3 card m-2 px-0"
+          v-for="apartment in apartments"
+          :key="apartment.id"
+        >
+          <img
+            :src="'/storage/' + apartment.image"
+            class="card-img-top"
+            alt=""
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ apartment.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">
+              {{ apartment.type }}
+            </h6>
+            <p class="card-text">
+              {{ apartment.description }}
+            </p>
+            <router-link
+              :to="{
+                name: 'Apartment',
+                params: { slug: apartment.slug },
+              }"
+              class="card-link"
+              >Visualizza
+            </router-link>
           </div>
         </div>
       </div>
@@ -61,4 +63,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.card-img-top {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
 </style>
