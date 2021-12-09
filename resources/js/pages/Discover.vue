@@ -1,29 +1,4 @@
 <template>
-  <div v-if="!isLoading" class="container my-3">
-    {{ destination }}
-    <div class="form-group">
-      <input
-        type="text"
-        v-model="city"
-        @keyup.enter="getCity"
-        placeholder="Città"
-        class="form-control"
-      />
-      <div class="d-flex justify-content-end">
-        <button class="btn btn-login-register px-3 my-3" @click="getCity" id="getCityBtn">
-          Vai
-        </button>
-      </div>
-    </div>
-    <template>
-      <div v-if="citySearched">
-        <div class="form-services row">
-          <div
-            class="form-group col-2"
-            v-for="service in services"
-            :key="service.id"
-          >
-            <label :for="service.id">{{ service.name }}</label>
   <div>
     <div class="container my-3">
       <div class="form-group">
