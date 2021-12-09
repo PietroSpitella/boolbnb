@@ -1,5 +1,6 @@
 <template>
   <section id="cta-host">
+    <div class="img-overlay"></div>
     <div class="container h-100">
       <div class="row h-100">
         <div
@@ -10,7 +11,6 @@
             flex-column
             align-items-center
             justify-content-center
-            h-100
             text-left
           "
         >
@@ -22,8 +22,12 @@
             </h3>
           </div>
         </div>
-        <div class="col-12 col-md-3 h-100 d-flex align-items-center">
-          <a href="/register" class="btn">Diventa Host</a>
+        <div class="col-12 col-md-3 d-flex align-items-center">
+          <a
+            href="/register"
+            class="btn btn-outline-danger bg-danger text-light p-3"
+            >Diventa Host</a
+          >
         </div>
       </div>
     </div>
@@ -36,6 +40,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 #cta-host {
+  position: relative;
   height: 350px;
   background-image: url("https://images.unsplash.com/photo-1542676032-6e468ada2953?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHNlYSUyMGhvdXNlfGVufDB8MHwwfHw%3D&auto=format&fit=cropq=60");
   background-position: center;
@@ -48,6 +53,12 @@ export default {
       font-size: 3.5em;
       font-weight: 800;
     }
+  }
+
+  .img-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.387);
   }
 }
 </style>

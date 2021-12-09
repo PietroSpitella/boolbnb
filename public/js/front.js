@@ -1951,6 +1951,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CTAhost"
 });
@@ -2089,6 +2093,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3052,7 +3063,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "#cta-host[data-v-277d791d] {\n  height: 350px;\n  background-image: url(\"https://images.unsplash.com/photo-1542676032-6e468ada2953?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHNlYSUyMGhvdXNlfGVufDB8MHwwfHw%3D&auto=format&fit=cropq=60\");\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n#cta-host .cta-host[data-v-277d791d] {\n  text-shadow: 3px 5px 20px rgba(0, 0, 0, 0.3);\n}\n#cta-host .cta-host .title-cta[data-v-277d791d] {\n  font-size: 3.5em;\n  font-weight: 800;\n}", ""]);
+exports.push([module.i, "#cta-host[data-v-277d791d] {\n  position: relative;\n  height: 350px;\n  background-image: url(\"https://images.unsplash.com/photo-1542676032-6e468ada2953?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fHNlYSUyMGhvdXNlfGVufDB8MHwwfHw%3D&auto=format&fit=cropq=60\");\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n#cta-host .cta-host[data-v-277d791d] {\n  text-shadow: 3px 5px 20px rgba(0, 0, 0, 0.3);\n}\n#cta-host .cta-host .title-cta[data-v-277d791d] {\n  font-size: 3.5em;\n  font-weight: 800;\n}\n#cta-host .img-overlay[data-v-277d791d] {\n  position: absolute;\n  inset: 0;\n  background-color: rgba(0, 0, 0, 0.387);\n}", ""]);
 
 // exports
 
@@ -5137,13 +5148,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("section", { attrs: { id: "cta-host" } }, [
+      _c("div", { staticClass: "img-overlay" }),
+      _vm._v(" "),
       _c("div", { staticClass: "container h-100" }, [
         _c("div", { staticClass: "row h-100" }, [
           _c(
             "div",
             {
               staticClass:
-                "\n          col-12 col-md-9\n          cta-host\n          d-flex\n          flex-column\n          align-items-center\n          justify-content-center\n          h-100\n          text-left\n        ",
+                "\n          col-12 col-md-9\n          cta-host\n          d-flex\n          flex-column\n          align-items-center\n          justify-content-center\n          text-left\n        ",
             },
             [
               _c("div", { staticClass: "text-cta px-3" }, [
@@ -5162,11 +5175,17 @@ var staticRenderFns = [
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "col-12 col-md-3 h-100 d-flex align-items-center" },
+            { staticClass: "col-12 col-md-3 d-flex align-items-center" },
             [
-              _c("a", { staticClass: "btn", attrs: { href: "/register" } }, [
-                _vm._v("Diventa Host"),
-              ]),
+              _c(
+                "a",
+                {
+                  staticClass:
+                    "btn btn-outline-danger bg-danger text-light p-3",
+                  attrs: { href: "/register" },
+                },
+                [_vm._v("Diventa Host")]
+              ),
             ]
           ),
         ]),
@@ -5421,12 +5440,13 @@ var render = function () {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "input-group-append" },
+              { staticClass: "input-group-append d-flex align-items-center" },
               [
                 _c(
                   "router-link",
                   {
-                    staticClass: "btn btn-outline-danger bg-danger text-light",
+                    staticClass:
+                      "\n              btn btn-outline-danger\n              bg-danger\n              text-light\n              h-100\n              d-flex\n              align-items-center\n            ",
                     attrs: {
                       to: {
                         name: "Discover",
@@ -5502,7 +5522,7 @@ var render = function () {
         _vm._l(_vm.apartments, function (apartment) {
           return _c(
             "div",
-            { key: apartment.id, staticClass: "col-3 card m-2 px-0" },
+            { key: apartment.id, staticClass: "col-5 col-md-3 card m-2 px-0" },
             [
               _c("img", {
                 staticClass: "card-img-top",

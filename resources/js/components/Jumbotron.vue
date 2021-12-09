@@ -25,12 +25,19 @@
             aria-label="Destination"
             aria-describedby="button-addon2"
           />
-          <div class="input-group-append">
+          <div class="input-group-append d-flex align-items-center">
             <router-link
               :to="{
                 name: 'Discover',
               }"
-              class="btn btn-outline-danger bg-danger text-light"
+              class="
+                btn btn-outline-danger
+                bg-danger
+                text-light
+                h-100
+                d-flex
+                align-items-center
+              "
               @click="searchDestination"
               >Cerca
             </router-link>

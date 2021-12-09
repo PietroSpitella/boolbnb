@@ -10972,7 +10972,6 @@ body {
 
 #vue main {
   min-height: calc(100vh - 70px);
-  padding-bottom: 15px;
 }
 
 #app main {

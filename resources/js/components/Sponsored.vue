@@ -10,7 +10,7 @@
 
       <div class="row">
         <div
-          class="col-3 card m-2 px-0"
+          class="col-5 col-md-3 card m-2 px-0"
           v-for="apartment in apartments"
           :key="apartment.id"
         >
