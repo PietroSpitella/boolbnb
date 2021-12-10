@@ -11072,7 +11072,11 @@ body .container-xl main {
 }
 
 nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 70px;
+  z-index: 1;
 }
 
 nav a img {
@@ -11098,12 +11102,23 @@ nav a img {
 }
 
 .my_sidebar {
-  min-height: calc(100vh - 46px);
+  height: 100vh;
+  position: fixed;
+  margin-top: 70px;
 }
 
 .flex-column .nav-item a {
   color: #ff385c;
   font-size: 25px;
+  transition: color 0.45s;
+}
+
+.flex-column .nav-item a:hover {
+  color: white;
+}
+
+.col-md-10 {
+  margin-top: 70px;
 }
 
 .my-icons {

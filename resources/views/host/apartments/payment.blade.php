@@ -3,20 +3,24 @@
 
 @section('content')
 <div class="container">
-    <h1>Concludi il pagamento</h1>
-    
-    <form action="{{route('host.apartments.advertise.checkout', ['id'=>$apartment->id, 'advertise_id'=>$advertise->id])}}" id="payment-form" method="POST">
-    @csrf
-    @method('POST')
-    <div id="dropin-container"></div>
-    <button type="submit" class="btn btn-primary">Paga</button>
-    <input type="hidden" name="payment_method_nonce" id="nonce" />
-    </form>
-    
-    <div id="clientToken" class="d-none">
-        @php
-            echo $clientToken;
-        @endphp
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h1>Concludi il pagamento</h1>
+            
+            <form action="{{route('host.apartments.advertise.checkout', ['id'=>$apartment->id, 'advertise_id'=>$advertise->id])}}" id="payment-form" method="POST">
+            @csrf
+            @method('POST')
+            <div id="dropin-container"></div>
+            <button type="submit" class="btn btn-primary">Paga</button>
+            <input type="hidden" name="payment_method_nonce" id="nonce" />
+            </form>
+            
+            <div id="clientToken" class="d-none">
+                @php
+                    echo $clientToken;
+                @endphp
+            </div>
+        </div>
     </div>
 
 </div>

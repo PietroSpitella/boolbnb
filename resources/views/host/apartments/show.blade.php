@@ -4,8 +4,8 @@
     
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-12">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
             <h1>INFO APPARTAMENTO: {{$apartment->title}}</h1>
             <div class="col-md-12 p-0 mt-4">
                 <p class="fs-20 font-weight-bold text-capitalize">Titolo: {{$apartment->title}}</p>

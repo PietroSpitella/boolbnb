@@ -12,27 +12,28 @@
 </div>
 @endif
 <div class="container">
-
-    @if (count($apartments) < 1)
-        <h2>Non hai registrato nessun appartamento</h2>
-        <a href="{{route('host.apartments.create')}}" class="btn btn-primary">Inizia ad ospitare</a>
-    @else
-    @if (count($adv_houses)>0)
-    <h3>Appartamenti sponsorizzati attivi:</h3>
-    <ol>
-    @foreach ($adv_houses as $house)
-    <div class="row border rounded my-4 align-items-center">
-        <h5 class="col-12 col-md-6">{{$house->title}}</h5>
-        <div class="col-12 col-md-6 text-right d-flex flex-column justify-content-center">
-           <span>Promozione valida fino al:</span>
-           <p>{{$house->end_date}}</p>
-        </div>
-    </div>
-    @endforeach
-    </ol>
-    @endif
-        <h2>I miei appartamenti:</h2>
-        <ol>
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            @if (count($apartments) < 1)
+                <h2>Non hai registrato nessun appartamento</h2>
+                <a href="{{route('host.apartments.create')}}" class="btn btn-primary">Inizia ad ospitare</a>
+            @else
+            @if (count($adv_houses)>0)
+            <h3>Appartamenti sponsorizzati attivi:</h3>
+            <ol>
+            @foreach ($adv_houses as $house)
+            <div class="row border rounded my-4 align-items-center">
+                <h5 class="col-12 col-md-6">{{$house->title}}</h5>
+                <div class="col-12 col-md-6 text-right d-flex flex-column justify-content-center">
+                    <span>Promozione valida fino al:</span>
+                    <p>{{$house->end_date}}</p>
+                </div>
+            </div>
+            @endforeach
+            </ol>
+            @endif
+            <h2>I miei appartamenti:</h2>
+            <ol>
             @foreach ($apartments as $apartment)
                 <div class="border rounded row my-4 apartment-row align-items-center py-3">
                     <div class="col-12 col-md-6">
@@ -55,8 +56,9 @@
                     </div>
                 </div>
             @endforeach
-        </ol>
-        
-    @endif
+            </ol>        
+            @endif
+        </div>
+    </div>
 </div>
 @endsection
