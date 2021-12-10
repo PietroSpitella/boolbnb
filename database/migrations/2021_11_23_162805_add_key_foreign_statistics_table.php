@@ -16,7 +16,7 @@ class AddKeyForeignStatisticsTable extends Migration
         Schema::table('statistics', function (Blueprint $table) {
             $table->unsignedBigInteger('apartment_id')->after('id');
 
-            $table->foreign('apartment_id')->references('id')->on('apartments');
+            $table->foreign('apartment_id')->references('id')->on('apartments')->onDelete('cascade');
         });
     }
 
