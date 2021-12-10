@@ -14,9 +14,10 @@
 <div class="container">
 
     @if (count($apartments) < 1)
-        <h2>You don't have any apartments yet</h2>
-        <a href="{{route('host.apartments.create')}}" class="btn btn-primary">Add your first apartment</a>
-    @else 
+        <h2>Non hai registrato nessun appartamento</h2>
+        <a href="{{route('host.apartments.create')}}" class="btn btn-primary">Inizia ad ospitare</a>
+    @else
+    @if (count($adv_houses)>0)
     <h3>Appartamenti sponsorizzati attivi:</h3>
     <ol>
     @foreach ($adv_houses as $house)
@@ -29,7 +30,8 @@
     </div>
     @endforeach
     </ol>
-        <h2>My apartments:</h2>
+    @endif
+        <h2>I miei appartamenti:</h2>
         <ol>
             @foreach ($apartments as $apartment)
                 <div class="border rounded row my-4 apartment-row align-items-center py-3">
