@@ -23,5 +23,4 @@ Route::get('/apartment/{slug}', 'Api\ApartmentController@show');
 Route::get('/sponsored', 'Api\ApartmentController@sponsored');
 Route::post('/statistics', 'Api\StatisticController@store');
 Route::post('/contacts', 'Api\ApartmentController@sendMessage');
-// Route::post('/sendcity', 'Api\ApartmentController@sendCity');
-// Route::get('/sendcity', 'Api\ApartmentController@sendCity');
+Route::get('/statistic/{id}', 'Api\StatisticController@show');

@@ -19,7 +19,6 @@ window.searchBox = function() {
     document.querySelector('input.tt-search-box-input').name = 'address';
     document.querySelector('input.tt-search-box-input').id = 'search-for-coordinates';
     document.querySelector('input.tt-search-box-input').placeholder = 'Indirizzo';
-
 }
 
 

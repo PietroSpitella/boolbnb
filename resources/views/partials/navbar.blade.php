@@ -14,10 +14,10 @@
               </li>
 
               <li class="nav-item {{Request::route()->getName()=='discoverPage'? 'active' : 'null'}}">
-                <a class="nav-link" href="{{url('/discover')}}">Discover</a>
+                <a class="nav-link" href="{{url('/discover')}}">Scopri</a>
               </li>
               <li class="nav-item {{Request::route()->getName()=='about-us'? 'active' : 'null'}}">
-                <a class="nav-link" href="{{url('/about-us')}}">About Us</a>
+                <a class="nav-link" href="{{url('/about-us')}}">Chi siamo</a>
               </li>
             </ul>
         </div>
