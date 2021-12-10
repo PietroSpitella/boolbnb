@@ -37,10 +37,10 @@
                         <router-link class="nav-link" to="/">Home</router-link>
                     </li>
                     <li class="nav-item {{Request::route()->getName()=='Discover'? 'active' : 'null'}}">
-                        <router-link class="nav-link" to="/discover">Discover</router-link>
+                        <router-link class="nav-link" to="/discover">Scopri</router-link>
                     </li>
                     <li class="nav-item {{Request::route()->getName()=='About'? 'active' : 'null'}}">
-                        <router-link class="nav-link" to="/about">About Us</router-link>
+                        <router-link class="nav-link" to="/about">Chi siamo</router-link>
                     </li>
 
                     </ul>
@@ -141,7 +141,7 @@
                                 <li class="nav-item h-50 navbar-buttons mbr-10">
                                     {{-- <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
                                     <button type="button" class="button_register p-2" data-toggle="modal" data-target="#exampleModal2">
-                                        Register
+                                        Registrati
                                     </button>
                                     
                                     <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="ModalRegister" aria-hidden="true">
@@ -152,7 +152,7 @@
                                             <div class="modal-body-right">
                                                 <div class="modal-content border-0 rounded-0">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title font-weight-bold" id="ModalRegister">Register</h5>
+                                                        <h5 class="modal-title font-weight-bold" id="ModalRegister">Registrati</h5>
                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
@@ -165,7 +165,7 @@
                                                                         @csrf
                                                 
                                                                         <div class="form-group modal-dialog-centered row">
-                                                                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                                                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
                                                 
                                                                             <div class="col-md-8 modal-dialog-centered flex-column">
                                                                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -178,7 +178,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group modal-dialog-centered row">
-                                                                            <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
+                                                                            <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Cognome') }}</label>
                                                 
                                                                             <div class="col-md-8 modal-dialog-centered flex-column">
                                                                                 <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" required autocomplete="surname" autofocus>
@@ -191,7 +191,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="form-group modal-dialog-centered row">
-                                                                            <label for="date_of_birth" class="col-md-4 col-form-label text-md-right">{{ __('Date of birth') }}</label>
+                                                                            <label for="date_of_birth" class="col-md-4 col-form-label text-md-right">{{ __('Data di nascita') }}</label>
                                                 
                                                                             <div class="col-md-8 modal-dialog-centered flex-column">
                                                                                 <input id="date_of_birth" type="date" class="form-control @error('date_of_birth') is-invalid @enderror" name="date_of_birth" value="{{ old('date_of_birth') }}" required autocomplete="date_of_birth" autofocus>
@@ -205,7 +205,7 @@
                                                                         </div>
                                                 
                                                                         <div class="form-group modal-dialog-centered row">
-                                                                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                                                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
                                                 
                                                                             <div class="col-md-8 modal-dialog-centered flex-column">
                                                                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -233,7 +233,7 @@
                                                                         </div>
                                                 
                                                                         <div class="form-group modal-dialog-centered row">
-                                                                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                                                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Ripeti Password') }}</label>
                                                 
                                                                             <div class="col-md-8 modal-dialog-centered flex-column">
                                                                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -245,7 +245,7 @@
                                                                                 <button type="submit" class="btn-login-register py-2">
                                                                                     {{ __('Register') }}
                                                                                 </button>
-                                                                                <a class="color-red btn btn-link" data-target="#exampleModal" data-dismiss="modal" data-toggle="modal" href="#lost">Do you already have an account? Login!</a>
+                                                                                <a class="color-red btn btn-link" data-target="#exampleModal" data-dismiss="modal" data-toggle="modal" href="#lost">Hai già un account? Loggati!</a>
                                                                             </div>
                                                                         </div>
                                                                     </form>
@@ -272,7 +272,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Esci') }}
                                     </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
