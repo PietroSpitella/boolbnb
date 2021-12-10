@@ -11,7 +11,7 @@
         <input type="text" value="{{Auth::user()->id}}" hidden name="user_id">
         <div class="mt-3 mb-3">
             <label for="title" class="form-label">Titolo*</label>
-            <input type="text" name="title" class="form-control" id="title" placeholder="Add Title" class="@error('title') is-invalid @enderror" value="{{old('title')}}">
+            <input type="text" name="title" class="form-control" id="title" placeholder="Aggiungi un titolo" class="@error('title') is-invalid @enderror" value="{{old('title')}}">
             @error('title')
             <div class="alert alert-danger">{{ $message }}</div>
             @enderror
