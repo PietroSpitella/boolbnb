@@ -117,18 +117,6 @@ class StatisticController extends Controller
             return response()->json([
                 'success'=>true,
                 'results'=>[count($january),count($february),count($march),count($april),count($may),count($june),count($july),count($august),count($september),count($october),count($november),count($december)],
-                'january'=>count($january),
-                'february'=>count($february),
-                'march'=>count($march),
-                'april'=>count($april),
-                'may'=>count($may),
-                'june'=>count($june),
-                'july'=>count($july),
-                'august'=>count($august),
-                'september'=>count($september),
-                'october'=>count($october),
-                'november'=>count($november),
-                'december'=>count($december),
                 'statistics'=>$statistics,
                 'maxClicks'=>count($maxClicks),
                 'apartment'=>$apartment
