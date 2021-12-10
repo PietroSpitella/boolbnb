@@ -48,4 +48,15 @@ class StatisticController extends Controller
         
         return view('host.apartments.statistics', compact('statistics'));
     }
+    
+    public function show($id){
+
+        $apartment = Apartment::where('id', $id)->first();
+        if(!$apartment) {
+            abort(404);
+        }elseif(Auth::user()->id !== $apartment->user_id){
+            return redirect()->back();
+        }
+        return view('host.apartments.statistics.show', compact('apartment'));
+    }
 }

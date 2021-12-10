@@ -48,7 +48,7 @@
                     </div>
                     <div class="col-12 col-md-6 details-statistic text-right">
                         <a href="{{ route('host.apartments.show', $apartment['id'])}}" class="btn btn-success">Dettagli</a>
-                        <a href="{{ route('host.statistics-page', $apartment['id'])}}" class="btn btn-dark">Statistiche</a>
+                        <a href="{{ route('host.statistic', $apartment->id)}}" class="btn btn-dark">Statistiche</a>
                         <a href="{{ route('host.apartments.advertise', $apartment['id'])}}" class="btn btn-primary">Sponsorizza</a>
                     </div>
                 </div>
