@@ -9,7 +9,7 @@
                 <form action="{{ route('host.apartments.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('POST')
-                    <h1>Aggiungi un nuovo appartamento</h1>
+                    <h1 class="font-weight-bold">Aggiungi un nuovo appartamento</h1>
                     <input type="text" value="{{Auth::user()->id}}" hidden name="user_id">
                     <div class="mt-3 mb-3">
                         <label for="title" class="form-label">Titolo*</label>

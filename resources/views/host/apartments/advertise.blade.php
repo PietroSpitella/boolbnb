@@ -13,7 +13,7 @@
             </div>
             @endif
             <div class="container" id="payment_section">
-                <h1>Sponsorizza il tuo appartamento: {{$apartment->title}}</h1>
+                <h1 class="font-weight-bold">Sponsorizza il tuo appartamento: {{$apartment->title}}</h1>
                 <div class="row my-5">
                 @foreach ($advertises as $advertise)
                     <div class="col-12 col-md-4">

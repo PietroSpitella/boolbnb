@@ -5,7 +5,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <h1>Concludi il pagamento</h1>
+            <h1 class="font-weight-bold">Concludi il pagamento</h1>
             
             <form action="{{route('host.apartments.advertise.checkout', ['id'=>$apartment->id, 'advertise_id'=>$advertise->id])}}" id="payment-form" method="POST">
             @csrf

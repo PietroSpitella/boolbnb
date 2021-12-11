@@ -14,7 +14,7 @@
             @endif
             
             @if (!empty($user_messages))
-            <h2>Hai ricevuto i seguenti messaggi:</h2>
+            <h2 class="font-weight-bold">Hai ricevuto i seguenti messaggi:</h2>
             <div class="messages-list d-flex flex-column-reverse">
                 @foreach ($user_messages as $user_message)
                     <div class="card my-2">
@@ -38,7 +38,7 @@
                 @endforeach
             </div>
             @else
-                <h2>Nessun Messaggio Ricevuto</h2>
+                <h2 class="font-weight-bold">Nessun Messaggio Ricevuto</h2>
             @endif
         </div>
     </div>

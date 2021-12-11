@@ -9,7 +9,7 @@
             <form action="{{ route('host.apartments.update', $apartment->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                <h1>Modifica la struttura: {{$apartment->title}}</h1>
+                <h1 class="font-weight-bold">Modifica la struttura: {{$apartment->title}}</h1>
                 <input type="text" value="{{Auth::user()->id}}" hidden name="user_id">
                 <div class="py-3">
                     <label for="title" class="form-label">Titolo*</label>

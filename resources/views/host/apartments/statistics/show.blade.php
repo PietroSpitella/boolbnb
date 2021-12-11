@@ -2,9 +2,14 @@
 @section('title', 'Statistiche appartamento ' . $apartment->title)
 
 @section('content')
-<h1 class="text-center">Statistiche visualizzazioni: {{$apartment->title}}</h1>
-
-<canvas id="myChart" width="2" height="1"></canvas>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <h1 class="text-center font-weight-bold">Statistiche visualizzazioni: {{$apartment->title}}</h1>            
+            <canvas id="myChart" width="2" height="1"></canvas>
+        </div>
+    </div>
+</div>
 
 
 

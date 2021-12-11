@@ -10,7 +10,7 @@
           class="form-control"
         />
         <button
-          class="btn btn-primary my-3"
+          class="btn btn-danger my-3"
           @click="getApartments"
           id="getCityBtn"
         >
@@ -25,12 +25,12 @@
               v-for="service in services"
               :key="service.id"
             >
-              <label :for="service.id">{{ service.name }}</label>
+              <label class="my_btns btn btn-outline-dark" :for="service.id"><i :class="service.icon"></i></label>
               <input
                 type="checkbox"
                 :name="service.name"
                 :id="service.id"
-                class=""
+                class="d-none"
                 :value="service.id"
                 @change="getSelectedServices"
               />
@@ -88,36 +88,28 @@
             :key="index"
           >
             <div class="col-12">
-              <div class="card mb-3" style="max-width: 540px">
-                <div class="row no-gutters">
-                  <div class="col-md-4">
-                    <img
-                      :src="'/storage/' + apartment.image"
-                      class="card-img-top"
-                      alt=""
-                    />
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title">{{ apartment.title }}</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">
-                        {{ apartment.city }}
-                      </h6>
-                      <p class="card-text">{{ apartment.description }}</p>
-                      <p class="card-text">
-                        <router-link
-                          :to="{
-                            name: 'Apartment',
-                            params: { slug: apartment.slug },
-                          }"
-                          class="card-link"
-                          >Visualizza
-                        </router-link>
-                      </p>
+              <router-link class="text-decoration-none" :to="{ name: 'Apartment', params: { slug: apartment.slug } }" style="color: inherit">
+                <div class="card mb-3 border-0" style="max-width: 540px">
+                  <div class="row no-gutters">
+                    <div class="col-md-4">
+                      <img
+                        :src="'/storage/' + apartment.image"
+                        class="card-img-top"
+                        alt=""
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body">
+                        <h5 class="card-title font-weight-bold">{{ apartment.title }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                          {{ apartment.city }}
+                        </h6>
+                        <p class="card-text">{{ apartment.description }}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </router-link>
             </div>
           </div>
         </div>
@@ -311,5 +303,18 @@ export default {
     height: 100%;
     overflow: hidden;
   }
+}
+
+.my_btns{
+  padding: 15px;
+  margin: 10px 0 0 10px;
+  border: none;
+  transition: box-shadow 0.4s ease;
+  font-size: 20px;
+
+}
+
+#rangeDistance{
+  accent-color: #ff385c;
 }
 </style>
