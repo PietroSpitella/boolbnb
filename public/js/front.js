@@ -22906,6 +22906,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(/*! C:\Users\Luciano\Documents\Boolean\Progetto_Finale\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/albertogaia/Desktop/boolbnb/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })
