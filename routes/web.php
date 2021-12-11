@@ -43,6 +43,7 @@ Route::middleware('auth')->namespace('Host')->prefix('host')->name('host.')
     Route::resource('/apartments', 'ApartmentController');
     Route::resource('/advertises', 'AdvertiseController');
     Route::get('/statistics/{id}', 'StatisticController@statistics')->name('statistics-page');
+    Route::get('/stastic/{id}', 'StatisticController@show')->name('statistic');
 });
 
 Route::get('/{any}', function () {

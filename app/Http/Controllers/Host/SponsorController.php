@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Braintree\Gateway;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 class SponsorController extends Controller
 {
     public function index(Request $request, $id){
@@ -67,15 +67,19 @@ class SponsorController extends Controller
 
         // $amount = $result->transaction->amount;
 
-
+        $adv_house = DB::table('apartments')->join('advertise_apartment', 'apartments.id', '=', 'advertise_apartment.apartment_id')
+                        ->where('apartments.id', $apartment->id)
+                        ->whereDate('end_date', '>', Carbon::now()->toDateString())
+                        ->get();
+        
+        if(count($adv_house)>0){
+            return redirect()->route('host.apartments.advertise', $apartment->id)->with('error', 'L\'appartamento ha già una sponsorizzazione in corso');
+        }                                  
 
         if($result->success){
             $startDate = Carbon::now()->toDateTimeString();
             $endDate = Carbon::now()->add($advertise->duration, 'hours')->toDateTimeString();
 
-            if(Carbon::now()->toDateTimeString() < $endDate) {
-                return redirect()->route('host.apartments.advertise', $apartment->id)->with('error', 'L\'appartamento ha già una sponsorizzazione in corso');
-            }
 
             $apartment->advertises()->attach($advertise->id, [
                 'start_date' => $startDate,
