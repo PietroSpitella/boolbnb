@@ -1,249 +1,64 @@
 <template>
-  <div class="container my-3">
+  <div class="container">
     <div class="row">
-      <div class="col-md-10">
-        <h1 class="font-weight-bold">About Us</h1>
+      <div class="col-md-10 my-3">
+        <h1 class="font-weight-bold">Chi siamo</h1>
         <p>
-          See the humble contributors who gave a soul to this
-          <strong>AWESOME</strong> website
+          Conosci gli <strong>umili</strong> sviluppatori che hanno dato vita a questo <strong>INCREDIBILE</strong> sito.
         </p>
-        <div
-          class="
-            row row-cols-1 row-cols-md-1 row-cols-lg-1
-            justify-content-center
-          "
-        >
-          <div class="my_card card my-3 border-0 bg-transparent">
-            <div class="row">
-              <div class="my_img_col d-flex col-md-4 col-lg-4 p-0">
-                <img
-                  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-                  class="img-fluid rounded-start"
-                  alt="pic"
-                />
-              </div>
-              <div class="my_text_col col-md-8 col-lg-8">
-                <div
-                  class="card-body d-flex flex-column justify-content-center"
-                >
-                  <div class="my_info">
-                    <h2 class="card-title font-weight-bold">
-                      Paolino Paperino
-                    </h2>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                  <div
-                    class="my_contacts_btns d-flex justify-content-evenly my-3"
-                  >
-                    <a href="https://github.com/PietroSpitella" target="_blank"
-                      ><i class="fab fa-github"></i
-                    ></a>
-                    <a
-                      href="https://www.linkedin.com/in/pietro-spitella/"
-                      target="_blank"
-                      ><i class="fab fa-linkedin-in"></i
-                    ></a>
-                  </div>
-                </div>
+        <div class="row justify-content-center py-3">
+          <div class="col-md-6 col-lg-4 bg-transparent card border-0">
+            <img src="../../../public/images/about_us_pics/alberto_gaia_bw.png" class="card-img-top" alt="alberto_gaia">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold fs-24">Alberto Gaia</h5>
+              <!-- <p class="card-text">Subtitle</p> -->
+              <div class="my_contacts_btns d-flex justify-content-around my-3">
+                <a href="https://github.com/albertogaia" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/alberto-gaia/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
               </div>
             </div>
           </div>
-          <div class="my_card card my-3 border-0 bg-transparent">
-            <div class="row">
-              <div class="my_img_col d-flex col-md-4 col-lg-4 p-0">
-                <img
-                  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-                  class="img-fluid rounded-start"
-                  alt="pic"
-                />
-              </div>
-              <div class="my_text_col col-md-8 col-lg-8">
-                <div
-                  class="card-body d-flex flex-column justify-content-center"
-                >
-                  <div class="my_info">
-                    <h2 class="card-title font-weight-bold">
-                      Paolino Paperino
-                    </h2>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                  <div
-                    class="my_contacts_btns d-flex justify-content-evenly my-3"
-                  >
-                    <a href="https://github.com/PietroSpitella" target="_blank"
-                      ><i class="fab fa-github"></i
-                    ></a>
-                    <a
-                      href="https://www.linkedin.com/in/pietro-spitella/"
-                      target="_blank"
-                      ><i class="fab fa-linkedin-in"></i
-                    ></a>
-                  </div>
-                </div>
+          <div class="col-md-6 col-lg-4 bg-transparent card border-0">
+            <img src="../../../public/images/about_us_pics/amedeo_pasanisi_bw.png" class="card-img-top" alt="amedeo_pasanisi">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold fs-24">Amedeo Pasanisi</h5>
+              <!-- <p class="card-text">Subtitle</p> -->
+              <div class="my_contacts_btns d-flex justify-content-around my-3">
+                <a href="https://github.com/amedeo-pasanisi" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/amedeo-pasanisi-88a331185/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
               </div>
             </div>
           </div>
-          <div class="my_card card my-3 border-0 bg-transparent">
-            <div class="row">
-              <div class="my_img_col d-flex col-md-4 col-lg-4 p-0">
-                <img
-                  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-                  class="img-fluid rounded-start"
-                  alt="pic"
-                />
-              </div>
-              <div class="my_text_col col-md-8 col-lg-8">
-                <div
-                  class="card-body d-flex flex-column justify-content-center"
-                >
-                  <div class="my_info">
-                    <h2 class="card-title font-weight-bold">
-                      Paolino Paperino
-                    </h2>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                  <div
-                    class="my_contacts_btns d-flex justify-content-evenly my-3"
-                  >
-                    <a href="https://github.com/PietroSpitella" target="_blank"
-                      ><i class="fab fa-github"></i
-                    ></a>
-                    <a
-                      href="https://www.linkedin.com/in/pietro-spitella/"
-                      target="_blank"
-                      ><i class="fab fa-linkedin-in"></i
-                    ></a>
-                  </div>
-                </div>
+          <div class="col-md-6 col-lg-4 bg-transparent card border-0">
+            <img src="../../../public/images/about_us_pics/luciano_marchionna_bw.png" class="card-img-top" alt="luciano_marchionna">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold fs-24">Luciano Marchionna</h5>
+              <!-- <p class="card-text">Subtitle</p> -->
+              <div class="my_contacts_btns d-flex justify-content-around my-3">
+                <a href="https://github.com/lucianomarchionna" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/luciano-marchionna/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
               </div>
             </div>
           </div>
-          <div class="my_card card my-3 border-0 bg-transparent">
-            <div class="row">
-              <div class="my_img_col d-flex col-md-4 col-lg-4 p-0">
-                <img
-                  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-                  class="img-fluid rounded-start"
-                  alt="pic"
-                />
-              </div>
-              <div class="my_text_col col-md-8 col-lg-8">
-                <div
-                  class="card-body d-flex flex-column justify-content-center"
-                >
-                  <div class="my_info">
-                    <h2 class="card-title font-weight-bold">
-                      Paolino Paperino
-                    </h2>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                  <div
-                    class="my_contacts_btns d-flex justify-content-evenly my-3"
-                  >
-                    <a href="https://github.com/PietroSpitella" target="_blank"
-                      ><i class="fab fa-github"></i
-                    ></a>
-                    <a
-                      href="https://www.linkedin.com/in/pietro-spitella/"
-                      target="_blank"
-                      ><i class="fab fa-linkedin-in"></i
-                    ></a>
-                  </div>
-                </div>
+          <div class="col-md-6 col-lg-4 bg-transparent card border-0">
+            <img src="../../../public/images/about_us_pics/pietro_spitella_bw.png" class="card-img-top" alt="pietro_spitella">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold fs-24">Pietro Spitella</h5>
+              <!-- <p class="card-text">Subtitle</p> -->
+              <div class="my_contacts_btns d-flex justify-content-around my-3">
+                <a href="https://github.com/PietroSpitella" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/pietro-spitella/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
               </div>
             </div>
           </div>
-          <div class="my_card card my-3 border-0 bg-transparent">
-            <div class="row">
-              <div class="my_img_col d-flex col-md-4 col-lg-4 p-0">
-                <img
-                  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-                  class="img-fluid rounded-start"
-                  alt="pic"
-                />
-              </div>
-              <div class="my_text_col col-md-8 col-lg-8">
-                <div
-                  class="card-body d-flex flex-column justify-content-center"
-                >
-                  <div class="my_info">
-                    <h2 class="card-title font-weight-bold">
-                      Paolino Paperino
-                    </h2>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                  <div
-                    class="my_contacts_btns d-flex justify-content-evenly my-3"
-                  >
-                    <a href="https://github.com/PietroSpitella" target="_blank"
-                      ><i class="fab fa-github"></i
-                    ></a>
-                    <a
-                      href="https://www.linkedin.com/in/pietro-spitella/"
-                      target="_blank"
-                      ><i class="fab fa-linkedin-in"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="my_card card my-3 border-0 bg-transparent">
-            <div class="row">
-              <div class="my_img_col d-flex col-md-4 col-lg-4 p-0">
-                <img
-                  src="https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-                  class="img-fluid rounded-start"
-                  alt="pic"
-                />
-              </div>
-              <div class="my_text_col col-md-8 col-lg-8">
-                <div
-                  class="card-body d-flex flex-column justify-content-center"
-                >
-                  <div class="my_info">
-                    <h2 class="card-title font-weight-bold">
-                      Paolino Paperino
-                    </h2>
-                    <p class="card-text">
-                      This is a wider card with supporting text below as a
-                      natural lead-in to additional content. This content is a
-                      little bit longer.
-                    </p>
-                  </div>
-                  <div
-                    class="my_contacts_btns d-flex justify-content-evenly my-3"
-                  >
-                    <a href="https://github.com/PietroSpitella" target="_blank"
-                      ><i class="fab fa-github"></i
-                    ></a>
-                    <a
-                      href="https://www.linkedin.com/in/pietro-spitella/"
-                      target="_blank"
-                      ><i class="fab fa-linkedin-in"></i
-                    ></a>
-                  </div>
-                </div>
+          <div class="col-md-6 col-lg-4 bg-transparent card border-0">
+            <img src="../../../public/images/about_us_pics/roberto_martino_bw.png" class="card-img-top" alt="roberto_martino">
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold fs-24">Roberto Martino</h5>
+              <!-- <p class="card-text">Subtitle</p> -->
+              <div class="my_contacts_btns d-flex justify-content-around my-3">
+                <a href="https://github.com/Robma1994" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/roberto-martino-86a301163/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
               </div>
             </div>
           </div>
@@ -258,4 +73,5 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+
 </style>

@@ -11566,15 +11566,8 @@ nav a img {
   align-items: center;
 }
 
-.my_card .row .my_img_col img {
-  border-radius: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.my_card .row .my_text_col .card-body {
-  height: 100%;
+.my_card {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .my_contacts_btns a {
@@ -11583,10 +11576,15 @@ nav a img {
 }
 
 .my_contacts_btns a i {
+  color: #ff385c;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 50px;
+}
+
+.my_contacts_btns a i:hover {
+  filter: brightness(0.8);
 }
 
 /*!

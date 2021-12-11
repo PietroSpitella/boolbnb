@@ -17,7 +17,7 @@
             name: 'Apartment',
             params: { slug: apartment.slug },
           }"
-          class="col-5 col-md-3 card m-2 px-0 text-reset text-decoration-none"
+          class="col-5 col-md-3 card border-0 m-2 px-0 text-reset text-decoration-none"
           v-for="apartment in apartments"
           :key="apartment.id"
         >

@@ -8,7 +8,7 @@
     </div>
     <div class="row">
       <div class=" col-sm-12 col-md-12 col-lg-4 mb-3">
-        <a href="#" class="card" @click="getClick">
+        <a href="#" class="card border-0" @click="getClick">
           <div class="card-img h-100">
             <img
               src="https://images.unsplash.com/photo-1552832230-c0197dd311b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2596&q=80"
@@ -21,7 +21,7 @@
         </a>
       </div>
       <div class=" col-sm-12 col-md-12 col-lg-4 mb-3">
-        <a href="#" class="card" @click="getClick">
+        <a href="#" class="card border-0" @click="getClick">
           <div class="card-img h-100">
             <img
               src="https://images.unsplash.com/photo-1610651219730-6b580d616e72?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8dHVyaW4lMjBpdGFseXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=900&q=60"
@@ -34,7 +34,7 @@
         </a>
       </div>
       <div class=" col-sm-12 col-md-12 col-lg-4 mb-3">
-        <a href="#" class="card" @click="getClick">
+        <a href="#" class="card border-0" @click="getClick">
           <div class="card-img h-100">
             <img
               src="https://images.unsplash.com/photo-1610016302534-6f67f1c968d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2275&q=80"
