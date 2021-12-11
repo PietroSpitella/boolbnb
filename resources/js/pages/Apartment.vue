@@ -20,7 +20,7 @@
             <div class="p-4">
               <i class="fas fa-home fs-30 color-grey-icon"></i>
               <p class="fs-15 text-capitalize font-weight-bold">
-                Type {{ apartment.type }}
+                Tipologia {{ apartment.type }}
               </p>
             </div>
           </div>
@@ -35,13 +35,13 @@
             >
               <i class="fas fa-bed fs-20 color-grey-icon"></i>
               <p class="fs-15 text-capitalize font-weight-bold">
-                Bedrooms {{ apartment.n_beds }}
+                {{ apartment.n_beds }} Letti
               </p>
             </div>
             <div class="div-bordered-3 icon-separation p-4">
               <i class="fas fa-user-friends fs-20 color-grey-icon"></i>
               <p class="fs-15 text-capitalize font-weight-bold">
-                Guests {{ apartment.n_guests }}
+                Fino a {{ apartment.n_guests }} persone
               </p>
             </div>
             <div
@@ -53,46 +53,46 @@
             >
               <i class="far fa-clone fs-20 color-grey-icon"></i>
               <p class="fs-15 text-capitalize font-weight-bold">
-                Mq {{ apartment.mq }}
+                {{ apartment.mq }} m<sup>2</sup>
               </p>
             </div>
           </div>
 
-          <h4 class="font-weight-bold">Description</h4>
+          <h4 class="font-weight-bold">Descrizione dell'appartamento</h4>
           <p class="fs-15 pb-3 div-bordered-3">{{ apartment.description }}</p>
 
           <div class="pb-3 div-bordered-3">
-            <h4 class="font-weight-bold">Details</h4>
+            <h4 class="font-weight-bold">Caratteristiche</h4>
             <div class="details-apartments d-flex justify-content-around">
               <div class="details-left">
                 <p class="fs-15">
                   <i class="far fa-circle fs-12"></i> ID: {{ apartment.id }}
                 </p>
                 <p class="fs-15">
-                  <i class="far fa-circle fs-12"></i> Pet: {{ apartment.pet }}
+                  <i class="far fa-circle fs-12"></i> Possibilità di portare animali: {{ apartment.pet }}
                 </p>
                 <p class="fs-15">
-                  <i class="far fa-circle fs-12"></i> Checkin time:
+                  <i class="far fa-circle fs-12"></i> Orario Checkin:
                   {{ apartment.h_checkin }}
                 </p>
                 <p class="fs-15">
-                  <i class="far fa-circle fs-12"></i> Checkout time:
+                  <i class="far fa-circle fs-12"></i> Orario Checkout:
                   {{ apartment.h_checkout }}
                 </p>
               </div>
               <div class="details-right">
                 <p class="fs-15">
-                  <i class="far fa-circle fs-12"></i> Type: {{ apartment.type }}
+                  <i class="far fa-circle fs-12"></i> Tipo di alloggio: {{ apartment.type }}
                 </p>
                 <p class="fs-15">
-                  <i class="far fa-circle fs-12"></i> City: {{ apartment.city }}
+                  <i class="far fa-circle fs-12"></i> Città: {{ apartment.city }}
                 </p>
                 <p class="fs-15">
-                  <i class="far fa-circle fs-12"></i> Street:
+                  <i class="far fa-circle fs-12"></i> Indirizzo:
                   {{ apartment.street }}
                 </p>
                 <p class="fs-15">
-                  <i class="far fa-circle fs-12"></i> House number:
+                  <i class="far fa-circle fs-12"></i> N° Civico:
                   {{ apartment.house_number }}
                 </p>
               </div>
@@ -101,7 +101,7 @@
           <div class="row">
             <div class="col-6">
               <div class="row flex-column">
-                <h4 class="font-weight-bold pt-3">Additional Services</h4>
+                <h4 class="font-weight-bold pt-3">Servizi aggiuntivi</h4>
                 <div
                   class="
                     additional_services
@@ -125,10 +125,10 @@
                 </div>
               </div>
               <div class="row flex-column">
-                <h4 class="font-weight-bold pt-3">Price</h4>
+                <h4 class="font-weight-bold pt-3">Prezzo</h4>
                 <p class="fs-15 pb-3 div-bordered-3">
-                  <i class="fas fa-chevron-right fs-12"></i> Price per night:
-                  {{ apartment.price_night }} €
+                  <i class="fas fa-chevron-right fs-12"></i>
+                  {{ apartment.price_night }} € / notte
                 </p>
               </div>
             </div>

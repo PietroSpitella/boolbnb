@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <h1 class="mb-5">BoolBnb Dashboard</h1>
+            <h1 class="mb-5 font-weight-bold">BoolBnb Dashboard</h1>
             @if (session('status'))
             <div class="alert alert-success" role="alert">
                 {{ session('status') }}

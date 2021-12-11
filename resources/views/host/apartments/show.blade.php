@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-10">
-            <h1>INFO APPARTAMENTO: {{$apartment->title}}</h1>
+            <h1 class="font-weight-bold">INFO APPARTAMENTO: {{$apartment->title}}</h1>
             <div class="col-md-12 p-0 mt-4">
                 <p class="fs-20 font-weight-bold text-capitalize">Titolo: {{$apartment->title}}</p>
                 <p class="fs-15 d-flex flex-column">Immagine di copertina: <img class="host-apartments-img my-2" src="{{ asset('storage/' . $apartment->image)}}" alt="Image inserted"></p>
