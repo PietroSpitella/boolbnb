@@ -37,7 +37,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Descrizione dell'appartamento*</label>
-                        <textarea name="description" class="form-control" id="description" placeholder="Add description" class="@error('description') is-invalid @enderror">{{old('description')}}</textarea>
+                        <textarea name="description" class="form-control" id="description" placeholder="Aggiungi una descrizione" class="@error('description') is-invalid @enderror">{{old('description')}}</textarea>
                         @error('description')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -46,7 +46,7 @@
                     <div class="d-flex align-items-start flex-wrap pt-3 pb-3"> 
                         <div class="mb-3 mr-4">
                             <label for="mq">Dimensione m<sup>2</sup></label>
-                            <input class="text-center" type="number" id="mq" name="mq" min="1" placeholder="Add square meters min 30 max 300" value="{{old('mq')}}">
+                            <input class="text-center" type="number" id="mq" name="mq" min="1" placeholder="Aggiungi la dimensione della struttura in mq" value="{{old('mq')}}">
                         </div>
                         <div class="mb-3 mr-4">
                             <label for="n_rooms">N° di stanze*</label>
@@ -82,15 +82,11 @@
                         <div class="d-flex justify-content-between flex-wrap mt-2">
                             @foreach ($services as $service)
                                 <div>
-                                    @error('address')
-                                        <div class="alert alert-danger pt-1">{{ $message }}</div>
-                                    @enderror
-                                    @error('city')
-                                        <div class="alert alert-danger pt-1">{{ $message }}</div>
-                                    @enderror
-                                    @error('street')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+                                    <i class="{{ $service['icon'] }}"></i>
+                                    <label for="{{ 'service' . $service['id'] }}" class="form-check-label">{{ $service['name'] }}</label> 
+                                    <input type="checkbox" 
+                                    {{in_array($service->id, old('services', [])) ? 'checked' : null}}
+                                    value="{{ $service['id'] }}" name="services[]" id="{{ 'service' . $service['id'] }}">      
                                 </div>
                             @endforeach
                         </div>
@@ -121,7 +117,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="price_night">Prezzo per notte</label>
-                        <input class="w-25 text-center" type="number" id="price_night" name="price_night" min="30" max="1000" placeholder="Add square meters min 30 max 1.000" value="{{old('price_night')}}">
+                        <input class="w-25 text-center" type="number" id="price_night" name="price_night" min="1" placeholder="Prezzo per notte" value="{{old('price_night')}}">
                     </div>
                     {{-- Per l'immagine bisogna: modificare il file system, creare un link nella cartella public, inserire l'enctype nel form, utilizzare il metodo Storage::put nel controller --}}
                 
@@ -159,9 +155,9 @@
                     </div>
                     
                     <p>I campi contrassegnati con (*) sono richiesti</p>
-                    <div class="d-flex justify-content-between">
-                        <button type="submit" class="d-block btn btn-login-register-green">Registra l'appartamento</button>
-                        <a href="{{route('host.apartments.index')}}" class="btn btn-login-register p-2">Torna indietro</a>
+                    <div class="d-flex mt-2">
+                        <a href="{{route('host.apartments.index')}}" class="btn btn-border p-2 mr-3">Torna indietro</a>
+                        <button type="submit" class="d-block btn btn-success">Registra l'appartamento</button>
                     </div>
                 </form>
             </div>
