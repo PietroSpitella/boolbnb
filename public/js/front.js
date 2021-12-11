@@ -2400,191 +2400,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AboutUs"
 });
@@ -5673,7 +5488,7 @@ var render = function () {
           _c(
             "a",
             {
-              staticClass: "card",
+              staticClass: "card border-0",
               attrs: { href: "#" },
               on: { click: _vm.getClick },
             },
@@ -5690,7 +5505,7 @@ var render = function () {
           _c(
             "a",
             {
-              staticClass: "card",
+              staticClass: "card border-0",
               attrs: { href: "#" },
               on: { click: _vm.getClick },
             },
@@ -5709,7 +5524,7 @@ var render = function () {
           _c(
             "a",
             {
-              staticClass: "card",
+              staticClass: "card border-0",
               attrs: { href: "#" },
               on: { click: _vm.getClick },
             },
@@ -5821,7 +5636,7 @@ var render = function () {
             {
               key: apartment.id,
               staticClass:
-                "col-5 col-md-3 card m-2 px-0 text-reset text-decoration-none",
+                "col-5 col-md-3 card border-0 m-2 px-0 text-reset text-decoration-none",
               attrs: {
                 to: {
                   name: "Apartment",
@@ -5910,579 +5725,285 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container my-3" }, [
+    return _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-10" }, [
-          _c("h1", { staticClass: "font-weight-bold" }, [_vm._v("About Us")]),
+        _c("div", { staticClass: "col-md-10 my-3" }, [
+          _c("h1", { staticClass: "font-weight-bold" }, [_vm._v("Chi siamo")]),
           _vm._v(" "),
           _c("p", [
-            _vm._v(
-              "\n        See the humble contributors who gave a soul to this\n        "
-            ),
-            _c("strong", [_vm._v("AWESOME")]),
-            _vm._v(" website\n      "),
+            _vm._v("\n        Conosci gli "),
+            _c("strong", [_vm._v("umili")]),
+            _vm._v(" sviluppatori che hanno dato vita a questo "),
+            _c("strong", [_vm._v("INCREDIBILE")]),
+            _vm._v(" sito.\n      "),
           ]),
           _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "\n          row row-cols-1 row-cols-md-1 row-cols-lg-1\n          justify-content-center\n        ",
-            },
-            [
-              _c(
-                "div",
-                { staticClass: "my_card card my-3 border-0 bg-transparent" },
-                [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "my_img_col d-flex col-md-4 col-lg-4 p-0",
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "img-fluid rounded-start",
+          _c("div", { staticClass: "row justify-content-center py-3" }, [
+            _c(
+              "div",
+              { staticClass: "col-md-6 col-lg-4 bg-transparent card border-0" },
+              [
+                _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: {
+                    src: __webpack_require__(/*! ../../../public/images/about_us_pics/alberto_gaia_bw.png */ "./public/images/about_us_pics/alberto_gaia_bw.png"),
+                    alt: "alberto_gaia",
+                  },
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c(
+                    "h5",
+                    { staticClass: "card-title font-weight-bold fs-24" },
+                    [_vm._v("Alberto Gaia")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "my_contacts_btns d-flex justify-content-around my-3",
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
                           attrs: {
-                            src: "https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-                            alt: "pic",
+                            href: "https://github.com/albertogaia",
+                            target: "_blank",
                           },
-                        }),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "my_text_col col-md-8 col-lg-8" },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-body d-flex flex-column justify-content-center",
-                          },
-                          [
-                            _c("div", { staticClass: "my_info" }, [
-                              _c(
-                                "h2",
-                                { staticClass: "card-title font-weight-bold" },
-                                [
-                                  _vm._v(
-                                    "\n                    Paolino Paperino\n                  "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "card-text" }, [
-                                _vm._v(
-                                  "\n                    This is a wider card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                  "
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "my_contacts_btns d-flex justify-content-evenly my-3",
-                              },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: {
-                                      href: "https://github.com/PietroSpitella",
-                                      target: "_blank",
-                                    },
-                                  },
-                                  [_c("i", { staticClass: "fab fa-github" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: {
-                                      href: "https://www.linkedin.com/in/pietro-spitella/",
-                                      target: "_blank",
-                                    },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fab fa-linkedin-in",
-                                    }),
-                                  ]
-                                ),
-                              ]
-                            ),
-                          ]
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "my_card card my-3 border-0 bg-transparent" },
-                [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "my_img_col d-flex col-md-4 col-lg-4 p-0",
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "img-fluid rounded-start",
+                        },
+                        [_c("i", { staticClass: "fab fa-github" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
                           attrs: {
-                            src: "https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-                            alt: "pic",
+                            href: "https://www.linkedin.com/in/alberto-gaia/",
+                            target: "_blank",
                           },
-                        }),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "my_text_col col-md-8 col-lg-8" },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-body d-flex flex-column justify-content-center",
-                          },
-                          [
-                            _c("div", { staticClass: "my_info" }, [
-                              _c(
-                                "h2",
-                                { staticClass: "card-title font-weight-bold" },
-                                [
-                                  _vm._v(
-                                    "\n                    Paolino Paperino\n                  "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "card-text" }, [
-                                _vm._v(
-                                  "\n                    This is a wider card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                  "
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "my_contacts_btns d-flex justify-content-evenly my-3",
-                              },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: {
-                                      href: "https://github.com/PietroSpitella",
-                                      target: "_blank",
-                                    },
-                                  },
-                                  [_c("i", { staticClass: "fab fa-github" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: {
-                                      href: "https://www.linkedin.com/in/pietro-spitella/",
-                                      target: "_blank",
-                                    },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fab fa-linkedin-in",
-                                    }),
-                                  ]
-                                ),
-                              ]
-                            ),
-                          ]
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "my_card card my-3 border-0 bg-transparent" },
-                [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "my_img_col d-flex col-md-4 col-lg-4 p-0",
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "img-fluid rounded-start",
+                        },
+                        [_c("i", { staticClass: "fab fa-linkedin-in" })]
+                      ),
+                    ]
+                  ),
+                ]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-md-6 col-lg-4 bg-transparent card border-0" },
+              [
+                _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: {
+                    src: __webpack_require__(/*! ../../../public/images/about_us_pics/amedeo_pasanisi_bw.png */ "./public/images/about_us_pics/amedeo_pasanisi_bw.png"),
+                    alt: "amedeo_pasanisi",
+                  },
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c(
+                    "h5",
+                    { staticClass: "card-title font-weight-bold fs-24" },
+                    [_vm._v("Amedeo Pasanisi")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "my_contacts_btns d-flex justify-content-around my-3",
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
                           attrs: {
-                            src: "https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-                            alt: "pic",
+                            href: "https://github.com/amedeo-pasanisi",
+                            target: "_blank",
                           },
-                        }),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "my_text_col col-md-8 col-lg-8" },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-body d-flex flex-column justify-content-center",
-                          },
-                          [
-                            _c("div", { staticClass: "my_info" }, [
-                              _c(
-                                "h2",
-                                { staticClass: "card-title font-weight-bold" },
-                                [
-                                  _vm._v(
-                                    "\n                    Paolino Paperino\n                  "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "card-text" }, [
-                                _vm._v(
-                                  "\n                    This is a wider card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                  "
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "my_contacts_btns d-flex justify-content-evenly my-3",
-                              },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: {
-                                      href: "https://github.com/PietroSpitella",
-                                      target: "_blank",
-                                    },
-                                  },
-                                  [_c("i", { staticClass: "fab fa-github" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: {
-                                      href: "https://www.linkedin.com/in/pietro-spitella/",
-                                      target: "_blank",
-                                    },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fab fa-linkedin-in",
-                                    }),
-                                  ]
-                                ),
-                              ]
-                            ),
-                          ]
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "my_card card my-3 border-0 bg-transparent" },
-                [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "my_img_col d-flex col-md-4 col-lg-4 p-0",
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "img-fluid rounded-start",
+                        },
+                        [_c("i", { staticClass: "fab fa-github" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
                           attrs: {
-                            src: "https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-                            alt: "pic",
+                            href: "https://www.linkedin.com/in/amedeo-pasanisi-88a331185/",
+                            target: "_blank",
                           },
-                        }),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "my_text_col col-md-8 col-lg-8" },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-body d-flex flex-column justify-content-center",
-                          },
-                          [
-                            _c("div", { staticClass: "my_info" }, [
-                              _c(
-                                "h2",
-                                { staticClass: "card-title font-weight-bold" },
-                                [
-                                  _vm._v(
-                                    "\n                    Paolino Paperino\n                  "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "card-text" }, [
-                                _vm._v(
-                                  "\n                    This is a wider card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                  "
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "my_contacts_btns d-flex justify-content-evenly my-3",
-                              },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: {
-                                      href: "https://github.com/PietroSpitella",
-                                      target: "_blank",
-                                    },
-                                  },
-                                  [_c("i", { staticClass: "fab fa-github" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: {
-                                      href: "https://www.linkedin.com/in/pietro-spitella/",
-                                      target: "_blank",
-                                    },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fab fa-linkedin-in",
-                                    }),
-                                  ]
-                                ),
-                              ]
-                            ),
-                          ]
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "my_card card my-3 border-0 bg-transparent" },
-                [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "my_img_col d-flex col-md-4 col-lg-4 p-0",
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "img-fluid rounded-start",
+                        },
+                        [_c("i", { staticClass: "fab fa-linkedin-in" })]
+                      ),
+                    ]
+                  ),
+                ]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-md-6 col-lg-4 bg-transparent card border-0" },
+              [
+                _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: {
+                    src: __webpack_require__(/*! ../../../public/images/about_us_pics/luciano_marchionna_bw.png */ "./public/images/about_us_pics/luciano_marchionna_bw.png"),
+                    alt: "luciano_marchionna",
+                  },
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c(
+                    "h5",
+                    { staticClass: "card-title font-weight-bold fs-24" },
+                    [_vm._v("Luciano Marchionna")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "my_contacts_btns d-flex justify-content-around my-3",
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
                           attrs: {
-                            src: "https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-                            alt: "pic",
+                            href: "https://github.com/lucianomarchionna",
+                            target: "_blank",
                           },
-                        }),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "my_text_col col-md-8 col-lg-8" },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-body d-flex flex-column justify-content-center",
-                          },
-                          [
-                            _c("div", { staticClass: "my_info" }, [
-                              _c(
-                                "h2",
-                                { staticClass: "card-title font-weight-bold" },
-                                [
-                                  _vm._v(
-                                    "\n                    Paolino Paperino\n                  "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "card-text" }, [
-                                _vm._v(
-                                  "\n                    This is a wider card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                  "
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "my_contacts_btns d-flex justify-content-evenly my-3",
-                              },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: {
-                                      href: "https://github.com/PietroSpitella",
-                                      target: "_blank",
-                                    },
-                                  },
-                                  [_c("i", { staticClass: "fab fa-github" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: {
-                                      href: "https://www.linkedin.com/in/pietro-spitella/",
-                                      target: "_blank",
-                                    },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fab fa-linkedin-in",
-                                    }),
-                                  ]
-                                ),
-                              ]
-                            ),
-                          ]
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "my_card card my-3 border-0 bg-transparent" },
-                [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      {
-                        staticClass: "my_img_col d-flex col-md-4 col-lg-4 p-0",
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "img-fluid rounded-start",
+                        },
+                        [_c("i", { staticClass: "fab fa-github" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
                           attrs: {
-                            src: "https://images.unsplash.com/photo-1565464027194-7957a2295fb7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-                            alt: "pic",
+                            href: "https://www.linkedin.com/in/luciano-marchionna/",
+                            target: "_blank",
                           },
-                        }),
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "my_text_col col-md-8 col-lg-8" },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass:
-                              "card-body d-flex flex-column justify-content-center",
+                        },
+                        [_c("i", { staticClass: "fab fa-linkedin-in" })]
+                      ),
+                    ]
+                  ),
+                ]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-md-6 col-lg-4 bg-transparent card border-0" },
+              [
+                _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: {
+                    src: __webpack_require__(/*! ../../../public/images/about_us_pics/pietro_spitella_bw.png */ "./public/images/about_us_pics/pietro_spitella_bw.png"),
+                    alt: "pietro_spitella",
+                  },
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c(
+                    "h5",
+                    { staticClass: "card-title font-weight-bold fs-24" },
+                    [_vm._v("Pietro Spitella")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "my_contacts_btns d-flex justify-content-around my-3",
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "https://github.com/PietroSpitella",
+                            target: "_blank",
                           },
-                          [
-                            _c("div", { staticClass: "my_info" }, [
-                              _c(
-                                "h2",
-                                { staticClass: "card-title font-weight-bold" },
-                                [
-                                  _vm._v(
-                                    "\n                    Paolino Paperino\n                  "
-                                  ),
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "card-text" }, [
-                                _vm._v(
-                                  "\n                    This is a wider card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                  "
-                                ),
-                              ]),
-                            ]),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "my_contacts_btns d-flex justify-content-evenly my-3",
-                              },
-                              [
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: {
-                                      href: "https://github.com/PietroSpitella",
-                                      target: "_blank",
-                                    },
-                                  },
-                                  [_c("i", { staticClass: "fab fa-github" })]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "a",
-                                  {
-                                    attrs: {
-                                      href: "https://www.linkedin.com/in/pietro-spitella/",
-                                      target: "_blank",
-                                    },
-                                  },
-                                  [
-                                    _c("i", {
-                                      staticClass: "fab fa-linkedin-in",
-                                    }),
-                                  ]
-                                ),
-                              ]
-                            ),
-                          ]
-                        ),
-                      ]
-                    ),
-                  ]),
-                ]
-              ),
-            ]
-          ),
+                        },
+                        [_c("i", { staticClass: "fab fa-github" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "https://www.linkedin.com/in/pietro-spitella/",
+                            target: "_blank",
+                          },
+                        },
+                        [_c("i", { staticClass: "fab fa-linkedin-in" })]
+                      ),
+                    ]
+                  ),
+                ]),
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "col-md-6 col-lg-4 bg-transparent card border-0" },
+              [
+                _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: {
+                    src: __webpack_require__(/*! ../../../public/images/about_us_pics/roberto_martino_bw.png */ "./public/images/about_us_pics/roberto_martino_bw.png"),
+                    alt: "roberto_martino",
+                  },
+                }),
+                _vm._v(" "),
+                _c("div", { staticClass: "card-body" }, [
+                  _c(
+                    "h5",
+                    { staticClass: "card-title font-weight-bold fs-24" },
+                    [_vm._v("Roberto Martino")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "my_contacts_btns d-flex justify-content-around my-3",
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "https://github.com/Robma1994",
+                            target: "_blank",
+                          },
+                        },
+                        [_c("i", { staticClass: "fab fa-github" })]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "a",
+                        {
+                          attrs: {
+                            href: "https://www.linkedin.com/in/roberto-martino-86a301163/",
+                            target: "_blank",
+                          },
+                        },
+                        [_c("i", { staticClass: "fab fa-linkedin-in" })]
+                      ),
+                    ]
+                  ),
+                ]),
+              ]
+            ),
+          ]),
         ]),
       ]),
     ])
@@ -22538,6 +22059,61 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+
+/***/ "./public/images/about_us_pics/alberto_gaia_bw.png":
+/*!*********************************************************!*\
+  !*** ./public/images/about_us_pics/alberto_gaia_bw.png ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/alberto_gaia_bw.png?aa21362cf6a7f4720fdb2f432a5d0ad6";
+
+/***/ }),
+
+/***/ "./public/images/about_us_pics/amedeo_pasanisi_bw.png":
+/*!************************************************************!*\
+  !*** ./public/images/about_us_pics/amedeo_pasanisi_bw.png ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/amedeo_pasanisi_bw.png?321ae3e6235a2ecd672a70f27958ff11";
+
+/***/ }),
+
+/***/ "./public/images/about_us_pics/luciano_marchionna_bw.png":
+/*!***************************************************************!*\
+  !*** ./public/images/about_us_pics/luciano_marchionna_bw.png ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/luciano_marchionna_bw.png?5d2c8cc34a883380c884515fa9b71fca";
+
+/***/ }),
+
+/***/ "./public/images/about_us_pics/pietro_spitella_bw.png":
+/*!************************************************************!*\
+  !*** ./public/images/about_us_pics/pietro_spitella_bw.png ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/pietro_spitella_bw.png?e555e7d24b3dc3c05456543afc6dfcbd";
+
+/***/ }),
+
+/***/ "./public/images/about_us_pics/roberto_martino_bw.png":
+/*!************************************************************!*\
+  !*** ./public/images/about_us_pics/roberto_martino_bw.png ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/roberto_martino_bw.png?120f15693da4692f65cdbf9f0e3d7da8";
 
 /***/ }),
 

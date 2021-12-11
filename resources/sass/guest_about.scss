@@ -1,19 +1,5 @@
 .my_card {
-    .row {
-        .my_img_col {
-            img {
-                border-radius: 100%;
-                object-fit: cover;
-                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-            }
-        }
-
-        .my_text_col{
-            .card-body{
-                height: 100%;
-            }
-        }
-    }
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .my_contacts_btns {
@@ -21,10 +7,14 @@
         text-decoration: none;
         margin-right: 15px;
         i{
+            color: $red;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 50px;
+            &:hover{
+                filter: brightness(0.8);
+            }
         }
     }
 }
