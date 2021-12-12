@@ -45,11 +45,51 @@
 
                     </ul>
                 </div>
-                <div class="collapse navbar-collapse navbar-hamburger" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse">
                     <ul class="navbar-nav my-background-navbar">
                         <!-- Authentication Links -->
                         @guest
                     <li class="nav-item pr-1 h-50 navbar-buttons">
+                        <a href="{{route('login')}}" class="button_login p-2 text-decoration-none text-light">
+                            Accedi
+                        </a>
+                    </li>
+                    @if (Route::has('register'))
+                        <li class="nav-item h-50 navbar-buttons mbr-10 margin-bottom-resp">
+                            {{-- <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
+                            <a href="{{route('register')}}" class="button_register p-2 text-decoration-none text-light">
+                                Registrati
+                            </a>
+                        </li>
+                    @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('host.home') }}">
+                                    Dashboard
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                        {{ __('Esci') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
+                <div class="collapse navbar-collapse navbar-hamburger" id="navbarSupportedContent">
+                    <ul class="navbar-nav my-background-navbar dysplay-none">
+                        <!-- Authentication Links -->
+                        @guest
+                    <li class="nav-item padding-r-10px h-50 navbar-buttons">
                         <a href="{{route('login')}}" class="button_login p-2 text-decoration-none text-light">
                             Accedi
                         </a>
@@ -68,7 +108,7 @@
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu my-dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('host.home') }}">
                                     Dashboard
                                     </a>
@@ -83,6 +123,16 @@
                                 </div>
                             </li>
                         @endguest
+                        <p class="m-0 border-top-resp pt-1">PAGINE</p>
+                        <li class="nav-item {{Request::route()->getName()=='Homepage'? 'active' : 'null'}}">
+                            <router-link class="nav-link" to="/">Home</router-link>
+                        </li>
+                        <li class="nav-item {{Request::route()->getName()=='Discover'? 'active' : 'null'}}">
+                            <router-link class="nav-link" to="/discover">Scopri</router-link>
+                        </li>
+                        <li class="nav-item {{Request::route()->getName()=='Discover'? 'active' : 'null'}}">
+                            <router-link class="nav-link" to="/about">Chi siamo</router-link>
+                        </li>
                     </ul>
                 </div>
             </div>

@@ -21,7 +21,7 @@
               </li>
             </ul>
         </div>
-        <div class="collapse navbar-collapse navbar-hamburger" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse navbar-hamburger ciaosonoqui" id="navbarSupportedContent">
             <ul class="navbar-nav my-background-navbar">
                 <!-- Authentication Links -->
                 @guest

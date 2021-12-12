@@ -11283,6 +11283,10 @@ nav a img {
   max-width: 25%;
 }
 
+.padding-r-10px {
+  padding-right: 10px;
+}
+
 .flex-wrap .mb-3 input {
   width: 280px;
   min-width: auto;
@@ -11318,41 +11322,41 @@ nav a img {
   color: #ffffff;
 }
 
-@media only screen and (max-width: 767px) {
-  .navbar-hamburger {
-    z-index: 1041;
+@media only screen and (min-width: 767px) {
+  #navbarSupportedContent .dysplay-none {
+    display: none;
   }
+}
 
-  .navbar-hamburger .my-background-navbar {
+@media only screen and (max-width: 767px) {
+  .my-background-navbar {
     margin-left: auto;
     width: 25%;
-    min-width: 92px;
+    min-width: 110px;
+    padding: 10px;
   }
 
-  .navbar-hamburger .my-background-navbar .navbar-buttons {
+  .my-background-navbar .navbar-buttons {
     padding-right: 0;
-    margin-top: 10px;
+    padding: 10px;
   }
 
-  .navbar-hamburger .my-background-navbar .mbr-10 {
+  .my-background-navbar .pr-1 {
+    padding-right: 0;
+  }
+
+  .my-background-navbar .mbr-10 {
     margin-bottom: 10px;
   }
 
-  .modal {
-    width: 100%;
+  .my-background-navbar .border-top-resp {
+    border-top: 1px solid #b4b4b4;
   }
 
-  .modal .modal-dialog {
-    max-width: 100%;
-  }
-
-  .modal .modal-dialog .modal-body-left {
-    display: none;
-  }
-
-  .modal .modal-dialog .modal-body-left,
-  .modal .modal-dialog .modal-body-right {
-    margin: 0 auto;
+  .my-background-navbar .my-dropdown-menu {
+    border: none;
+    background-color: unset;
+    padding-top: 0;
   }
 }
 
