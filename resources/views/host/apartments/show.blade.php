@@ -1,6 +1,6 @@
 {{-- Pagina dettaglio appartamento (host) --}}
 @extends('layouts.dashboard')
-@section('title', 'Page of show')
+@section('title', 'Info appartamento')
     
 @section('content')
 <div class="container">

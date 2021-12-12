@@ -71,17 +71,15 @@
     </div>
     <section class="container mb-5">
       <div class="row justify-content-around mx-0">
+        <div class="col-12 my-3">
+          <h3 v-if="resultCity != ''">
+            Risultati trovati per : <span class="font-weight-bold text-capitalize"> {{ resultCity }}</span>  ({{
+              apartments.length
+            }})
+          </h3>
+          <h3 v-else><strong>Viaggetto a Roma?</strong></h3>
+        </div>
         <div class="col-12 col-md-6">
-          <div class="row">
-            <div class="col-12">
-              <h3 v-if="resultCity != ''">
-                Risultati trovati per: {{ resultCity }} ({{
-                  apartments.length
-                }})
-              </h3>
-              <h3 v-else>Viaggetto a Roma?</h3>
-            </div>
-          </div>
           <div
             class="row"
             v-for="(apartment, index) in apartments"
@@ -104,7 +102,7 @@
                         <h6 class="card-subtitle mb-2 text-muted">
                           {{ apartment.city }}
                         </h6>
-                        <p class="card-text">{{ apartment.description }}</p>
+                        <p class="card-text text-truncate">{{ apartment.description }}</p>
                       </div>
                     </div>
                   </div>

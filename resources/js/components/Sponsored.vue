@@ -11,7 +11,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row justify-content-around">
         <router-link
           :to="{
             name: 'Apartment',
@@ -27,11 +27,11 @@
             alt=""
           />
           <div class="card-body">
-            <h5 class="card-title">{{ apartment.title }}</h5>
+            <h5 class="card-title font-weight-bold">{{ apartment.title }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">
               {{ apartment.type }}
             </h6>
-            <p class="card-text">
+            <p class="card-text text-truncate">
               {{ apartment.description }}
             </p>
           </div>

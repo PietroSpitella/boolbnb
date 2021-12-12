@@ -10999,6 +10999,17 @@ body .container-xl main {
   }
 }
 
+#loginPage {
+  background-image: url("https://images.unsplash.com/photo-1630650231815-a567e2ed26cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format");
+  min-height: calc(100vh - 70px);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .navbar .logo {
   color: #ff385c;
 }
@@ -11432,6 +11443,11 @@ nav a img {
 
 .apartment-row:hover .edit-delete {
   visibility: initial;
+}
+
+.form-control:focus {
+  border-color: none !important;
+  box-shadow: none !important;
 }
 
 #jumbotron {
