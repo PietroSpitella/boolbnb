@@ -2768,8 +2768,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Main",
@@ -5419,7 +5417,36 @@ var render = function () {
                     },
                     on: { click: _vm.searchDestination },
                   },
-                  [_vm._v("Cerca\n          ")]
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "feather feather-search",
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          width: "24",
+                          height: "24",
+                          viewBox: "0 0 24 24",
+                          fill: "none",
+                          stroke: "currentColor",
+                          "stroke-width": "2",
+                          "stroke-linecap": "round",
+                          "stroke-linejoin": "round",
+                        },
+                      },
+                      [
+                        _c("circle", { attrs: { cx: "11", cy: "11", r: "8" } }),
+                        _c("line", {
+                          attrs: {
+                            x1: "21",
+                            y1: "21",
+                            x2: "16.65",
+                            y2: "16.65",
+                          },
+                        }),
+                      ]
+                    ),
+                  ]
                 ),
               ],
               1
@@ -5549,7 +5576,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-12" }, [
-        _c("h3", { staticClass: "mb-3" }, [
+        _c("h3", { staticClass: "mb-3 font-weight-bold" }, [
           _vm._v("Ispirazioni per il tuo prossimo viaggio"),
         ]),
         _vm._v(" "),
@@ -5629,7 +5656,7 @@ var render = function () {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "row" },
+        { staticClass: "row justify-content-around" },
         _vm._l(_vm.apartments, function (apartment) {
           return _c(
             "router-link",
@@ -5651,7 +5678,7 @@ var render = function () {
               }),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
-                _c("h5", { staticClass: "card-title" }, [
+                _c("h5", { staticClass: "card-title font-weight-bold" }, [
                   _vm._v(_vm._s(apartment.title)),
                 ]),
                 _vm._v(" "),
@@ -5661,7 +5688,7 @@ var render = function () {
                   ),
                 ]),
                 _vm._v(" "),
-                _c("p", { staticClass: "card-text" }, [
+                _c("p", { staticClass: "card-text text-truncate" }, [
                   _vm._v(
                     "\n            " +
                       _vm._s(apartment.description) +
@@ -6554,106 +6581,104 @@ var render = function () {
       _vm._v(" "),
       _c("section", { staticClass: "container mb-5" }, [
         _c("div", { staticClass: "row justify-content-around mx-0" }, [
+          _c("div", { staticClass: "col-12 my-3" }, [
+            _vm.resultCity != ""
+              ? _c("h3", [
+                  _vm._v("\n          Risultati trovati per : "),
+                  _c(
+                    "span",
+                    { staticClass: "font-weight-bold text-capitalize" },
+                    [_vm._v(" " + _vm._s(_vm.resultCity))]
+                  ),
+                  _vm._v("  (" + _vm._s(_vm.apartments.length) + ")\n        "),
+                ])
+              : _c("h3", [_c("strong", [_vm._v("Viaggetto a Roma?")])]),
+          ]),
+          _vm._v(" "),
           _c(
             "div",
             { staticClass: "col-12 col-md-6" },
-            [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-12" }, [
-                  _vm.resultCity != ""
-                    ? _c("h3", [
-                        _vm._v(
-                          "\n              Risultati trovati per: " +
-                            _vm._s(_vm.resultCity) +
-                            " (" +
-                            _vm._s(_vm.apartments.length) +
-                            ")\n            "
-                        ),
-                      ])
-                    : _c("h3", [_vm._v("Viaggetto a Roma?")]),
-                ]),
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.apartments, function (apartment, index) {
-                return _c("div", { key: index, staticClass: "row" }, [
-                  _c(
-                    "div",
-                    { staticClass: "col-12" },
-                    [
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "text-decoration-none",
-                          staticStyle: { color: "inherit" },
-                          attrs: {
-                            to: {
-                              name: "Apartment",
-                              params: { slug: apartment.slug },
-                            },
+            _vm._l(_vm.apartments, function (apartment, index) {
+              return _c("div", { key: index, staticClass: "row" }, [
+                _c(
+                  "div",
+                  { staticClass: "col-12" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "text-decoration-none",
+                        staticStyle: { color: "inherit" },
+                        attrs: {
+                          to: {
+                            name: "Apartment",
+                            params: { slug: apartment.slug },
                           },
                         },
-                        [
-                          _c(
-                            "div",
-                            {
-                              staticClass: "card mb-3 border-0",
-                              staticStyle: { "max-width": "540px" },
-                            },
-                            [
-                              _c("div", { staticClass: "row no-gutters" }, [
-                                _c("div", { staticClass: "col-md-4" }, [
-                                  _c("img", {
-                                    staticClass: "card-img-top",
-                                    attrs: {
-                                      src: "/storage/" + apartment.image,
-                                      alt: "",
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "card mb-3 border-0",
+                            staticStyle: { "max-width": "540px" },
+                          },
+                          [
+                            _c("div", { staticClass: "row no-gutters" }, [
+                              _c("div", { staticClass: "col-md-4" }, [
+                                _c("img", {
+                                  staticClass: "card-img-top",
+                                  attrs: {
+                                    src: "/storage/" + apartment.image,
+                                    alt: "",
+                                  },
+                                }),
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "col-md-8" }, [
+                                _c("div", { staticClass: "card-body" }, [
+                                  _c(
+                                    "h5",
+                                    {
+                                      staticClass:
+                                        "card-title font-weight-bold",
                                     },
-                                  }),
-                                ]),
-                                _vm._v(" "),
-                                _c("div", { staticClass: "col-md-8" }, [
-                                  _c("div", { staticClass: "card-body" }, [
-                                    _c(
-                                      "h5",
-                                      {
-                                        staticClass:
-                                          "card-title font-weight-bold",
-                                      },
-                                      [_vm._v(_vm._s(apartment.title))]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "h6",
-                                      {
-                                        staticClass:
-                                          "card-subtitle mb-2 text-muted",
-                                      },
-                                      [
-                                        _vm._v(
-                                          "\n                        " +
-                                            _vm._s(apartment.city) +
-                                            "\n                      "
-                                        ),
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("p", { staticClass: "card-text" }, [
-                                      _vm._v(_vm._s(apartment.description)),
-                                    ]),
-                                  ]),
+                                    [_vm._v(_vm._s(apartment.title))]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "h6",
+                                    {
+                                      staticClass:
+                                        "card-subtitle mb-2 text-muted",
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                        " +
+                                          _vm._s(apartment.city) +
+                                          "\n                      "
+                                      ),
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "p",
+                                    { staticClass: "card-text text-truncate" },
+                                    [_vm._v(_vm._s(apartment.description))]
+                                  ),
                                 ]),
                               ]),
-                            ]
-                          ),
-                        ]
-                      ),
-                    ],
-                    1
-                  ),
-                ])
-              }),
-            ],
-            2
+                            ]),
+                          ]
+                        ),
+                      ]
+                    ),
+                  ],
+                  1
+                ),
+              ])
+            }),
+            0
           ),
           _vm._v(" "),
           _vm._m(0),
@@ -22560,19 +22585,19 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history',
   routes: [{
     path: '/',
-    name: 'Homepage',
+    name: 'BoolBnB | Scopri nuovi posti e partecipa a esperienze fantastiche ',
     component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
     path: '/discover',
-    name: 'Discover',
+    name: 'Scopri | BoolBnB',
     component: _pages_Discover_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }, {
     path: '/apartment/:slug',
-    name: 'Apartment',
+    name: 'Dettaglio | BoolBnB',
     component: _pages_Apartment_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: '/about',
-    name: 'About',
+    name: 'Chi siamo | BoolBnB',
     component: _pages_AboutUs_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 });
@@ -22905,7 +22930,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/albertogaia/Desktop/boolbnb/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Zaps\Desktop\BOOLEAN\PROGETTO-FINALE\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })

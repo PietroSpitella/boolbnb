@@ -15,22 +15,22 @@ const router = new VueRouter({
     routes: [
         {
             path: '/',
-            name: 'Homepage',
+            name: 'BoolBnB | Scopri nuovi posti e partecipa a esperienze fantastiche ',
             component: Home,
         },
         {
             path: '/discover',
-            name: 'Discover',
+            name: 'Scopri | BoolBnB',
             component: Main,
         },
         {
             path: '/apartment/:slug',
-            name: 'Apartment',
+            name: 'Dettaglio | BoolBnB',
             component: Apartment,
         },
         {
             path: '/about',
-            name: 'About',
+            name: 'Chi siamo | BoolBnB',
             component: AboutUs
         }
     ],

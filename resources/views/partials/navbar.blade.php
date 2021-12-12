@@ -27,14 +27,14 @@
                 @guest
                     <li class="nav-item pr-1 h-50 navbar-buttons">
                         <a href="{{route('login')}}" class="button_login p-2 text-decoration-none text-light">
-                            Login
+                            Accedi
                         </a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item h-50 navbar-buttons mbr-10">
                             {{-- <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
                             <a href="{{route('register')}}" class="button_register p-2 text-decoration-none text-light">
-                                Register
+                                Registrati
                             </a>
                         </li>
                     @endif
@@ -51,7 +51,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('Esci') }}
                             </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                 @csrf

@@ -37,12 +37,12 @@
 
 </head>
 <body onload="searchBox()">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark flex-md-nowrap py-0 px-4 position-fixed">
+    <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-nowrap py-0 px-4 position-fixed">
         <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{route('host.home')}}">
             <img src="{{asset('images/boolbnb-def.png')}}" class="d-none d-md-block" alt="boolbnb_logo">
             <img src="{{asset('images/favicon.png')}}" class="d-block d-md-none" alt="boolbnb_logo">
         </a>
-        <ul class="navbar-nav px-3 ml-auto">
+        <ul class="navbar-nav px-3 ml-auto d-flex align-items-center">
             <li class="nav-item my_user">
                 <div class="my_user_icon mx-2">
                     <img src="{{asset('images/pippo-avatar.jpg')}}" alt="user_icon">
@@ -62,7 +62,7 @@
                 <a class="nav-link" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                      document.getElementById('logout-form').submit();">
-                    Logout
+                    Esci
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -73,7 +73,7 @@
     <div class="container-fluid">
         <div class="row">
             <nav class="col-md-3 col-sm-2 col-12 d-md-block my_sidebar bg-dark py-4">
-                <ul class="nav d-flex flex-column bg-dark">
+                <ul class="nav d-flex flex-column">
                     <li class="nav-item px-1">
                         <a class="nav-link" href="{{route('host.home')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
@@ -106,4 +106,41 @@
         </div>
     </div>
 </body>
+<style>
+@media screen and (max-width: 575px) {
+
+    .navbar .dropdown {
+        display: inline-block;
+    }
+
+    .navbar-nav li {
+        text-align: center;
+        
+    }    
+    
+    .my_sidebar{
+     height: 70px;
+     background-color: #343a40;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+    }
+
+    .my_sidebar ul {
+        background-color: transparent;
+        flex-direction: row !important;
+    }
+
+    .my_sidebar ul li{
+        
+    }
+    .my_sidebar ul li a span{
+        display: none
+    }
+
+    .col-md-10{
+        margin-top: 140px;
+    }
+}
+</style>
 </html>
