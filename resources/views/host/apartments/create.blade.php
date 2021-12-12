@@ -1,6 +1,6 @@
 {{-- Creazione appartamenti --}}
 @extends('layouts.dashboard')
-@section('title', 'New Apartment')
+@section('title', 'Aggiungi appartamento')
 
 @section('content')
     <div class="container">

@@ -1,6 +1,6 @@
 {{-- Modifica appartamento --}}
 @extends('layouts.dashboard')
-@section('title', 'Edit Apartment')
+@section('title', 'Modifica appartamento')
 
 @section('content')
 <div class="container">

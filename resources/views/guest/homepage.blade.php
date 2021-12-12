@@ -63,7 +63,7 @@
                                         <div class="modal-body-right">
                                             <div class="modal-content border-0 rounded-0">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Login</h5>
+                                                    <h5 class="modal-title font-weight-bold" id="exampleModalLabel">Accedi</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -108,7 +108,7 @@
                                                                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                     
                                                                                 <label class="form-check-label" for="remember">
-                                                                                    {{ __('Remember Me') }}
+                                                                                    {{ __('Rimani collegato') }}
                                                                                 </label>
                                                                             </div>
                                                                         </div>
@@ -117,12 +117,12 @@
                                                                     <div class="form-group row mb-0"> 
                                                                         <div class="col-md-12 d-flex flex-column">
                                                                             <button type="submit" class="btn-login-register py-2">
-                                                                                {{ __('Login') }}
+                                                                                {{ __('Accedi') }}
                                                                             </button>
                                             
                                                                             @if (Route::has('password.request'))
                                                                                 <a class="color-red btn btn-link" href="{{ route('password.request') }}">
-                                                                                    {{ __('Forgot Your Password?') }}
+                                                                                    {{ __('Password dimenticata?') }}
                                                                                 </a>
                                                                             @endif
                                                                         </div>

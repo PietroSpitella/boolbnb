@@ -1,6 +1,6 @@
 {{-- Pagina utente che fa accesso --}}
 @extends('layouts.dashboard')
-@section('title', 'Welcome back')
+@section('title', 'Home')
 
 @section('content')
 <div class="container">

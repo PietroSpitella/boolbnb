@@ -2,7 +2,7 @@
   <section id="places" class="container my-5">
     <div class="row">
       <div class="col-12">
-        <h3 class="mb-3">Ispirazioni per il tuo prossimo viaggio</h3>
+        <h3 class="mb-3 font-weight-bold">Ispirazioni per il tuo prossimo viaggio</h3>
         <h5 class="mb-3">Una casa ovunque nel mondo</h5>
       </div>
     </div>

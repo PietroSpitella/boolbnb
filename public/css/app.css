@@ -11434,6 +11434,11 @@ nav a img {
   visibility: initial;
 }
 
+.form-control:focus {
+  border-color: none !important;
+  box-shadow: none !important;
+}
+
 #jumbotron {
   padding: 250px 0;
   overflow: hidden;

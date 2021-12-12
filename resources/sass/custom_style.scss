@@ -453,3 +453,10 @@ nav {
         }
     }
 }
+
+// tolto il bordo che compare al click degli input
+
+.form-control:focus {
+    border-color:none !important;
+    box-shadow: none !important;
+} 
