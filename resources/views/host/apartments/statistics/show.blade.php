@@ -55,7 +55,7 @@
                                 text: 'Visualizzazioni'
                             },
                             min: 0,
-                            max: maxCount + 2,
+                            max: maxCount + 1,
                             ticks: {
                                 stepSize: 1
                             }
