@@ -6,7 +6,7 @@
                 <a href="./"><img src="{{asset('images/boolbnb-def.png')}}" alt="logo"></a>
             </div>
             <div class="col text-center">
-                <h2>Site creators</h2>
+                <h2>I membri</h2>
                 <ul class="list-unstyled">
                     <li><a class="color-white" href="https://www.linkedin.com/in/alberto-gaia/">Alberto Gaia</a></li>
                     <li><a class="color-white" href="https://www.linkedin.com/in/amedeo-pasanisi-88a331185/">Amedeo Pasanisi</a></li>
@@ -16,13 +16,13 @@
                 </ul>
             </div>
             <div class="col text-center">
-                <h2>Other information</h2>
+                <h2>Altre informazioni</h2>
                 <ul class="list-unstyled">
                     <li><a class="color-white" href="./">Home</a></li>
-                    <li><a class="color-white" href="./discover">Discover</a></li>
-                    <li><a class="color-white" href="./about">About Us</a></li>
+                    <li><a class="color-white" href="./discover">Scopri</a></li>
+                    <li><a class="color-white" href="./about">Chi siamo</a></li>
                     <li><a class="color-white" href="./host/dashboard">Dashboard</a></li>
-                    <li><a class="color-white" href="./host/messages">Messages</a></li>
+                    <li><a class="color-white" href="./host/messages">Messaggi</a></li>
                 </ul>
             </div>
         </div>
