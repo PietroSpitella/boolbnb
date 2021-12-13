@@ -8,7 +8,7 @@ import Main from './pages/Discover.vue'
 import Home from './pages/Home.vue'
 import Apartment from './pages/Apartment.vue'
 import AboutUs from './pages/AboutUs.vue'
-
+import NotFound from './pages/NotFound.vue';
 
 const router = new VueRouter({
     mode: 'history',
@@ -32,6 +32,10 @@ const router = new VueRouter({
             path: '/about',
             name: 'About',
             component: AboutUs
+        },
+        {
+            path: "/:catchAll(.*)",
+            component: NotFound,
         }
     ],
 });

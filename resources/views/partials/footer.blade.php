@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row d-flex">
             <div class="col text-center">
-                <a href="./"><img src="images/boolbnb-def.png" alt="logo"></a>
+                <a href="./"><img src="{{asset('images/boolbnb-def.png')}}" alt="logo"></a>
             </div>
             <div class="col text-center">
                 <h2>Site creators</h2>
