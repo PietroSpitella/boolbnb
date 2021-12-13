@@ -38,10 +38,16 @@
                 {{ apartment.n_beds }} Letti
               </p>
             </div>
+            <div class="div-bordered-2 div-bordered-3 icon-separation p-4">
+              <i class="fas fa-door-closed fs-20 color-grey-icon"></i>
+              <p class="fs-15 text-capitalize font-weight-bold">
+                {{ apartment.n_rooms }} Stanze
+              </p>
+            </div>
             <div class="div-bordered-3 icon-separation p-4">
               <i class="fas fa-user-friends fs-20 color-grey-icon"></i>
               <p class="fs-15 text-capitalize font-weight-bold">
-                Fino a {{ apartment.n_guests }} persone
+                Fino a {{ apartment.n_guests }} Persone
               </p>
             </div>
             <div

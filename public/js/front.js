@@ -2590,6 +2590,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Apartment",
@@ -6188,6 +6194,35 @@ var render = function () {
                     _vm._v(" "),
                     _c(
                       "div",
+                      {
+                        staticClass:
+                          "div-bordered-2 div-bordered-3 icon-separation p-4",
+                      },
+                      [
+                        _c("i", {
+                          staticClass:
+                            "fas fa-door-closed fs-20 color-grey-icon",
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "p",
+                          {
+                            staticClass:
+                              "fs-15 text-capitalize font-weight-bold",
+                          },
+                          [
+                            _vm._v(
+                              "\n              " +
+                                _vm._s(_vm.apartment.n_rooms) +
+                                " Stanze\n            "
+                            ),
+                          ]
+                        ),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
                       { staticClass: "div-bordered-3 icon-separation p-4" },
                       [
                         _c("i", {
@@ -6205,7 +6240,7 @@ var render = function () {
                             _vm._v(
                               "\n              Fino a " +
                                 _vm._s(_vm.apartment.n_guests) +
-                                " persone\n            "
+                                " Persone\n            "
                             ),
                           ]
                         ),
@@ -22984,7 +23019,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/albertogaia/Desktop/boolbnb/resources/js/front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! C:\Users\Luciano\Documents\Boolean\Progetto_Finale\boolbnb\resources\js\front.js */"./resources/js/front.js");
 
 
 /***/ })
