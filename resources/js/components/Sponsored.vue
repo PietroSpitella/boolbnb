@@ -11,7 +11,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row flex-row-reverse justify-content-end">
         <router-link
           :to="{
             name: 'Dettaglio | BoolBnB',

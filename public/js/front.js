@@ -5695,7 +5695,7 @@ var render = function () {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "row" },
+        { staticClass: "row flex-row-reverse justify-content-end" },
         _vm._l(_vm.apartments, function (apartment) {
           return _c(
             "router-link",

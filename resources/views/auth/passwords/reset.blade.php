@@ -1,6 +1,7 @@
 @extends('layouts.app')
+@section('title', 'Reimposta la password')
 
-@section('content')
+@section('content_main')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

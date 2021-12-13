@@ -16,7 +16,7 @@
             @endif
             @if (count($apartments) < 1)
                 <h2 class="font-weight-bold">Non hai registrato nessun appartamento</h2>
-                <a href="{{route('host.apartments.create')}}" class="btn btn-primary">Inizia ad ospitare</a>
+                <a href="{{route('host.apartments.create')}}" class="btn btn-danger">Inizia ad ospitare</a>
             @else
             @if (count($adv_houses)>0)
             <h3>Appartamenti sponsorizzati attivi:</h3>

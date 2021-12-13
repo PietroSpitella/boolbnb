@@ -28,7 +28,14 @@ class ApartmentController extends Controller
         $apartments = Apartment::where('user_id', $user_id)->get();
         $advertises = Advertise::all();
 
-        $houses = DB::table('apartments')->join('advertise_apartment' , 'apartments.id', '=','advertise_apartment.apartment_id')->get();
+        $houses = DB::table('apartments')
+        ->join('advertise_apartment' , 'apartments.id', '=','advertise_apartment.apartment_id')
+        ->get();
+        // $houses = DB::table('apartments')
+        // ->join('advertise_apartment', 'apartment.id', '=', 'advertise_apartment.apartment_id')
+        // ->join('users', 'users.id', $user_id)
+        // ->get();
+
 
         $adv_houses = [];
         foreach($houses as $house){
