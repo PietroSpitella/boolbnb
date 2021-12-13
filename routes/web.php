@@ -21,7 +21,7 @@ Route::get('/', 'HomeController@indexHome')->name('index');
 
 
 // Route::get('/', 'HomeController@index')->name('index');
-Route::get('/about-us', 'HomeController@about')->name('about-us');
+// Route::get('/about-us', 'HomeController@about')->name('about-us');
 
 Route::resource('/apartments', 'ApartmentController');
 Route::post('/new-message', 'MessageController@store')->name('store-message');
@@ -41,14 +41,16 @@ Route::middleware('auth')->namespace('Host')->prefix('host')->name('host.')
     Route::post('/apartments/advertise/checkout/{id}', 'SponsorController@checkout')->name('apartments.advertise.checkout');
     Route::delete('/messages/delete/{message}', 'HomeController@destroyMessage')->name('delete-message');
     Route::resource('/apartments', 'ApartmentController');
-    Route::resource('/advertises', 'AdvertiseController');
     Route::get('/statistics/{id}', 'StatisticController@statistics')->name('statistics-page');
     Route::get('/stastic/{id}', 'StatisticController@show')->name('statistic');
 });
 
+
 Route::get('/{any}', function () {
     return view('guest.homepage');
 })->where("any", ".*");
+
+
 
 Route::prefix('api')->namespace('Api')->middleware('auth')->group(function (){
     Route::get('/user', function(){

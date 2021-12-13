@@ -20,7 +20,7 @@
                 <ul class="list-unstyled">
                     <li><a class="color-white" href="./">Home</a></li>
                     <li><a class="color-white" href="./discover">Discover</a></li>
-                    <li><a class="color-white" href="./about-us">About Us</a></li>
+                    <li><a class="color-white" href="./about">About Us</a></li>
                     <li><a class="color-white" href="./host/dashboard">Dashboard</a></li>
                     <li><a class="color-white" href="./host/messages">Messages</a></li>
                 </ul>

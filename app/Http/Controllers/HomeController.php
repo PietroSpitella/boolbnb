@@ -25,17 +25,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $services = Service::all();
-        $apartments = Apartment::all();
-        return view('index', compact('apartments', 'services'));
+        // $services = Service::all();
+        // $apartments = Apartment::all();
+        // return view('index', compact('apartments', 'services'));
     }
 
-    public function about(){
-        return view('about');
-    }
-    public function search(){
-        return view('discover');
-    }
+    // public function about(){
+    //     return view('about');
+    // }
+    // public function search(){
+    //     return view('discover');
+    // }
     public function indexHome(){
         return view('guest.homepage');
     }
