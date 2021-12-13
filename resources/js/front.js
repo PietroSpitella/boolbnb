@@ -15,7 +15,7 @@ const router = new VueRouter({
     routes: [
         {
             path: '/',
-            name: 'BoolBnB | Scopri nuovi posti e partecipa a esperienze fantastiche ',
+            name: 'Homepage',
             component: Home,
         },
         {
@@ -30,7 +30,7 @@ const router = new VueRouter({
         },
         {
             path: '/about',
-            name: 'Chi siamo | BoolBnB',
+            name: 'About',
             component: AboutUs
         }
     ],

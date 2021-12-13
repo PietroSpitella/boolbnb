@@ -2,12 +2,14 @@
   <section id="places" class="container my-5">
     <div class="row">
       <div class="col-12">
-        <h3 class="mb-3 font-weight-bold">Ispirazioni per il tuo prossimo viaggio</h3>
+        <h3 class="mb-3 font-weight-bold">
+          Ispirazioni per il tuo prossimo viaggio
+        </h3>
         <h5 class="mb-3">Una casa ovunque nel mondo</h5>
       </div>
     </div>
     <div class="row">
-      <div class=" col-sm-12 col-md-12 col-lg-4 mb-3">
+      <div class="col-sm-12 col-md-12 col-lg-4 mb-3">
         <a href="#" class="card border-0" @click="getClick">
           <div class="card-img h-100">
             <img
@@ -20,7 +22,7 @@
           ><span class="text-white fs-28">Roma</span>
         </a>
       </div>
-      <div class=" col-sm-12 col-md-12 col-lg-4 mb-3">
+      <div class="col-sm-12 col-md-12 col-lg-4 mb-3">
         <a href="#" class="card border-0" @click="getClick">
           <div class="card-img h-100">
             <img
@@ -33,7 +35,7 @@
           ><span class="text-white fs-28">Torino</span>
         </a>
       </div>
-      <div class=" col-sm-12 col-md-12 col-lg-4 mb-3">
+      <div class="col-sm-12 col-md-12 col-lg-4 mb-3">
         <a href="#" class="card border-0" @click="getClick">
           <div class="card-img h-100">
             <img
@@ -61,7 +63,7 @@ export default {
   methods: {
     getClick(el) {
       this.$router.push({
-        name: "Discover",
+        name: "Scopri | BoolBnB",
         params: { destination: el.target.innerText },
       });
     },

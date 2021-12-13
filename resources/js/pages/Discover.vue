@@ -25,12 +25,14 @@
               v-for="service in services"
               :key="service.id"
             >
-              <label class="my_btns btn btn-outline-dark" :for="service.id"><i :class="service.icon"></i></label>
+              <label class="my_btns btn btn-outline-dark" :for="service.id"
+                ><i :class="service.icon"></i
+              ></label>
               <input
                 type="checkbox"
                 :name="service.name"
                 :id="service.id"
-                class="d-none"
+                class=""
                 :value="service.id"
                 @change="getSelectedServices"
               />
@@ -73,9 +75,11 @@
       <div class="row justify-content-around mx-0">
         <div class="col-12 my-3">
           <h3 v-if="resultCity != ''">
-            Risultati trovati per : <span class="font-weight-bold text-capitalize"> {{ resultCity }}</span>  ({{
-              apartments.length
-            }})
+            Risultati trovati per :
+            <span class="font-weight-bold text-capitalize">
+              {{ resultCity }}</span
+            >
+            ({{ apartments.length }})
           </h3>
           <h3 v-else><strong>Viaggetto a Roma?</strong></h3>
         </div>
@@ -86,7 +90,14 @@
             :key="index"
           >
             <div class="col-12">
-              <router-link class="text-decoration-none" :to="{ name: 'Apartment', params: { slug: apartment.slug } }" style="color: inherit">
+              <router-link
+                class="text-decoration-none"
+                :to="{
+                  name: 'Dettaglio | BoolBnB',
+                  params: { slug: apartment.slug },
+                }"
+                style="color: inherit"
+              >
                 <div class="card mb-3 border-0" style="max-width: 540px">
                   <div class="row no-gutters">
                     <div class="col-md-4">
@@ -98,11 +109,15 @@
                     </div>
                     <div class="col-md-8">
                       <div class="card-body">
-                        <h5 class="card-title font-weight-bold">{{ apartment.title }}</h5>
+                        <h5 class="card-title font-weight-bold">
+                          {{ apartment.title }}
+                        </h5>
                         <h6 class="card-subtitle mb-2 text-muted">
                           {{ apartment.city }}
                         </h6>
-                        <p class="card-text text-truncate">{{ apartment.description }}</p>
+                        <p class="card-text text-truncate">
+                          {{ apartment.description }}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -303,16 +318,20 @@ export default {
   }
 }
 
-.my_btns{
+.my_btns {
   padding: 15px;
-  margin: 10px 0 0 10px;
   border: none;
   transition: box-shadow 0.4s ease;
   font-size: 20px;
-
 }
 
-#rangeDistance{
+#rangeDistance,
+input[type="checkbox"] {
   accent-color: #ff385c;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  aspect-ratio: 1;
 }
 </style>

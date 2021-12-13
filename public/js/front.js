@@ -2145,6 +2145,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Jumbotron",
   data: function data() {
@@ -2155,7 +2169,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     searchDestination: function searchDestination() {
       this.$router.push({
-        name: "Discover",
+        name: "Scopri | BoolBnB",
         params: {
           destination: this.destination
         }
@@ -2226,6 +2240,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Places",
   data: function data() {
@@ -2236,7 +2252,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getClick: function getClick(el) {
       this.$router.push({
-        name: "Discover",
+        name: "Scopri | BoolBnB",
         params: {
           destination: el.target.innerText
         }
@@ -2256,6 +2272,13 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2768,6 +2791,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Main",
@@ -3063,7 +3101,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".card-img-top[data-v-3b77341c] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.marker-icon[data-v-3b77341c] {\n  background-position: center;\n  background-size: 22px 22px;\n  border-radius: 50%;\n  height: 22px;\n  left: 4px;\n  position: absolute;\n  text-align: center;\n  top: 3px;\n  transform: rotate(45deg);\n  width: 22px;\n}\n.marker[data-v-3b77341c] {\n  height: 30px;\n  width: 30px;\n}\n.marker-content[data-v-3b77341c] {\n  background: #c30b82;\n  border-radius: 50% 50% 50% 0;\n  height: 30px;\n  left: 50%;\n  margin: -15px 0 0 -15px;\n  position: absolute;\n  top: 50%;\n  transform: rotate(-45deg);\n  width: 30px;\n}\n.marker-content[data-v-3b77341c]::before {\n  background: #ffffff;\n  border-radius: 50%;\n  content: \"\";\n  height: 24px;\n  margin: 3px 0 0 3px;\n  position: absolute;\n  width: 24px;\n}\n.container-map[data-v-3b77341c] {\n  height: 100%;\n  min-height: 350px;\n}\n.container-map #map_div[data-v-3b77341c] {\n  height: 100%;\n  overflow: hidden;\n}\n.my_btns[data-v-3b77341c] {\n  padding: 15px;\n  margin: 10px 0 0 10px;\n  border: none;\n  transition: box-shadow 0.4s ease;\n  font-size: 20px;\n}\n#rangeDistance[data-v-3b77341c] {\n  accent-color: #ff385c;\n}", ""]);
+exports.push([module.i, ".card-img-top[data-v-3b77341c] {\n  width: 100%;\n  height: 100%;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.marker-icon[data-v-3b77341c] {\n  background-position: center;\n  background-size: 22px 22px;\n  border-radius: 50%;\n  height: 22px;\n  left: 4px;\n  position: absolute;\n  text-align: center;\n  top: 3px;\n  transform: rotate(45deg);\n  width: 22px;\n}\n.marker[data-v-3b77341c] {\n  height: 30px;\n  width: 30px;\n}\n.marker-content[data-v-3b77341c] {\n  background: #c30b82;\n  border-radius: 50% 50% 50% 0;\n  height: 30px;\n  left: 50%;\n  margin: -15px 0 0 -15px;\n  position: absolute;\n  top: 50%;\n  transform: rotate(-45deg);\n  width: 30px;\n}\n.marker-content[data-v-3b77341c]::before {\n  background: #ffffff;\n  border-radius: 50%;\n  content: \"\";\n  height: 24px;\n  margin: 3px 0 0 3px;\n  position: absolute;\n  width: 24px;\n}\n.container-map[data-v-3b77341c] {\n  height: 100%;\n  min-height: 350px;\n}\n.container-map #map_div[data-v-3b77341c] {\n  height: 100%;\n  overflow: hidden;\n}\n.my_btns[data-v-3b77341c] {\n  padding: 15px;\n  border: none;\n  transition: box-shadow 0.4s ease;\n  font-size: 20px;\n}\n#rangeDistance[data-v-3b77341c],\ninput[type=checkbox][data-v-3b77341c] {\n  accent-color: #ff385c;\n}\ninput[type=checkbox][data-v-3b77341c] {\n  width: 20px;\n  aspect-ratio: 1;\n}", ""]);
 
 // exports
 
@@ -5412,7 +5450,7 @@ var render = function () {
                       "\n              btn btn-outline-danger\n              bg-danger\n              text-light\n              h-100\n              d-flex\n              align-items-center\n            ",
                     attrs: {
                       to: {
-                        name: "Discover",
+                        name: "Scopri | BoolBnB",
                       },
                     },
                     on: { click: _vm.searchDestination },
@@ -5436,6 +5474,7 @@ var render = function () {
                       },
                       [
                         _c("circle", { attrs: { cx: "11", cy: "11", r: "8" } }),
+                        _vm._v(" "),
                         _c("line", {
                           attrs: {
                             x1: "21",
@@ -5511,7 +5550,7 @@ var render = function () {
       _vm._m(0),
       _vm._v(" "),
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: " col-sm-12 col-md-12 col-lg-4 mb-3" }, [
+        _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-4 mb-3" }, [
           _c(
             "a",
             {
@@ -5528,7 +5567,7 @@ var render = function () {
           ),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: " col-sm-12 col-md-12 col-lg-4 mb-3" }, [
+        _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-4 mb-3" }, [
           _c(
             "a",
             {
@@ -5547,7 +5586,7 @@ var render = function () {
           ),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: " col-sm-12 col-md-12 col-lg-4 mb-3" }, [
+        _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-4 mb-3" }, [
           _c(
             "a",
             {
@@ -5577,7 +5616,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-12" }, [
         _c("h3", { staticClass: "mb-3 font-weight-bold" }, [
-          _vm._v("Ispirazioni per il tuo prossimo viaggio"),
+          _vm._v("\n        Ispirazioni per il tuo prossimo viaggio\n      "),
         ]),
         _vm._v(" "),
         _c("h5", { staticClass: "mb-3" }, [
@@ -5656,17 +5695,17 @@ var render = function () {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "row justify-content-around" },
+        { staticClass: "row" },
         _vm._l(_vm.apartments, function (apartment) {
           return _c(
             "router-link",
             {
               key: apartment.id,
               staticClass:
-                "col-5 col-md-3 card border-0 m-2 px-0 text-reset text-decoration-none",
+                "\n          col-5 col-md-3\n          card\n          border-0\n          m-2\n          px-0\n          text-reset text-decoration-none\n        ",
               attrs: {
                 to: {
-                  name: "Apartment",
+                  name: "Dettaglio | BoolBnB",
                   params: { slug: apartment.slug },
                 },
               },
@@ -6477,7 +6516,6 @@ var render = function () {
                           ),
                           _vm._v(" "),
                           _c("input", {
-                            staticClass: "d-none",
                             attrs: {
                               type: "checkbox",
                               name: service.name,
@@ -6584,13 +6622,17 @@ var render = function () {
           _c("div", { staticClass: "col-12 my-3" }, [
             _vm.resultCity != ""
               ? _c("h3", [
-                  _vm._v("\n          Risultati trovati per : "),
+                  _vm._v("\n          Risultati trovati per :\n          "),
                   _c(
                     "span",
                     { staticClass: "font-weight-bold text-capitalize" },
-                    [_vm._v(" " + _vm._s(_vm.resultCity))]
+                    [_vm._v("\n            " + _vm._s(_vm.resultCity))]
                   ),
-                  _vm._v("  (" + _vm._s(_vm.apartments.length) + ")\n        "),
+                  _vm._v(
+                    "\n          (" +
+                      _vm._s(_vm.apartments.length) +
+                      ")\n        "
+                  ),
                 ])
               : _c("h3", [_c("strong", [_vm._v("Viaggetto a Roma?")])]),
           ]),
@@ -6611,7 +6653,7 @@ var render = function () {
                         staticStyle: { color: "inherit" },
                         attrs: {
                           to: {
-                            name: "Apartment",
+                            name: "Dettaglio | BoolBnB",
                             params: { slug: apartment.slug },
                           },
                         },
@@ -6643,7 +6685,13 @@ var render = function () {
                                       staticClass:
                                         "card-title font-weight-bold",
                                     },
-                                    [_vm._v(_vm._s(apartment.title))]
+                                    [
+                                      _vm._v(
+                                        "\n                        " +
+                                          _vm._s(apartment.title) +
+                                          "\n                      "
+                                      ),
+                                    ]
                                   ),
                                   _vm._v(" "),
                                   _c(
@@ -6664,7 +6712,13 @@ var render = function () {
                                   _c(
                                     "p",
                                     { staticClass: "card-text text-truncate" },
-                                    [_vm._v(_vm._s(apartment.description))]
+                                    [
+                                      _vm._v(
+                                        "\n                        " +
+                                          _vm._s(apartment.description) +
+                                          "\n                      "
+                                      ),
+                                    ]
                                   ),
                                 ]),
                               ]),
@@ -22585,7 +22639,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   mode: 'history',
   routes: [{
     path: '/',
-    name: 'BoolBnB | Scopri nuovi posti e partecipa a esperienze fantastiche ',
+    name: 'Homepage',
     component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
     path: '/discover',
@@ -22597,7 +22651,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
     component: _pages_Apartment_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
     path: '/about',
-    name: 'Chi siamo | BoolBnB',
+    name: 'About',
     component: _pages_AboutUs_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }]
 });
@@ -22930,7 +22984,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Luciano\Documents\Boolean\Progetto_Finale\boolbnb\resources\js\front.js */"./resources/js/front.js");
+module.exports = __webpack_require__(/*! /Users/albertogaia/Desktop/boolbnb/resources/js/front.js */"./resources/js/front.js");
 
 
 /***/ })

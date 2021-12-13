@@ -36,10 +36,10 @@
                     <li class="nav-item {{Request::route()->getName()=='Homepage'? 'active' : 'null'}}">
                         <router-link class="nav-link" to="/">Home</router-link>
                     </li>
-                    <li class="nav-item {{Request::route()->getName()=='Discover'? 'active' : 'null'}}">
+                    <li class="nav-item {{Request::route()->getName()=='Scopri | BoolBnB'? 'active' : 'null'}}">
                         <router-link class="nav-link" to="/discover">Scopri</router-link>
                     </li>
-                    <li class="nav-item {{Request::route()->getName()=='About'? 'active' : 'null'}}">
+                    <li class="nav-item {{Request::route()->getName()=='Chi siamo | BoolBnB'? 'active' : 'null'}}">
                         <router-link class="nav-link" to="/about">Chi siamo</router-link>
                     </li>
 
@@ -127,10 +127,10 @@
                         <li class="nav-item {{Request::route()->getName()=='Homepage'? 'active' : 'null'}}">
                             <router-link class="nav-link" to="/">Home</router-link>
                         </li>
-                        <li class="nav-item {{Request::route()->getName()=='Discover'? 'active' : 'null'}}">
+                        <li class="nav-item {{Request::route()->getName()=='Scopri | BoolBnB'? 'active' : 'null'}}">
                             <router-link class="nav-link" to="/discover">Scopri</router-link>
                         </li>
-                        <li class="nav-item {{Request::route()->getName()=='Discover'? 'active' : 'null'}}">
+                        <li class="nav-item {{Request::route()->getName()=='Chi siamo | BoolBnB'? 'active' : 'null'}}">
                             <router-link class="nav-link" to="/about">Chi siamo</router-link>
                         </li>
                     </ul>
