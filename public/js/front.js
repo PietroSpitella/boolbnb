@@ -2423,6 +2423,67 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "AboutUs"
 });
@@ -6068,18 +6129,18 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-md-10 my-3" }, [
+        _c("div", { staticClass: "col-12 my-3" }, [
           _c("h1", { staticClass: "font-weight-bold" }, [_vm._v("Chi siamo")]),
           _vm._v(" "),
-          _c("p", [
+          _c("h5", { staticClass: "mb-3" }, [
             _vm._v("\n        Conosci gli "),
             _c("strong", [_vm._v("umili")]),
-            _vm._v(" sviluppatori che hanno dato vita a questo "),
+            _vm._v(" sviluppatori che hanno dato vita a\n        questo "),
             _c("strong", [_vm._v("INCREDIBILE")]),
             _vm._v(" sito.\n      "),
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "row justify-content-center py-3" }, [
+          _c("div", { staticClass: "row justify-content-center py-3 mt-4" }, [
             _c(
               "div",
               { staticClass: "col-md-6 col-lg-4 bg-transparent card border-0" },
@@ -6095,8 +6156,11 @@ var staticRenderFns = [
                 _c("div", { staticClass: "card-body" }, [
                   _c(
                     "h5",
-                    { staticClass: "card-title font-weight-bold fs-24" },
-                    [_vm._v("Alberto Gaia")]
+                    {
+                      staticClass:
+                        "card-title text-center font-weight-bold fs-24",
+                    },
+                    [_vm._v("\n              Alberto Gaia\n            ")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -6148,8 +6212,11 @@ var staticRenderFns = [
                 _c("div", { staticClass: "card-body" }, [
                   _c(
                     "h5",
-                    { staticClass: "card-title font-weight-bold fs-24" },
-                    [_vm._v("Amedeo Pasanisi")]
+                    {
+                      staticClass:
+                        "card-title text-center font-weight-bold fs-24",
+                    },
+                    [_vm._v("\n              Amedeo Pasanisi\n            ")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -6201,8 +6268,11 @@ var staticRenderFns = [
                 _c("div", { staticClass: "card-body" }, [
                   _c(
                     "h5",
-                    { staticClass: "card-title font-weight-bold fs-24" },
-                    [_vm._v("Luciano Marchionna")]
+                    {
+                      staticClass:
+                        "card-title text-center font-weight-bold fs-24",
+                    },
+                    [_vm._v("\n              Luciano Marchionna\n            ")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -6254,8 +6324,11 @@ var staticRenderFns = [
                 _c("div", { staticClass: "card-body" }, [
                   _c(
                     "h5",
-                    { staticClass: "card-title font-weight-bold fs-24" },
-                    [_vm._v("Pietro Spitella")]
+                    {
+                      staticClass:
+                        "card-title text-center font-weight-bold fs-24",
+                    },
+                    [_vm._v("\n              Pietro Spitella\n            ")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -6307,8 +6380,11 @@ var staticRenderFns = [
                 _c("div", { staticClass: "card-body" }, [
                   _c(
                     "h5",
-                    { staticClass: "card-title font-weight-bold fs-24" },
-                    [_vm._v("Roberto Martino")]
+                    {
+                      staticClass:
+                        "card-title text-center font-weight-bold fs-24",
+                    },
+                    [_vm._v("\n              Roberto Martino\n            ")]
                   ),
                   _vm._v(" "),
                   _c(
